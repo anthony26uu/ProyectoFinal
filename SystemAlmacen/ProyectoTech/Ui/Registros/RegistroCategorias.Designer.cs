@@ -172,6 +172,7 @@
             this.Controls.Add(this.nombreCategoriaTextBox);
             this.Name = "RegistroCategorias";
             this.Text = "RegistroCategorias";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroCategorias_FormClosed);
             this.Load += new System.EventHandler(this.RegistroCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoriaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

@@ -13,6 +13,8 @@ namespace Entidades
         public string Nombres { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
+        public string Sexo { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
         public string Telefono { get; set; }
     

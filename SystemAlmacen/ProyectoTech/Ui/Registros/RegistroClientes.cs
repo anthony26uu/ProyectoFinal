@@ -54,6 +54,8 @@ namespace ProyectoTech.Ui.Registros
             emailTextBox.Clear();
             telefonoMaskedTextBox.Clear();
             NombreerrorProvider.Clear();
+            sexoComboBox.Text = null;
+           
             nombresTextBox.Focus();
         }
 
@@ -89,7 +91,9 @@ namespace ProyectoTech.Ui.Registros
                     guardar.Direccion = direccionTextBox.Text;
                     guardar.Telefono = telefonoMaskedTextBox.Text;
                     guardar.Email = emailTextBox.Text;
-           
+                    guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
+                    guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
+
                     //Modifica si es necesario  de lo contrario guarda 
                     if (id != guardar.ClienteId)
                     {
@@ -109,6 +113,37 @@ namespace ProyectoTech.Ui.Registros
             {
 
                 throw;
+            }
+        }
+
+        private void RegistroClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+         //   unico = null;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(clienteIdNumericUpDown.Text);
+            Clientes cliente;
+
+            cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
+            if (cliente != null)
+            {
+
+                nombresTextBox.Text = cliente.Nombres;
+                direccionTextBox.Text = cliente.Direccion;
+                emailTextBox.Text = cliente.Email;
+                telefonoMaskedTextBox.Text = cliente.Telefono;
+                sexoComboBox.Text = cliente.Sexo;
+                fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
+
+
+                MessageBox.Show("Resultados de su busqueda");
+            }
+            else
+            {
+                MessageBox.Show("No existe ninguna categoria con ese Id.");
             }
         }
     }

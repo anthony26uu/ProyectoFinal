@@ -78,6 +78,24 @@ namespace BLL
             }
         }
 
+        public static Articulos BuscarRelacion(int id)
+        {
+            Articulos estudiante = null;
+            using (var conexion = new RegistroDb())
+            {
+                try
+                {
+                    estudiante = conexion.articuloDb.Find(id);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return estudiante;
+        }
+
     }
 
 }

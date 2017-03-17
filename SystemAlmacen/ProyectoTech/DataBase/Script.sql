@@ -4,14 +4,13 @@
     IdArticulo     INT primary key IDENTITY (1, 1),
     NombreArticulo VARCHAR (80),
     Existencia     INT ,
-    PrecioVenta    FLOAT,
-    PrecioCompra   FLOAT,
+    PrecioVenta    decimal,
+    PrecioCompra   decimal,
     Categoria      VARCHAR (80),
     CodigoArticulo VARCHAR (80),
     FechaIngreso   DATETIME,
 	CategoriaId int ,
-	ITBIS double
-   
+	ITBIS decimal
 );
 
 create table Clientes(ClienteId int identity(1,1) primary key, 
@@ -40,11 +39,11 @@ create table Facturas (IdFactura int primary key identity (1,1),
 IdEmpleado int,
 IdArticulo int,
 FechaVenta DateTime,
-Descuento float,
+Descuento decimal,
 Cliente varchar(80),
 TipoVenta varchar(80), 
 CantidadProd int ,
-ITBS float
+ITBS decimal
 );
 
 create table  ArticuloCategorias (
@@ -56,4 +55,4 @@ create table  ArticuloCategorias (
 
 
 
-
+create table FacturaDetalles(FacturaDetalleId int identity(1,1) primary key, IdFactura int, IdArticulo int );

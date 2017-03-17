@@ -203,6 +203,11 @@ namespace ProyectoTech.Ui.Registros
         {
 
         }
+
+        private void RegistroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            unico = null;
+        }
     }
     }
 

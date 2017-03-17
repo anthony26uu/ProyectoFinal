@@ -14,6 +14,7 @@ namespace ProyectoTech.Ui.Registros
     public partial class RegistroCategorias : Form
     {
       private static  RegistroCategorias unico = null;
+
         public RegistroCategorias()
         {
             InitializeComponent();
@@ -24,6 +25,10 @@ namespace ProyectoTech.Ui.Registros
             if (unico == null)
             {
                 unico = new RegistroCategorias();
+            }
+            else
+            {
+                unico.Activate();
             }
             return unico;
         }
@@ -139,6 +144,9 @@ namespace ProyectoTech.Ui.Registros
             }
         }
 
-       
+        private void RegistroCategorias_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            unico = null;
+        }
     }
 }

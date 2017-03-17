@@ -223,6 +223,11 @@ namespace ProyectoTech.Ui.Registros
                 MessageBox.Show("No se pudo eliminar.");
             }
         }
+
+        private void RegistroArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            unico = null;
+        }
     }
     }
     

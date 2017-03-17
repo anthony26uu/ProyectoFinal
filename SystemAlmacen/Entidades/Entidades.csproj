@@ -52,6 +52,7 @@
     <Compile Include="Categorias.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="FacturaDetalle.cs" />
+    <Compile Include="FacturaDetalles.cs" />
     <Compile Include="Facturas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />

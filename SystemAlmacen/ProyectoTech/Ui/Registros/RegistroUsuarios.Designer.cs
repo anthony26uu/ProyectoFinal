@@ -34,8 +34,8 @@
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nombreUsuarioLabel;
             System.Windows.Forms.Label passUsuarioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarios));
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarios));
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ConfirmaContextBox = new System.Windows.Forms.TextBox();
             this.nombreUsuarioTextBox = new System.Windows.Forms.TextBox();
@@ -100,6 +100,15 @@
             passUsuarioLabel.Size = new System.Drawing.Size(64, 13);
             passUsuarioLabel.TabIndex = 44;
             passUsuarioLabel.Text = "Contraseña:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(18, 126);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(31, 13);
+            label3.TabIndex = 64;
+            label3.Text = "Tipo:";
             // 
             // IdnumericUpDown
             // 
@@ -207,15 +216,6 @@
             this.TipoComboBox.TabIndex = 63;
             this.TipoComboBox.SelectedIndexChanged += new System.EventHandler(this.categoriaComboBox_SelectedIndexChanged);
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(18, 126);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(31, 13);
-            label3.TabIndex = 64;
-            label3.Text = "Tipo:";
-            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +238,7 @@
             this.Controls.Add(this.passUsuarioTextBox);
             this.Name = "RegistroUsuarios";
             this.Text = "RegistroUsuarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();

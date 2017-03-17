@@ -21,9 +21,16 @@ namespace Entidades
         public decimal ITBS { get; set; }
 
 
-        public Facturas()
+        public Facturas(int id, int idArticulo, DateTime fechaVenta, decimal descuento,string cliente, string tipoventa, int cantidadProd, decimal itbis  )
         {
-
+            this.Id = id;
+            this.IdArticulo = IdArticulo;
+            this.FechaVenta = fechaVenta;
+            this.Descuento = descuento;
+            this.Cliente = cliente;
+            this.TipoVenta = tipoventa;
+            this.CantidadProd = cantidadProd;
+            this.ITBS = itbis;
         }
     }
 }

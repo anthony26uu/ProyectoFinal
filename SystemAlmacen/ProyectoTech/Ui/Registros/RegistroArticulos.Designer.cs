@@ -37,8 +37,8 @@
             System.Windows.Forms.Label categoriaLabel;
             System.Windows.Forms.Label codigoArticuloLabel;
             System.Windows.Forms.Label fechaIngresoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroArticulos));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroArticulos));
             this.categoriaComboBox = new System.Windows.Forms.ComboBox();
             this.ArticulonumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.existenciaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -137,6 +137,15 @@
             fechaIngresoLabel.Size = new System.Drawing.Size(78, 13);
             fechaIngresoLabel.TabIndex = 40;
             fechaIngresoLabel.Text = "Fecha Ingreso:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(23, 244);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(37, 13);
+            label1.TabIndex = 66;
+            label1.Text = "ITBIS:";
             // 
             // categoriaComboBox
             // 
@@ -273,15 +282,6 @@
             this.buttonNuevo.UseVisualStyleBackColor = true;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(23, 244);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(37, 13);
-            label1.TabIndex = 66;
-            label1.Text = "ITBIS:";
-            // 
             // ITBISmaskedTextBox
             // 
             this.ITBISmaskedTextBox.Location = new System.Drawing.Point(114, 241);
@@ -320,6 +320,7 @@
             this.Controls.Add(this.fechaIngresoDateTimePicker);
             this.Name = "RegistroArticulos";
             this.Text = "RegistroArticulos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroArticulos_FormClosed);
             this.Load += new System.EventHandler(this.RegistroArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ArticulonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();

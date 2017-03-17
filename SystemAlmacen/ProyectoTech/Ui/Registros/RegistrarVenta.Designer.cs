@@ -61,8 +61,8 @@
             this.SubTotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
+            this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             idFacturaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             fechaVentaLabel = new System.Windows.Forms.Label();
@@ -214,7 +214,7 @@
             this.idArticuloComboBox.FormattingEnabled = true;
             this.idArticuloComboBox.Location = new System.Drawing.Point(74, 37);
             this.idArticuloComboBox.Name = "idArticuloComboBox";
-            this.idArticuloComboBox.Size = new System.Drawing.Size(184, 21);
+            this.idArticuloComboBox.Size = new System.Drawing.Size(126, 21);
             this.idArticuloComboBox.TabIndex = 6;
             this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
             // 
@@ -228,9 +228,11 @@
             // descuentoMaskedTextBox
             // 
             this.descuentoMaskedTextBox.Location = new System.Drawing.Point(93, 72);
+            this.descuentoMaskedTextBox.Mask = "99999";
             this.descuentoMaskedTextBox.Name = "descuentoMaskedTextBox";
             this.descuentoMaskedTextBox.Size = new System.Drawing.Size(200, 20);
             this.descuentoMaskedTextBox.TabIndex = 10;
+            this.descuentoMaskedTextBox.ValidatingType = typeof(int);
             // 
             // clienteComboBox
             // 
@@ -243,6 +245,9 @@
             // tipoVentaComboBox
             // 
             this.tipoVentaComboBox.FormattingEnabled = true;
+            this.tipoVentaComboBox.Items.AddRange(new object[] {
+            "Credito",
+            "Contado"});
             this.tipoVentaComboBox.Location = new System.Drawing.Point(379, 16);
             this.tipoVentaComboBox.Name = "tipoVentaComboBox";
             this.tipoVentaComboBox.Size = new System.Drawing.Size(96, 21);
@@ -376,6 +381,14 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // comboBoxNombreAr
+            // 
+            this.comboBoxNombreAr.FormattingEnabled = true;
+            this.comboBoxNombreAr.Location = new System.Drawing.Point(206, 37);
+            this.comboBoxNombreAr.Name = "comboBoxNombreAr";
+            this.comboBoxNombreAr.Size = new System.Drawing.Size(136, 21);
+            this.comboBoxNombreAr.TabIndex = 46;
+            // 
             // textBoxCantidad
             // 
             this.textBoxCantidad.Location = new System.Drawing.Point(63, 77);
@@ -383,14 +396,6 @@
             this.textBoxCantidad.Size = new System.Drawing.Size(82, 20);
             this.textBoxCantidad.TabIndex = 45;
             this.textBoxCantidad.ValueChanged += new System.EventHandler(this.textBoxCantidad_ValueChanged);
-            // 
-            // comboBoxNombreAr
-            // 
-            this.comboBoxNombreAr.FormattingEnabled = true;
-            this.comboBoxNombreAr.Location = new System.Drawing.Point(267, 37);
-            this.comboBoxNombreAr.Name = "comboBoxNombreAr";
-            this.comboBoxNombreAr.Size = new System.Drawing.Size(184, 21);
-            this.comboBoxNombreAr.TabIndex = 46;
             // 
             // RegistrarVenta
             // 
