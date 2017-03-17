@@ -1,0 +1,150 @@
+﻿using ProyectoTech.Ui.Registros;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace ProyectoTech.Ui.Incio
+{
+    public partial class Inicio : Form
+    {
+        private static Inicio inicio;
+        public Inicio()
+        {
+            InitializeComponent();
+            timer1Hora.Enabled = true;
+        }
+
+        public static Inicio Funcio()
+        {
+            if (inicio == null)
+            {
+                inicio = new Inicio();
+            }
+            return inicio;
+        }
+        private void LlenarLabel()
+        {
+
+            LabelUsuario.Text = Login.InsetarU().NombreUsuario;
+            LabelTipo.Text = Login.InsetarU().Tipo;
+            
+
+        }
+
+        private void Permisos()
+        {
+            if(Login.InsetarU().Tipo != "Administrador")
+            {
+                usuariosToolStripMenuItem.Enabled = false;
+
+            }
+            else
+            {
+                usuariosToolStripMenuItem.Enabled = true;
+            }
+        }
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         //   this.Hide();
+            Ui.Registros.RegistroArticulos.Funcion().Show();
+            Ui.Registros.RegistroArticulos.Funcion().Activate();
+
+    }
+
+    private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+          //  this.Hide();
+            RegistroCategorias.Funcion().Show();
+            RegistroCategorias.Funcion().Activate();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros.RegistroUsuarios db = new Registros.RegistroUsuarios();
+            db.Show();
+
+           // this.Hide();
+            RegistroUsuarios.Funcion().Show();
+            RegistroUsuarios.Funcion().Activate();
+          
+        }
+
+        private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ui.Incio.Login.Funcion().Show();
+            Ui.Incio.Login.Funcion().Activate();
+
+
+        }
+
+        private void Inicio_VisibleChanged(object sender, EventArgs e)
+        {
+            LlenarLabel();
+            Permisos();
+        }
+
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void TipoStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1Hora_Tick(object sender, EventArgs e)
+        {
+            //Actualizar cada segundo la Hora
+            labelHORA.Text = DateTime.Now.ToLongTimeString();
+            //Fecha
+            labelFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void articulosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Registros.RegistroClientes db = new RegistroClientes();
+            db.Show();
+        }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Registros.RegistrarVenta db = new RegistrarVenta();
+            db.Show();
+        }
+    }
+}
