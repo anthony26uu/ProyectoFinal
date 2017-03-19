@@ -14,6 +14,7 @@ namespace ProyectoTech.Ui.Registros
     {
         private static RegistroUsuarios unico = null;
         Usuarios usuario = new Usuarios();
+
         public RegistroUsuarios()
         {
 
@@ -172,7 +173,7 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña Incorrecta");
+                    errorProviderTodo.SetError(passUsuarioTextBox, "Para Eliminar Coloque contraseña usuario a eliminar");
                 }
             }
 
@@ -187,6 +188,7 @@ namespace ProyectoTech.Ui.Registros
                 {
                     IdnumericUpDown.Text = Convert.ToString(user.Id);
                     nombreUsuarioTextBox.Text = user.NombreUsuario;
+                    TipoComboBox.Text = user.Tipo;
                     passUsuarioTextBox.Text = "*****";
                     ConfirmaContextBox.Text = "*****";
                     MessageBox.Show("Este es el Usuario Contraseña Protegida por seguridad");

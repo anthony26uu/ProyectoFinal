@@ -13,7 +13,7 @@ namespace ProyectoTech.Ui.Registros
     public partial class RegistroArticulos : Form
     {
         Articulos articulo = new Articulos();
-     private static   RegistroArticulos unico=null;
+      private static   RegistroArticulos unico=null;
         public RegistroArticulos()
         {
             InitializeComponent();
@@ -66,7 +66,8 @@ namespace ProyectoTech.Ui.Registros
             codigoArticuloMaskedTextBox.Clear();
             fechaIngresoDateTimePicker.Value = DateTime.Today;
             nombreArticuloTextBox.Focus();
-
+            categoriaComboBox.Text = null;
+            ITBISmaskedTextBox.Clear();
             errorProviderTodo.Clear();
 
         }

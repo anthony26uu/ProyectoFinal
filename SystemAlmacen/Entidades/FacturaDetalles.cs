@@ -6,22 +6,25 @@ using System.Text;
 
 namespace Entidades
 {
-   public class FacturaDetalles
+public    class FacturaDetalles
     {
         [Key]
-        public int FacturaDetalleId { get; set; }
+        public int IdDetalle { get; set; }
         public int IdFactura { get; set; }
         public int IdArticulo { get; set; }
+        public decimal Precio { get; set; }
+        public decimal Cantidad { get; set; }
+
+        public virtual Articulos articulosDetalle { get; set; }
 
         public FacturaDetalles()
         {
+            this.articulosDetalle = new Entidades.Articulos();
 
         }
-
-        public FacturaDetalles(int facturaDetalleId, int idFactura, int idArticulo)
+        public FacturaDetalles(int idFactura, int IdArticulo, decimal precio)
         {
-            this.FacturaDetalleId = facturaDetalleId;
-            this.IdArticulo = IdArticulo;
+            this.IdDetalle = IdDetalle;
             this.IdFactura = IdFactura;
         }
     }

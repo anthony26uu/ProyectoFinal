@@ -31,12 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idFacturaLabel;
             System.Windows.Forms.Label idArticuloLabel;
-            System.Windows.Forms.Label fechaVentaLabel;
             System.Windows.Forms.Label descuentoLabel;
             System.Windows.Forms.Label clienteLabel;
             System.Windows.Forms.Label tipoVentaLabel;
             System.Windows.Forms.Label iTBSLabel;
-            System.Windows.Forms.Label idEmpleadoLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label labelPrecio;
             System.Windows.Forms.Label label2;
@@ -44,7 +42,6 @@
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
             this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
-            this.fechaVentaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descuentoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
@@ -56,21 +53,25 @@
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.idFacturaTextBox = new System.Windows.Forms.TextBox();
             this.iTBSMaskedTextBox = new System.Windows.Forms.TextBox();
             this.SubTotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.IDArticulotextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idFacturaTextBox = new System.Windows.Forms.TextBox();
             idFacturaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
-            fechaVentaLabel = new System.Windows.Forms.Label();
             descuentoLabel = new System.Windows.Forms.Label();
             clienteLabel = new System.Windows.Forms.Label();
             tipoVentaLabel = new System.Windows.Forms.Label();
             iTBSLabel = new System.Windows.Forms.Label();
-            idEmpleadoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             labelPrecio = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).BeginInit();
             this.SuspendLayout();
             // 
             // idFacturaLabel
@@ -100,15 +102,6 @@
             idArticuloLabel.Size = new System.Drawing.Size(45, 13);
             idArticuloLabel.TabIndex = 5;
             idArticuloLabel.Text = "Articulo:";
-            // 
-            // fechaVentaLabel
-            // 
-            fechaVentaLabel.AutoSize = true;
-            fechaVentaLabel.Location = new System.Drawing.Point(494, 19);
-            fechaVentaLabel.Name = "fechaVentaLabel";
-            fechaVentaLabel.Size = new System.Drawing.Size(71, 13);
-            fechaVentaLabel.TabIndex = 7;
-            fechaVentaLabel.Text = "Fecha Venta:";
             // 
             // descuentoLabel
             // 
@@ -145,15 +138,6 @@
             iTBSLabel.Size = new System.Drawing.Size(61, 13);
             iTBSLabel.TabIndex = 17;
             iTBSLabel.Text = "Toal ITBIS:";
-            // 
-            // idEmpleadoLabel
-            // 
-            idEmpleadoLabel.AutoSize = true;
-            idEmpleadoLabel.Location = new System.Drawing.Point(574, 48);
-            idEmpleadoLabel.Name = "idEmpleadoLabel";
-            idEmpleadoLabel.Size = new System.Drawing.Size(46, 13);
-            idEmpleadoLabel.TabIndex = 3;
-            idEmpleadoLabel.Text = "Usuario:";
             // 
             // label1
             // 
@@ -218,13 +202,6 @@
             this.idArticuloComboBox.TabIndex = 6;
             this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
             // 
-            // fechaVentaDateTimePicker
-            // 
-            this.fechaVentaDateTimePicker.Location = new System.Drawing.Point(577, 15);
-            this.fechaVentaDateTimePicker.Name = "fechaVentaDateTimePicker";
-            this.fechaVentaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaVentaDateTimePicker.TabIndex = 8;
-            // 
             // descuentoMaskedTextBox
             // 
             this.descuentoMaskedTextBox.Location = new System.Drawing.Point(93, 72);
@@ -256,7 +233,7 @@
             // labelFecha
             // 
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(814, 22);
+            this.labelFecha.Location = new System.Drawing.Point(299, 58);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(37, 13);
             this.labelFecha.TabIndex = 20;
@@ -265,7 +242,7 @@
             // labelHORA
             // 
             this.labelHORA.AutoSize = true;
-            this.labelHORA.Location = new System.Drawing.Point(814, 9);
+            this.labelHORA.Location = new System.Drawing.Point(299, 45);
             this.labelHORA.Name = "labelHORA";
             this.labelHORA.Size = new System.Drawing.Size(30, 13);
             this.labelHORA.TabIndex = 19;
@@ -313,7 +290,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.idFacturaTextBox);
             this.groupBox1.Controls.Add(idFacturaLabel);
             this.groupBox1.Controls.Add(descuentoLabel);
             this.groupBox1.Controls.Add(this.descuentoMaskedTextBox);
@@ -321,20 +297,14 @@
             this.groupBox1.Controls.Add(this.clienteComboBox);
             this.groupBox1.Controls.Add(tipoVentaLabel);
             this.groupBox1.Controls.Add(this.tipoVentaComboBox);
+            this.groupBox1.Controls.Add(this.labelHORA);
+            this.groupBox1.Controls.Add(this.labelFecha);
             this.groupBox1.Location = new System.Drawing.Point(2, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(486, 121);
+            this.groupBox1.Size = new System.Drawing.Size(532, 121);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
-            // 
-            // idFacturaTextBox
-            // 
-            this.idFacturaTextBox.Location = new System.Drawing.Point(93, 17);
-            this.idFacturaTextBox.Name = "idFacturaTextBox";
-            this.idFacturaTextBox.ReadOnly = true;
-            this.idFacturaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idFacturaTextBox.TabIndex = 40;
             // 
             // iTBSMaskedTextBox
             // 
@@ -362,6 +332,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.IDArticulotextBox);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.comboBoxNombreAr);
             this.groupBox2.Controls.Add(this.textBoxCantidad);
             this.groupBox2.Controls.Add(this.PreciotextBox);
@@ -381,6 +353,24 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // IDArticulotextBox
+            // 
+            this.IDArticulotextBox.Location = new System.Drawing.Point(372, 32);
+            this.IDArticulotextBox.Name = "IDArticulotextBox";
+            this.IDArticulotextBox.ReadOnly = true;
+            this.IDArticulotextBox.Size = new System.Drawing.Size(59, 20);
+            this.IDArticulotextBox.TabIndex = 45;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(465, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // comboBoxNombreAr
             // 
             this.comboBoxNombreAr.FormattingEnabled = true;
@@ -397,11 +387,54 @@
             this.textBoxCantidad.TabIndex = 45;
             this.textBoxCantidad.ValueChanged += new System.EventHandler(this.textBoxCantidad_ValueChanged);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(607, 292);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(736, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Tipo Usuario";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(736, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Usuario";
+            // 
+            // errorProviderTodo
+            // 
+            this.errorProviderTodo.ContainerControl = this;
+            // 
+            // idFacturaTextBox
+            // 
+            this.idFacturaTextBox.Location = new System.Drawing.Point(499, 109);
+            this.idFacturaTextBox.Name = "idFacturaTextBox";
+            this.idFacturaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idFacturaTextBox.TabIndex = 52;
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 515);
+            this.Controls.Add(this.idFacturaTextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TotalmaskedTextBox);
             this.Controls.Add(this.SubTotalmaskedTextBox);
@@ -410,11 +443,6 @@
             this.Controls.Add(this.dataGridViewVenta);
             this.Controls.Add(label4);
             this.Controls.Add(label3);
-            this.Controls.Add(this.labelFecha);
-            this.Controls.Add(this.labelHORA);
-            this.Controls.Add(idEmpleadoLabel);
-            this.Controls.Add(fechaVentaLabel);
-            this.Controls.Add(this.fechaVentaDateTimePicker);
             this.Controls.Add(iTBSLabel);
             this.Name = "RegistrarVenta";
             this.Text = "RegistrarVenta";
@@ -425,6 +453,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,7 +461,6 @@
 
         #endregion
         private System.Windows.Forms.ComboBox idArticuloComboBox;
-        private System.Windows.Forms.DateTimePicker fechaVentaDateTimePicker;
         private System.Windows.Forms.MaskedTextBox descuentoMaskedTextBox;
         private System.Windows.Forms.ComboBox clienteComboBox;
         private System.Windows.Forms.ComboBox tipoVentaComboBox;
@@ -444,12 +472,18 @@
         private System.Windows.Forms.TextBox ItbsArticultextBox;
         private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox idFacturaTextBox;
         private System.Windows.Forms.TextBox iTBSMaskedTextBox;
         private System.Windows.Forms.TextBox SubTotalmaskedTextBox;
         private System.Windows.Forms.TextBox TotalmaskedTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown textBoxCantidad;
         private System.Windows.Forms.ComboBox comboBoxNombreAr;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox IDArticulotextBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorProviderTodo;
+        private System.Windows.Forms.TextBox idFacturaTextBox;
     }
 }

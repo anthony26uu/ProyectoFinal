@@ -61,6 +61,7 @@ namespace ProyectoTech.Ui.Incio
 
         }
 
+
         public static Entidades.Usuarios InsetarU()
         {
             return UsuarioG;
@@ -71,11 +72,11 @@ namespace ProyectoTech.Ui.Incio
             Entidades.Usuarios usuario = null;
             if(nombreTextBox.Text=="root")
             {
-                usuario = new Entidades.Usuarios(0, "admin", "1234", "Administrador");
+                usuario = new Entidades.Usuarios(0, "Admin", "1234", "Administrador");
             }
             else
             {
-                usuario = BLL.UserBLL.Buscar(p => p.NombreUsuario == nombreTextBox.Text);
+                usuario = BLL.UserBLL.Buscar(p => p.NombreUsuario == nombreTextBox.Text); 
             }
             if(usuario!=null)
             {

@@ -154,14 +154,14 @@
             this.categoriaComboBox.Location = new System.Drawing.Point(114, 153);
             this.categoriaComboBox.Name = "categoriaComboBox";
             this.categoriaComboBox.Size = new System.Drawing.Size(198, 21);
-            this.categoriaComboBox.TabIndex = 48;
+            this.categoriaComboBox.TabIndex = 4;
             // 
             // ArticulonumericUpDown
             // 
             this.ArticulonumericUpDown.Location = new System.Drawing.Point(114, 20);
             this.ArticulonumericUpDown.Name = "ArticulonumericUpDown";
             this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.ArticulonumericUpDown.TabIndex = 47;
+            this.ArticulonumericUpDown.TabIndex = 12;
             // 
             // existenciaMaskedTextBox
             // 
@@ -169,7 +169,7 @@
             this.existenciaMaskedTextBox.Mask = "99999";
             this.existenciaMaskedTextBox.Name = "existenciaMaskedTextBox";
             this.existenciaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.existenciaMaskedTextBox.TabIndex = 46;
+            this.existenciaMaskedTextBox.TabIndex = 1;
             this.existenciaMaskedTextBox.ValidatingType = typeof(int);
             // 
             // nombreArticuloTextBox
@@ -177,7 +177,7 @@
             this.nombreArticuloTextBox.Location = new System.Drawing.Point(114, 49);
             this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
             this.nombreArticuloTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nombreArticuloTextBox.TabIndex = 31;
+            this.nombreArticuloTextBox.TabIndex = 0;
             // 
             // precioVentaMaskedTextBox
             // 
@@ -185,7 +185,7 @@
             this.precioVentaMaskedTextBox.Mask = "99999";
             this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
             this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.precioVentaMaskedTextBox.TabIndex = 34;
+            this.precioVentaMaskedTextBox.TabIndex = 2;
             this.precioVentaMaskedTextBox.ValidatingType = typeof(int);
             // 
             // precioCompraMaskedTextBox
@@ -194,7 +194,7 @@
             this.precioCompraMaskedTextBox.Mask = "99999";
             this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
             this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.precioCompraMaskedTextBox.TabIndex = 36;
+            this.precioCompraMaskedTextBox.TabIndex = 3;
             this.precioCompraMaskedTextBox.ValidatingType = typeof(int);
             // 
             // codigoArticuloMaskedTextBox
@@ -203,7 +203,7 @@
             this.codigoArticuloMaskedTextBox.Mask = "9-999999-999999";
             this.codigoArticuloMaskedTextBox.Name = "codigoArticuloMaskedTextBox";
             this.codigoArticuloMaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.codigoArticuloMaskedTextBox.TabIndex = 39;
+            this.codigoArticuloMaskedTextBox.TabIndex = 5;
             // 
             // fechaIngresoDateTimePicker
             // 
@@ -212,7 +212,7 @@
             this.fechaIngresoDateTimePicker.Location = new System.Drawing.Point(114, 206);
             this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
             this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaIngresoDateTimePicker.TabIndex = 41;
+            this.fechaIngresoDateTimePicker.TabIndex = 6;
             // 
             // errorProviderTodo
             // 
@@ -228,7 +228,7 @@
             this.buttonbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(43, 29);
-            this.buttonbuscar.TabIndex = 65;
+            this.buttonbuscar.TabIndex = 11;
             this.buttonbuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonbuscar.UseVisualStyleBackColor = true;
             this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
@@ -244,7 +244,7 @@
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(60, 52);
-            this.buttonEliminar.TabIndex = 64;
+            this.buttonEliminar.TabIndex = 10;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonEliminar.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(66, 52);
-            this.buttonGuardar.TabIndex = 63;
+            this.buttonGuardar.TabIndex = 8;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@
             this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(66, 51);
-            this.buttonNuevo.TabIndex = 62;
+            this.buttonNuevo.TabIndex = 9;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNuevo.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@
             this.ITBISmaskedTextBox.Mask = "99999";
             this.ITBISmaskedTextBox.Name = "ITBISmaskedTextBox";
             this.ITBISmaskedTextBox.Size = new System.Drawing.Size(200, 20);
-            this.ITBISmaskedTextBox.TabIndex = 67;
+            this.ITBISmaskedTextBox.TabIndex = 7;
             this.ITBISmaskedTextBox.ValidatingType = typeof(int);
             // 
             // RegistroArticulos

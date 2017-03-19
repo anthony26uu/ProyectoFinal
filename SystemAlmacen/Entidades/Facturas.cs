@@ -20,7 +20,11 @@ namespace Entidades
         public int CantidadProd { get; set; }
         public decimal ITBS { get; set; }
 
+        public Facturas()
+        {
 
+
+        }
         public Facturas(int id, int idArticulo, DateTime fechaVenta, decimal descuento,string cliente, string tipoventa, int cantidadProd, decimal itbis  )
         {
             this.Id = id;

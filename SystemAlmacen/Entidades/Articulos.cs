@@ -29,16 +29,17 @@ namespace Entidades
             this.categorialist = new List<Categorias>();
         }
 
-        public Articulos(int idArticulo, String nombreArticulo, int existencia, decimal precioVenta, decimal precioCompra, string categoria, string codigoArticulo, DateTime fechaIngreso, decimal itbs)
+    
+        public Articulos(int IdArticulo,  String nombreArticulo, decimal precioVenta,  decimal itbs)
         {
-            this.IdArticulo = idArticulo;
+           // this.IdArticulo = idArticulo;
             this.NombreArticulo = nombreArticulo;
-            this.Existencia = existencia;
+           // this.Existencia = existencia;
             this.PrecioVenta = precioVenta;
-            this.PrecioCompra = precioCompra;
-            this.Categoria = categoria;
-            this.CodigoArticulo = codigoArticulo;
-            this.FechaIngreso = fechaIngreso;
+           // this.PrecioCompra = precioCompra;
+           // this.Categoria = categoria;
+         //   this.CodigoArticulo = codigoArticulo;
+          //  this.FechaIngreso = fechaIngreso;
             this.ITBIS = itbs;
         }
 

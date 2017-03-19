@@ -32,7 +32,7 @@ namespace BLL
         return resultado;
     }
 
-    public static bool Guardar(List<FacturaDetalles> listado)
+    public static bool Guardar(List<FacturaDetalles >listado)
     {
         bool resultado = false;
         try
