@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgresoBarra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrosDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

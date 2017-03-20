@@ -20,25 +20,26 @@ namespace DAL
         public DbSet <Clientes>clientesDb { get; set; }
         public DbSet<Categorias> categoriaDb { get; set; }
         public DbSet<FacturaDetalles> RelacionDb { get; set; }
+        public DbSet<Facturas> FacturasDb { get; set; }
 
-                                           /*
-                                                   protected override void OnModelCreating(DbModelBuilder modelBuilder)
-                                                   {
-                                                       modelBuilder.Entity<Entidades.Categorias>()
-                                                           .HasMany(categoria => categoria.articulo)
-                                                           .WithMany(articulo => articulo.categoria)
-                                                           .Map(ArticuloCategoria =>
-                                                           {
-                                                               ArticuloCategoria.MapLeftKey("IdArticulo");
-                                                               ArticuloCategoria.MapRightKey("CategoriaId");
-                                                               ArticuloCategoria.ToTable("ArticuloCategorias");
-                                                           }
+        /*
+                protected override void OnModelCreating(DbModelBuilder modelBuilder)
+                {
+                    modelBuilder.Entity<Entidades.Categorias>()
+                        .HasMany(categoria => categoria.articulo)
+                        .WithMany(articulo => articulo.categoria)
+                        .Map(ArticuloCategoria =>
+                        {
+                            ArticuloCategoria.MapLeftKey("IdArticulo");
+                            ArticuloCategoria.MapRightKey("CategoriaId");
+                            ArticuloCategoria.ToTable("ArticuloCategorias");
+                        }
 
-                                                           );
+                        );
 
 
-                                                   }
-                                                   */
+                }
+                */
 
     }
 }

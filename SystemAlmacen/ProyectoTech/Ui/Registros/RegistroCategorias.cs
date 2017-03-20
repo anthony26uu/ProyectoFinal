@@ -58,10 +58,12 @@ namespace ProyectoTech.Ui.Registros
 
         }
 
+        
+
         private void buttonGuardar_Click(object sender, EventArgs e)
         { var guardar = new Categorias();
                 int id = 0;
-            
+          
             try
             {
                
@@ -72,21 +74,23 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                   // id = Utilidades.TOINT(categoriaIdNumericUpDown.Text);
+                    // id = Utilidades.TOINT(categoriaIdNumericUpDown.Text);
                     //No Crei necesario crear una funcion llenar campos ya que son pocas cosas que se deben guardar 
-                //    guardar.CategoriaId = Utilidades.TOINT(categoriaIdNumericUpDown.Text); 
+                    //    guardar.CategoriaId = Utilidades.TOINT(categoriaIdNumericUpDown.Text); 
+                   
                     guardar.NombreCategoria = nombreCategoriaTextBox.Text;
                    guardar.CategoriaId= (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
 
                     //Modifica si es necesario  de lo contrario guarda 
                     if (id != guardar.CategoriaId)
                     {
+                        this.Progreso.Start();
                         CategoriaBLL.Mofidicar(guardar);
                         MessageBox.Show("Categoria modificada");
                     }
                     else
                     {
-
+                        this.Progreso.Start();
                         CategoriaBLL.Guardar(guardar);
                         MessageBox.Show("Nueva categproa agregada con exito!");
                     }
@@ -147,6 +151,16 @@ namespace ProyectoTech.Ui.Registros
         private void RegistroCategorias_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void Progreso_Tick(object sender, EventArgs e)
+        {
+            this.progressBar1.Increment(1);
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            ProgressBar pbar = new ProgressBar();
         }
     }
 }

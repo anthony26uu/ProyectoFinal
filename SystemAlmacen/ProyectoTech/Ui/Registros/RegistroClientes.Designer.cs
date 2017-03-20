@@ -128,35 +128,36 @@
             this.clienteIdNumericUpDown.Location = new System.Drawing.Point(112, 18);
             this.clienteIdNumericUpDown.Name = "clienteIdNumericUpDown";
             this.clienteIdNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.clienteIdNumericUpDown.TabIndex = 2;
+            this.clienteIdNumericUpDown.TabIndex = 9;
             // 
             // nombresTextBox
             // 
             this.nombresTextBox.Location = new System.Drawing.Point(112, 44);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(120, 20);
-            this.nombresTextBox.TabIndex = 4;
+            this.nombresTextBox.TabIndex = 0;
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(112, 70);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(120, 20);
-            this.direccionTextBox.TabIndex = 6;
+            this.direccionTextBox.TabIndex = 1;
             // 
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(112, 96);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(120, 20);
-            this.emailTextBox.TabIndex = 8;
+            this.emailTextBox.TabIndex = 2;
             // 
             // telefonoMaskedTextBox
             // 
             this.telefonoMaskedTextBox.Location = new System.Drawing.Point(112, 122);
+            this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(120, 20);
-            this.telefonoMaskedTextBox.TabIndex = 10;
+            this.telefonoMaskedTextBox.TabIndex = 3;
             // 
             // NombreerrorProvider
             // 
@@ -170,7 +171,7 @@
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 51);
-            this.NewButton.TabIndex = 22;
+            this.NewButton.TabIndex = 7;
             this.NewButton.Text = "Nuevo";
             this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NewButton.UseVisualStyleBackColor = true;
@@ -186,7 +187,7 @@
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(66, 52);
-            this.SaveButton.TabIndex = 23;
+            this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Guardar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -202,7 +203,7 @@
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(60, 52);
-            this.Deletebutton.TabIndex = 24;
+            this.Deletebutton.TabIndex = 8;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
@@ -217,7 +218,7 @@
             this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(41, 37);
-            this.searchButton.TabIndex = 25;
+            this.searchButton.TabIndex = 10;
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -232,7 +233,7 @@
             this.sexoComboBox.Location = new System.Drawing.Point(112, 148);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(120, 21);
-            this.sexoComboBox.TabIndex = 26;
+            this.sexoComboBox.TabIndex = 4;
             // 
             // fechaNacimientoDateTimePicker
             // 
@@ -240,7 +241,7 @@
             this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 175);
             this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(120, 20);
-            this.fechaNacimientoDateTimePicker.TabIndex = 28;
+            this.fechaNacimientoDateTimePicker.TabIndex = 5;
             // 
             // RegistroClientes
             // 

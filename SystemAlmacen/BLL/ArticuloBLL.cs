@@ -60,6 +60,28 @@ namespace BLL
             return Result;
         }
 
+
+        public static Entidades.Articulos BuscarB(int id)
+        {
+
+            Entidades.Articulos nuevo;
+            using (var db = new RegistroDb())
+            {
+                try
+                {
+                    nuevo = db.articuloDb.Find(id);
+
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return nuevo;
+            }
+        }
+
         public static List<Entidades.Articulos> GetListodo()
         {
             List<Entidades.Articulos> lista = new List<Entidades.Articulos>();

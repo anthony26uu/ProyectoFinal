@@ -14,6 +14,7 @@ public    class FacturaDetalles
         public int IdArticulo { get; set; }
         public decimal Precio { get; set; }
         public decimal Cantidad { get; set; }
+        public decimal Descuento { get; set; }
 
         public virtual Articulos articulosDetalle { get; set; }
 
@@ -22,10 +23,14 @@ public    class FacturaDetalles
             this.articulosDetalle = new Entidades.Articulos();
 
         }
-        public FacturaDetalles(int idFactura, int IdArticulo, decimal precio)
+        public FacturaDetalles(int idDetalle, int idFactura, int idArticulo, decimal precio, decimal Cantidad, decimal descuento)
         {
-            this.IdDetalle = IdDetalle;
-            this.IdFactura = IdFactura;
+            this.IdDetalle = idDetalle;
+            this.IdFactura = idFactura;
+            this.IdArticulo = idArticulo;
+            this.Precio = precio;
+            this.Cantidad = Cantidad;
+            this.Descuento = descuento;
         }
     }
 }
