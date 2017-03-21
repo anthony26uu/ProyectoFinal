@@ -20,7 +20,7 @@ namespace Entidades
         public DateTime FechaIngreso { get; set; }
         public int CategoriaId { get; set; }
         public decimal ITBIS { get; set; }
-
+       
 
         public virtual List<Categorias> categorialist { get; set; }
 

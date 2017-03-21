@@ -85,7 +85,11 @@ namespace ProyectoTech.Ui.Incio
                     Limpiar();
                     UsuarioG = usuario;
                     this.Hide();
+                    
+                   
+                    Inicio.Funcio().WindowState = FormWindowState.Maximized;
                     Inicio.Funcio().Show();
+                    
                 }
                 else
                 {
@@ -115,6 +119,11 @@ namespace ProyectoTech.Ui.Incio
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

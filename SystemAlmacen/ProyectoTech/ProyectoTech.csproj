@@ -125,16 +125,6 @@
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Ui\Conultas\ConsultaArticulos.resx">
       <DependentUpon>ConsultaArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,7 +182,6 @@
     <None Include="RegistrosDbDataSet.xss">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Resources\FlechaDerecha25x25.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

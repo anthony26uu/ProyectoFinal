@@ -66,9 +66,7 @@ namespace ProyectoTech.Ui.Incio
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Registros.RegistroUsuarios db = new Registros.RegistroUsuarios();
-            db.Show();
-
+          
            // this.Hide();
             RegistroUsuarios.Funcion().Show();
             RegistroUsuarios.Funcion().Activate();
@@ -93,7 +91,10 @@ namespace ProyectoTech.Ui.Incio
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-           
+         
+         
+       
+               
         }
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +146,18 @@ namespace ProyectoTech.Ui.Incio
         {
             Ui.Registros.RegistrarVenta db = new RegistrarVenta();
             db.Show();
+        }
+
+        private void button_Apagado_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button_CambiarUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ui.Incio.Login.Funcion().Show();
+            Ui.Incio.Login.Funcion().Activate();
         }
     }
 }

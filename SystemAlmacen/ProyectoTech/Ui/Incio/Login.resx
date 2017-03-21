@@ -120,6 +120,83 @@
   <metadata name="errorProviderTodo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAAAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP7c
+        +gD9o/MA/aPzAP2j8wD9o/MA/aPzAP2j8wD9o/MA/aPzAOqr4wDOsMsAtbW1ALW1tQDPscsA6qvjAP2j
+        8wD9o/MA/aPzAP2j8wD9o/MA/aPzAP2j8wD9o/MA/tz6AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A/aPzAPsL4AD7C+AA+wvgAPsL4AD7C+AA6A/QAKAskwBiQF4ARERE/0VFRf9NTU3/TU1N/0RE
+        RP9ERET/YkBesqAskwDoD9AA+wvgAPsL4AD7C+AA+wvgAPsL4AD9o/MA////AP///wD///8A////AP//
+        /wD///8A////AP///wD9o/MA+wvgAPsL4AD7C+AA9wvdAKYumQBXUFYAbGxs/5OTk/+fn5//oaCg/5yT
+        lf+bkJL/nJma/5qamv+QkJD/bGxs/1dQVv+mLpkA9wvdAPsL4AD7C+AA+wvgAP2j8wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP2j8wD7C+AA+wvgAO4V1gB4QHIAbGxs/5+fn/+ZgIX/iDpJ/4gV
+        K/+LAh3/iwAb/4sAG/+MABv/hwwk/4MqO/+QanH/lZWV/2tra/94QHL/7hXWAPsL4AD7C+AA/aPzAP//
+        /wD///8A////AP///wD///8A////AP///wD///8A/aPzAPsL4ADyDdgAdEduAIODg/+gj5L/mSpA/6EA
+        H/+bAB3/mAIb/5YDGv+VBBr/lQQa/5UEGv+XAhv/mQAd/54AHv+VFi//knJ4/4CAgP90R27/8g3YAPsL
+        4AD9o/MA////AP///wD///8A////AP///wD///8A////AP///wD9o/MA+wvgAJI/iACHh4f/nnZ+/6wJ
+        Kf+qACD/qQcc/7EWF//ALw7/yD4J/8tDB//LRAf/yUAI/8M1DP+1HhX/qgob/6kBH/+sAiP/lFJf/4OD
+        g/+SP4j/+wvgAP2j8wD///8A////AP///wD///8A////AP///wD///8A////AP2j8wDUIMAAeXl5xaWE
+        i/+vBif/swIg/70ZGP/OPgr/11IB/91WAP/iVgD/5VYA/+VWAP/jVgD/31UA/9pTAP/TRgf/wyQU/7UH
+        Hv+yACP/mlpm/3d3d//UIMAA/aPzAP///wD///8A////AP///wD///8A////AP///wD///8A/aPzAJBJ
+        iACsp6j/qxQy/7UEIP/JKBT/11AC/+FZAP/qWAD/71YA//NUAP/0UwD/9FMA//NTAP/xVAD/7FYA/+VY
+        AP/bVAH/0jcO/7oLHv+vAyX/noSK/5FJif/9o/MA////AP///wD///8A////AP///wD///8A////AP//
+        /wDzpesAjIiMAK9mdP+0ASH/yCUV/9pVAf/mWwD/8FkA//VWAP/4VAD/+lMA//tTAP/7UwD/+1MA//lU
+        AP/3VQD/8lcA/+paAP/fWAD/0jcO/7cHH/+pMUj/iYaJ//Ol6wD///8A////AP///wD///8A////AP//
+        /wD///8A////ANm31QCsrKz/rSA7/70RHP/ZUAT/510A//FbAP/3WQD/+1cA//xWAP/9UwL//lYA//5W
+        AP/9VgD//VYA//tXAP/5WAD/9FoA/+tcAP/fWAH/ySMW/7IDI/+djpH/2bfV/////wD///8A////AP//
+        /wD///8A////AP///wD///8AxMDDALi1tv+zAyP/zjMQ/+NeAP/vXwD/91wA//tbAv/9cjL//rWa//6y
+        mv/+XxP//l8T//5dDv/+WgD//VoA//xaAP/5WwD/810A/+heAP/ZRgn/twcf/6tve//EwMP/////AP//
+        /wD///8A////AP///wD///8A////AP///wDEwcQAuqqt/7YFIP/YSQf/6mIA//RhAP/6aCT//s7A//7+
+        /f///////////////////////si1//9fAP/+XwD//V4A//teAP/3YAD/72EA/+FYAv/AFRv/rV1s/8TB
+        xP////8A////AP///wD///8A////AP///wD///8A////ANq41gC4pKj/ugwd/95VBP/uZQD/9mQA//tj
+        Av/9bij//qmJ//7n4//+2c///ptz//6bc//+h1P//2MA//9jAP/+YgD//GIA//hjAP/yZAD/5mEA/8cf
+        F/+sWmr/2rjW/////wD///8A////AP///wD///8A////AP///wD///8A9KXrAKmgpP+6Dh//4VcE//Bp
+        Av/3agX/+2sH//1rCP/+bAn//m0W//55OP//bAn//2wK//9sCf//bAn//2wJ//5rCP/8agf/+WoG//Np
+        A//pZAD/xx4Y/6Bba//0pev4////AP///wD///8A////AP///wD///8A////AP///wD9o/MAr2emALot
+        Qf/dUxD/8Xka//d6G//7ehv//Xob//56G//+eBr//nIa//5yGv/+hkz//ruc//6HQv/+eRv//Xob//x5
+        G//5eRv/9Hkb/+hoEf+/Exv/q0mN//2j8wD///8A////AP///wD///8A////AP///wD///8A////AP2j
+        8wDWIsEArV1r/9E3FP/xhSv/94cs//qHLP/8hyz//Ycs//6MR//++fn//vn5//77+v///////v7+//7Z
+        zP/9iE//+4cs//iHLP/zhiz/31IV/6seMv/WIsL//aPzAP///wD///8A////AP///wD///8A////AP//
+        /wD///8A/aPzAPsL4ACuUp0DvB8r/+lyJP/2kj3/+ZM9//uUPf/9lD3//ZBF//6qgv/+qoL//rui//7s
+        6f/+vqb//Zhf//yPPf/6kz3/95M9//CELv/HIBf/qiV0//sL4AD9o/MA////AP///wD///8A////AP//
+        /wD///8A////AP///wD9o/MA+wvgAPIN2ACiQXH/yCYa//KNO//4n07/+p9O//yfTv/8oE7//aBO//2g
+        Tv/9l1D//ZZP//2gTv/8n07/+59O//mfTv/2l0T/1T0Y/64USP/yDdj/+wvgAP2j8wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP2j8wD7C+AA+wvgAO4V1gCkJmL/yisb//GNPv/6q2D/+6tg//yr
+        YP/8rGD//Kxg//2sYP/8rGD//Kxg//urYP/6q2D/9ZpK/9U/G//AFSz/8RPK//sL4AD7C+AA/aPzAP//
+        /wD///8A////AP///wD///8A////AP///wD///8A/aPzAPsL4AD7C+AA+wvgAPcL3QDDHnf/ux4f/+Fg
+        LP/3n0//+7Rt//y2cf/8t3H//Ldx//y3cf/7tnD/+adY/+dwNf/HIhv/0BRL//cRxfj7C+AA+wvgAPsL
+        4AD9o/MA////AP///wD///8A////AP///wD///8A////AP///wD9o/MA+wvgAPsL4AD7C+AA+wvgAPsL
+        4ADwGasA0hpK/8UgIP/SPiP/4GI0/+d2P//od0D/4mY3/9VEJf/FIB//zRwn/+saif/7DdkB+wvgAPsL
+        4AD7C+AA+wvgAP2j8wD///8A////AP///wD///8A////AP///wD///8A////AP2u9AD7KeMA+ynjAPsp
+        4wD7KeMA+ynjAPsp4wD7KeMA+jXBAOouopXfSTv/20kv/9pHMP/cSy//5DOF//Y1tf/7LNwB+ynjAPsp
+        4wD7KeMA+ynjAPsp4wD7KeMA/a70AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A//////////////////////////////////gP///gA///gAD//wAAf/4A
+        AD/8AAA//AAAH/wAAB/4AAAP+AAAD/gAAA/4AAAP+AAAD/wAAB/8AAAf/AAAP/4AAD//AAB//4AA///g
+        Af//+Af///////////////////////////8=
+</value>
+  </data>
   <metadata name="timer1Hora.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>169, 17</value>
   </metadata>

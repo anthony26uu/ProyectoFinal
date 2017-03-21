@@ -19,7 +19,7 @@ namespace ProyectoTech.Ui.Registros
      private static Entidades.Usuarios UsuarioG = null;
         FacturaDetalles detalle;
         Facturas facturaG;
-
+        Entidades.Articulos articulo;
         //LIST Necesarias para detalle de la factura
         private static List<Entidades.FacturaDetalles> listaRelaciones = new List<FacturaDetalles>();
         private static List<Entidades.Articulos> listadoArticulos = new List<Entidades.Articulos>();
@@ -32,18 +32,20 @@ namespace ProyectoTech.Ui.Registros
             Limpiar();
         }
 
+     
+
+          
+
+
+        
+
         private void LlenarInstancia()
         {
 
-            string idFacturaInstancia = comboBoxNombreAr.Text;        
+         
             string idArticuloInstancia = idArticuloComboBox.Text;
-            string fechaventaInstancia = labelFecha.Text;
-            string descuentoInstancia = descuentoMaskedTextBox.Text;
             string clienteInstancia = clienteComboBox.Text;
-            string tipoventaInstancia = tipoVentaComboBox.Text;
             string cantidadproducto = Convert.ToString(textBoxCantidad.Value);
-            string itbisInstancia = ItbsArticultextBox.Text;
-
             int itbs = Utilidades.TOINT(ItbsArticultextBox.Text);
             decimal itbsd = Convert.ToDecimal(itbs);
             facturaG = new Facturas(0, label6.Text, Utilidades.TOINT(idArticuloInstancia), DateTime.Now,
@@ -116,6 +118,8 @@ namespace ProyectoTech.Ui.Registros
             textBoxCantidad.ResetText();
             textBoxTotalArticlo.Clear();
             tipoVentaComboBox.Text = null;
+            articulo = new Articulos();
+            textBoxCantidad.Enabled = false;
         }
         //Clientes
         public void LlenarCombo()
@@ -164,7 +168,28 @@ namespace ProyectoTech.Ui.Registros
             LlenarComboArticulo();
 
         }
- 
+
+        /*
+        private Articulos llenarCamposArticulo()
+        {
+
+
+            // peliculas.ActorId = Utilidades.TOINT(actores);
+            //    articulo.Categoria = Utils.TOINT(categoria);
+           articulo = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Utilidades.TOINT(idArticuloComboBox.Text));
+            // articulo = new Articulos();
+            //     articulo = new Articulos();
+            var existencia= new Articulos();
+            articulo.Existencia = existencia.;
+            int cantidad = Utilidades.TOINT(textBoxCantidad.Text); ;
+            int resultado = existencia - cantidad;
+            
+          
+            articulo.Existencia = resultado;
+
+            return articulo;
+        }
+        */
 
         private void ItbsArticultextBox_TextChanged(object sender, EventArgs e)
         {
@@ -202,14 +227,33 @@ namespace ProyectoTech.Ui.Registros
 
         private void idArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+
                int id = Utilidades.TOINT(idArticuloComboBox.Text);
                 detalle.articulosDetalle = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (detalle.articulosDetalle != null)
                 {
+                       
+                if (detalle.articulosDetalle.Existencia == 0)
+                {
+                    errorProviderTodo.SetError(idArticuloComboBox, "No Existe Unidades de este articulo");
+                    textBoxCantidad.Enabled = false;
+                    TotalmaskedTextBox.Clear();
+                    ItbsArticultextBox.Clear();
+                    PreciotextBox.Clear();
+                    idArticuloComboBox.Focus();
+  
+                }
+                else
+                {
+                    errorProviderTodo.Clear();
+                    textBoxCantidad.Enabled = true;
+                    textBoxCantidad.Enabled = true;
                     PreciotextBox.Text = detalle.articulosDetalle.PrecioVenta.ToString();
                     ItbsArticultextBox.Text = detalle.articulosDetalle.ITBIS.ToString();
-
                     textBoxCantidad.Focus();
+                   
+                }
+               
                 }
             
 
@@ -225,7 +269,7 @@ namespace ProyectoTech.Ui.Registros
             decimal preciod = Convert.ToDecimal(precio);
 
 
-          
+            listaRelaciones = new List<FacturaDetalles>();
             listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura, Utilidades.TOINT(idArticuloComboBox.Text+1), 
             preciod, Utilidades.TOINT(textBoxCantidad.Value.ToString()), descuentod));
             listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == idArticuloComboBox.SelectedIndex + 1));
@@ -234,27 +278,41 @@ namespace ProyectoTech.Ui.Registros
             RefreshDataGridView();
         }
 
+
+  
+
+
+
+
+            
+
         private void button2_Click(object sender, EventArgs e)
         {
-            
-        
+            articulo = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Utilidades.TOINT(idArticuloComboBox.Text));
 
-                if (!Validar())
+            if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
                 }
                 else
                 {
 
-                 
-                    LlenarInstancia();
+                articulo = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Utilidades.TOINT(idArticuloComboBox.Text));
+                LlenarInstancia();
+                //    articulo=   llenarCamposArticulo();
                     //Modifica si es necesario  de lo contrario guarda 
                     if ( facturaG!=null)
                     {
 
-                        bool relaciong = true;
-                        BLL.FacturaBLL.Guardar(facturaG);
-                        foreach (var relacion in listaRelaciones)
+                   bool relaciong = true;
+                 
+                    BLL.FacturaBLL.Guardar(facturaG);
+            //        articulo = new Articulos();
+                  // if(Utilidades.TOINT( idArticuloComboBox.Text) == articulo.IdArticulo)
+                    //{
+                        BLL.ArticuloBLL.Mofidicar(articulo);
+                    //}
+                    foreach (var relacion in listaRelaciones)
                         {
                             relacion.IdFactura = facturaG.IdArticulo;
                             if (BLL.FacturaDetallesBLL.Guardar(relacion) == false)
@@ -272,8 +330,6 @@ namespace ProyectoTech.Ui.Registros
                             MessageBox.Show("Error");
                         }
 
-                        //   BLL.FacturaBLL.Mofidicar(facturaG);
-                   //     MessageBox.Show("Articulo fue modificado");
                     }
                    
                 }

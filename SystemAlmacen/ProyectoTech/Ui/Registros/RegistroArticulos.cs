@@ -80,11 +80,13 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(nombreArticuloTextBox, "Campo Obligatorio");
                 retorno = false;
             }
+            /*
             if (string.IsNullOrWhiteSpace(existenciaMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(existenciaMaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
+            */
             if (string.IsNullOrWhiteSpace(precioCompraMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(precioCompraMaskedTextBox, "Campo Obligatorio");
