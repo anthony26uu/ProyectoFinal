@@ -24,6 +24,15 @@ namespace ProyectoTech.Ui.Registros
         private static List<Entidades.FacturaDetalles> listaRelaciones = new List<FacturaDetalles>();
         private static List<Entidades.Articulos> listadoArticulos = new List<Entidades.Articulos>();
 
+
+
+        //Calcular 
+        const int COLUMNAPRECIO = 3;
+        decimal total1 = 0;
+        decimal total2 = 0;
+        decimal data = 0;
+
+
         public RegistrarVenta()
         {
             InitializeComponent();
@@ -159,9 +168,48 @@ namespace ProyectoTech.Ui.Registros
         {
             textBoxFacturaId.Text = facturaG.IdFactura.ToString();
         }
+/*
+        private void Total()
+        {
+            decimal total=0;
+            decimal subtotal=0;
+            const int COLUMNAPRECIO=2;
 
+            if(dataGridViewVenta.Rows.Count>0)
+            {
+                foreach(DataGridViewRow precio in dataGridViewVenta.Rows )
+                {
+                    subtotal += (int)precio.Cells[COLUMNAPRECIO].Value;
+                    SubTotalmaskedTextBox.Text = subtotal.ToString();
+                }
+                if(descuentoMaskedTextBox.Text==null)
+                {
+                    decimal totaldescuento = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
+                    total = subtotal - totaldescuento;
+                    subtotal = subtotal - totaldescuento;
+                    SubTotalmaskedTextBox.Text = subtotal.ToString();
+                    TotalmaskedTextBox.Text = total.ToString();
+
+                }
+                if(ItbsArticultextBox.Text != null)
+                {
+                    decimal totalitbs = Convert.ToDecimal(Utilidades.TOINT(ItbsArticultextBox.Text));
+                    total = subtotal + totalitbs;
+                    SubTotalmaskedTextBox.Text = subtotal.ToString();
+                    TotalmaskedTextBox.Text = total.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error");
+                Limpiar();
+            }
+
+        }
+        */
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {
+            
             IdFactura();
             LlenarLabel();
             LlenarCombo();
@@ -196,15 +244,29 @@ namespace ProyectoTech.Ui.Registros
 
         }
 
+        private void AsiganarDatosArticulos()
+        {
+            int descuento = Utilidades.TOINT(descuentoMaskedTextBox.Text);
+            decimal descuentod = Convert.ToDecimal(descuento);
+            total1 = (detalle.articulosDetalle.PrecioVenta * textBoxCantidad.Value) * detalle.articulosDetalle.ITBIS;
+            total2 = total1 - descuentod;
+            data = total2;
+            textBoxTotalArticlo.Text = total2.ToString();
+
+         
+        }
         private void textBoxCantidad_ValueChanged(object sender, EventArgs e)
         {
+          
+
             if (textBoxCantidad.Value > 0)
             {
-                int descuento =Utilidades.TOINT ( descuentoMaskedTextBox.Text);
-                decimal descuentod = Convert.ToDecimal(descuento);
-                decimal total1 = (detalle.articulosDetalle.PrecioVenta * textBoxCantidad.Value) * detalle.articulosDetalle.ITBIS;
-                decimal total2 = total1 - descuentod;
-                textBoxTotalArticlo.Text = total2.ToString();
+
+                AsiganarDatosArticulos();
+
+            
+
+
             }
             else
             {
@@ -262,6 +324,7 @@ namespace ProyectoTech.Ui.Registros
         //Button Agregar
         private void button1_Click_1(object sender, EventArgs e)
         {
+           
             int descuento = Utilidades.TOINT(descuentoMaskedTextBox.Text);
             decimal descuentod = Convert.ToDecimal(descuento);
 
@@ -276,15 +339,22 @@ namespace ProyectoTech.Ui.Registros
             
 
             RefreshDataGridView();
+            AsiganarDatosArticulos();
+            foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
+            {
+                data += (int)precio1.Cells[2].Value;
+                TotalmaskedTextBox.Text = data.ToString();
+            }
+
         }
 
 
-  
 
 
 
 
-            
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -346,6 +416,11 @@ namespace ProyectoTech.Ui.Registros
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
         }
     }
 }

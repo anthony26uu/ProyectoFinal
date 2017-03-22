@@ -51,23 +51,30 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.textBoxFacturaId = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
+            this.Nuevo_Articulo = new System.Windows.Forms.Button();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
             this.textBoxTotalArticlo = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.SubTotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.iTBSMaskedTextBox = new System.Windows.Forms.TextBox();
-            this.Nuevo_Articulo = new System.Windows.Forms.Button();
-            this.Nuevo_Cliente = new System.Windows.Forms.Button();
-            this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.registrosDbDataSet = new ProyectoTech.RegistrosDbDataSet();
+            this.articuloCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.articuloCategoriasTableAdapter = new ProyectoTech.RegistrosDbDataSetTableAdapters.ArticuloCategoriasTableAdapter();
+            this.detalle1 = new ProyectoTech.Detalle();
+            this.detalle1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturaDetallesTableAdapter = new ProyectoTech.DetalleTableAdapters.FacturaDetallesTableAdapter();
             idFacturaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             descuentoLabel = new System.Windows.Forms.Label();
@@ -86,6 +93,11 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registrosDbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloCategoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalle1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idFacturaLabel
@@ -199,6 +211,15 @@
             label5.TabIndex = 33;
             label5.Text = " ITBIS Articulo:";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(8, 71);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(45, 13);
+            label8.TabIndex = 47;
+            label8.Text = "Articulo:";
+            // 
             // idArticuloComboBox
             // 
             this.idArticuloComboBox.FormattingEnabled = true;
@@ -290,6 +311,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
             // 
+            // Nuevo_Cliente
+            // 
+            this.Nuevo_Cliente.Location = new System.Drawing.Point(297, 45);
+            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
+            this.Nuevo_Cliente.Size = new System.Drawing.Size(105, 23);
+            this.Nuevo_Cliente.TabIndex = 54;
+            this.Nuevo_Cliente.Text = "Agregar";
+            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
+            // 
             // textBoxFacturaId
             // 
             this.textBoxFacturaId.Location = new System.Drawing.Point(93, 20);
@@ -321,15 +351,23 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button1
+            // comboBoxNombreAr
             // 
-            this.button1.Location = new System.Drawing.Point(579, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.comboBoxNombreAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNombreAr.FormattingEnabled = true;
+            this.comboBoxNombreAr.Location = new System.Drawing.Point(74, 68);
+            this.comboBoxNombreAr.Name = "comboBoxNombreAr";
+            this.comboBoxNombreAr.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxNombreAr.TabIndex = 52;
+            // 
+            // Nuevo_Articulo
+            // 
+            this.Nuevo_Articulo.Location = new System.Drawing.Point(210, 30);
+            this.Nuevo_Articulo.Name = "Nuevo_Articulo";
+            this.Nuevo_Articulo.Size = new System.Drawing.Size(105, 23);
+            this.Nuevo_Articulo.TabIndex = 48;
+            this.Nuevo_Articulo.Text = "Agregar";
+            this.Nuevo_Articulo.UseVisualStyleBackColor = true;
             // 
             // textBoxCantidad
             // 
@@ -363,16 +401,6 @@
             this.textBoxTotalArticlo.ReadOnly = true;
             this.textBoxTotalArticlo.Size = new System.Drawing.Size(75, 20);
             this.textBoxTotalArticlo.TabIndex = 35;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(675, 273);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label7
             // 
@@ -427,41 +455,59 @@
             this.iTBSMaskedTextBox.Size = new System.Drawing.Size(82, 20);
             this.iTBSMaskedTextBox.TabIndex = 40;
             // 
-            // label8
+            // button2
             // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(8, 71);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(45, 13);
-            label8.TabIndex = 47;
-            label8.Text = "Articulo:";
+            this.button2.BackgroundImage = global::ProyectoTech.Properties.Resources.Save_64px;
+            this.button2.Location = new System.Drawing.Point(700, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 60);
+            this.button2.TabIndex = 48;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Nuevo_Articulo
+            // button1
             // 
-            this.Nuevo_Articulo.Location = new System.Drawing.Point(210, 30);
-            this.Nuevo_Articulo.Name = "Nuevo_Articulo";
-            this.Nuevo_Articulo.Size = new System.Drawing.Size(105, 23);
-            this.Nuevo_Articulo.TabIndex = 48;
-            this.Nuevo_Articulo.Text = "Agregar";
-            this.Nuevo_Articulo.UseVisualStyleBackColor = true;
+            this.button1.BackgroundImage = global::ProyectoTech.Properties.Resources.Add_File;
+            this.button1.Location = new System.Drawing.Point(579, 264);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 36);
+            this.button1.TabIndex = 47;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
             // 
-            // Nuevo_Cliente
+            // registrosDbDataSet
             // 
-            this.Nuevo_Cliente.Location = new System.Drawing.Point(297, 45);
-            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
-            this.Nuevo_Cliente.Size = new System.Drawing.Size(105, 23);
-            this.Nuevo_Cliente.TabIndex = 54;
-            this.Nuevo_Cliente.Text = "Agregar";
-            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
+            this.registrosDbDataSet.DataSetName = "RegistrosDbDataSet";
+            this.registrosDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // comboBoxNombreAr
+            // articuloCategoriasBindingSource
             // 
-            this.comboBoxNombreAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxNombreAr.FormattingEnabled = true;
-            this.comboBoxNombreAr.Location = new System.Drawing.Point(74, 68);
-            this.comboBoxNombreAr.Name = "comboBoxNombreAr";
-            this.comboBoxNombreAr.Size = new System.Drawing.Size(130, 21);
-            this.comboBoxNombreAr.TabIndex = 52;
+            this.articuloCategoriasBindingSource.DataMember = "ArticuloCategorias";
+            this.articuloCategoriasBindingSource.DataSource = this.registrosDbDataSet;
+            // 
+            // articuloCategoriasTableAdapter
+            // 
+            this.articuloCategoriasTableAdapter.ClearBeforeFill = true;
+            // 
+            // detalle1
+            // 
+            this.detalle1.DataSetName = "Detalle";
+            this.detalle1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // detalle1BindingSource
+            // 
+            this.detalle1BindingSource.DataSource = this.detalle1;
+            this.detalle1BindingSource.Position = 0;
+            // 
+            // facturaDetallesBindingSource
+            // 
+            this.facturaDetallesBindingSource.DataMember = "FacturaDetalles";
+            this.facturaDetallesBindingSource.DataSource = this.detalle1BindingSource;
+            // 
+            // facturaDetallesTableAdapter
+            // 
+            this.facturaDetallesTableAdapter.ClearBeforeFill = true;
             // 
             // RegistrarVenta
             // 
@@ -494,6 +540,11 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registrosDbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.articuloCategoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalle1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,5 +577,12 @@
         private System.Windows.Forms.Button Nuevo_Cliente;
         private System.Windows.Forms.Button Nuevo_Articulo;
         private System.Windows.Forms.ComboBox comboBoxNombreAr;
+        private RegistrosDbDataSet registrosDbDataSet;
+        private System.Windows.Forms.BindingSource articuloCategoriasBindingSource;
+        private RegistrosDbDataSetTableAdapters.ArticuloCategoriasTableAdapter articuloCategoriasTableAdapter;
+        private System.Windows.Forms.BindingSource detalle1BindingSource;
+        private Detalle detalle1;
+        private System.Windows.Forms.BindingSource facturaDetallesBindingSource;
+        private DetalleTableAdapters.FacturaDetallesTableAdapter facturaDetallesTableAdapter;
     }
 }

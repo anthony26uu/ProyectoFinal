@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detalle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgresoBarra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -159,6 +164,17 @@
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Detalle.xsc">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </None>
+    <None Include="Detalle.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Detalle.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Detalle.xss">
+      <DependentUpon>Detalle.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,13 +189,22 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\RegistrosDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\RegistrosDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\Add File.ico" />
+    <None Include="Resources\Add File_32px.png" />
+    <None Include="Resources\Plus_64px.png" />
+    <None Include="Resources\Plus_96px.png" />
+    <None Include="Resources\Save_64px.png" />
+    <None Include="Resources\Plus_32px.png" />
+    <None Include="Resources\Plus_48px.png" />
+    <None Include="Resources\agregar.png" />
+    <None Include="Resources\clientes1.png" />
     <None Include="Resources\empleados.png" />
     <None Include="Resources\productos.png" />
     <None Include="Resources\categorias.png" />

@@ -237,7 +237,7 @@
             // 
             this.button_CambiarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CambiarUser.BackColor = System.Drawing.Color.Transparent;
-            this.button_CambiarUser.BackgroundImage = global::ProyectoTech.Properties.Resources.user3;
+            this.button_CambiarUser.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes1;
             this.button_CambiarUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_CambiarUser.FlatAppearance.BorderSize = 0;
             this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
