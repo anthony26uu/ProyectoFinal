@@ -39,7 +39,6 @@ namespace ProyectoTech.Ui.Registros
         {   
             LlanarTipo();
             Limpiar();
-            //      TipoComboBox.Text = null;
         }
 
         private bool Validar()
@@ -144,39 +143,20 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(IdnumericUpDown.Text);
-            //cionIdMaskedTextBox.Text);
-            // tipo = BLL.TiposEmailBLL.Buscar(id);
 
 
+            var bll = new BLL.UserBLL();
             var user = BLL.UserBLL.Buscar(p => p.Id == id);
-            if (string.IsNullOrWhiteSpace(passUsuarioTextBox.Text))
+            if (BLL.UserBLL.Eliminar(user))
             {
-                errorProviderTodo.SetError(passUsuarioTextBox, " Ingrese Contraseña de usuario a eliminar \n en Campo Contrasña");
-                MessageBox.Show("Llene Campos");
-                errorProviderTodo.Clear();
-                // MessageBox.Show("Ingrese Contraseña de usuario a eliminar \n en Campo Contrasña");
+
+                MessageBox.Show("El Usuario se ha Eliminado  con exito.");
+                Limpiar();
             }
             else
             {
-                if (passUsuarioTextBox.Text == user.PassUsuario)
-                {
-                    if (BLL.UserBLL.Eliminar(user))
-                    {
-
-                        MessageBox.Show("Eliminado con exito.");
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo eliminar .");
-                    }
-                }
-                else
-                {
-                    errorProviderTodo.SetError(passUsuarioTextBox, "Para Eliminar Coloque contraseña usuario a eliminar");
-                }
+                MessageBox.Show("No se pudo eliminar El usuario.");
             }
-
 
         }
 

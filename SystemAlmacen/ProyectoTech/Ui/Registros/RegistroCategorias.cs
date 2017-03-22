@@ -57,42 +57,30 @@ namespace ProyectoTech.Ui.Registros
         {
 
         }
-
-        
-
         private void buttonGuardar_Click(object sender, EventArgs e)
         { var guardar = new Categorias();
                 int id = 0;
-          
             try
             {
                
-                //int.Parse(categoriaIdNumericUpDown.Text);
-                if (!Validar())
+              if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
                 }
                 else
                 {
-                    // id = Utilidades.TOINT(categoriaIdNumericUpDown.Text);
-                    //No Crei necesario crear una funcion llenar campos ya que son pocas cosas que se deben guardar 
-                    //    guardar.CategoriaId = Utilidades.TOINT(categoriaIdNumericUpDown.Text); 
-                   
+                 
                     guardar.NombreCategoria = nombreCategoriaTextBox.Text;
-                   guardar.CategoriaId= (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
-
-                    //Modifica si es necesario  de lo contrario guarda 
+                    guardar.CategoriaId= (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
                     if (id != guardar.CategoriaId)
                     {
-                        this.Progreso.Start();
                         CategoriaBLL.Mofidicar(guardar);
                         MessageBox.Show("Categoria modificada");
                     }
                     else
                     {
-                        this.Progreso.Start();
                         CategoriaBLL.Guardar(guardar);
-                        MessageBox.Show("Nueva categproa agregada con exito!");
+                        MessageBox.Show("Nueva Categoria agregada con exito!");
                     }
                 }
                 Limpiar();
@@ -114,14 +102,11 @@ namespace ProyectoTech.Ui.Registros
 
             int id = int.Parse(categoriaIdNumericUpDown.Text);
             Categorias tipo;
-
             tipo = BLL.CategoriaBLL.Buscar(p => p.CategoriaId == id);
             if (tipo != null)
             {
 
                 nombreCategoriaTextBox.Text = tipo.NombreCategoria;
-
-
                 MessageBox.Show("Resultados de su busqueda");
             }
             else
@@ -134,7 +119,6 @@ namespace ProyectoTech.Ui.Registros
         {
             int id = int.Parse(categoriaIdNumericUpDown.Text);
             var bll = new BLL.CategoriaBLL();
-
             var user = CategoriaBLL.Buscar(p => p.CategoriaId == id);
             if (BLL.CategoriaBLL.Eliminar(user))
             {
@@ -155,12 +139,9 @@ namespace ProyectoTech.Ui.Registros
 
         private void Progreso_Tick(object sender, EventArgs e)
         {
-            this.progressBar1.Increment(1);
+          
         }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-            ProgressBar pbar = new ProgressBar();
-        }
+      
     }
 }

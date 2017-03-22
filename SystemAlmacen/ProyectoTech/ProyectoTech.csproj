@@ -71,6 +71,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="ProgresoBarra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrosDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +130,10 @@
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Conultas\ConsultaArticulos.resx">
       <DependentUpon>ConsultaArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +180,17 @@
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\empleados.png" />
+    <None Include="Resources\productos.png" />
+    <None Include="Resources\categorias.png" />
+    <None Include="Resources\clientes.png" />
+    <None Include="Resources\user3.ico" />
+    <None Include="Resources\FlechaDerecha25x251.png" />
+    <None Include="Resources\FlechaDerecha25x25.png" />
+    <None Include="Resources\Cambiar.ico" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\shutdown-icon-9213.png" />
+    <None Include="Resources\fondo_login.png" />
     <None Include="RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>

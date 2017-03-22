@@ -48,6 +48,7 @@ namespace ProyectoTech.Ui.Incio
                 usuariosToolStripMenuItem.Enabled = true;
             }
         }
+
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
          //   this.Hide();

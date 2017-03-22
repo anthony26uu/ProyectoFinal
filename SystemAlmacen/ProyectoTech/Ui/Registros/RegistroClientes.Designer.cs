@@ -43,12 +43,13 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.telefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.NombreerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.sexoComboBox = new System.Windows.Forms.ComboBox();
+            this.fechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.Deletebutton = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.sexoComboBox = new System.Windows.Forms.ComboBox();
-            this.fechaNacimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             clienteIdLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -63,97 +64,118 @@
             // clienteIdLabel
             // 
             clienteIdLabel.AutoSize = true;
-            clienteIdLabel.Location = new System.Drawing.Point(12, 20);
+            clienteIdLabel.BackColor = System.Drawing.Color.Transparent;
+            clienteIdLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            clienteIdLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            clienteIdLabel.Location = new System.Drawing.Point(0, 12);
             clienteIdLabel.Name = "clienteIdLabel";
-            clienteIdLabel.Size = new System.Drawing.Size(54, 13);
+            clienteIdLabel.Size = new System.Drawing.Size(68, 15);
             clienteIdLabel.TabIndex = 1;
             clienteIdLabel.Text = "Cliente Id:";
             // 
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(12, 49);
+            nombresLabel.BackColor = System.Drawing.Color.Transparent;
+            nombresLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            nombresLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            nombresLabel.Location = new System.Drawing.Point(0, 41);
             nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(52, 13);
+            nombresLabel.Size = new System.Drawing.Size(63, 15);
             nombresLabel.TabIndex = 3;
             nombresLabel.Text = "Nombres:";
             // 
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(12, 75);
+            direccionLabel.BackColor = System.Drawing.Color.Transparent;
+            direccionLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            direccionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            direccionLabel.Location = new System.Drawing.Point(0, 67);
             direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.Size = new System.Drawing.Size(65, 15);
             direccionLabel.TabIndex = 5;
             direccionLabel.Text = "Direccion:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(12, 101);
+            emailLabel.BackColor = System.Drawing.Color.Transparent;
+            emailLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            emailLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            emailLabel.Location = new System.Drawing.Point(0, 93);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.Size = new System.Drawing.Size(43, 15);
             emailLabel.TabIndex = 7;
             emailLabel.Text = "Email:";
             // 
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(12, 127);
+            telefonoLabel.BackColor = System.Drawing.Color.Transparent;
+            telefonoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            telefonoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            telefonoLabel.Location = new System.Drawing.Point(0, 119);
             telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.Size = new System.Drawing.Size(61, 15);
             telefonoLabel.TabIndex = 9;
             telefonoLabel.Text = "Telefono:";
             // 
             // sexoLabel
             // 
             sexoLabel.AutoSize = true;
-            sexoLabel.Location = new System.Drawing.Point(13, 154);
+            sexoLabel.BackColor = System.Drawing.Color.Transparent;
+            sexoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            sexoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            sexoLabel.Location = new System.Drawing.Point(1, 146);
             sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(34, 13);
+            sexoLabel.Size = new System.Drawing.Size(41, 15);
             sexoLabel.TabIndex = 27;
             sexoLabel.Text = "Sexo:";
             // 
             // fechaNacimientoLabel
             // 
             fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(13, 174);
+            fechaNacimientoLabel.BackColor = System.Drawing.Color.Transparent;
+            fechaNacimientoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            fechaNacimientoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(1, 166);
             fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(96, 13);
+            fechaNacimientoLabel.Size = new System.Drawing.Size(112, 15);
             fechaNacimientoLabel.TabIndex = 29;
             fechaNacimientoLabel.Text = "Fecha Nacimiento:";
             // 
             // clienteIdNumericUpDown
             // 
-            this.clienteIdNumericUpDown.Location = new System.Drawing.Point(112, 18);
+            this.clienteIdNumericUpDown.Location = new System.Drawing.Point(112, 7);
             this.clienteIdNumericUpDown.Name = "clienteIdNumericUpDown";
             this.clienteIdNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.clienteIdNumericUpDown.TabIndex = 9;
             // 
             // nombresTextBox
             // 
-            this.nombresTextBox.Location = new System.Drawing.Point(112, 44);
+            this.nombresTextBox.Location = new System.Drawing.Point(112, 33);
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.Size = new System.Drawing.Size(120, 20);
             this.nombresTextBox.TabIndex = 0;
             // 
             // direccionTextBox
             // 
-            this.direccionTextBox.Location = new System.Drawing.Point(112, 70);
+            this.direccionTextBox.Location = new System.Drawing.Point(112, 59);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(120, 20);
             this.direccionTextBox.TabIndex = 1;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(112, 96);
+            this.emailTextBox.Location = new System.Drawing.Point(112, 85);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(120, 20);
             this.emailTextBox.TabIndex = 2;
             // 
             // telefonoMaskedTextBox
             // 
-            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(112, 122);
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(112, 111);
             this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(120, 20);
@@ -163,11 +185,56 @@
             // 
             this.NombreerrorProvider.ContainerControl = this;
             // 
+            // sexoComboBox
+            // 
+            this.sexoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sexoComboBox.FormattingEnabled = true;
+            this.sexoComboBox.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.sexoComboBox.Location = new System.Drawing.Point(112, 137);
+            this.sexoComboBox.Name = "sexoComboBox";
+            this.sexoComboBox.Size = new System.Drawing.Size(120, 21);
+            this.sexoComboBox.TabIndex = 4;
+            // 
+            // fechaNacimientoDateTimePicker
+            // 
+            this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 164);
+            this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
+            this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(120, 20);
+            this.fechaNacimientoDateTimePicker.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(283, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(139, 120);
+            this.panel1.TabIndex = 30;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
+            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.searchButton.Location = new System.Drawing.Point(237, 7);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(41, 37);
+            this.searchButton.TabIndex = 10;
+            this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // NewButton
             // 
             this.NewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewButton.Image = ((System.Drawing.Image)(resources.GetObject("NewButton.Image")));
-            this.NewButton.Location = new System.Drawing.Point(11, 237);
+            this.NewButton.Location = new System.Drawing.Point(389, 144);
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 51);
@@ -183,7 +250,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(124, 236);
+            this.SaveButton.Location = new System.Drawing.Point(237, 144);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(66, 52);
@@ -199,7 +266,7 @@
             this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Deletebutton.Location = new System.Drawing.Point(234, 236);
+            this.Deletebutton.Location = new System.Drawing.Point(315, 143);
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(60, 52);
@@ -207,47 +274,15 @@
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.searchButton.Location = new System.Drawing.Point(243, 18);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(41, 37);
-            this.searchButton.TabIndex = 10;
-            this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // sexoComboBox
-            // 
-            this.sexoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sexoComboBox.FormattingEnabled = true;
-            this.sexoComboBox.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.sexoComboBox.Location = new System.Drawing.Point(112, 148);
-            this.sexoComboBox.Name = "sexoComboBox";
-            this.sexoComboBox.Size = new System.Drawing.Size(120, 21);
-            this.sexoComboBox.TabIndex = 4;
-            // 
-            // fechaNacimientoDateTimePicker
-            // 
-            this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 175);
-            this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
-            this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(120, 20);
-            this.fechaNacimientoDateTimePicker.TabIndex = 5;
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 314);
+            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
+            this.ClientSize = new System.Drawing.Size(466, 204);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(fechaNacimientoLabel);
             this.Controls.Add(this.fechaNacimientoDateTimePicker);
             this.Controls.Add(sexoLabel);
@@ -266,8 +301,10 @@
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(telefonoLabel);
             this.Controls.Add(this.telefonoMaskedTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegistroClientes";
-            this.Text = "RegistroClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro Clientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistroClientes_FormClosed);
             this.Load += new System.EventHandler(this.RegistroClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteIdNumericUpDown)).EndInit();
@@ -291,5 +328,6 @@
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.DateTimePicker fechaNacimientoDateTimePicker;
         private System.Windows.Forms.ComboBox sexoComboBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

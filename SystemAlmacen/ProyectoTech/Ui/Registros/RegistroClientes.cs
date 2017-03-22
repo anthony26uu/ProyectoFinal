@@ -1,4 +1,5 @@
-﻿using Entidades;
+﻿using BLL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,12 +55,9 @@ namespace ProyectoTech.Ui.Registros
             emailTextBox.Clear();
             telefonoMaskedTextBox.Clear();
             NombreerrorProvider.Clear();
-            sexoComboBox.Text = null;
-           
+            sexoComboBox.Text = null;    
             nombresTextBox.Focus();
         }
-
-
 
         private void RegistroClientes_Load(object sender, EventArgs e)
         {
@@ -77,8 +75,7 @@ namespace ProyectoTech.Ui.Registros
             int id = 0;
 
             try
-            {
-               
+            {  
                 if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
@@ -93,7 +90,6 @@ namespace ProyectoTech.Ui.Registros
                     guardar.Email = emailTextBox.Text;
                     guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
                     guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
-
                     //Modifica si es necesario  de lo contrario guarda 
                     if (id != guardar.ClienteId)
                     {
@@ -118,7 +114,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void RegistroClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
-         //   unico = null;
+        
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -144,6 +140,24 @@ namespace ProyectoTech.Ui.Registros
             else
             {
                 MessageBox.Show("No existe ninguna categoria con ese Id.");
+            }
+        }
+
+        private void Deletebutton_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(clienteIdNumericUpDown.Text);
+            var bll = new BLL.ClientesBLL();
+            var user = ClientesBLL.Buscar(p => p.ClienteId == id);
+            if (BLL.ClientesBLL.Eliminar(user))
+            {
+
+                MessageBox.Show("El Cliente se ha Eliminado  con exito.");
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo eliminar el cliente \n Compruebe Existencia");
             }
         }
     }

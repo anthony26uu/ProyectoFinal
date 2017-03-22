@@ -71,11 +71,11 @@
             // IniciarSesionbutton
             // 
             this.IniciarSesionbutton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.IniciarSesionbutton.BackgroundImage = global::ProyectoTech.Properties.Resources.FlechaDerecha25x251;
             this.IniciarSesionbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IniciarSesionbutton.FlatAppearance.BorderSize = 0;
             this.IniciarSesionbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.IniciarSesionbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-   //         this.IniciarSesionbutton.Image = global::ProyectoTech.Properties.Resources.FlechaDerecha25x25;
             this.IniciarSesionbutton.Location = new System.Drawing.Point(363, 115);
             this.IniciarSesionbutton.Name = "IniciarSesionbutton";
             this.IniciarSesionbutton.Size = new System.Drawing.Size(30, 26);
@@ -148,11 +148,11 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::ProyectoTech.Properties.Resources.Icon;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-  //          this.button1.Image = global::ProyectoTech.Properties.Resources.abstract_power_button_icon_switch_off_symbol_illustration_36199287;
             this.button1.Location = new System.Drawing.Point(475, 180);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(34, 32);
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         //   this.BackgroundImage = global::ProyectoTech.Properties.Resources.image;
+            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(521, 224);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelFecha);

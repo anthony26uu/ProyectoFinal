@@ -18,8 +18,6 @@ namespace ProyectoTech.Ui.Registros
         {
             InitializeComponent();
         }
-
-
         public static RegistroArticulos Funcion()
         {
             if (unico == null)
@@ -49,9 +47,7 @@ namespace ProyectoTech.Ui.Registros
             articulo.ITBIS = Convert.ToDecimal( ITBISmaskedTextBox.Text);
             string categoria = categoriaComboBox.SelectedValue.ToString();
             articulo.Categoria = categoria;
-            // peliculas.ActorId = Utilidades.TOINT(actores);
-            //    articulo.Categoria = Utils.TOINT(categoria);
-
+          
             return articulo;
         }
 
@@ -80,13 +76,13 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(nombreArticuloTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            /*
+            
             if (string.IsNullOrWhiteSpace(existenciaMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(existenciaMaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            */
+            
             if (string.IsNullOrWhiteSpace(precioCompraMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(precioCompraMaskedTextBox, "Campo Obligatorio");
@@ -135,10 +131,7 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-              
                     articulo = llenarCampos();
-
-                    //Modifica si es necesario  de lo contrario guarda 
                     if (id != articulo.IdArticulo)
                     {
                         BLL.ArticuloBLL.Mofidicar(articulo);
@@ -190,8 +183,6 @@ namespace ProyectoTech.Ui.Registros
             arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
             if (arte != null)
             {
-
-                //  nombreCategoriaTextBox.Text = arte.NombreCategoria;
                 nombreArticuloTextBox.Text = arte.NombreArticulo;
                 existenciaMaskedTextBox.Text = Convert.ToString(arte.Existencia);
                 precioVentaMaskedTextBox.Text = Convert.ToString(arte.PrecioVenta);
@@ -217,7 +208,6 @@ namespace ProyectoTech.Ui.Registros
             var arte =BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
             if (BLL.ArticuloBLL.Eliminar(arte))
             {
-
                 MessageBox.Show("El Articulo se ha Eliminado  con exito.");
                 Limpiar();
             }

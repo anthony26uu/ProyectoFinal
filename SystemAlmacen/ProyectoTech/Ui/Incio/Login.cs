@@ -72,7 +72,7 @@ namespace ProyectoTech.Ui.Incio
             Entidades.Usuarios usuario = null;
             if(nombreTextBox.Text=="root")
             {
-                usuario = new Entidades.Usuarios(0, "Admin", "1234", "Administrador");
+                usuario = new Entidades.Usuarios(1, "Admin", "1234", "Administrador");
             }
             else
             {

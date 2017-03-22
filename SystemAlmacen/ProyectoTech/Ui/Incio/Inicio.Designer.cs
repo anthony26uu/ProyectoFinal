@@ -221,11 +221,11 @@
             // 
             this.button_Apagado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Apagado.BackColor = System.Drawing.Color.Transparent;
+            this.button_Apagado.BackgroundImage = global::ProyectoTech.Properties.Resources.Icon;
             this.button_Apagado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Apagado.FlatAppearance.BorderSize = 0;
             this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //    this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.abstract_power_button_icon_switch_off_symbol_illustration_36199287;
             this.button_Apagado.Location = new System.Drawing.Point(467, 281);
             this.button_Apagado.Name = "button_Apagado";
             this.button_Apagado.Size = new System.Drawing.Size(34, 32);
@@ -237,11 +237,11 @@
             // 
             this.button_CambiarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CambiarUser.BackColor = System.Drawing.Color.Transparent;
+            this.button_CambiarUser.BackgroundImage = global::ProyectoTech.Properties.Resources.user3;
             this.button_CambiarUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_CambiarUser.FlatAppearance.BorderSize = 0;
             this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-     //       this.button_CambiarUser.Image = global::ProyectoTech.Properties.Resources.user3;
             this.button_CambiarUser.Location = new System.Drawing.Point(415, 281);
             this.button_CambiarUser.Name = "button_CambiarUser";
             this.button_CambiarUser.Size = new System.Drawing.Size(34, 32);
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         //   this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
+            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(513, 321);
             this.Controls.Add(this.button_CambiarUser);
             this.Controls.Add(this.button_Apagado);
