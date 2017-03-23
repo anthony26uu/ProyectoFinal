@@ -66,8 +66,8 @@
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.SubTotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.iTBSMaskedTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Guardar_button = new System.Windows.Forms.Button();
+            this.Agregar_Button = new System.Windows.Forms.Button();
             this.registrosDbDataSet = new ProyectoTech.RegistrosDbDataSet();
             this.articuloCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articuloCategoriasTableAdapter = new ProyectoTech.RegistrosDbDataSetTableAdapters.ArticuloCategoriasTableAdapter();
@@ -455,26 +455,26 @@
             this.iTBSMaskedTextBox.Size = new System.Drawing.Size(82, 20);
             this.iTBSMaskedTextBox.TabIndex = 40;
             // 
-            // button2
+            // Guardar_button
             // 
-            this.button2.BackgroundImage = global::ProyectoTech.Properties.Resources.Save_64px;
-            this.button2.Location = new System.Drawing.Point(700, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 60);
-            this.button2.TabIndex = 48;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Guardar_button.BackgroundImage = global::ProyectoTech.Properties.Resources.Save_64px;
+            this.Guardar_button.Location = new System.Drawing.Point(700, 230);
+            this.Guardar_button.Name = "Guardar_button";
+            this.Guardar_button.Size = new System.Drawing.Size(62, 60);
+            this.Guardar_button.TabIndex = 48;
+            this.Guardar_button.UseVisualStyleBackColor = true;
+            this.Guardar_button.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // Agregar_Button
             // 
-            this.button1.BackgroundImage = global::ProyectoTech.Properties.Resources.Add_File;
-            this.button1.Location = new System.Drawing.Point(579, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 36);
-            this.button1.TabIndex = 47;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            this.button1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
+            this.Agregar_Button.BackgroundImage = global::ProyectoTech.Properties.Resources.Add_File;
+            this.Agregar_Button.Location = new System.Drawing.Point(579, 264);
+            this.Agregar_Button.Name = "Agregar_Button";
+            this.Agregar_Button.Size = new System.Drawing.Size(34, 36);
+            this.Agregar_Button.TabIndex = 47;
+            this.Agregar_Button.UseVisualStyleBackColor = true;
+            this.Agregar_Button.Click += new System.EventHandler(this.button1_Click_1);
+            this.Agregar_Button.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
             // 
             // registrosDbDataSet
             // 
@@ -514,10 +514,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 556);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Agregar_Button);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Guardar_button);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TotalmaskedTextBox);
             this.Controls.Add(this.SubTotalmaskedTextBox);
@@ -562,8 +562,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown textBoxCantidad;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Agregar_Button;
+        private System.Windows.Forms.Button Guardar_button;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorProviderTodo;

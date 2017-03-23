@@ -61,6 +61,8 @@ namespace BLL
         }
 
 
+       
+
         public static Entidades.Articulos BuscarB(int id)
         {
 
@@ -119,5 +121,7 @@ namespace BLL
         }
 
     }
+
+
 
 }
