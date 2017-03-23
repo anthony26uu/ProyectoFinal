@@ -50,6 +50,7 @@
             this.labelHORA = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.textBoxFacturaId = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             this.detalle1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaDetallesTableAdapter = new ProyectoTech.DetalleTableAdapters.FacturaDetallesTableAdapter();
+            this.facturaDetallesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             idFacturaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             descuentoLabel = new System.Windows.Forms.Label();
@@ -98,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // idFacturaLabel
@@ -287,11 +290,20 @@
             this.dataGridViewVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewVenta.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Total});
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
             this.dataGridViewVenta.Location = new System.Drawing.Point(2, 305);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
             this.dataGridViewVenta.Size = new System.Drawing.Size(875, 211);
             this.dataGridViewVenta.TabIndex = 32;
+            this.dataGridViewVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellContentClick);
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "TotalData";
+            this.Total.HeaderText = "TOTAL";
+            this.Total.Name = "Total";
             // 
             // groupBox1
             // 
@@ -509,6 +521,11 @@
             // 
             this.facturaDetallesTableAdapter.ClearBeforeFill = true;
             // 
+            // facturaDetallesBindingSource1
+            // 
+            this.facturaDetallesBindingSource1.DataMember = "FacturaDetalles";
+            this.facturaDetallesBindingSource1.DataSource = this.detalle1BindingSource;
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,10 +542,10 @@
             this.Controls.Add(this.labelHORA);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridViewVenta);
             this.Controls.Add(label4);
             this.Controls.Add(label3);
             this.Controls.Add(iTBSLabel);
+            this.Controls.Add(this.dataGridViewVenta);
             this.Name = "RegistrarVenta";
             this.Text = "RegistrarVenta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarVenta_FormClosed);
@@ -545,6 +562,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,5 +602,7 @@
         private Detalle detalle1;
         private System.Windows.Forms.BindingSource facturaDetallesBindingSource;
         private DetalleTableAdapters.FacturaDetallesTableAdapter facturaDetallesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.BindingSource facturaDetallesBindingSource1;
     }
 }

@@ -86,9 +86,34 @@ namespace ProyectoTech.Ui.Registros
 
         private void RefreshDataGridView()
         {
+            DataGridViewRow precio1 = new DataGridViewRow();
             dataGridViewVenta.DataSource = null;
             dataGridViewVenta.DataSource = listadoArticulos;
+            //dataGridViewVenta.[0].HeaderText = textBoxTotalArticlo.Text;
+         //   Total.HeaderText = textBoxTotalArticlo.Text;
          
+            precio1.SetValues(textBoxTotalArticlo.Text);
+            /*
+            foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
+            {
+              
+              //  dataGridViewVenta.RowCount = cantidad;
+               
+               
+             //   dataGridViewVenta.Rows[precio1].SetValues(textBoxTotalArticlo.Text);
+              
+
+            }
+            */
+
+
+            this.dataGridViewVenta.Columns["IdArticulo"].Visible = false;
+            this.dataGridViewVenta.Columns["Existencia"].Visible = false;
+            this.dataGridViewVenta.Columns["PrecioCompra"].Visible = false;
+            //     this.dataGridViewVenta.Columns["CodigoArticulo"].Visible = false;
+            this.dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
+            this.dataGridViewVenta.Columns["CategoriaId"].Visible = false;
+
         }
         //Usuario y tipo de Usuario
         private void LlenarLabel()
@@ -258,31 +283,23 @@ namespace ProyectoTech.Ui.Registros
             textBoxTotalArticlo.Text = total2.ToString();
 
         }
+        //////////////
         private void textBoxCantidad_ValueChanged(object sender, EventArgs e)
         {
-          
 
             if (textBoxCantidad.Value > 0)
             {
 
                 AsiganarDatosArticulos();
-
-            
-
-
             }
             else
             {
-            //    Limpiar();
+          
                 PreciotextBox.Clear();
                 ItbsArticultextBox.Clear();
                 textBoxTotalArticlo.Clear();
                 clienteComboBox.Focus();
-
             }
-
-         //   Agregarbutton.Focus();
-            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -296,8 +313,7 @@ namespace ProyectoTech.Ui.Registros
                int id = Utilidades.TOINT(idArticuloComboBox.Text);
                 detalle.articulosDetalle = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (detalle.articulosDetalle != null)
-                {
-                       
+                {             
                 if (detalle.articulosDetalle.Existencia == 0)
                 {
                     errorProviderTodo.SetError(idArticuloComboBox, "No Existe Unidades de este articulo");
@@ -335,9 +351,6 @@ namespace ProyectoTech.Ui.Registros
             articulo = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
             if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
             {
-            
-
-
                 errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
                 MessageBox.Show("Articulo Selecionado es: "+articulo.NombreArticulo+ "\n Cantidad del articulo es ( " + articulo.Existencia + " )");
                 textBoxCantidad.ResetText();
@@ -348,9 +361,7 @@ namespace ProyectoTech.Ui.Registros
 
             }
             else
-            {
-
-               
+            {          
                     AsiganarDatosArticulos();
                     decimal descuentod = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
                     decimal preciod = Convert.ToDecimal(Utilidades.TOINT(PreciotextBox.Text));
@@ -359,17 +370,17 @@ namespace ProyectoTech.Ui.Registros
                     preciod, Utilidades.TOINT(textBoxCantidad.Value.ToString()), descuentod));
                     listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == idArticuloComboBox.SelectedIndex + 1));
 
-
                     RefreshDataGridView();
 
-
+/*
                 foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
                 {
                     data += (int)precio1.Cells[2].Value;
                     TotalmaskedTextBox.Text = data.ToString();
+
                 }
 
-
+    */
 
 
 
@@ -378,7 +389,7 @@ namespace ProyectoTech.Ui.Registros
 
 
         }
-
+        //Button Guardar
         private void button2_Click(object sender, EventArgs e)
         {
            
@@ -443,6 +454,11 @@ namespace ProyectoTech.Ui.Registros
         private void button1_KeyPress(object sender, KeyPressEventArgs e)
         {
           
+        }
+
+        private void dataGridViewVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
