@@ -24,7 +24,7 @@ namespace ProyectoTech.Ui.Registros
         private static List<Entidades.FacturaDetalles> listaRelaciones = new List<FacturaDetalles>();
         private static List<Entidades.Articulos> listadoArticulos = new List<Entidades.Articulos>();
 
-
+     
 
         //Calcular 
         const int COLUMNAPRECIO = 3;
@@ -34,15 +34,39 @@ namespace ProyectoTech.Ui.Registros
 
 
         public RegistrarVenta()
-        { 
+        {
+
+         
 
             InitializeComponent();
             //HOra y Fecha
             timer1.Enabled = true;
             Limpiar();
+            dataGridViewVenta.ColumnCount = 4;
+            dataGridViewVenta.Columns[0].Name = "Nombre";
+            dataGridViewVenta.Columns[1].Name = "Codigo";
+            dataGridViewVenta.Columns[2].Name = "ITBIS";
+            dataGridViewVenta.Columns[3].Name = "Total";
+
+
+
+
+
         }
 
-     
+        private void llenarData()
+        {
+          
+        }
+      
+        private void addData(string nombre, string codigo, decimal itbis, string total)
+        {
+          //  addColunna();
+            string[] row = { nombre, codigo, itbis.ToString(), total.ToString() };
+            dataGridViewVenta.Rows.Add(row);
+         
+        }
+
 
         private void ComprobarCantidad(int existencia)
         {
@@ -84,27 +108,43 @@ namespace ProyectoTech.Ui.Registros
             clienteInstancia, tipoVentaComboBox.Text, Utilidades.TOINT(cantidadproducto),itbsd );
         }
 
+      
+
         private void RefreshDataGridView()
         {
-            DataGridViewRow precio1 = new DataGridViewRow();
+            Entidades.Articulos db = new Articulos();
+         //   BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Utilidades.TOINT(idArticuloComboBox.Text));
+            
+            addData(articulo.NombreArticulo, articulo.CodigoArticulo, articulo.ITBIS, textBoxTotalArticlo.Text);
+
+            /*
+          //  DataGridViewRow precio1 = new DataGridViewRow();
             dataGridViewVenta.DataSource = null;
             dataGridViewVenta.DataSource = listadoArticulos;
             //dataGridViewVenta.[0].HeaderText = textBoxTotalArticlo.Text;
-         //   Total.HeaderText = textBoxTotalArticlo.Text;
-         
-            precio1.SetValues(textBoxTotalArticlo.Text);
-            /*
+            //   Total.HeaderText = textBoxTotalArticlo.Text;
+
+            //precio1.SetValues(textBoxTotalArticlo.Text);
+           
             foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
             {
-              
-              //  dataGridViewVenta.RowCount = cantidad;
-               
-               
-             //   dataGridViewVenta.Rows[precio1].SetValues(textBoxTotalArticlo.Text);
-              
+
+                decimal resultado = 0;
+                resultado = data + Utilidades.TOINT(textBoxTotalArticlo.Text);
+                TotalmaskedTextBox.Text = resultado.ToString();
+                RefreshDataGridView();
+
+
+                //  dataGridViewVenta.RowCount = cantidad;
+
+
+                //   dataGridViewVenta.Rows[precio1].SetValues(textBoxTotalArticlo.Text);
+
+
 
             }
-            */
+
+
 
 
             this.dataGridViewVenta.Columns["IdArticulo"].Visible = false;
@@ -113,7 +153,7 @@ namespace ProyectoTech.Ui.Registros
             //     this.dataGridViewVenta.Columns["CodigoArticulo"].Visible = false;
             this.dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
             this.dataGridViewVenta.Columns["CategoriaId"].Visible = false;
-
+            */
         }
         //Usuario y tipo de Usuario
         private void LlenarLabel()
@@ -157,9 +197,15 @@ namespace ProyectoTech.Ui.Registros
 
             return retorno;
         }
-       
+
+        private void LimpiarColunna()
+        {
+            dataGridViewVenta.DataMember = null;
+        }
         private void Limpiar()
         {
+           
+
             comboBoxNombreAr.Text = null;
             textBoxCantidad.ResetText();
             listadoArticulos = new List<Articulos>();
@@ -178,6 +224,7 @@ namespace ProyectoTech.Ui.Registros
             textBoxCantidad.Text = "0";
             articulo = new Articulos();
             textBoxCantidad.Enabled = false;
+
         }
         //Clientes
         public void LlenarComboClientes()
@@ -349,6 +396,9 @@ namespace ProyectoTech.Ui.Registros
         private void button1_Click_1(object sender, EventArgs e)
         {
             articulo = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
+            
+          
+ 
             if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
             {
                 errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
@@ -370,7 +420,8 @@ namespace ProyectoTech.Ui.Registros
                     preciod, Utilidades.TOINT(textBoxCantidad.Value.ToString()), descuentod));
                     listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == idArticuloComboBox.SelectedIndex + 1));
 
-                    RefreshDataGridView();
+               
+                RefreshDataGridView();
 
 /*
                 foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
@@ -437,12 +488,14 @@ namespace ProyectoTech.Ui.Registros
                    
                 }
                 Limpiar();
+            LimpiarColunna();
           
         }
 
         private void RegistrarVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            listaRelaciones = null;
+            dataGridViewVenta.ColumnCount = 0;
+           listaRelaciones = null;
             listadoArticulos = null;
         }
 

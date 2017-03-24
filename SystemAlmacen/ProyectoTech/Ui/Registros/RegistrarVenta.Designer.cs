@@ -50,7 +50,6 @@
             this.labelHORA = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.textBoxFacturaId = new System.Windows.Forms.TextBox();
@@ -69,14 +68,6 @@
             this.iTBSMaskedTextBox = new System.Windows.Forms.TextBox();
             this.Guardar_button = new System.Windows.Forms.Button();
             this.Agregar_Button = new System.Windows.Forms.Button();
-            this.registrosDbDataSet = new ProyectoTech.RegistrosDbDataSet();
-            this.articuloCategoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.articuloCategoriasTableAdapter = new ProyectoTech.RegistrosDbDataSetTableAdapters.ArticuloCategoriasTableAdapter();
-            this.detalle1 = new ProyectoTech.Detalle();
-            this.detalle1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.facturaDetallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.facturaDetallesTableAdapter = new ProyectoTech.DetalleTableAdapters.FacturaDetallesTableAdapter();
-            this.facturaDetallesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             idFacturaLabel = new System.Windows.Forms.Label();
             idArticuloLabel = new System.Windows.Forms.Label();
             descuentoLabel = new System.Windows.Forms.Label();
@@ -95,12 +86,6 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrosDbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloCategoriasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalle1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // idFacturaLabel
@@ -290,20 +275,12 @@
             this.dataGridViewVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewVenta.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Total});
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
             this.dataGridViewVenta.Location = new System.Drawing.Point(2, 305);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
             this.dataGridViewVenta.Size = new System.Drawing.Size(875, 211);
             this.dataGridViewVenta.TabIndex = 32;
             this.dataGridViewVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellContentClick);
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "TotalData";
-            this.Total.HeaderText = "TOTAL";
-            this.Total.Name = "Total";
             // 
             // groupBox1
             // 
@@ -488,44 +465,6 @@
             this.Agregar_Button.Click += new System.EventHandler(this.button1_Click_1);
             this.Agregar_Button.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button1_KeyPress);
             // 
-            // registrosDbDataSet
-            // 
-            this.registrosDbDataSet.DataSetName = "RegistrosDbDataSet";
-            this.registrosDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // articuloCategoriasBindingSource
-            // 
-            this.articuloCategoriasBindingSource.DataMember = "ArticuloCategorias";
-            this.articuloCategoriasBindingSource.DataSource = this.registrosDbDataSet;
-            // 
-            // articuloCategoriasTableAdapter
-            // 
-            this.articuloCategoriasTableAdapter.ClearBeforeFill = true;
-            // 
-            // detalle1
-            // 
-            this.detalle1.DataSetName = "Detalle";
-            this.detalle1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // detalle1BindingSource
-            // 
-            this.detalle1BindingSource.DataSource = this.detalle1;
-            this.detalle1BindingSource.Position = 0;
-            // 
-            // facturaDetallesBindingSource
-            // 
-            this.facturaDetallesBindingSource.DataMember = "FacturaDetalles";
-            this.facturaDetallesBindingSource.DataSource = this.detalle1BindingSource;
-            // 
-            // facturaDetallesTableAdapter
-            // 
-            this.facturaDetallesTableAdapter.ClearBeforeFill = true;
-            // 
-            // facturaDetallesBindingSource1
-            // 
-            this.facturaDetallesBindingSource1.DataMember = "FacturaDetalles";
-            this.facturaDetallesBindingSource1.DataSource = this.detalle1BindingSource;
-            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,12 +496,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrosDbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.articuloCategoriasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalle1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detalle1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturaDetallesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,14 +528,5 @@
         private System.Windows.Forms.Button Nuevo_Cliente;
         private System.Windows.Forms.Button Nuevo_Articulo;
         private System.Windows.Forms.ComboBox comboBoxNombreAr;
-        private RegistrosDbDataSet registrosDbDataSet;
-        private System.Windows.Forms.BindingSource articuloCategoriasBindingSource;
-        private RegistrosDbDataSetTableAdapters.ArticuloCategoriasTableAdapter articuloCategoriasTableAdapter;
-        private System.Windows.Forms.BindingSource detalle1BindingSource;
-        private Detalle detalle1;
-        private System.Windows.Forms.BindingSource facturaDetallesBindingSource;
-        private DetalleTableAdapters.FacturaDetallesTableAdapter facturaDetallesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.BindingSource facturaDetallesBindingSource1;
     }
 }
