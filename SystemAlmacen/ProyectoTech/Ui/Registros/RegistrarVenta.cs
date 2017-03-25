@@ -454,14 +454,18 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.Rows.Clear();
             dataGridViewVenta.Refresh();
             Entidades.Facturas db;
-            int id = int.Parse(maskedTextBoxId.Text);
-            /*
-            if (BLL.FacturaBLL.Buscarb( p=> p.IdFactura == id))
+            int id = Utilidades.TOINT(maskedTextBoxId.Text);
+
+         
+
+            db=  BLL.FacturaBLL.Buscar(p=> p.IdFactura== id)
+     /*
+                if(db!=null)
             {
-
+                facturaG
             }
-
-    */
+            */
+    
         }
     }
 }
