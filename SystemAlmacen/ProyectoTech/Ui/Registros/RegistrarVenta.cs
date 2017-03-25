@@ -27,10 +27,11 @@ namespace ProyectoTech.Ui.Registros
      
 
         //Calcular 
-        const int COLUMNAPRECIO = 3;
+        const int COLUMNAPRECIO = 4;
         decimal total1 = 0;
         decimal total2 = 0;
         decimal data = 0;
+        int totalFactura;
 
 
         public RegistrarVenta()
@@ -42,11 +43,15 @@ namespace ProyectoTech.Ui.Registros
             //HOra y Fecha
             timer1.Enabled = true;
             Limpiar();
+            
             dataGridViewVenta.ColumnCount = 4;
+          
             dataGridViewVenta.Columns[0].Name = "Nombre";
             dataGridViewVenta.Columns[1].Name = "Codigo";
             dataGridViewVenta.Columns[2].Name = "ITBIS";
             dataGridViewVenta.Columns[3].Name = "Total";
+           
+
 
 
 
@@ -54,17 +59,23 @@ namespace ProyectoTech.Ui.Registros
 
         }
 
-        private void llenarData()
+   
+      
+        private void addData(string nombre, string codigo, int itbs, int totalarticulo)
         {
           
-        }
-      
-        private void addData(string nombre, string codigo, decimal itbis, string total)
-        {
-          //  addColunna();
-            string[] row = { nombre, codigo, itbis.ToString(), total.ToString() };
+            string[] row = { nombre, codigo, itbs.ToString(), totalarticulo.ToString() };
             dataGridViewVenta.Rows.Add(row);
-         
+            CalcularFactura();
+
+
+        }
+
+        private void RefreshDataGridView()
+        {
+            Entidades.Articulos db = new Articulos();
+            addData(comboBoxNombreAr.Text, articulo.CodigoArticulo, Utilidades.TOINT( ItbsArticultextBox.Text ),  Utilidades.TOINT(textBoxTotalArticlo.Text));
+
         }
 
 
@@ -81,21 +92,32 @@ namespace ProyectoTech.Ui.Registros
                 textBoxCantidad.ResetText();
                
             }
-            
-            
-            
-        } 
+  
+        }
+
+
+        private void CalcularFactura()
+        {
+            double total = 0;
+            foreach (DataGridViewRow row in dataGridViewVenta.Rows)
+            {
+                total += Convert.ToDouble(row.Cells[3].Value);
+            }
+            TotalmaskedTextBox.Text = total.ToString();
+            TotalmaskedTextBox.Text = total.ToString();
+        }
+
+
         private void EliminarExitencia(int existencia)
         {
             Entidades.Articulos arti = new Articulos();
           
+               
                 arti = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
                 arti.Existencia = arti.Existencia - existencia;
                 BLL.ArticuloBLL.Mofidicar(arti);
+            
         }
-
-        
-
         private void LlenarInstancia()
         {
 
@@ -108,61 +130,12 @@ namespace ProyectoTech.Ui.Registros
             clienteInstancia, tipoVentaComboBox.Text, Utilidades.TOINT(cantidadproducto),itbsd );
         }
 
-      
-
-        private void RefreshDataGridView()
-        {
-            Entidades.Articulos db = new Articulos();
-         //   BLL.ArticuloBLL.Buscar(p => p.IdArticulo == Utilidades.TOINT(idArticuloComboBox.Text));
-            
-            addData(articulo.NombreArticulo, articulo.CodigoArticulo, articulo.ITBIS, textBoxTotalArticlo.Text);
-
-            /*
-          //  DataGridViewRow precio1 = new DataGridViewRow();
-            dataGridViewVenta.DataSource = null;
-            dataGridViewVenta.DataSource = listadoArticulos;
-            //dataGridViewVenta.[0].HeaderText = textBoxTotalArticlo.Text;
-            //   Total.HeaderText = textBoxTotalArticlo.Text;
-
-            //precio1.SetValues(textBoxTotalArticlo.Text);
-           
-            foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
-            {
-
-                decimal resultado = 0;
-                resultado = data + Utilidades.TOINT(textBoxTotalArticlo.Text);
-                TotalmaskedTextBox.Text = resultado.ToString();
-                RefreshDataGridView();
-
-
-                //  dataGridViewVenta.RowCount = cantidad;
-
-
-                //   dataGridViewVenta.Rows[precio1].SetValues(textBoxTotalArticlo.Text);
-
-
-
-            }
-
-
-
-
-            this.dataGridViewVenta.Columns["IdArticulo"].Visible = false;
-            this.dataGridViewVenta.Columns["Existencia"].Visible = false;
-            this.dataGridViewVenta.Columns["PrecioCompra"].Visible = false;
-            //     this.dataGridViewVenta.Columns["CodigoArticulo"].Visible = false;
-            this.dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
-            this.dataGridViewVenta.Columns["CategoriaId"].Visible = false;
-            */
-        }
+   
         //Usuario y tipo de Usuario
         private void LlenarLabel()
         {
-
             label6.Text = Login.InsetarU().NombreUsuario;
             label7.Text = Login.InsetarU().Tipo;
-
-
         }
         public static Entidades.Usuarios InsetarU()
         {
@@ -266,45 +239,7 @@ namespace ProyectoTech.Ui.Registros
         {
             textBoxFacturaId.Text = facturaG.IdFactura.ToString();
         }
-/*
-        private void Total()
-        {
-            decimal total=0;
-            decimal subtotal=0;
-            const int COLUMNAPRECIO=2;
 
-            if(dataGridViewVenta.Rows.Count>0)
-            {
-                foreach(DataGridViewRow precio in dataGridViewVenta.Rows )
-                {
-                    subtotal += (int)precio.Cells[COLUMNAPRECIO].Value;
-                    SubTotalmaskedTextBox.Text = subtotal.ToString();
-                }
-                if(descuentoMaskedTextBox.Text==null)
-                {
-                    decimal totaldescuento = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
-                    total = subtotal - totaldescuento;
-                    subtotal = subtotal - totaldescuento;
-                    SubTotalmaskedTextBox.Text = subtotal.ToString();
-                    TotalmaskedTextBox.Text = total.ToString();
-
-                }
-                if(ItbsArticultextBox.Text != null)
-                {
-                    decimal totalitbs = Convert.ToDecimal(Utilidades.TOINT(ItbsArticultextBox.Text));
-                    total = subtotal + totalitbs;
-                    SubTotalmaskedTextBox.Text = subtotal.ToString();
-                    TotalmaskedTextBox.Text = total.ToString();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error");
-                Limpiar();
-            }
-
-        }
-        */
       
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {
@@ -396,9 +331,6 @@ namespace ProyectoTech.Ui.Registros
         private void button1_Click_1(object sender, EventArgs e)
         {
             articulo = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
-            
-          
- 
             if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
             {
                 errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
@@ -408,7 +340,6 @@ namespace ProyectoTech.Ui.Registros
                 textBoxCantidad.Text = "0";
                 textBoxCantidad.Enabled = false;
                 idArticuloComboBox.Focus();
-
             }
             else
             {          
@@ -420,20 +351,22 @@ namespace ProyectoTech.Ui.Registros
                     preciod, Utilidades.TOINT(textBoxCantidad.Value.ToString()), descuentod));
                     listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == idArticuloComboBox.SelectedIndex + 1));
 
-               
-                RefreshDataGridView();
 
-/*
-                foreach (DataGridViewRow precio1 in dataGridViewVenta.Rows)
+                    RefreshDataGridView();
+    
+
+
+
+                /*
+
+                foreach (DataGridViewRow row in dataGridViewVenta.Rows)
                 {
-                    data += (int)precio1.Cells[2].Value;
-                    TotalmaskedTextBox.Text = data.ToString();
+                    totalFactura += (int)row.Cells[3].Value;
+                    int total = totalFactura;
+                    TotalmaskedTextBox.Text = totalFactura.ToString();
 
                 }
-
-    */
-
-
+                */
 
             }
           
@@ -494,7 +427,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void RegistrarVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            dataGridViewVenta.ColumnCount = 0;
+           // dataGridViewVenta.ColumnCount = 0;
            listaRelaciones = null;
             listadoArticulos = null;
         }

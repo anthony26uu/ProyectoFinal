@@ -134,7 +134,12 @@ namespace ProyectoTech.Ui.Incio
 
         private void articulosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+           
 
+            Ui.Conultas.ConsultaArticulos.Funcion().Show();
+            Ui.Conultas.ConsultaArticulos.Funcion().Activate();
+
+            
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)

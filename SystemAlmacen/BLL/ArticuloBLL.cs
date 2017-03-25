@@ -86,7 +86,7 @@ namespace BLL
 
         public static List<Entidades.Articulos> GetListodo()
         {
-            List<Entidades.Articulos> lista = new List<Entidades.Articulos>();
+                    
             using (var db = new DAL.Repositorio<Articulos>())
             {
                 try
@@ -101,7 +101,7 @@ namespace BLL
 
             }
         }
-
+        
         public static Articulos BuscarRelacion(int id)
         {
             Articulos estudiante = null;

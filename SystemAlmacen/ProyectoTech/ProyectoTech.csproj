@@ -55,9 +55,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,11 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Detalle.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Detalle.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgresoBarra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,7 +79,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegistrosDbDataSet.Designer.cs">
+    <Compile Include="Ui\Reportes\RegistrosDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
@@ -134,6 +132,12 @@
     <Compile Include="Ui\Registros\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\ReporteFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\ReporteFacturas.Designer.cs">
+      <DependentUpon>ReporteFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,18 +167,11 @@
     <EmbeddedResource Include="Ui\Registros\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Facturas.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\ReporteFacturas.resx">
+      <DependentUpon>ReporteFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Detalle.xsc">
-      <DependentUpon>Detalle.xsd</DependentUpon>
-    </None>
-    <None Include="Detalle.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Detalle.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Detalle.xss">
-      <DependentUpon>Detalle.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -196,6 +193,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xsc">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xss">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Add File.ico" />
     <None Include="Resources\Add File_32px.png" />
     <None Include="Resources\Plus_64px.png" />
@@ -216,17 +224,6 @@
     <None Include="Resources\Icon.ico" />
     <None Include="Resources\shutdown-icon-9213.png" />
     <None Include="Resources\fondo_login.png" />
-    <None Include="RegistrosDbDataSet.xsc">
-      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RegistrosDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RegistrosDbDataSet.xss">
-      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
