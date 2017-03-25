@@ -456,16 +456,16 @@ namespace ProyectoTech.Ui.Registros
             Entidades.Facturas db;
             int id = Utilidades.TOINT(maskedTextBoxId.Text);
 
-         
 
-            db=  BLL.FacturaBLL.Buscar(p=> p.IdFactura== id)
-     /*
-                if(db!=null)
-            {
-                facturaG
-            }
-            */
-    
+            /*
+        db=  BLL.FacturaBLL.Buscar(p=> p.IdFactura== id)
+
+            if(db!=null)
+        {
+            facturaG
+        }
+        */
+
         }
     }
 }
