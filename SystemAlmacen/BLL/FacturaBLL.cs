@@ -21,6 +21,18 @@ namespace BLL
             return creado;
         }
 
+        public static Entidades.Facturas Buscarb(Expression<Func<Facturas, bool>> tipo)
+        {
+            Facturas Result = null;
+            using (var repoitorio = new Repositorio<Facturas>())
+
+            {
+                Result = repoitorio.Buscar(tipo);
+            }
+
+            return Result;
+        }
+
         public static Facturas Buscar(Expression<Func<Facturas, bool>> criterioBusqueda)
         {
             using (var repositorio = new DAL.Repositorio<Facturas>())

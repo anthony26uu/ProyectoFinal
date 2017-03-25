@@ -58,7 +58,6 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.prestamoIdTextBox = new System.Windows.Forms.TextBox();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
             this.Nuevo_Cliente = new System.Windows.Forms.Button();
@@ -80,6 +79,8 @@
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -321,8 +322,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBoxId);
+            this.groupBox1.Controls.Add(this.buttonBuscar);
             this.groupBox1.Controls.Add(this.panel2);
-            this.groupBox1.Controls.Add(this.prestamoIdTextBox);
             this.groupBox1.Controls.Add(this.tipoVentaComboBox);
             this.groupBox1.Controls.Add(this.clienteComboBox);
             this.groupBox1.Controls.Add(this.Nuevo_Cliente);
@@ -347,13 +349,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(139, 120);
             this.panel2.TabIndex = 57;
-            // 
-            // prestamoIdTextBox
-            // 
-            this.prestamoIdTextBox.Location = new System.Drawing.Point(107, 12);
-            this.prestamoIdTextBox.Name = "prestamoIdTextBox";
-            this.prestamoIdTextBox.Size = new System.Drawing.Size(77, 20);
-            this.prestamoIdTextBox.TabIndex = 60;
             // 
             // tipoVentaComboBox
             // 
@@ -591,6 +586,24 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonBuscar.Location = new System.Drawing.Point(219, 10);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(88, 32);
+            this.buttonBuscar.TabIndex = 60;
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // maskedTextBoxId
+            // 
+            this.maskedTextBoxId.Location = new System.Drawing.Point(107, 12);
+            this.maskedTextBoxId.Name = "maskedTextBoxId";
+            this.maskedTextBoxId.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxId.TabIndex = 61;
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +682,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox prestamoIdTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artiuclo;
@@ -677,5 +689,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
     }
 }
