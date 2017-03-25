@@ -13,7 +13,19 @@ namespace ProyectoTech.Ui.Registros
 {
     public partial class RegistroClientes : Form
     {
-        public RegistroClientes()
+        private static RegistroClientes unico = null;
+
+        public static RegistroClientes Funcion()
+        {
+            if (unico == null)
+            {
+                unico = new RegistroClientes();
+            }
+            return unico;
+            
+    }
+
+    public RegistroClientes()
         {
             InitializeComponent();
         }
@@ -114,7 +126,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void RegistroClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
-        
+            unico = null;
         }
 
         private void searchButton_Click(object sender, EventArgs e)

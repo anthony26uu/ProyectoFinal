@@ -193,6 +193,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\BotonAñadir.png" />
+    <None Include="Resources\BotonGuardar11.png" />
+    <None Include="Resources\add.ico" />
+    <None Include="Resources\BotonAñadir1.png" />
+    <None Include="Resources\Plus.ico" />
     <None Include="Ui\Reportes\RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>

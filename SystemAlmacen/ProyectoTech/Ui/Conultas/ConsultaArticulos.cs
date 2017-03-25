@@ -26,7 +26,7 @@ namespace ProyectoTech.Ui.Conultas
             }
             return unico;
           
-    }
+       }
 
     public void Llenar()
         {
@@ -78,7 +78,7 @@ namespace ProyectoTech.Ui.Conultas
         private void ConsultaArticulos_Load(object sender, EventArgs e)
         {
             buscaText.Enabled = false;
-           HastadateTimePicker1.Enabled = false;
+            HastadateTimePicker1.Enabled = false;
             desdeDateTimePicker.Enabled = false;
             Llenar();
         }

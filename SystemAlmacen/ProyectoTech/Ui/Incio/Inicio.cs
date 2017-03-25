@@ -144,14 +144,15 @@ namespace ProyectoTech.Ui.Incio
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ui.Registros.RegistroClientes db = new RegistroClientes();
-            db.Show();
+           
+
         }
 
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ui.Registros.RegistrarVenta db = new RegistrarVenta();
-            db.Show();
+           
+            Ui.Registros.RegistrarVenta.Funcion().Show();
+            RegistrarVenta.Funcion().Activate();
         }
 
         private void button_Apagado_Click(object sender, EventArgs e)
