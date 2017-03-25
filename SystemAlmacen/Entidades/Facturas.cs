@@ -29,7 +29,7 @@ namespace Entidades
         {
             this.IdFactura = IdFactura;
             this.NombreUsuario = nombreUsuario;
-            this.IdArticulo = IdArticulo;
+            this.IdArticulo = idArticulo;
             this.FechaVenta = fechaVenta;
            
             this.Cliente = cliente;

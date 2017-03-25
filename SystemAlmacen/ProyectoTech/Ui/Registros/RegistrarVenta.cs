@@ -51,19 +51,18 @@ namespace ProyectoTech.Ui.Registros
             //HOra y Fecha
             timer1.Enabled = true;
             Limpiar();
-           
-            dataGridViewVenta.ColumnCount = 4;         
-            dataGridViewVenta.Columns[0].Name = "Nombre";
-            dataGridViewVenta.Columns[1].Name = "Codigo";
-            dataGridViewVenta.Columns[2].Name = "ITBIS";
-            dataGridViewVenta.Columns[3].Name = "Total";
+
+
+          
+
            
         }
  
-        private void addData(string nombre, string codigo, int itbs, int totalarticulo)
+        private void addData(int idDetalle, int idFactura, string ArticuloN,  string nombreProducto, decimal precioProducto, int cantidad, int totalarticulo)
         {
           
-            string[] row = { nombre, codigo, itbs.ToString(), totalarticulo.ToString() };
+            string[] row = { idDetalle.ToString(), idFactura.ToString(), comboBoxNombreAr.Text, nombreProducto,  precioProducto.ToString(), cantidad.ToString(), totalarticulo.ToString() };
+
             dataGridViewVenta.Rows.Add(row);
             CalcularFactura();
 
@@ -80,9 +79,19 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-                double devuelta = Convert.ToDouble(EfectivomaskedTextBox.Text);
-                double resultado = Convert.ToDouble(TotalmaskedTextBox.Text) - devuelta;
-                textBoxDevuelta.Text = resultado.ToString();
+                if(descuentoMaskedTextBox.Text != null)
+                {
+                    double devuelta = Convert.ToDouble(EfectivomaskedTextBox.Text)-Convert.ToDouble(descuentoMaskedTextBox);
+                    double resultado = Convert.ToDouble(TotalmaskedTextBox.Text) - devuelta;
+                    textBoxDevuelta.Text = resultado.ToString();
+                }
+                else
+                {
+                    double devuelta = Convert.ToDouble(EfectivomaskedTextBox.Text);
+                    double resultado = Convert.ToDouble(TotalmaskedTextBox.Text) - devuelta;
+                    textBoxDevuelta.Text = resultado.ToString();
+                }
+               
             }
 
           
@@ -91,7 +100,7 @@ namespace ProyectoTech.Ui.Registros
         private void RefreshDataGridView()
         {
             Entidades.Articulos db = new Articulos();
-            addData(comboBoxNombreAr.Text, articulo.CodigoArticulo, Utilidades.TOINT( ItbsArticultextBox.Text ),  Utilidades.TOINT(textBoxTotalArticlo.Text));
+            addData(detalle.IdDetalle, facturaG.IdFactura, comboBoxNombreAr.Text, idArticuloComboBox.Text, db.PrecioCompra, Utilidades.TOINT(textBoxCantidad.Text), Utilidades.TOINT(TotalmaskedTextBox.Text));
         }
         private void ComprobarCantidad(int existencia)
         {
@@ -110,18 +119,18 @@ namespace ProyectoTech.Ui.Registros
         private void CalcularFactura()
         {
             double total = 0;
-            double totalItbs=0;
+          
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
-                total += Convert.ToDouble(row.Cells[3].Value);
-                totalItbs += Convert.ToDouble(row.Cells[2].Value);
+                total += Convert.ToDouble(row.Cells[6].Value);
+             //   totalItbs += Convert.ToDouble(row.Cells[5].Value);
 
             }
             TotalmaskedTextBox.Text = total.ToString();
             TotalmaskedTextBox.Text = total.ToString();
 
-            iTBSMaskedTextBox.Text = totalItbs.ToString();
-            iTBSMaskedTextBox.Text = totalItbs.ToString();
+      //      iTBSMaskedTextBox.Text = totalItbs.ToString();
+        //    iTBSMaskedTextBox.Text = totalItbs.ToString();
         }
 
 
@@ -191,6 +200,9 @@ namespace ProyectoTech.Ui.Registros
         }
         private void Limpiar()
         {
+            dataGridViewVenta.Rows.Clear();
+            dataGridViewVenta.Refresh();
+
             comboBoxNombreAr.Text = null;
             textBoxCantidad.ResetText();
             listadoArticulos = new List<Articulos>();
@@ -243,14 +255,10 @@ namespace ProyectoTech.Ui.Registros
         }
 
       
-        private void IdFactura ()
-        {
-            textBoxFacturaId.Text = facturaG.IdFactura.ToString();
-        }
-
+      
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {            
-            IdFactura();
+         
             LlenarLabel();
             LlenarComboClientes();
             LlenarComboArticulo();
@@ -374,40 +382,24 @@ namespace ProyectoTech.Ui.Registros
 
                 LlenarInstancia();
 
-                if (facturaG != null)
+                if (BLL.FacturaBLL.Guardar(facturaG) != null)
                 {
-
-                    bool relaciong = true;
-
-                    if (BLL.FacturaBLL.Guardar(facturaG) != null)
-                    {
-                        EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
-                    }
-
-                    foreach (var relacion in listaRelaciones)
-                    {
-                        relacion.IdFactura = facturaG.IdArticulo;
-                        if (BLL.FacturaDetallesBLL.Guardar(relacion) == false)
-                        {
-                            relaciong = false;
-                            break;
-                        }
-                    }
-                    if (facturaG != null && relaciong)
-                    {
-                        MessageBox.Show("Correcto");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error");
-                    }
-
+                    EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
                 }
 
-            }
-            Limpiar();
-            LimpiarColunna();
+                foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+                {
+                    
+                        int productoId = Convert.ToInt32(producto.Cells[3].Value);
+                        BLL.ArticuloBLL.Buscar(x => x.IdArticulo == productoId);
+                        FacturaDetalles factura = new FacturaDetalles(0, facturaG.IdFactura, productoId, Convert.ToInt32(producto.Cells[4].Value), Convert.ToInt32(producto.Cells[5].Value));
+     
+                }
 
+
+                Limpiar();
+                LimpiarColunna();
+            }
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -426,14 +418,18 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-                AsiganarDatosArticulos();
-                decimal descuentod = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
-                decimal preciod = Convert.ToDecimal(Utilidades.TOINT(PreciotextBox.Text));
-                listaRelaciones = new List<FacturaDetalles>();
-                listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura, Utilidades.TOINT(idArticuloComboBox.Text + 1),
-                preciod, Utilidades.TOINT(textBoxCantidad.Value.ToString()), descuentod));
-                listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == idArticuloComboBox.SelectedIndex + 1));
-                RefreshDataGridView();
+                 AsiganarDatosArticulos();
+                if(textBoxCantidad.Value ==0)
+                {
+                    errorProviderTodo.SetError(textBoxCantidad, "Antes debe selecionar Cantidad");
+                }
+                else
+                {
+                    errorProviderTodo.Clear();
+                    Entidades.Articulos producto = (Articulos)idArticuloComboBox.SelectedItem;
+                    addData(detalle.IdDetalle, facturaG.IdFactura, comboBoxNombreAr.Text, idArticuloComboBox.Text, producto.PrecioCompra, Utilidades.TOINT(textBoxCantidad.Text), Utilidades.TOINT(textBoxTotalArticlo.Text));
+                }
+               
 
 
             }
@@ -444,6 +440,7 @@ namespace ProyectoTech.Ui.Registros
         {
             Limpiar();
             LimpiarColunna();
+
         }
 
         private void Nuevo_Cliente_Click(object sender, EventArgs e)

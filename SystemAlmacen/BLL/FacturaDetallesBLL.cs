@@ -12,8 +12,20 @@ namespace BLL
     {
 
 
-    public static bool Guardar(FacturaDetalles relacion)
+        public static FacturaDetalles Guardard(FacturaDetalles detalle)
+        {
+            using (var repositorio = new Repositorio<FacturaDetalles>())
+            {
+                
+                    return repositorio.Guardar(detalle);
+                
+                
+            }
+        }
+
+        public static bool Guardar(FacturaDetalles relacion)
     {
+
         bool resultado = false;
         using (var conexion = new RegistroDb())
         {
@@ -50,8 +62,15 @@ namespace BLL
         }
         return resultado;
     }
+        public static List<FacturaDetalles> GetList(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new Repositorio<FacturaDetalles>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
 
-    public static List<Articulos> Listar(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
+        public static List<Articulos> Listar(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
     {
         List<Articulos> listado = new List<Articulos>();
         List<FacturaDetalles> relaciones = null;
