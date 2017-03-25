@@ -144,7 +144,9 @@ namespace ProyectoTech.Ui.Incio
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
+            Ui.Registros.RegistroClientes.Funcion().Show();
+            RegistroClientes.Funcion().Activate();
 
         }
 

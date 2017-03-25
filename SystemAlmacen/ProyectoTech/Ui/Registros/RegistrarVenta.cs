@@ -272,15 +272,19 @@ namespace ProyectoTech.Ui.Registros
 
             if (textBoxCantidad.Value > 0)
             {
-
+                PreciotextBox.Enabled = true;
+                ItbsArticultextBox.Enabled = true;
+                textBoxTotalArticlo.Enabled = true;
                 AsiganarDatosArticulos();
+
+
             }
             else
             {
-          
-                PreciotextBox.Clear();
-                ItbsArticultextBox.Clear();
-                textBoxTotalArticlo.Clear();
+
+                PreciotextBox.Enabled = false;
+                ItbsArticultextBox.Enabled = false;
+                textBoxTotalArticlo.Enabled = false;
                 clienteComboBox.Focus();
             }
         }
@@ -444,7 +448,8 @@ namespace ProyectoTech.Ui.Registros
 
         private void Nuevo_Cliente_Click(object sender, EventArgs e)
         {
-
+            Ui.Registros.RegistroClientes.Funcion().Show();
+            RegistroClientes.Funcion().Activate();
         }
     }
 }
