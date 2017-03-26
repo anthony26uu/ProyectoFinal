@@ -220,32 +220,36 @@
             // button_Apagado
             // 
             this.button_Apagado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Apagado.BackColor = System.Drawing.Color.Transparent;
-            this.button_Apagado.BackgroundImage = global::ProyectoTech.Properties.Resources.Icon;
+            this.button_Apagado.BackColor = System.Drawing.Color.DimGray;
             this.button_Apagado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_Apagado.FlatAppearance.BorderSize = 0;
             this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Apagado.Location = new System.Drawing.Point(467, 281);
+            this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.Icon;
+            this.button_Apagado.Location = new System.Drawing.Point(443, 256);
             this.button_Apagado.Name = "button_Apagado";
-            this.button_Apagado.Size = new System.Drawing.Size(34, 32);
+            this.button_Apagado.Size = new System.Drawing.Size(58, 56);
             this.button_Apagado.TabIndex = 15;
+            this.button_Apagado.Text = "Cerrar";
+            this.button_Apagado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_Apagado.UseVisualStyleBackColor = false;
             this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
             // button_CambiarUser
             // 
             this.button_CambiarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_CambiarUser.BackColor = System.Drawing.Color.Transparent;
-            this.button_CambiarUser.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes1;
+            this.button_CambiarUser.BackColor = System.Drawing.Color.DimGray;
             this.button_CambiarUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_CambiarUser.FlatAppearance.BorderSize = 0;
             this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CambiarUser.Location = new System.Drawing.Point(415, 281);
+            this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CambiarUser.Image = global::ProyectoTech.Properties.Resources.user3;
+            this.button_CambiarUser.Location = new System.Drawing.Point(346, 244);
             this.button_CambiarUser.Name = "button_CambiarUser";
-            this.button_CambiarUser.Size = new System.Drawing.Size(34, 32);
+            this.button_CambiarUser.Size = new System.Drawing.Size(93, 69);
             this.button_CambiarUser.TabIndex = 16;
+            this.button_CambiarUser.Text = "Usuario";
+            this.button_CambiarUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_CambiarUser.UseVisualStyleBackColor = false;
             this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
             // 

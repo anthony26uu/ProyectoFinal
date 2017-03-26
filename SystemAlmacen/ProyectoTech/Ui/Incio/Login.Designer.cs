@@ -71,11 +71,11 @@
             // IniciarSesionbutton
             // 
             this.IniciarSesionbutton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.IniciarSesionbutton.BackgroundImage = global::ProyectoTech.Properties.Resources.FlechaDerecha25x251;
             this.IniciarSesionbutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.IniciarSesionbutton.FlatAppearance.BorderSize = 0;
             this.IniciarSesionbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.IniciarSesionbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciarSesionbutton.Image = global::ProyectoTech.Properties.Resources.FlechaDerecha25x251;
             this.IniciarSesionbutton.Location = new System.Drawing.Point(363, 115);
             this.IniciarSesionbutton.Name = "IniciarSesionbutton";
             this.IniciarSesionbutton.Size = new System.Drawing.Size(30, 26);
@@ -147,15 +147,15 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::ProyectoTech.Properties.Resources.Icon;
+            this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(475, 180);
+            this.button1.Image = global::ProyectoTech.Properties.Resources.Icon;
+            this.button1.Location = new System.Drawing.Point(469, 174);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(34, 32);
+            this.button1.Size = new System.Drawing.Size(40, 38);
             this.button1.TabIndex = 14;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
