@@ -154,13 +154,13 @@ namespace ProyectoTech.Ui.Registros
 
         private void LlenarFactura()
         {
-            string idArticuloInstancia = idArticuloComboBox.Text;
+          
             string clienteInstancia = clienteComboBox.Text;
             string cantidadproducto = Convert.ToString(textBoxCantidad.Value);
             int itbs = Utilidades.TOINT(ItbsArticultextBox.Text);
-            decimal itbsd = Convert.ToDecimal(itbs);
-            facturaG = new Facturas( UsuarioLabel.Text, Utilidades.TOINT(idArticuloInstancia), DateTime.Now,
-            clienteInstancia, tipoVentaComboBox.Text, Utilidades.TOINT(cantidadproducto),itbsd );
+         
+            facturaG = new Facturas( UsuarioLabel.Text, DateTime.Now,
+            clienteInstancia, tipoVentaComboBox.Text, Utilidades.TOINT(cantidadproducto) );
         }
 
 
@@ -182,9 +182,9 @@ namespace ProyectoTech.Ui.Registros
                 retorno = false;
             }
 
-            if (string.IsNullOrWhiteSpace(textBoxDevuelta.Text))
+            if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
             {
-                errorProviderTodo.SetError(textBoxDevuelta, "Campo Obligatorio");
+                errorProviderTodo.SetError(EfectivomaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
 
@@ -446,8 +446,9 @@ namespace ProyectoTech.Ui.Registros
                     {
                         errorProviderTodo.Clear();
                         Entidades.Articulos producto = (Articulos)idArticuloComboBox.SelectedItem;
+                       
+                        listaRelaciones.Add(new FacturaDetalles(0,facturaG.IdFactura, Utilidades.TOINT(idArticuloComboBox.Text), articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text)));
                         addData(detalle.IdDetalle, facturaG.IdFactura, comboBoxNombreAr.Text, idArticuloComboBox.Text, producto.PrecioCompra, Utilidades.TOINT(textBoxCantidad.Text), Utilidades.TOINT(textBoxTotalArticlo.Text));
-                        listaRelaciones.Add(new FacturaDetalles(facturaG.IdFactura, Utilidades.TOINT(idArticuloComboBox.Text), articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text)));
                         EfectivomaskedTextBox.Enabled = true;
                     }
 
@@ -541,7 +542,7 @@ namespace ProyectoTech.Ui.Registros
                     else
                     {
                         Entidades.Articulos arti = new Articulos();
-                        listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdArticulo == id);
+                        listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdArticulo == detalle.IdFactura);
                         foreach (var relacion in listaRelaciones)
                         {
                             MessageBox.Show("Enter");

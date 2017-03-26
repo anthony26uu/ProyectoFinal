@@ -48,12 +48,24 @@
             this.labelHORA = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
+            this.IdDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artiuclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
+            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
@@ -65,21 +77,9 @@
             this.EfectivomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
-            this.IdDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artiuclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonAgregar = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -273,6 +273,43 @@
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 227);
             this.dataGridViewVenta.TabIndex = 32;
             // 
+            // IdDetalle
+            // 
+            this.IdDetalle.HeaderText = "Id Detalle";
+            this.IdDetalle.Name = "IdDetalle";
+            this.IdDetalle.Visible = false;
+            // 
+            // IdFactura
+            // 
+            this.IdFactura.HeaderText = "Id Factura";
+            this.IdFactura.Name = "IdFactura";
+            this.IdFactura.Visible = false;
+            // 
+            // Artiuclo
+            // 
+            this.Artiuclo.HeaderText = "Nombre Articulo";
+            this.Artiuclo.Name = "Artiuclo";
+            // 
+            // IdArticulo
+            // 
+            this.IdArticulo.HeaderText = "Articulo Id";
+            this.IdArticulo.Name = "IdArticulo";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.maskedTextBoxId);
@@ -301,6 +338,27 @@
             this.maskedTextBoxId.Size = new System.Drawing.Size(198, 20);
             this.maskedTextBoxId.TabIndex = 61;
             // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonBusqueda1;
+            this.buttonBuscar.Location = new System.Drawing.Point(311, 8);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(51, 28);
+            this.buttonBuscar.TabIndex = 60;
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(423, 12);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(139, 120);
+            this.panel2.TabIndex = 57;
+            // 
             // tipoVentaComboBox
             // 
             this.tipoVentaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -321,6 +379,17 @@
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(198, 21);
             this.clienteComboBox.TabIndex = 55;
+            // 
+            // Nuevo_Cliente
+            // 
+            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 42);
+            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
+            this.Nuevo_Cliente.Size = new System.Drawing.Size(40, 31);
+            this.Nuevo_Cliente.TabIndex = 54;
+            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
+            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
             // 
             // groupBox2
             // 
@@ -346,6 +415,17 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(219, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(86, 75);
+            this.panel1.TabIndex = 68;
+            // 
             // comboBoxNombreAr
             // 
             this.comboBoxNombreAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -354,6 +434,22 @@
             this.comboBoxNombreAr.Name = "comboBoxNombreAr";
             this.comboBoxNombreAr.Size = new System.Drawing.Size(130, 21);
             this.comboBoxNombreAr.TabIndex = 52;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
+            this.buttonAgregar.TabIndex = 58;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // textBoxCantidad
             // 
@@ -456,43 +552,6 @@
             this.groupBoxDinero.TabStop = false;
             this.groupBoxDinero.Text = "Dinero";
             // 
-            // IdDetalle
-            // 
-            this.IdDetalle.HeaderText = "Id Detalle";
-            this.IdDetalle.Name = "IdDetalle";
-            this.IdDetalle.Visible = false;
-            // 
-            // IdFactura
-            // 
-            this.IdFactura.HeaderText = "Id Factura";
-            this.IdFactura.Name = "IdFactura";
-            this.IdFactura.Visible = false;
-            // 
-            // Artiuclo
-            // 
-            this.Artiuclo.HeaderText = "Nombre Articulo";
-            this.Artiuclo.Name = "Artiuclo";
-            // 
-            // IdArticulo
-            // 
-            this.IdArticulo.HeaderText = "Articulo Id";
-            this.IdArticulo.Name = "IdArticulo";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -540,65 +599,6 @@
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(219, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(86, 75);
-            this.panel1.TabIndex = 68;
-            // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
-            this.buttonAgregar.TabIndex = 58;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonBusqueda1;
-            this.buttonBuscar.Location = new System.Drawing.Point(311, 8);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(51, 28);
-            this.buttonBuscar.TabIndex = 60;
-            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(423, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(139, 120);
-            this.panel2.TabIndex = 57;
-            // 
-            // Nuevo_Cliente
-            // 
-            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 42);
-            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
-            this.Nuevo_Cliente.Size = new System.Drawing.Size(40, 31);
-            this.Nuevo_Cliente.TabIndex = 54;
-            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
-            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
             // 
             // RegistrarVenta
             // 
