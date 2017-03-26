@@ -160,7 +160,7 @@ namespace ProyectoTech.Ui.Registros
             int itbs = Utilidades.TOINT(ItbsArticultextBox.Text);
          
             facturaG = new Facturas( UsuarioLabel.Text, DateTime.Now,
-            clienteInstancia, tipoVentaComboBox.Text, Utilidades.TOINT(cantidadproducto) );
+            clienteInstancia, tipoVentaComboBox.Text, Convert.ToInt32(TotalmaskedTextBox.Text));
         }
 
 
@@ -390,6 +390,7 @@ namespace ProyectoTech.Ui.Registros
             else
             {     
                 LlenarFactura();
+
                 if (BLL.FacturaBLL.Guardar(facturaG) != null)
                 {
                     EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
@@ -397,8 +398,9 @@ namespace ProyectoTech.Ui.Registros
                     foreach (var relacion in listaRelaciones)
                     {
 
-                        relacion.IdFactura = facturaG.IdFactura;
-                        BLL.FacturaDetallesBLL.Guardar(relacion);
+                        relacion.IdDetalle = facturaG.IdFactura;
+                        BLL.FacturaDetallesBLL.Guardar(new FacturaDetalles(relacion.IdDetalle,facturaG.IdFactura,relacion.IdArticulo, relacion.Precio, relacion.Cantidad));
+                 
 
                     }
                 }else
@@ -410,6 +412,7 @@ namespace ProyectoTech.Ui.Registros
                 Limpiar();
                 LimpiarColunna();
                 clienteComboBox.Focus();
+               
             }
         }
 
@@ -511,8 +514,8 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-           dataGridViewVenta.Rows.Clear();
-           dataGridViewVenta.Refresh();
+        //   dataGridViewVenta.Rows.Clear();
+          // dataGridViewVenta.Refresh();
 
             if(string.IsNullOrWhiteSpace(maskedTextBoxId.Text))
             {
@@ -528,11 +531,11 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-
-                    dataGridViewVenta.Rows.Clear();
-                    dataGridViewVenta.Refresh();
+                    LimpiarColunna();
+                    Limpiar();
+                    Entidades.Facturas factura = new Facturas();
                     int id = Utilidades.TOINT(maskedTextBoxId.Text);
-                    facturaG = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
+                    factura = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
                     if (facturaG == null)
                     {
                         MessageBox.Show("Factura No ha sido Registrada");
@@ -541,21 +544,35 @@ namespace ProyectoTech.Ui.Registros
                     }
                     else
                     {
+                      //  relacion.IdDetalle = facturaG.IdFactura;
+
+
                         Entidades.Articulos arti = new Articulos();
-                        listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdArticulo == detalle.IdFactura);
+                        factura = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
+                    //    arti = BLL.ArticuloBLL.fg();
+
+                    
+                        listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdDetalle == factura.IdFactura);
+                         
                         foreach (var relacion in listaRelaciones)
                         {
+
+                            listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == relacion.IdArticulo));
+
+                            /*
                             MessageBox.Show("Enter");
-                            arti = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == relacion.IdArticulo);
-                            listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
-                            dataGridViewVenta.RowCount = listadoArticulos.Count;
+                           
+                            listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == facturaG.IdFactura));
+
+
+                            dataGridViewVenta.RowCount = listaRelaciones.Count;
                             DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
-                            row.Cells[0].Value = relacion.IdDetalle;
-                            row.Cells[1].Value = relacion.IdFactura;
+                            row.Cells[0].Value = "0";
+                            row.Cells[1].Value = "0";
                             row.Cells[2].Value = arti.NombreArticulo;
                             row.Cells[3].Value = relacion.IdArticulo;
-                            row.Cells[4].Value = relacion.Precio;
-                            row.Cells[5].Value = relacion.Cantidad;
+                            row.Cells[4].Value = arti.PrecioVenta;
+                            row.Cells[5].Value = "0";
 
                             row.Cells[6].Value = row.Cells[4].Value = Convert.ToDouble(row.Cells[4].Value) * Convert.ToDouble(row.Cells[3].Value);
                             dataGridViewVenta.Rows.Add(row);
@@ -564,9 +581,10 @@ namespace ProyectoTech.Ui.Registros
                             Estado(false);
                             CalcularFactura();
 
-
+    */
                         }
-                        dataGridViewVenta.Refresh();
+                        Refrescar();
+                  //      dataGridViewVenta.Refresh();
 
                     }
 

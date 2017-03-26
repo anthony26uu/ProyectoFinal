@@ -35,16 +35,18 @@ NombreCategoria varchar(80)
 );
 
 
-create table Facturas (IdFactura int primary key identity (1,1),
-IdEmpleado int,
-IdArticulo int,
-FechaVenta DateTime,
-Descuento decimal,
-Cliente varchar(80),
-TipoVenta varchar(80), 
-CantidadProd int ,
-ITBS decimal
+
+
+create table  Facturas (
+	IdFactura int identity(1,1)primary key,
+ NombreUsuario varchar(80),
+FechaVenta datetime,
+Cliente  varchar(80),
+TipoVenta varchar(80),
+Total decimal
 );
+
+
 
 create table  ArticuloCategorias (
 	ArticuloCategoriasid int identity(1,1)primary key,

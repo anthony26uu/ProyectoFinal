@@ -21,6 +21,7 @@ namespace BLL
             return creado;
         }
 
+
         public static Entidades.Facturas Buscarb(Expression<Func<Facturas, bool>> tipo)
         {
             Facturas Result = null;

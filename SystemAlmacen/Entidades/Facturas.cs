@@ -10,10 +10,10 @@ namespace Entidades
     {
         [Key]
         public int IdFactura { get; set; }
-     
+       
+       
         public string NombreUsuario { get; set; }
         public DateTime FechaVenta { get; set; }
-      
         public string Cliente { get; set; }
         public string TipoVenta { get; set; }
         public int CantidadProd { get; set; }
@@ -26,18 +26,15 @@ namespace Entidades
        //     ArticuloList = new List<Entidades.Articulos>();
 
         }
-        public Facturas( string nombreUsuario, DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd  )
+        public Facturas( string nombreUsuario,  DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd  )
         {
           
             this.NombreUsuario = nombreUsuario;
-          
-            this.FechaVenta = fechaVenta;
-           
+            this.FechaVenta = fechaVenta;       
             this.Cliente = cliente;
             this.TipoVenta = tipoventa;
             this.CantidadProd = cantidadProd;
 
-           
         }
     }
 }
