@@ -86,6 +86,25 @@ namespace BLL
             }
         }
 
+        public static List<Entidades.FacturaDetalles> GetListodo()
+        {
+            List<Entidades.FacturaDetalles> lista = new List<Entidades.FacturaDetalles>();
+            using (var db = new RegistroDb())
+            {
+                try
+                {
+                    lista = db.RelacionDb.ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return lista;
+            }
+        }
+
+
         public static List<Articulos> Listar(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
     {
         List<Articulos> listado = new List<Articulos>();

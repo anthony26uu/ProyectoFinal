@@ -399,8 +399,8 @@ namespace ProyectoTech.Ui.Registros
                     {
 
                         relacion.IdDetalle = facturaG.IdFactura;
-                        BLL.FacturaDetallesBLL.Guardar(new FacturaDetalles(relacion.IdDetalle,facturaG.IdFactura,relacion.IdArticulo, relacion.Precio, relacion.Cantidad));
-                 
+                        BLL.FacturaDetallesBLL.Guardar(new FacturaDetalles(relacion.IdDetalle,relacion.IdFactura,relacion.IdArticulo, relacion.Precio, relacion.Cantidad));
+                  //      BLL.FacturaDetallesBLL.Guardar(relacion);
 
                     }
                 }else
@@ -449,9 +449,10 @@ namespace ProyectoTech.Ui.Registros
                     {
                         errorProviderTodo.Clear();
                         Entidades.Articulos producto = (Articulos)idArticuloComboBox.SelectedItem;
+                     
+                        listaRelaciones.Add(new FacturaDetalles(0,facturaG.IdFactura, 0, articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text)));
+                       addData(detalle.IdDetalle, facturaG.IdFactura, comboBoxNombreAr.Text, idArticuloComboBox.Text, producto.PrecioCompra, Utilidades.TOINT(textBoxCantidad.Text), Utilidades.TOINT(textBoxTotalArticlo.Text));
                        
-                        listaRelaciones.Add(new FacturaDetalles(0,facturaG.IdFactura, Utilidades.TOINT(idArticuloComboBox.Text), articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text)));
-                        addData(detalle.IdDetalle, facturaG.IdFactura, comboBoxNombreAr.Text, idArticuloComboBox.Text, producto.PrecioCompra, Utilidades.TOINT(textBoxCantidad.Text), Utilidades.TOINT(textBoxTotalArticlo.Text));
                         EfectivomaskedTextBox.Enabled = true;
                     }
 
@@ -556,9 +557,9 @@ namespace ProyectoTech.Ui.Registros
                          
                         foreach (var relacion in listaRelaciones)
                         {
-
+                           
                             listadoArticulos.Add(BLL.ArticuloBLL.Buscar(p => p.IdArticulo == relacion.IdArticulo));
-
+                          
                             /*
                             MessageBox.Show("Enter");
                            
