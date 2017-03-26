@@ -18,10 +18,26 @@ namespace BLL
             {
                 
                     return repositorio.Guardar(detalle);
-                
-                
+     
             }
         }
+
+        public static List<FacturaDetalles> GetList(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new Repositorio<FacturaDetalles>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
+
+        public static Entidades.FacturaDetalles Buscar(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new DAL.Repositorio<FacturaDetalles>())
+            {
+                return repositorio.Buscar(criterioBusqueda);
+            }
+        }
+
 
         public static bool Guardar(FacturaDetalles relacion)
     {
@@ -62,7 +78,7 @@ namespace BLL
         }
         return resultado;
     }
-        public static List<FacturaDetalles> GetList(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
+        public static List<FacturaDetalles> GetLista(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
         {
             using (var repositorio = new Repositorio<FacturaDetalles>())
             {

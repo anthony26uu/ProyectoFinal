@@ -34,7 +34,6 @@
             this.descuentoLabel = new System.Windows.Forms.Label();
             this.clienteLabel = new System.Windows.Forms.Label();
             this.tipoVentaLabel = new System.Windows.Forms.Label();
-            this.iTBSLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelPrecio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,22 +48,12 @@
             this.labelHORA = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
-            this.IdDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artiuclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
-            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
-            this.buttonAgregar = new System.Windows.Forms.Button();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
@@ -73,14 +62,24 @@
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
-            this.iTBSMaskedTextBox = new System.Windows.Forms.TextBox();
             this.EfectivomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
+            this.IdDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artiuclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
-            this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -133,16 +132,6 @@
             this.tipoVentaLabel.Size = new System.Drawing.Size(62, 13);
             this.tipoVentaLabel.TabIndex = 13;
             this.tipoVentaLabel.Text = "Tipo Venta:";
-            // 
-            // iTBSLabel
-            // 
-            this.iTBSLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.iTBSLabel.AutoSize = true;
-            this.iTBSLabel.Location = new System.Drawing.Point(190, 20);
-            this.iTBSLabel.Name = "iTBSLabel";
-            this.iTBSLabel.Size = new System.Drawing.Size(61, 13);
-            this.iTBSLabel.TabIndex = 17;
-            this.iTBSLabel.Text = "Toal ITBIS:";
             // 
             // label1
             // 
@@ -203,7 +192,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 20);
+            this.label3.Location = new System.Drawing.Point(176, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 53;
@@ -236,6 +225,7 @@
             this.descuentoMaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.descuentoMaskedTextBox.TabIndex = 10;
             this.descuentoMaskedTextBox.ValidatingType = typeof(int);
+            this.descuentoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descuentoMaskedTextBox_KeyPress);
             // 
             // labelFecha
             // 
@@ -278,47 +268,10 @@
             this.Cantidad,
             this.Total});
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridViewVenta.Location = new System.Drawing.Point(2, 305);
+            this.dataGridViewVenta.Location = new System.Drawing.Point(3, 305);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 227);
             this.dataGridViewVenta.TabIndex = 32;
-            // 
-            // IdDetalle
-            // 
-            this.IdDetalle.HeaderText = "Id Detalle";
-            this.IdDetalle.Name = "IdDetalle";
-            this.IdDetalle.Visible = false;
-            // 
-            // IdFactura
-            // 
-            this.IdFactura.HeaderText = "Id Factura";
-            this.IdFactura.Name = "IdFactura";
-            this.IdFactura.Visible = false;
-            // 
-            // Artiuclo
-            // 
-            this.Artiuclo.HeaderText = "Nombre Articulo";
-            this.Artiuclo.Name = "Artiuclo";
-            // 
-            // IdArticulo
-            // 
-            this.IdArticulo.HeaderText = "Articulo Id";
-            this.IdArticulo.Name = "IdArticulo";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
             // 
             // groupBox1
             // 
@@ -340,15 +293,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
             // 
-            // panel2
+            // maskedTextBoxId
             // 
-            this.panel2.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(423, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(139, 120);
-            this.panel2.TabIndex = 57;
+            this.maskedTextBoxId.Location = new System.Drawing.Point(107, 12);
+            this.maskedTextBoxId.Mask = "99999";
+            this.maskedTextBoxId.Name = "maskedTextBoxId";
+            this.maskedTextBoxId.Size = new System.Drawing.Size(198, 20);
+            this.maskedTextBoxId.TabIndex = 61;
             // 
             // tipoVentaComboBox
             // 
@@ -370,17 +321,6 @@
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(198, 21);
             this.clienteComboBox.TabIndex = 55;
-            // 
-            // Nuevo_Cliente
-            // 
-            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 48);
-            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
-            this.Nuevo_Cliente.Size = new System.Drawing.Size(57, 41);
-            this.Nuevo_Cliente.TabIndex = 54;
-            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
-            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
             // 
             // groupBox2
             // 
@@ -406,17 +346,6 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(219, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(86, 75);
-            this.panel1.TabIndex = 68;
-            // 
             // comboBoxNombreAr
             // 
             this.comboBoxNombreAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -425,22 +354,6 @@
             this.comboBoxNombreAr.Name = "comboBoxNombreAr";
             this.comboBoxNombreAr.Size = new System.Drawing.Size(130, 21);
             this.comboBoxNombreAr.TabIndex = 52;
-            // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
-            this.buttonAgregar.TabIndex = 58;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // textBoxCantidad
             // 
@@ -508,19 +421,10 @@
             this.TotalmaskedTextBox.Size = new System.Drawing.Size(82, 20);
             this.TotalmaskedTextBox.TabIndex = 42;
             // 
-            // iTBSMaskedTextBox
-            // 
-            this.iTBSMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.iTBSMaskedTextBox.Location = new System.Drawing.Point(277, 16);
-            this.iTBSMaskedTextBox.Name = "iTBSMaskedTextBox";
-            this.iTBSMaskedTextBox.ReadOnly = true;
-            this.iTBSMaskedTextBox.Size = new System.Drawing.Size(82, 20);
-            this.iTBSMaskedTextBox.TabIndex = 40;
-            // 
             // EfectivomaskedTextBox
             // 
             this.EfectivomaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(78, 17);
+            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(241, 16);
             this.EfectivomaskedTextBox.Mask = "9999999999";
             this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
             this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
@@ -544,9 +448,7 @@
             this.groupBoxDinero.Controls.Add(this.label3);
             this.groupBoxDinero.Controls.Add(this.EfectivomaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.TotalmaskedTextBox);
-            this.groupBoxDinero.Controls.Add(this.iTBSMaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.label4);
-            this.groupBoxDinero.Controls.Add(this.iTBSLabel);
             this.groupBoxDinero.Location = new System.Drawing.Point(119, 538);
             this.groupBoxDinero.Name = "groupBoxDinero";
             this.groupBoxDinero.Size = new System.Drawing.Size(672, 46);
@@ -554,17 +456,70 @@
             this.groupBoxDinero.TabStop = false;
             this.groupBoxDinero.Text = "Dinero";
             // 
+            // IdDetalle
+            // 
+            this.IdDetalle.HeaderText = "Id Detalle";
+            this.IdDetalle.Name = "IdDetalle";
+            this.IdDetalle.Visible = false;
+            // 
+            // IdFactura
+            // 
+            this.IdFactura.HeaderText = "Id Factura";
+            this.IdFactura.Name = "IdFactura";
+            this.IdFactura.Visible = false;
+            // 
+            // Artiuclo
+            // 
+            this.Artiuclo.HeaderText = "Nombre Articulo";
+            this.Artiuclo.Name = "Artiuclo";
+            // 
+            // IdArticulo
+            // 
+            this.IdArticulo.HeaderText = "Articulo Id";
+            this.IdArticulo.Name = "IdArticulo";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.button1.Location = new System.Drawing.Point(814, 535);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 51);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "Imprimir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // buttonNuevo
             // 
             this.buttonNuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonNuevo.Image = global::ProyectoTech.Properties.Resources.BotonAñadir;
-            this.buttonNuevo.Location = new System.Drawing.Point(825, 538);
+            this.buttonNuevo.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonNuevo.Location = new System.Drawing.Point(882, 535);
             this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(71, 48);
+            this.buttonNuevo.Size = new System.Drawing.Size(55, 51);
             this.buttonNuevo.TabIndex = 59;
+            this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNuevo.UseVisualStyleBackColor = true;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
@@ -575,40 +530,82 @@
             this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonGuardar.Image = global::ProyectoTech.Properties.Resources.BotonGuardar11;
+            this.buttonGuardar.Image = global::ProyectoTech.Properties.Resources.BotonGuardar111;
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGuardar.Location = new System.Drawing.Point(915, 537);
+            this.buttonGuardar.Location = new System.Drawing.Point(956, 535);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(66, 49);
+            this.buttonGuardar.Size = new System.Drawing.Size(66, 51);
             this.buttonGuardar.TabIndex = 57;
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(219, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(86, 75);
+            this.panel1.TabIndex = 68;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
+            this.buttonAgregar.TabIndex = 58;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.buttonBuscar.Location = new System.Drawing.Point(219, 10);
+            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonBusqueda1;
+            this.buttonBuscar.Location = new System.Drawing.Point(311, 8);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(88, 32);
+            this.buttonBuscar.Size = new System.Drawing.Size(51, 28);
             this.buttonBuscar.TabIndex = 60;
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
-            // maskedTextBoxId
+            // panel2
             // 
-            this.maskedTextBoxId.Location = new System.Drawing.Point(107, 12);
-            this.maskedTextBoxId.Name = "maskedTextBoxId";
-            this.maskedTextBoxId.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxId.TabIndex = 61;
+            this.panel2.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(423, 12);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(139, 120);
+            this.panel2.TabIndex = 57;
+            // 
+            // Nuevo_Cliente
+            // 
+            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 42);
+            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
+            this.Nuevo_Cliente.Size = new System.Drawing.Size(40, 31);
+            this.Nuevo_Cliente.TabIndex = 54;
+            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
+            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
             // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 588);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.groupBoxDinero);
@@ -652,7 +649,6 @@
         private System.Windows.Forms.Label UsuarioLabel;
         private System.Windows.Forms.ErrorProvider errorProviderTodo;
         private System.Windows.Forms.TextBox TotalmaskedTextBox;
-        private System.Windows.Forms.TextBox iTBSMaskedTextBox;
         private System.Windows.Forms.TextBox PreciotextBox;
         private System.Windows.Forms.TextBox ItbsArticultextBox;
         private System.Windows.Forms.TextBox textBoxTotalArticlo;
@@ -671,7 +667,6 @@
         private System.Windows.Forms.Label descuentoLabel;
         private System.Windows.Forms.Label clienteLabel;
         private System.Windows.Forms.Label tipoVentaLabel;
-        private System.Windows.Forms.Label iTBSLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPrecio;
         private System.Windows.Forms.Label label2;
@@ -682,6 +677,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonBuscar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artiuclo;
@@ -689,7 +686,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
+        private System.Windows.Forms.Button button1;
     }
 }

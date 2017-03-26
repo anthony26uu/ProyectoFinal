@@ -123,9 +123,29 @@ namespace ProyectoTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonBusqueda1 {
+            get {
+                object obj = ResourceManager.GetObject("BotonBusqueda1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonGuardar11 {
             get {
                 object obj = ResourceManager.GetObject("BotonGuardar11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonGuardar111 {
+            get {
+                object obj = ResourceManager.GetObject("BotonGuardar111", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +236,16 @@ namespace ProyectoTech.Properties {
         internal static System.Drawing.Bitmap Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impresora1_25x25 {
+            get {
+                object obj = ResourceManager.GetObject("Impresora1-25x25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

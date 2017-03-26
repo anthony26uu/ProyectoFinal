@@ -20,14 +20,16 @@ namespace Entidades
         public int CantidadProd { get; set; }
         public decimal ITBS { get; set; }
 
+    //    public virtual List<Entidades.Articulos> ArticuloList { get; set; }
+
         public Facturas()
         {
-
+       //     ArticuloList = new List<Entidades.Articulos>();
 
         }
-        public Facturas(int idFactura, string nombreUsuario, int idArticulo, DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd, decimal itbis  )
+        public Facturas( string nombreUsuario, int idArticulo, DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd, decimal itbis  )
         {
-            this.IdFactura = IdFactura;
+          
             this.NombreUsuario = nombreUsuario;
             this.IdArticulo = idArticulo;
             this.FechaVenta = fechaVenta;

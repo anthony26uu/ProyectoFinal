@@ -57,4 +57,4 @@ create table  ArticuloCategorias (
 
 
 create table FacturaDetalles(IdDetalle int identity(1,1) primary key, IdFactura int, 
-IdArticulo int ,  Precio decimal,   Cantidad decimal);
+IdArticulo int ,  Precio decimal,   Cantidad int);
