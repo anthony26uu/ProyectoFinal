@@ -45,11 +45,7 @@ namespace ProyectoTech.Ui.Registros
                 NombreerrorProvider.SetError(direccionTextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
-            if (string.IsNullOrEmpty(emailTextBox.Text))
-            {
-                NombreerrorProvider.SetError(emailTextBox, "Por favor llenar el campo vacio.");
-                retorno = false;
-            }
+            
             if (string.IsNullOrEmpty(telefonoMaskedTextBox.Text))
             {
                 NombreerrorProvider.SetError(telefonoMaskedTextBox, "Por favor llenar el campo vacio.");
@@ -106,13 +102,13 @@ namespace ProyectoTech.Ui.Registros
                     if (id != guardar.ClienteId)
                     {
                         BLL.ClientesBLL.Mofidicar(guardar);
-                        MessageBox.Show("Categoria modificada");
+                        MessageBox.Show("Cliente se ha Modificado");
                     }
                     else
                     {
 
                        BLL.ClientesBLL.Guardar(guardar);
-                        MessageBox.Show("Nueva categproa agregada con exito!");
+                        MessageBox.Show("Nuevo cliente agregado con exito!");
                     }
                 }
                 Limpiar();

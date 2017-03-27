@@ -182,6 +182,7 @@
             this.Controls.Add(nombreCategoriaLabel);
             this.Controls.Add(this.nombreCategoriaTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Categorias";

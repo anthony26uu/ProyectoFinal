@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarVenta));
             this.idFacturaLabel = new System.Windows.Forms.Label();
             this.idArticuloLabel = new System.Windows.Forms.Label();
             this.descuentoLabel = new System.Windows.Forms.Label();
@@ -50,15 +51,10 @@
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BusquedamaskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
-            this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
-            this.buttonAgregar = new System.Windows.Forms.Button();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
@@ -70,11 +66,24 @@
             this.EfectivomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.RealizoVentatextBox = new System.Windows.Forms.TextBox();
+            this.FechaVentatextBox = new System.Windows.Forms.TextBox();
+            this.Cliente_textBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.Nuevo_Cliente = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button_Apagado = new System.Windows.Forms.Button();
+            this.button_CambiarUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,7 +168,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(365, 20);
+            this.label4.Location = new System.Drawing.Point(50, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 29;
@@ -187,7 +196,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 19);
+            this.label3.Location = new System.Drawing.Point(186, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 53;
@@ -197,7 +206,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(515, 20);
+            this.label9.Location = new System.Drawing.Point(365, 27);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 54;
@@ -258,18 +267,23 @@
             this.ColumnTotal,
             this.ColumnCantidad});
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridViewVenta.Location = new System.Drawing.Point(3, 305);
+            this.dataGridViewVenta.Location = new System.Drawing.Point(3, 309);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
-            this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 227);
+            this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 216);
             this.dataGridViewVenta.TabIndex = 32;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Cliente_textBox);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.FechaVentatextBox);
             this.groupBox1.Controls.Add(this.BusquedamaskedTextBoxId);
+            this.groupBox1.Controls.Add(this.RealizoVentatextBox);
             this.groupBox1.Controls.Add(this.buttonBuscar);
-            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.tipoVentaComboBox);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.clienteComboBox);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Nuevo_Cliente);
             this.groupBox1.Controls.Add(this.idFacturaLabel);
             this.groupBox1.Controls.Add(this.descuentoLabel);
@@ -291,27 +305,6 @@
             this.BusquedamaskedTextBoxId.Size = new System.Drawing.Size(198, 20);
             this.BusquedamaskedTextBoxId.TabIndex = 61;
             // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonBusqueda1;
-            this.buttonBuscar.Location = new System.Drawing.Point(311, 8);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(51, 28);
-            this.buttonBuscar.TabIndex = 60;
-            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ProyectoTech.Properties.Resources.clientes;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(423, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(139, 120);
-            this.panel2.TabIndex = 57;
-            // 
             // tipoVentaComboBox
             // 
             this.tipoVentaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -332,17 +325,6 @@
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(198, 21);
             this.clienteComboBox.TabIndex = 55;
-            // 
-            // Nuevo_Cliente
-            // 
-            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 42);
-            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
-            this.Nuevo_Cliente.Size = new System.Drawing.Size(40, 31);
-            this.Nuevo_Cliente.TabIndex = 54;
-            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
-            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
             // 
             // groupBox2
             // 
@@ -368,17 +350,6 @@
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(219, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(86, 75);
-            this.panel1.TabIndex = 68;
-            // 
             // comboBoxNombreAr
             // 
             this.comboBoxNombreAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -387,22 +358,6 @@
             this.comboBoxNombreAr.Name = "comboBoxNombreAr";
             this.comboBoxNombreAr.Size = new System.Drawing.Size(130, 21);
             this.comboBoxNombreAr.TabIndex = 52;
-            // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
-            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
-            this.buttonAgregar.TabIndex = 58;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // textBoxCantidad
             // 
@@ -440,7 +395,7 @@
             // 
             this.TipoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TipoUsuarioLabel.AutoSize = true;
-            this.TipoUsuarioLabel.Location = new System.Drawing.Point(9, 552);
+            this.TipoUsuarioLabel.Location = new System.Drawing.Point(9, 556);
             this.TipoUsuarioLabel.Name = "TipoUsuarioLabel";
             this.TipoUsuarioLabel.Size = new System.Drawing.Size(67, 13);
             this.TipoUsuarioLabel.TabIndex = 50;
@@ -451,7 +406,7 @@
             this.UsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.UsuarioLabel.AutoSize = true;
             this.UsuarioLabel.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsuarioLabel.Location = new System.Drawing.Point(12, 535);
+            this.UsuarioLabel.Location = new System.Drawing.Point(12, 539);
             this.UsuarioLabel.Name = "UsuarioLabel";
             this.UsuarioLabel.Size = new System.Drawing.Size(64, 17);
             this.UsuarioLabel.TabIndex = 51;
@@ -464,7 +419,7 @@
             // TotalmaskedTextBox
             // 
             this.TotalmaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalmaskedTextBox.Location = new System.Drawing.Point(410, 16);
+            this.TotalmaskedTextBox.Location = new System.Drawing.Point(95, 23);
             this.TotalmaskedTextBox.Name = "TotalmaskedTextBox";
             this.TotalmaskedTextBox.ReadOnly = true;
             this.TotalmaskedTextBox.Size = new System.Drawing.Size(82, 20);
@@ -473,7 +428,7 @@
             // EfectivomaskedTextBox
             // 
             this.EfectivomaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(241, 16);
+            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(251, 23);
             this.EfectivomaskedTextBox.Mask = "9999999999";
             this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
             this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
@@ -483,7 +438,7 @@
             // textBoxDevuelta
             // 
             this.textBoxDevuelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDevuelta.Location = new System.Drawing.Point(573, 16);
+            this.textBoxDevuelta.Location = new System.Drawing.Point(423, 23);
             this.textBoxDevuelta.Name = "textBoxDevuelta";
             this.textBoxDevuelta.ReadOnly = true;
             this.textBoxDevuelta.Size = new System.Drawing.Size(95, 20);
@@ -498,60 +453,12 @@
             this.groupBoxDinero.Controls.Add(this.EfectivomaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.TotalmaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.label4);
-            this.groupBoxDinero.Location = new System.Drawing.Point(119, 538);
+            this.groupBoxDinero.Location = new System.Drawing.Point(269, 539);
             this.groupBoxDinero.Name = "groupBoxDinero";
-            this.groupBoxDinero.Size = new System.Drawing.Size(672, 46);
+            this.groupBoxDinero.Size = new System.Drawing.Size(522, 53);
             this.groupBoxDinero.TabIndex = 56;
             this.groupBoxDinero.TabStop = false;
             this.groupBoxDinero.Text = "Dinero";
-            // 
-            // buttonImprimir
-            // 
-            this.buttonImprimir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
-            this.buttonImprimir.Location = new System.Drawing.Point(814, 535);
-            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonImprimir.Name = "buttonImprimir";
-            this.buttonImprimir.Size = new System.Drawing.Size(55, 51);
-            this.buttonImprimir.TabIndex = 60;
-            this.buttonImprimir.Text = "Imprimir";
-            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonImprimir.UseVisualStyleBackColor = true;
-            // 
-            // buttonNuevo
-            // 
-            this.buttonNuevo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonNuevo.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
-            this.buttonNuevo.Location = new System.Drawing.Point(882, 535);
-            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(55, 51);
-            this.buttonNuevo.TabIndex = 59;
-            this.buttonNuevo.Text = "Nuevo";
-            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
-            // 
-            // buttonGuardar
-            // 
-            this.buttonGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonGuardar.Image = global::ProyectoTech.Properties.Resources.BotonGuardar111;
-            this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGuardar.Location = new System.Drawing.Point(956, 535);
-            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(66, 51);
-            this.buttonGuardar.TabIndex = 57;
-            this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonGuardar.UseVisualStyleBackColor = true;
-            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // ColumnTotal
             // 
@@ -563,11 +470,209 @@
             this.ColumnCantidad.HeaderText = "Cantidad Venta";
             this.ColumnCantidad.Name = "ColumnCantidad";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(374, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Realizo Venta";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(374, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "Fecha de Venta";
+            // 
+            // RealizoVentatextBox
+            // 
+            this.RealizoVentatextBox.Location = new System.Drawing.Point(463, 9);
+            this.RealizoVentatextBox.Name = "RealizoVentatextBox";
+            this.RealizoVentatextBox.ReadOnly = true;
+            this.RealizoVentatextBox.Size = new System.Drawing.Size(99, 20);
+            this.RealizoVentatextBox.TabIndex = 63;
+            // 
+            // FechaVentatextBox
+            // 
+            this.FechaVentatextBox.Location = new System.Drawing.Point(463, 44);
+            this.FechaVentatextBox.Name = "FechaVentatextBox";
+            this.FechaVentatextBox.ReadOnly = true;
+            this.FechaVentatextBox.Size = new System.Drawing.Size(99, 20);
+            this.FechaVentatextBox.TabIndex = 64;
+            // 
+            // Cliente_textBox
+            // 
+            this.Cliente_textBox.Location = new System.Drawing.Point(463, 76);
+            this.Cliente_textBox.Name = "Cliente_textBox";
+            this.Cliente_textBox.ReadOnly = true;
+            this.Cliente_textBox.Size = new System.Drawing.Size(99, 20);
+            this.Cliente_textBox.TabIndex = 66;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(374, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 13);
+            this.label10.TabIndex = 65;
+            this.label10.Text = "Cliente Venta";
+            // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.buttonImprimir.Location = new System.Drawing.Point(814, 543);
+            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(55, 51);
+            this.buttonImprimir.TabIndex = 60;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonNuevo.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonNuevo.Location = new System.Drawing.Point(882, 543);
+            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(55, 51);
+            this.buttonNuevo.TabIndex = 59;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonGuardar.Image = global::ProyectoTech.Properties.Resources.BotonGuardar111;
+            this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonGuardar.Location = new System.Drawing.Point(956, 543);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(66, 51);
+            this.buttonGuardar.TabIndex = 57;
+            this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.productos;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(219, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(86, 75);
+            this.panel1.TabIndex = 68;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.BotonAñadir1;
+            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
+            this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
+            this.buttonAgregar.TabIndex = 58;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Image = global::ProyectoTech.Properties.Resources.BotonBusqueda1;
+            this.buttonBuscar.Location = new System.Drawing.Point(311, 8);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(51, 28);
+            this.buttonBuscar.TabIndex = 60;
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // Nuevo_Cliente
+            // 
+            this.Nuevo_Cliente.Image = global::ProyectoTech.Properties.Resources.Add_File_32px;
+            this.Nuevo_Cliente.Location = new System.Drawing.Point(311, 42);
+            this.Nuevo_Cliente.Name = "Nuevo_Cliente";
+            this.Nuevo_Cliente.Size = new System.Drawing.Size(40, 47);
+            this.Nuevo_Cliente.TabIndex = 54;
+            this.Nuevo_Cliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevo_Cliente.UseVisualStyleBackColor = true;
+            this.Nuevo_Cliente.Click += new System.EventHandler(this.Nuevo_Cliente_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.BackgroundImage = global::ProyectoTech.Properties.Resources.icono_paquetes;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(668, 61);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 229);
+            this.panel3.TabIndex = 61;
+            // 
+            // button_Apagado
+            // 
+            this.button_Apagado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Apagado.BackColor = System.Drawing.Color.Transparent;
+            this.button_Apagado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Apagado.FlatAppearance.BorderSize = 0;
+            this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.FlechaDerecha25x25;
+            this.button_Apagado.Location = new System.Drawing.Point(201, 539);
+            this.button_Apagado.Name = "button_Apagado";
+            this.button_Apagado.Size = new System.Drawing.Size(59, 55);
+            this.button_Apagado.TabIndex = 62;
+            this.button_Apagado.Text = "Cerrar";
+            this.button_Apagado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Apagado.UseVisualStyleBackColor = false;
+            this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
+            // 
+            // button_CambiarUser
+            // 
+            this.button_CambiarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_CambiarUser.BackColor = System.Drawing.Color.Transparent;
+            this.button_CambiarUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_CambiarUser.FlatAppearance.BorderSize = 0;
+            this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_CambiarUser.Image = global::ProyectoTech.Properties.Resources.user3;
+            this.button_CambiarUser.Location = new System.Drawing.Point(109, 531);
+            this.button_CambiarUser.Name = "button_CambiarUser";
+            this.button_CambiarUser.Size = new System.Drawing.Size(68, 61);
+            this.button_CambiarUser.TabIndex = 63;
+            this.button_CambiarUser.Text = "Usuario";
+            this.button_CambiarUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_CambiarUser.UseVisualStyleBackColor = false;
+            this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 588);
+            this.ClientSize = new System.Drawing.Size(1025, 596);
+            this.Controls.Add(this.button_CambiarUser);
+            this.Controls.Add(this.button_Apagado);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonGuardar);
@@ -580,6 +685,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarVenta";
             this.Text = "Facturacion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrarVenta_FormClosed);
@@ -639,11 +745,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.MaskedTextBox BusquedamaskedTextBoxId;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
+        private System.Windows.Forms.TextBox FechaVentatextBox;
+        private System.Windows.Forms.TextBox RealizoVentatextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox Cliente_textBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button_Apagado;
+        private System.Windows.Forms.Button button_CambiarUser;
     }
 }

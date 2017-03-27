@@ -193,6 +193,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\icono_paquetes.png" />
     <None Include="Resources\Impresora1-25x25.png" />
     <None Include="Resources\BotonGuardar111.png" />
     <None Include="Resources\BotonBusqueda1.png" />

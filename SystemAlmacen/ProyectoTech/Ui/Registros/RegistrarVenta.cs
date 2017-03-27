@@ -136,18 +136,19 @@ namespace ProyectoTech.Ui.Registros
           
             double totalg = 0;
             double total;
-          
+            double cantidad = 0;
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
                 total = Convert.ToDouble(row.Cells[4].Value)  * Convert.ToDouble(row.Cells[6].Value); ;
-
-                row.Cells[1].Value= textBoxCantidad.Text;
+                cantidad = Convert.ToDouble(textBoxCantidad.Value);
+                row.Cells[1].Value = cantidad;
                 row.Cells[0].Value = total.ToString();
+            //    row.Cells[1].Value
                 totalg += Convert.ToDouble(row.Cells[0].Value);
 
 
             }
-
+            
             TotalmaskedTextBox.Text = totalg.ToString();
             TotalmaskedTextBox.Text = totalg.ToString();
         }
@@ -201,6 +202,9 @@ namespace ProyectoTech.Ui.Registros
       
         private void Limpiar()
         {
+            Cliente_textBox.Clear();
+            RealizoVentatextBox.Clear();
+            FechaVentatextBox.Clear();
             comboBoxNombreAr.Text = null;
             textBoxCantidad.ResetText();
             listadoArticulos = new List<Articulos>();
@@ -392,7 +396,7 @@ namespace ProyectoTech.Ui.Registros
 
                 if (facturaG != null && guardadoRelacion)
                 {
-                    MessageBox.Show("Guardado");
+                    MessageBox.Show("Factura Guardad con exito");
                 }
                 else
                 {
@@ -514,7 +518,9 @@ namespace ProyectoTech.Ui.Registros
 
                 tipoVentaComboBox.Text = facturaG.TipoVenta;
                 clienteComboBox.Text = facturaG.Cliente;
-
+                RealizoVentatextBox.Text = facturaG.NombreUsuario;
+                FechaVentatextBox.Text = facturaG.FechaVenta.ToString();
+                Cliente_textBox.Text = facturaG.Cliente;
                 RefreshDataGridView();
 
                 CalcularFactura();
@@ -523,7 +529,7 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("No hay Factura Registrada con ese Id");
             }
 
 
@@ -547,6 +553,18 @@ namespace ProyectoTech.Ui.Registros
                     textBoxDevuelta.Text = resultado.ToString();
                 }
             }
+        }
+
+        private void button_CambiarUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ui.Incio.Login.Funcion().Show();
+            Ui.Incio.Login.Funcion().Activate();
+        }
+
+        private void button_Apagado_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }
