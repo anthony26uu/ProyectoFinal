@@ -168,5 +168,11 @@ namespace ProyectoTech.Ui.Incio
             Ui.Incio.Login.Funcion().Show();
             Ui.Incio.Login.Funcion().Activate();
         }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Conultas.ConsultaUsuario.Funcion().Show();
+            Ui.Conultas.ConsultaUsuario.Funcion().Activate();
+        }
     }
 }

@@ -48,6 +48,14 @@ namespace BLL
             return resultado;
         }
 
+        public static List<Entidades.Articulos> GetList(Expression<Func<Entidades.Articulos, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new DAL.Repositorio<Entidades.Articulos>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
+
         public static Articulos Buscar(Expression<Func<Articulos, bool>> tipo)
         {
             Articulos Result = null;

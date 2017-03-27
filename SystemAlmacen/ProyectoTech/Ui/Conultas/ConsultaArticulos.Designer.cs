@@ -154,6 +154,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsultaArticulos";
             this.Text = "ConsultaArticulos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaArticulos_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

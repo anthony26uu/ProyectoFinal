@@ -57,5 +57,30 @@ namespace BLL
             return Result;
         }
 
+        public static List<Entidades.Usuarios> GetListodo()
+        {
+
+            using (var db = new DAL.Repositorio<Entidades.Usuarios>())
+            {
+                try
+                {
+                    return db.ListaTodo();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+        }
+
+        public static List<Entidades.Usuarios> GetList(Expression<Func<Entidades.Usuarios, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new DAL.Repositorio<Entidades.Usuarios>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
     }
 }

@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Conultas\ConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Conultas\ConsultaUsuario.Designer.cs">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\RegistrosDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Conultas\ConsultaArticulos.resx">
       <DependentUpon>ConsultaArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Conultas\ConsultaUsuario.resx">
+      <DependentUpon>ConsultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Incio\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
