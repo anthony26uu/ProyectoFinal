@@ -100,7 +100,10 @@ namespace DAL
                 EntitySet.Remove(laEntidad);
                 Result = Contex.SaveChanges() > 0;
             }
-            catch { }
+            catch {
+              //  throw;
+                return false;
+            }
 
             return Result;
         }

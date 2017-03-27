@@ -95,8 +95,10 @@ namespace ProyectoTech.Ui.Conultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (comboBox1.SelectedIndex == 0)
             {
+                errorProvider.Clear();
                 buscaText.Clear();
                // CampoVacioerrorProvider.Clear();
                 buscaText.Enabled = true;
@@ -106,6 +108,7 @@ namespace ProyectoTech.Ui.Conultas
             }
             if (comboBox1.SelectedIndex == 1)
             {
+                errorProvider.Clear();
                 buscaText.Clear();
                 // CampoVacioerrorProvider.Clear();
                 buscaText.Enabled = false;
@@ -115,6 +118,7 @@ namespace ProyectoTech.Ui.Conultas
             }
             if (comboBox1.SelectedIndex == 2)
             {
+                errorProvider.Clear();
                 buscaText.Clear();
                 // CampoVacioerrorProvider.Clear();
                 buscaText.Enabled = false;

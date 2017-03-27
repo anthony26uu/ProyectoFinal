@@ -240,11 +240,10 @@
             // ITBISmaskedTextBox
             // 
             this.ITBISmaskedTextBox.Location = new System.Drawing.Point(114, 241);
-            this.ITBISmaskedTextBox.Mask = "99999";
+            this.ITBISmaskedTextBox.Mask = "9.9999";
             this.ITBISmaskedTextBox.Name = "ITBISmaskedTextBox";
             this.ITBISmaskedTextBox.Size = new System.Drawing.Size(200, 20);
             this.ITBISmaskedTextBox.TabIndex = 7;
-            this.ITBISmaskedTextBox.ValidatingType = typeof(int);
             // 
             // panel1
             // 

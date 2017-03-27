@@ -78,7 +78,16 @@ namespace BLL
         return resultado;
     }
 
-    public static bool Guardar(List<FacturaDetalles >listado)
+        public static bool Eliminar(Entidades.FacturaDetalles detalle)
+        {
+            using (var repositorio = new Repositorio<Entidades.FacturaDetalles>())
+            {
+                return repositorio.Eliminar(detalle);
+            }
+        }
+
+
+        public static bool Guardar(List<FacturaDetalles >listado)
     {
         bool resultado = false;
         try
