@@ -83,7 +83,6 @@
             this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button_Apagado = new System.Windows.Forms.Button();
-            this.button_CambiarUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -638,7 +637,7 @@
             this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.FlechaDerecha25x25;
-            this.button_Apagado.Location = new System.Drawing.Point(201, 539);
+            this.button_Apagado.Location = new System.Drawing.Point(109, 537);
             this.button_Apagado.Name = "button_Apagado";
             this.button_Apagado.Size = new System.Drawing.Size(59, 55);
             this.button_Apagado.TabIndex = 62;
@@ -647,30 +646,11 @@
             this.button_Apagado.UseVisualStyleBackColor = false;
             this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
-            // button_CambiarUser
-            // 
-            this.button_CambiarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_CambiarUser.BackColor = System.Drawing.Color.Transparent;
-            this.button_CambiarUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_CambiarUser.FlatAppearance.BorderSize = 0;
-            this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_CambiarUser.Image = global::ProyectoTech.Properties.Resources.user3;
-            this.button_CambiarUser.Location = new System.Drawing.Point(109, 531);
-            this.button_CambiarUser.Name = "button_CambiarUser";
-            this.button_CambiarUser.Size = new System.Drawing.Size(68, 61);
-            this.button_CambiarUser.TabIndex = 63;
-            this.button_CambiarUser.Text = "Usuario";
-            this.button_CambiarUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_CambiarUser.UseVisualStyleBackColor = false;
-            this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
-            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 596);
-            this.Controls.Add(this.button_CambiarUser);
             this.Controls.Add(this.button_Apagado);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonImprimir);
@@ -758,6 +738,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_Apagado;
-        private System.Windows.Forms.Button button_CambiarUser;
     }
 }

@@ -560,6 +560,7 @@ namespace ProyectoTech.Ui.Registros
             this.Hide();
             Ui.Incio.Login.Funcion().Show();
             Ui.Incio.Login.Funcion().Activate();
+            this.Hide();
         }
 
         private void button_Apagado_Click(object sender, EventArgs e)
