@@ -22,6 +22,24 @@ namespace BLL
             }
         }
 
+        public static List<Entidades.FacturaDetalles> GetListado(Expression<Func<Entidades.FacturaDetalles, bool>> criterioBusqueda)
+        {
+            List<Entidades.FacturaDetalles> lista = new List<Entidades.FacturaDetalles>();
+            using (var db = new RegistroDb())
+            {
+                try
+                {
+                    lista = db.RelacionDb.Where(criterioBusqueda).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return lista;
+            }
+        }
+
         public static List<FacturaDetalles> GetList(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
         {
             using (var repositorio = new Repositorio<FacturaDetalles>())

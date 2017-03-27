@@ -33,7 +33,26 @@ namespace BLL
 
             return Result;
         }
+        public static Entidades.Facturas BuscarB(int id)
+        {
 
+            Entidades.Facturas nuevo;
+            using (var db = new RegistroDb())
+            {
+                try
+                {
+                    nuevo = db.FacturasDb.Find(id);
+
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                return nuevo;
+            }
+        }
         public static Facturas Buscar(Expression<Func<Facturas, bool>> criterioBusqueda)
         {
             using (var repositorio = new DAL.Repositorio<Facturas>())

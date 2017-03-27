@@ -48,15 +48,8 @@
             this.labelHORA = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewVenta = new System.Windows.Forms.DataGridView();
-            this.IdDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artiuclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
+            this.BusquedamaskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tipoVentaComboBox = new System.Windows.Forms.ComboBox();
@@ -77,9 +70,11 @@
             this.EfectivomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -260,59 +255,17 @@
             this.dataGridViewVenta.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdDetalle,
-            this.IdFactura,
-            this.Artiuclo,
-            this.IdArticulo,
-            this.Precio,
-            this.Cantidad,
-            this.Total});
+            this.ColumnTotal,
+            this.ColumnCantidad});
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
             this.dataGridViewVenta.Location = new System.Drawing.Point(3, 305);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 227);
             this.dataGridViewVenta.TabIndex = 32;
             // 
-            // IdDetalle
-            // 
-            this.IdDetalle.HeaderText = "Id Detalle";
-            this.IdDetalle.Name = "IdDetalle";
-            this.IdDetalle.Visible = false;
-            // 
-            // IdFactura
-            // 
-            this.IdFactura.HeaderText = "Id Factura";
-            this.IdFactura.Name = "IdFactura";
-            this.IdFactura.Visible = false;
-            // 
-            // Artiuclo
-            // 
-            this.Artiuclo.HeaderText = "Nombre Articulo";
-            this.Artiuclo.Name = "Artiuclo";
-            // 
-            // IdArticulo
-            // 
-            this.IdArticulo.HeaderText = "Articulo Id";
-            this.IdArticulo.Name = "IdArticulo";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBoxId);
+            this.groupBox1.Controls.Add(this.BusquedamaskedTextBoxId);
             this.groupBox1.Controls.Add(this.buttonBuscar);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.tipoVentaComboBox);
@@ -330,13 +283,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
             // 
-            // maskedTextBoxId
+            // BusquedamaskedTextBoxId
             // 
-            this.maskedTextBoxId.Location = new System.Drawing.Point(107, 12);
-            this.maskedTextBoxId.Mask = "99999";
-            this.maskedTextBoxId.Name = "maskedTextBoxId";
-            this.maskedTextBoxId.Size = new System.Drawing.Size(198, 20);
-            this.maskedTextBoxId.TabIndex = 61;
+            this.BusquedamaskedTextBoxId.Location = new System.Drawing.Point(107, 12);
+            this.BusquedamaskedTextBoxId.Mask = "99999";
+            this.BusquedamaskedTextBoxId.Name = "BusquedamaskedTextBoxId";
+            this.BusquedamaskedTextBoxId.Size = new System.Drawing.Size(198, 20);
+            this.BusquedamaskedTextBoxId.TabIndex = 61;
             // 
             // buttonBuscar
             // 
@@ -552,20 +505,20 @@
             this.groupBoxDinero.TabStop = false;
             this.groupBoxDinero.Text = "Dinero";
             // 
-            // button1
+            // buttonImprimir
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
-            this.button1.Location = new System.Drawing.Point(814, 535);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 51);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Imprimir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.buttonImprimir.Location = new System.Drawing.Point(814, 535);
+            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(55, 51);
+            this.buttonImprimir.TabIndex = 60;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
             // 
             // buttonNuevo
             // 
@@ -600,12 +553,22 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.Name = "ColumnTotal";
+            // 
+            // ColumnCantidad
+            // 
+            this.ColumnCantidad.HeaderText = "Cantidad Venta";
+            this.ColumnCantidad.Name = "ColumnCantidad";
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 588);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.groupBoxDinero);
@@ -678,14 +641,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Artiuclo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox BusquedamaskedTextBoxId;
+        private System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
     }
 }

@@ -23,12 +23,11 @@ namespace Entidades
        
 
 
-        public virtual List<Categorias> categorialist { get; set; }
      
         public Articulos()
         {
           
-            this.categorialist = new List<Categorias>();
+          
         }
 
     
