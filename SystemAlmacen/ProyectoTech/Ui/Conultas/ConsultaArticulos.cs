@@ -123,7 +123,7 @@ namespace ProyectoTech.Ui.Conultas
             {
                 errorProvider.Clear();
                 buscaText.Clear();
-         ;
+         
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;

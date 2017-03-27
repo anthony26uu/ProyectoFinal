@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Conultas\ConsultaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Conultas\ConsultaCategoria.Designer.cs">
+      <DependentUpon>ConsultaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Conultas\ConsultaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Ui\Conultas\ConsultaArticulos.resx">
       <DependentUpon>ConsultaArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Conultas\ConsultaCategoria.resx">
+      <DependentUpon>ConsultaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Conultas\ConsultaUsuario.resx">
       <DependentUpon>ConsultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,11 +204,11 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\RegistrosDb.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\RegistrosDb_log.ldf">
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
     <None Include="Resources\Eli.ico" />

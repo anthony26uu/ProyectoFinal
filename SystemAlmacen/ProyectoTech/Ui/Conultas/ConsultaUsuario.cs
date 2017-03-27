@@ -98,5 +98,10 @@ namespace ProyectoTech.Ui.Conultas
         {
             unico = null;
         }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
