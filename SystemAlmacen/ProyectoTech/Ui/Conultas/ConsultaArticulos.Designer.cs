@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaArticulos));
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -76,8 +78,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(676, 105);
+            this.label2.Location = new System.Drawing.Point(692, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 45;
@@ -85,8 +88,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(510, 101);
+            this.label1.Location = new System.Drawing.Point(526, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 44;
@@ -101,6 +105,7 @@
             // 
             // HastadateTimePicker1
             // 
+            this.HastadateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.HastadateTimePicker1.CustomFormat = "yyy/MM/dd";
             this.HastadateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.HastadateTimePicker1.Location = new System.Drawing.Point(747, 101);
@@ -110,19 +115,21 @@
             // 
             // desdeDateTimePicker
             // 
+            this.desdeDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.desdeDateTimePicker.CustomFormat = "yyy/MM/dd";
             this.desdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.desdeDateTimePicker.Location = new System.Drawing.Point(557, 99);
+            this.desdeDateTimePicker.Location = new System.Drawing.Point(573, 101);
             this.desdeDateTimePicker.Name = "desdeDateTimePicker";
             this.desdeDateTimePicker.Size = new System.Drawing.Size(104, 20);
             this.desdeDateTimePicker.TabIndex = 40;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 125);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 125);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(841, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(859, 215);
             this.dataGridView1.TabIndex = 39;
             // 
             // comboBox1
@@ -157,11 +164,27 @@
             this.label5.TabIndex = 51;
             this.label5.Text = "ID";
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.buttonImprimir.Location = new System.Drawing.Point(793, 11);
+            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(62, 54);
+            this.buttonImprimir.TabIndex = 74;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            // 
             // ConsultaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 366);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.maskedTextBoxId);
             this.Controls.Add(this.comboBox1);
@@ -174,7 +197,10 @@
             this.Controls.Add(this.HastadateTimePicker1);
             this.Controls.Add(this.desdeDateTimePicker);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Articulos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaArticulos_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaArticulos_Load);
@@ -200,5 +226,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

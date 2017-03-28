@@ -135,11 +135,6 @@ namespace ProyectoTech.Ui.Conultas
      
         }
 
-
-        
-
-        
-
         private void ConsultaArticulos_Load(object sender, EventArgs e)
         {
             buscaText.Enabled = false;

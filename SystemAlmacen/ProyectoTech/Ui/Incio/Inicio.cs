@@ -190,5 +190,11 @@ namespace ProyectoTech.Ui.Incio
             Ui.Conultas.ConsultaCliente.Funcion().Show();
             Ui.Conultas.ConsultaCliente.Funcion().Activate();
         }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Conultas.ConsultaFactura.Funcion().Show();
+            Ui.Conultas.ConsultaFactura.Funcion().Activate();
+        }
     }
 }

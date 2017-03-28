@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaCategoria));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -91,9 +93,9 @@
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 123);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(798, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(796, 215);
             this.dataGridView1.TabIndex = 65;
             // 
             // errorProvider
@@ -118,11 +120,27 @@
             this.label1.TabIndex = 72;
             this.label1.Text = "ID";
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.buttonImprimir.Location = new System.Drawing.Point(742, 11);
+            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(62, 54);
+            this.buttonImprimir.TabIndex = 73;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            // 
             // ConsultaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 380);
+            this.ClientSize = new System.Drawing.Size(816, 350);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBoxId);
             this.Controls.Add(this.comboBox1);
@@ -131,7 +149,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buscaText);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Categoria";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaCategoria_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaCategoria_Load);
@@ -153,5 +174,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxId;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

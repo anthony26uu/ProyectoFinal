@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaCliente));
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxId = new System.Windows.Forms.MaskedTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,7 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Sexo_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -109,10 +111,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 127);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 127);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(841, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(847, 215);
             this.dataGridView1.TabIndex = 52;
             // 
             // errorProvider
@@ -140,11 +143,27 @@
             this.label2.TabIndex = 65;
             this.label2.Text = "Sexo";
             // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonImprimir.Image = global::ProyectoTech.Properties.Resources.Impresora1_25x25;
+            this.buttonImprimir.Location = new System.Drawing.Point(796, 11);
+            this.buttonImprimir.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(62, 54);
+            this.buttonImprimir.TabIndex = 67;
+            this.buttonImprimir.Text = "Imprimir";
+            this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            // 
             // ConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 366);
+            this.ClientSize = new System.Drawing.Size(869, 366);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Sexo_comboBox);
             this.Controls.Add(this.label5);
@@ -155,7 +174,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buscaText);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaCliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaCliente_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaCliente_Load);
@@ -179,5 +201,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox Sexo_comboBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }
