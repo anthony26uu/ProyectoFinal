@@ -55,6 +55,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(189, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
@@ -64,6 +66,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(9, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
@@ -80,10 +84,11 @@
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(820, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 215);
             this.dataGridView1.TabIndex = 58;
             // 
             // errorProvider
@@ -122,7 +127,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 341);
+            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
+            this.ClientSize = new System.Drawing.Size(854, 287);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
