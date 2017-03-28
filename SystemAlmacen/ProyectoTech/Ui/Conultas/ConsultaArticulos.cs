@@ -58,11 +58,24 @@ namespace ProyectoTech.Ui.Conultas
                 {
                     errorProvider.Clear();
 
-
+                    Entidades.Articulos db = new Entidades.Articulos();
 
                    
-                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
-                    errorProvider.Clear();
+                    db = BLL.ArticuloBLL.Buscar(p => p.NombreArticulo == nombre);
+                    if (db == null)
+                    {
+                        errorProvider.Clear();
+                        MessageBox.Show("Nombre del Articulo no registrado");
+                        maskedTextBoxId.Clear();
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
+                        errorProvider.Clear();
+
+                    }
+
+
 
                 }
 
@@ -95,12 +108,25 @@ namespace ProyectoTech.Ui.Conultas
                 else
                 {
                     errorProvider.Clear();
-
-
+                    Entidades.Articulos db = new Entidades.Articulos();
 
                     int id = Utilidades.TOINT(maskedTextBoxId.Text);
-                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
-                    errorProvider.Clear();
+                    db = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
+                    if (db == null)
+                    {
+                        errorProvider.Clear();
+                        MessageBox.Show("Id del Articulo no registrado");
+                        maskedTextBoxId.Clear();
+                    }
+                    else
+                    {
+                        
+                        dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                        errorProvider.Clear();
+                    }
+
+
+                      
 
 
                 }
@@ -153,6 +179,7 @@ namespace ProyectoTech.Ui.Conultas
                 maskedTextBoxId.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
+                button1.Enabled = true;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 1)
@@ -164,6 +191,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = true;
                 HastadateTimePicker1.Enabled = true;
+                button1.Enabled = true;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 2)
@@ -175,12 +203,14 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
+                button1.Enabled = false;
                 dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
 
             }
             if (comboBox1.SelectedIndex == 3)
             {
                 maskedTextBoxId.Enabled = true;
+                button1.Enabled = true;
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Enabled = false;

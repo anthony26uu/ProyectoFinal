@@ -182,8 +182,8 @@ namespace ProyectoTech.Ui.Registros
                     IdnumericUpDown.Text = Convert.ToString(user.Id);
                     nombreUsuarioTextBox.Text = user.NombreUsuario;
                     TipoComboBox.Text = user.Tipo;
-                    passUsuarioTextBox.Text = "*****";
-                    ConfirmaContextBox.Text = "*****";
+                   // passUsuarioTextBox.Text = "*****";
+                   // ConfirmaContextBox.Text = "*****";
                     MessageBox.Show("Este es el Usuario Contraseña Protegida por seguridad");
 
                 }

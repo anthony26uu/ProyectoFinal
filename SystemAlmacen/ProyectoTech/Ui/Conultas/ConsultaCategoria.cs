@@ -30,7 +30,11 @@ namespace ProyectoTech.Ui.Conultas
 
         private void ConsultaCategoria_Load(object sender, EventArgs e)
         {
+          
             Llenar();
+            comboBox1.Text = null;
+            errorProvider.Clear();
+            buscaText.Enabled = false;
         }
 
 
@@ -56,9 +60,33 @@ namespace ProyectoTech.Ui.Conultas
             errorProvider.Clear();
             if (comboBox1.SelectedIndex == 0)
             {
-                dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
+                if (string.IsNullOrEmpty(buscaText.Text))
+            {
+                errorProvider.SetError(buscaText, "Por favor llenar este campo.");
+            }
+                else
+                {
 
-                errorProvider.Clear();
+
+                    Entidades.Categorias db = new Entidades.Categorias();
+
+                    db = BLL.CategoriaBLL.Buscar(p => p.NombreCategoria == nombre);
+                    if (db == null)
+                    {
+                        errorProvider.Clear();
+                        buscaText.Clear();
+                        MessageBox.Show("Nombre de la categoria no registrado");
+                        maskedTextBoxId.Clear();
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
+                        errorProvider.Clear();
+                    }
+                }
+
+
+               
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -77,16 +105,20 @@ namespace ProyectoTech.Ui.Conultas
 
                 else
                 {
-                  
-
-                        int id = Utilidades.TOINT(maskedTextBoxId.Text);
+                    Entidades.Categorias db = new Entidades.Categorias();
+                    int id = Utilidades.TOINT(maskedTextBoxId.Text);
+                    db = BLL.CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                    if (db == null)
+                    {
+                        errorProvider.Clear();
+                        MessageBox.Show("Id de la categoria no registrado");
+                        maskedTextBoxId.Clear();
+                    }
+                    else
+                    {   
                         dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
                         errorProvider.Clear();
-
-
-
-                    
-
+                    }
                 }
             }
 
@@ -104,7 +136,7 @@ namespace ProyectoTech.Ui.Conultas
                 dataGridView1.DataSource = null;
                 buscaText.Clear();
                 buscaText.Enabled = true;
-
+                button1.Enabled = true;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 1)
@@ -113,10 +145,12 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = null;
+                button1.Enabled = false;
                 dataGridView1.DataSource = BLL.CategoriaBLL.GetListodo();
             }
             if(comboBox1.SelectedIndex == 2)
             {
+                button1.Enabled = true;
                 buscaText.Enabled = false;
                 buscaText.Clear();
                 maskedTextBoxId.Clear();

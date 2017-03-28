@@ -30,6 +30,13 @@ namespace BLL
             }
         }
 
+        public static List<Entidades.Clientes> GetList(Expression<Func<Entidades.Clientes, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new DAL.Repositorio<Entidades.Clientes>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
         public static bool Eliminar(Clientes cliente)
         {
             using (var repositorio = new DAL.Repositorio<Clientes>())

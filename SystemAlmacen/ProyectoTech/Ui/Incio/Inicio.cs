@@ -41,10 +41,12 @@ namespace ProyectoTech.Ui.Incio
             if(Login.InsetarU().Tipo != "Administrador")
             {
                 usuariosToolStripMenuItem.Enabled = false;
+                usuarioToolStripMenuItem.Enabled = false;
 
             }
             else
             {
+                usuarioToolStripMenuItem.Enabled = true;
                 usuariosToolStripMenuItem.Enabled = true;
             }
         }
@@ -181,6 +183,12 @@ namespace ProyectoTech.Ui.Incio
             Ui.Conultas.ConsultaCategoria.Funcion().Activate();
 
           
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Ui.Conultas.ConsultaCliente.Funcion().Show();
+            Ui.Conultas.ConsultaCliente.Funcion().Activate();
         }
     }
 }
