@@ -174,5 +174,13 @@ namespace ProyectoTech.Ui.Incio
             Ui.Conultas.ConsultaUsuario.Funcion().Show();
             Ui.Conultas.ConsultaUsuario.Funcion().Activate();
         }
+
+        private void canteogiraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Conultas.ConsultaCategoria.Funcion().Show();
+            Ui.Conultas.ConsultaCategoria.Funcion().Activate();
+
+          
+        }
     }
 }

@@ -222,7 +222,9 @@ namespace ProyectoTech.Ui.Registros
             TotalmaskedTextBox.Clear();          
             textBoxTotalArticlo.Clear();
             tipoVentaComboBox.Text = null;
+
             textBoxCantidad.Text = "0";
+            textBoxCantidad.Value = 0;
             articulo = new Articulos();
             textBoxCantidad.Enabled = false;
             EfectivomaskedTextBox.Clear();
@@ -306,7 +308,8 @@ namespace ProyectoTech.Ui.Registros
         }
         private void idArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Estado(true);
+                Estado(true);
+               textBoxCantidad.Value = 0;
                int id = Utilidades.TOINT(idArticuloComboBox.Text);
                 detalle.articulosDetalle = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
                 if (detalle.articulosDetalle != null)
@@ -426,16 +429,19 @@ namespace ProyectoTech.Ui.Registros
             {
                 if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
                 {
-                    bool agregado  =false;
+                //    bool agregado  =false;
 
-                    foreach (var articulo in listadoArticulos)
-                    {
-                        if (articulo.IdArticulo == articulo.IdArticulo)
-                        {
-                            agregado = true;
-                        }
-                    }
-
+                //    foreach (var articulo in listadoArticulos)
+                //    {
+                //        if (articulo.IdArticulo == articulo.IdArticulo)
+                //        {
+                //            agregado = true;
+                //        }
+                //    }
+                //    if(!agregado)
+                //    {
+                //        MessageBox.Show("agregado");
+                //    }
                     errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
                     MessageBox.Show("Articulo Selecionado es: " + articulo.NombreArticulo + "\n Cantidad del articulo es ( " + articulo.Existencia + " )");
                     textBoxCantidad.ResetText();
@@ -613,6 +619,12 @@ namespace ProyectoTech.Ui.Registros
                 
                 
             
+        }
+
+
+        private void comboBoxNombreAr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxCantidad.Value = 0;
         }
     }
     }

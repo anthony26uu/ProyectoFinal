@@ -41,6 +41,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntoDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelTipo = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.button_Apagado = new System.Windows.Forms.Button();
             this.button_CambiarUser = new System.Windows.Forms.Button();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.canteogiraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +144,8 @@
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articulosToolStripMenuItem1,
-            this.usuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem,
+            this.canteogiraToolStripMenuItem});
             this.consultaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
@@ -156,6 +158,13 @@
             this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.articulosToolStripMenuItem1.Text = "Articulos";
             this.articulosToolStripMenuItem1.Click += new System.EventHandler(this.articulosToolStripMenuItem1_Click);
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // puntoDeVentasToolStripMenuItem
             // 
@@ -264,12 +273,12 @@
             this.button_CambiarUser.UseVisualStyleBackColor = false;
             this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
             // 
-            // usuarioToolStripMenuItem
+            // canteogiraToolStripMenuItem
             // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            this.canteogiraToolStripMenuItem.Name = "canteogiraToolStripMenuItem";
+            this.canteogiraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.canteogiraToolStripMenuItem.Text = "Cantegorias";
+            this.canteogiraToolStripMenuItem.Click += new System.EventHandler(this.canteogiraToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -320,5 +329,6 @@
         private System.Windows.Forms.Button button_Apagado;
         private System.Windows.Forms.Button button_CambiarUser;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem canteogiraToolStripMenuItem;
     }
 }

@@ -74,7 +74,13 @@ namespace BLL
 
             }
         }
-
+        public static List<Entidades.Categorias> GetList(Expression<Func<Entidades.Categorias, bool>> criterioBusqueda)
+        {
+            using (var repositorio = new DAL.Repositorio<Entidades.Categorias>())
+            {
+                return repositorio.GetList(criterioBusqueda);
+            }
+        }
 
     }
 }

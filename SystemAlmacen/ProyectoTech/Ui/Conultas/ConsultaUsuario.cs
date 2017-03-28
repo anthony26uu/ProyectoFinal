@@ -72,26 +72,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            if (comboBox1.SelectedIndex == 0)
-            {
-                errorProvider.Clear();
-                buscaText.Clear();
-                buscaText.Enabled = false;
-                dataGridView1.DataSource = BLL.UserBLL.GetListodo();
-
-               // Selecionar(Utilidades.TOINT(buscaText.Text));
-            }
-            if (comboBox1.SelectedIndex == 1)
-            {
-               
-                    buscaText.Enabled = true;
-                    dataGridView1.DataSource = null;
-                                     
-                    Selecionar(Utilidades.TOINT(buscaText.Text));
-               
-
-            }
+           
         }
 
         private void ConsultaUsuario_FormClosed(object sender, FormClosedEventArgs e)
@@ -102,6 +83,25 @@ namespace ProyectoTech.Ui.Conultas
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+            if (comboBox1.SelectedIndex == 0)
+            {
+                errorProvider.Clear();
+                buscaText.Clear();
+                buscaText.Enabled = false;
+                dataGridView1.DataSource = BLL.UserBLL.GetListodo();
+
+                // Selecionar(Utilidades.TOINT(buscaText.Text));
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+
+                buscaText.Enabled = true;
+                dataGridView1.DataSource = null;
+
+                Selecionar(Utilidades.TOINT(buscaText.Text));
+
+
+            }
         }
     }
 }

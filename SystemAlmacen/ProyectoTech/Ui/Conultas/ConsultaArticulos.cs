@@ -13,6 +13,7 @@ namespace ProyectoTech.Ui.Conultas
     public partial class ConsultaArticulos : Form
     {
         private static ConsultaArticulos unico = null;
+
         public ConsultaArticulos()
         {
             InitializeComponent();
@@ -25,15 +26,17 @@ namespace ProyectoTech.Ui.Conultas
                 unico = new ConsultaArticulos();
             }
             return unico;
-          
-       }
 
-    public void Llenar()
+        }
+
+        public void Llenar()
         {
 
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "FECHA");
             comboBox1.Items.Insert(2, "Todo");
+            comboBox1.Items.Insert(3, "ID");
+          
             //    comboBox1.Items.Insert(2, "TODO");
 
             //Si Colocas DiplayMember arriba no funcoina
@@ -42,41 +45,74 @@ namespace ProyectoTech.Ui.Conultas
 
 
         }
-
+    
         public void Selecionar(string nombre)
         {
-
-          
-            if (comboBox1.SelectedIndex == 0)
-                {
-                dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
-             
-                errorProvider.Clear();
-                }
-
-            if (comboBox1.SelectedIndex == 1)
-            {
-                if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
-                {
-                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
-
-                }
-            }
-            else if (comboBox1.SelectedIndex != 3)
+            if(comboBox1.SelectedIndex==0)
             {
                 if (string.IsNullOrEmpty(buscaText.Text))
                 {
                     errorProvider.SetError(buscaText, "Por favor llenar este campo.");
                 }
+                else
+                {
+                    errorProvider.Clear();
+
+
+
+                   
+                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
+                    errorProvider.Clear();
+
+                }
+
             }
-                if (comboBox1.SelectedIndex == 2)
+
+            if (comboBox1.SelectedIndex == 1)
+            {
+                if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
+                {
+
+                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
+
+                }
+            }
+
+            else if (comboBox1.SelectedIndex == 2)
             {
                 buscaText.Enabled = false;
+                maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
             }
 
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                if (string.IsNullOrEmpty(maskedTextBoxId.Text))
+                {
+                    errorProvider.SetError(maskedTextBoxId, "Por favor llenar este campo.");
+                }
 
+                else
+                {
+                    errorProvider.Clear();
+
+
+
+                    int id = Utilidades.TOINT(maskedTextBoxId.Text);
+                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                    errorProvider.Clear();
+
+
+                }
+            }
+
+     
         }
+
+
+        
+
+        
 
         private void ConsultaArticulos_Load(object sender, EventArgs e)
         {
@@ -84,11 +120,22 @@ namespace ProyectoTech.Ui.Conultas
             HastadateTimePicker1.Enabled = false;
             desdeDateTimePicker.Enabled = false;
             Llenar();
+           
+            errorProvider.Clear();
+            maskedTextBoxId.Enabled = true;
+            comboBox1.Text = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Selecionar(buscaText.Text);
+          if(buscaText.Enabled==false)
+            {
+                Selecionar(maskedTextBoxId.Text);
+            }
+            else
+            {
+                  Selecionar(buscaText.Text);
+            }
         }
 
         public static implicit operator ConsultaArticulos(RegistroClientes v)
@@ -98,13 +145,12 @@ namespace ProyectoTech.Ui.Conultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (comboBox1.SelectedIndex == 0)
             {
                 errorProvider.Clear();
-            //    buscaText.Clear();
-               // CampoVacioerrorProvider.Clear();
                 buscaText.Enabled = true;
+                maskedTextBoxId.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 Selecionar(buscaText.Text);
@@ -113,7 +159,8 @@ namespace ProyectoTech.Ui.Conultas
             {
                 errorProvider.Clear();
                 buscaText.Clear();
-                // CampoVacioerrorProvider.Clear();
+                maskedTextBoxId.Enabled = false;
+                maskedTextBoxId.Clear();
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = true;
                 HastadateTimePicker1.Enabled = true;
@@ -123,13 +170,26 @@ namespace ProyectoTech.Ui.Conultas
             {
                 errorProvider.Clear();
                 buscaText.Clear();
-         
+                maskedTextBoxId.Clear();
+                maskedTextBoxId.Enabled = false;
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
-               
+
             }
+            if (comboBox1.SelectedIndex == 3)
+            {
+                maskedTextBoxId.Enabled = true;
+                errorProvider.Clear();
+                buscaText.Clear();
+                buscaText.Enabled = false;
+                desdeDateTimePicker.Enabled = false;
+                HastadateTimePicker1.Enabled = false;               
+                Selecionar(maskedTextBoxId.Text);
+
+            }
+           
         }
 
         private void ConsultaArticulos_FormClosed(object sender, FormClosedEventArgs e)

@@ -112,18 +112,31 @@ namespace ProyectoTech.Ui.Registros
             try
             {
 
+                usuario = LlenarCampos();
+                int id = Utilidades.TOINT(IdnumericUpDown.Text);
 
                 if (passUsuarioTextBox.Text == ConfirmaContextBox.Text)
                 {
 
-                    usuario = LlenarCampos();
+
+                
                     if (!Validar())
                     {
                         MessageBox.Show("Por favor llenar los campos");
                     }
-                    else if (BLL.UserBLL.Guardar(usuario))
+                    else 
                     {
-                        MessageBox.Show("El Usuario se agrego con exito.");
+                        if (id != usuario.Id)
+                        {
+                            BLL.UserBLL.Mofidicar(usuario);
+                            MessageBox.Show("Usuario se ha Modificado");
+                        }
+                        else
+                        {
+
+                            BLL.UserBLL.Guardar(usuario);
+                            MessageBox.Show("Nuevo Usuario agregado con exito!");
+                        }
                     }
 
                     Limpiar();
