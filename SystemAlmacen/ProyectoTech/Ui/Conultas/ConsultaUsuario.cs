@@ -46,7 +46,9 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.UserBLL.GetList(p => p.Id == id);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
                        
+
                     }
                     else if(dataGridView1.DataSource==null)
                     {
@@ -62,7 +64,8 @@ namespace ProyectoTech.Ui.Conultas
 
         private void ConsultaUsuario_Load(object sender, EventArgs e)
         {
-
+            buttonImprimir.Enabled = false;
+            dataGridView1.DataSource = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +92,8 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Clear();
                 buscaText.Enabled = false;
                 dataGridView1.DataSource = BLL.UserBLL.GetListodo();
+                buttonImprimir.Enabled = true;
+               
 
                 // Selecionar(Utilidades.TOINT(buscaText.Text));
             }
@@ -97,7 +102,8 @@ namespace ProyectoTech.Ui.Conultas
 
                 buscaText.Enabled = true;
                 dataGridView1.DataSource = null;
-
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Selecionar(Utilidades.TOINT(buscaText.Text));
 
 

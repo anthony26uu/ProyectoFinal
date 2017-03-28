@@ -30,17 +30,13 @@ namespace ProyectoTech.Ui.Conultas
         public void Llenar()
         {
 
-            comboBox1.Items.Insert(0, "Usuario");//nombre  //echo
-            comboBox1.Items.Insert(1, "FECHAVenta"); //fecha
-            comboBox1.Items.Insert(2, "Todo"); //Echo
-            comboBox1.Items.Insert(3, "ID");  //Echo
+            comboBox1.Items.Insert(0, "Usuario");
+            comboBox1.Items.Insert(1, "Fecha Venta"); 
+            comboBox1.Items.Insert(2, "Todo"); 
+            comboBox1.Items.Insert(3, "ID"); 
             comboBox1.Items.Insert(4, "Cliente"); 
-            comboBox1.Items.Insert(5, "TipoVenta");
+            comboBox1.Items.Insert(5, "Tipo de Venta");
 
-
-            //    comboBox1.Items.Insert(2, "TODO");
-
-            //Si Colocas DiplayMember arriba no funcoina
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Usuario";
 
@@ -73,6 +69,7 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.NombreUsuario == nombre);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
 
                     }
 
@@ -88,7 +85,7 @@ namespace ProyectoTech.Ui.Conultas
                 {
 
                     dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.FechaVenta >= desdeDateTimePicker.Value.Date && p.FechaVenta <= HastadateTimePicker1.Value.Date);
-
+                    buttonImprimir.Enabled = true;
                 }
             }
 
@@ -97,6 +94,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.FacturaBLL.GetListodo();
+                buttonImprimir.Enabled = true;
             }
 
 
@@ -125,6 +123,7 @@ namespace ProyectoTech.Ui.Conultas
 
                         dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.IdFactura == id);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
                     }
 
 
@@ -155,6 +154,7 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.TipoVenta == nombre);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
 
                     }
 
@@ -183,11 +183,13 @@ namespace ProyectoTech.Ui.Conultas
                         errorProvider.Clear();
                         MessageBox.Show("Nombre del cliente no realizado compras \n o \n No esta Registrado");
                         maskedTextBoxId.Clear();
+
                     }
                     else
                     {
                         dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.Cliente == nombre);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
 
                     }
 
@@ -202,6 +204,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void ConsultaFactura_Load(object sender, EventArgs e)
         {
+            buttonImprimir.Enabled = false;
             buscaText.Enabled = false;
             HastadateTimePicker1.Enabled = false;
             desdeDateTimePicker.Enabled = false;
@@ -216,6 +219,7 @@ namespace ProyectoTech.Ui.Conultas
         {
             if (comboBox1.SelectedIndex == 0)
             {
+                dataGridView1.DataSource = null;
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Enabled = true;
@@ -223,10 +227,12 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 1)
             {
+                dataGridView1.DataSource = null;
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Clear();
@@ -236,10 +242,12 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = true;
                 HastadateTimePicker1.Enabled = true;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 2)
             {
+                dataGridView1.DataSource = null;
                 errorProvider.Clear();
                 buscaText.Clear();
                 maskedTextBoxId.Clear();
@@ -249,10 +257,12 @@ namespace ProyectoTech.Ui.Conultas
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
                 dataGridView1.DataSource = BLL.FacturaBLL.GetListodo();
+                buttonImprimir.Enabled = true;
 
             }
             if (comboBox1.SelectedIndex == 3)
             {
+                dataGridView1.DataSource = null;
                 maskedTextBoxId.Enabled = true;
                 button1.Enabled = true;
                 errorProvider.Clear();
@@ -261,12 +271,14 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 buscaText.Clear();
+                buttonImprimir.Enabled = false;
                 Selecionar(maskedTextBoxId.Text);
 
             }
 
             if (comboBox1.SelectedIndex == 4)
             {
+                dataGridView1.DataSource = null;
                 buscaText.Clear();
                 errorProvider.Clear();
                 buscaText.Enabled = true;
@@ -274,11 +286,13 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
                 Selecionar(buscaText.Text);
             }
 
             if (comboBox1.SelectedIndex == 5)
             {
+                dataGridView1.DataSource = null;
                 buscaText.Clear();
                 errorProvider.Clear();
                 buscaText.Enabled = true;
@@ -286,6 +300,7 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
                 Selecionar(buscaText.Text);
             }
 

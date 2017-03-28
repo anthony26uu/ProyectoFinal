@@ -76,6 +76,8 @@ namespace ProyectoTech.Ui.Conultas
 
                         dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.Nombres == nombre);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
+                        
 
                     }
 
@@ -90,6 +92,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.ClientesBLL.GetListodo();
+                buttonImprimir.Enabled = true;
             }
 
             else if (comboBox1.SelectedIndex == 2)
@@ -116,6 +119,7 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
                     }
                    
 
@@ -126,16 +130,22 @@ namespace ProyectoTech.Ui.Conultas
             else if (comboBox1.SelectedIndex == 3)
             {
               
+                if(string.IsNullOrWhiteSpace(Sexo_comboBox.Text))
+                {
+                   errorProvider.SetError(Sexo_comboBox, "Selecione");
+                }
+                else
+                {
                     errorProvider.Clear();
-
-
-
-                    
                     dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.Sexo == nombre);
                     errorProvider.Clear();
+                    Sexo_comboBox.Text = null;
+                    buttonImprimir.Enabled = true;
+                }
+                   
 
 
-                
+
             }
 
 
@@ -146,7 +156,9 @@ namespace ProyectoTech.Ui.Conultas
             buscaText.Enabled = false;
             Sexo_comboBox.Text = null;
             Sexo_comboBox.Enabled = false;
-           
+            buttonImprimir.Enabled = false;
+            dataGridView1.DataSource = null;
+
             Llenar();
 
             errorProvider.Clear();
@@ -163,7 +175,8 @@ namespace ProyectoTech.Ui.Conultas
                 errorProvider.Clear();
                 buscaText.Enabled = true;
                 maskedTextBoxId.Enabled = false;
-               
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Sexo_comboBox.Enabled = false;
                 button1.Enabled = true;
                 Selecionar(buscaText.Text);
@@ -180,6 +193,7 @@ namespace ProyectoTech.Ui.Conultas
                
                 Sexo_comboBox.Enabled = false;
                 dataGridView1.DataSource = BLL.ClientesBLL.GetListodo();
+                buttonImprimir.Enabled = true;
 
             }
             if (comboBox1.SelectedIndex == 2)
@@ -189,7 +203,8 @@ namespace ProyectoTech.Ui.Conultas
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Enabled = false;
-             
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Sexo_comboBox.Enabled = false;
                 Selecionar(maskedTextBoxId.Text);
 
@@ -202,7 +217,9 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Clear();
                 buscaText.Enabled = false;
                 button1.Enabled = true;
-               
+
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 buscaText.Enabled = false;
                 Sexo_comboBox.Enabled = true;
                 Selecionar(Sexo_comboBox.SelectedIndex.ToString());
@@ -223,7 +240,9 @@ namespace ProyectoTech.Ui.Conultas
             }
             else if (buscaText.Enabled == false && maskedTextBoxId.Enabled == false)
             {
+              
                 Selecionar(Sexo_comboBox.SelectedIndex.ToString());
+               
             }
 
             else if(maskedTextBoxId.Enabled== false &&  Sexo_comboBox.Enabled ==false)

@@ -30,7 +30,8 @@ namespace ProyectoTech.Ui.Conultas
 
         private void ConsultaCategoria_Load(object sender, EventArgs e)
         {
-          
+            dataGridView1.DataSource = null;
+            buttonImprimir.Enabled = false;
             Llenar();
             comboBox1.Text = null;
             errorProvider.Clear();
@@ -43,11 +44,7 @@ namespace ProyectoTech.Ui.Conultas
 
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "Todo");
-          
             comboBox1.Items.Insert(2, "ID");
-            //    comboBox1.Items.Insert(2, "TODO");
-
-            //Si Colocas DiplayMember arriba no funcoina
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Nombre";
 
@@ -82,6 +79,8 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
                         errorProvider.Clear();
+                        
+                        buttonImprimir.Enabled = true;
                     }
                 }
 
@@ -94,6 +93,8 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.CategoriaBLL.GetListodo();
+             
+                buttonImprimir.Enabled = true;
             }
 
             else if (comboBox1.SelectedIndex == 2)
@@ -117,6 +118,7 @@ namespace ProyectoTech.Ui.Conultas
                     else
                     {   
                         dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
+                        buttonImprimir.Enabled = true;
                         errorProvider.Clear();
                     }
                 }
@@ -137,6 +139,8 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Clear();
                 buscaText.Enabled = true;
                 button1.Enabled = true;
+                dataGridView1.DataSource = null;
+                buttonImprimir.Enabled = false;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 1)
@@ -146,7 +150,10 @@ namespace ProyectoTech.Ui.Conultas
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = null;
                 button1.Enabled = false;
+                dataGridView1.DataSource = null;
+                buttonImprimir.Enabled = false;
                 dataGridView1.DataSource = BLL.CategoriaBLL.GetListodo();
+                buttonImprimir.Enabled = true;
             }
             if(comboBox1.SelectedIndex == 2)
             {
@@ -155,7 +162,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Clear();
                 maskedTextBoxId.Clear();
                 maskedTextBoxId.Enabled = true;
-
+                buttonImprimir.Enabled = false;
                 dataGridView1.DataSource = null;
                 Selecionar(maskedTextBoxId.Text);
 

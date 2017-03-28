@@ -72,6 +72,7 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
 
                     }
 
@@ -87,8 +88,9 @@ namespace ProyectoTech.Ui.Conultas
                 {
 
                     dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
-
+                    buttonImprimir.Enabled = true;
                 }
+             
             }
 
             else if (comboBox1.SelectedIndex == 2)
@@ -96,6 +98,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
+                buttonImprimir.Enabled = true;
             }
 
             else if (comboBox1.SelectedIndex == 3)
@@ -123,6 +126,7 @@ namespace ProyectoTech.Ui.Conultas
                         
                         dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
                         errorProvider.Clear();
+                        buttonImprimir.Enabled = true;
                     }
 
 
@@ -140,6 +144,8 @@ namespace ProyectoTech.Ui.Conultas
             buscaText.Enabled = false;
             HastadateTimePicker1.Enabled = false;
             desdeDateTimePicker.Enabled = false;
+            buttonImprimir.Enabled = false;
+            dataGridView1.DataSource = null;
             Llenar();
            
             errorProvider.Clear();
@@ -175,6 +181,8 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 1)
@@ -187,6 +195,8 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = true;
                 HastadateTimePicker1.Enabled = true;
                 button1.Enabled = true;
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Selecionar(buscaText.Text);
             }
             if (comboBox1.SelectedIndex == 2)
@@ -199,8 +209,10 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
+               
+                dataGridView1.DataSource = null;
                 dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
-
+                buttonImprimir.Enabled = true;
             }
             if (comboBox1.SelectedIndex == 3)
             {
@@ -210,7 +222,9 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Clear();
                 buscaText.Enabled = false;
                 desdeDateTimePicker.Enabled = false;
-                HastadateTimePicker1.Enabled = false;               
+                HastadateTimePicker1.Enabled = false;
+                buttonImprimir.Enabled = false;
+                dataGridView1.DataSource = null;
                 Selecionar(maskedTextBoxId.Text);
 
             }
