@@ -109,49 +109,52 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+
+            var guardar = new Entidades.Usuarios();
+            int id = 0;
             try
             {
 
-                usuario = LlenarCampos();
-                int id = Utilidades.TOINT(IdnumericUpDown.Text);
-
-                if (passUsuarioTextBox.Text == ConfirmaContextBox.Text)
+                if (!Validar())
                 {
-
-
-                
-                    if (!Validar())
-                    {
-                        MessageBox.Show("Por favor llenar los campos");
-                    }
-                    else 
-                    {
-                        if (id != usuario.Id)
-                        {
-                            BLL.UserBLL.Mofidicar(usuario);
-                            MessageBox.Show("Usuario se ha Modificado");
-                        }
-                        else
-                        {
-
-                            BLL.UserBLL.Guardar(usuario);
-                            MessageBox.Show("Nuevo Usuario agregado con exito!");
-                        }
-                    }
-
-                    Limpiar();
+                    MessageBox.Show("Por favor llenar los campos");
                 }
                 else
                 {
-                    errorProviderTodo.SetError(ConfirmaContextBox, "Contraseña no son iguales");
+
+                    guardar.NombreUsuario = nombreUsuarioTextBox.Text;
+                    guardar.PassUsuario = passUsuarioTextBox.Text;
+                    guardar.Id = (Utilidades.TOINT(nombreUsuarioTextBox.Text));
+                   if(passUsuarioTextBox.Text== ConfirmaContextBox.Text)
+                    {
+                        if (id != guardar.Id)
+                        {
+                            BLL.UserBLL.Mofidicar(guardar);
+                            MessageBox.Show("Usuario modificado con exito");
+                        }
+                        else
+                        {
+                            BLL.UserBLL.Guardar(guardar);
+                            MessageBox.Show("Nuevo usuario agregado!");
+                        }
+                    }
+                    else
+                    {
+                        errorProviderTodo.SetError(passUsuarioTextBox, "Campos no son iguales");
+                        errorProviderTodo.SetError(ConfirmaContextBox, "Campos no son iguales");
+                        MessageBox.Show("CAMPOS No Coninciden");
+                     
+                    }
                 }
+                Limpiar();
             }
             catch (Exception)
             {
 
                 throw;
             }
-        }
+        
+    }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
