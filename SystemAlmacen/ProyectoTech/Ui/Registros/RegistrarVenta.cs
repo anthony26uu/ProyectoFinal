@@ -14,13 +14,24 @@ namespace ProyectoTech.Ui.Registros
 
     public partial class RegistrarVenta : Form
     {
+     
+        public RegistrarVenta()
+        {
 
+            InitializeComponent();
+            //HOra y Fecha
+            timer1.Enabled = true;
+            
+            Limpiar();
+        }
+     
         private static RegistrarVenta unico = null;
         private static Entidades.Usuarios UsuarioG = null;
         FacturaDetalles detalle;
         Facturas facturaG;
         Entidades.Articulos articulo;
 
+        
         int devuelta = 0;
         int descuento = 0;
 
@@ -64,14 +75,7 @@ namespace ProyectoTech.Ui.Registros
         }
 
 
-        public RegistrarVenta()
-        {
-
-            InitializeComponent();
-            //HOra y Fecha
-            timer1.Enabled = true;
-            Limpiar();    
-        }
+      
         private void EliminarExitencia(int existencia)
         {
 
@@ -87,6 +91,7 @@ namespace ProyectoTech.Ui.Registros
             }
 
         }
+        
         private void CalcularDevuelta()
         {
             if(string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
@@ -131,14 +136,17 @@ namespace ProyectoTech.Ui.Registros
                textBoxCantidad.ResetText();   
             }  
         }
-        private void CalcularFactura()
+        private void CalcularFactura(int cantidad)
         {
-            
-              foreach (DataGridViewRow row in dataGridViewVenta.Rows)
+            facturaG.Cantidadp = cantidad;
+            foreach (DataGridViewRow row in dataGridViewVenta.Rows)
               {
                 //detalle.Cantidad = Convert.ToInt32(textBoxCantidad.Value);
                 //row.Cells[1].Value = detalle.Cantidad;
+               
+              
                 facturaG.Total += (Convert.ToDecimal(textBoxCantidad.Value)  * Convert.ToDecimal(row.Cells[5].Value) * Convert.ToDecimal(ItbsArticultextBox.Text));
+                row.Cells[1].Value = facturaG.Cantidadp.ToString();
                 TotalmaskedTextBox.Text = facturaG.Total.ToString();
 
                 //row.Cells[1].Value = cantidad;
@@ -455,12 +463,14 @@ namespace ProyectoTech.Ui.Registros
 
                     Entidades.Articulos art = new Articulos();
                     art = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
+                    int   cantidadg= Utilidades.TOINT(textBoxCantidad.Text); 
                     listaRelaciones.Add(new FacturaDetalles(0,facturaG.IdFactura, idArticuloComboBox.SelectedIndex +1 ,art.PrecioVenta, detalle.Cantidad ));
+                   
                     listadoArticulos.Add(BLL.ArticuloBLL.BuscarB( idArticuloComboBox.SelectedIndex+1));
 
                     RefreshDataGridView();
 
-                    CalcularFactura();
+                    CalcularFactura(cantidadg);
                }
            }
            

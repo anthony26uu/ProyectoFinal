@@ -13,6 +13,7 @@ namespace ProyectoTech.Ui.Conultas
     public partial class ConsultaArticulos : Form
     {
         private static ConsultaArticulos unico = null;
+        public List<Entidades.Articulos> Lista { get; set; }
 
         public ConsultaArticulos()
         {
@@ -64,7 +65,10 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
+
+                        Lista= BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
+
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
@@ -77,8 +81,8 @@ namespace ProyectoTech.Ui.Conultas
             {
                 if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
                 {
-
-                    dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
+                    Lista  = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
+                    dataGridView1.DataSource = Lista;
                     buttonImprimir.Enabled = true;
                 }
              
@@ -88,7 +92,8 @@ namespace ProyectoTech.Ui.Conultas
             {
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
-                dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
+                Lista= BLL.ArticuloBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
 
@@ -115,7 +120,8 @@ namespace ProyectoTech.Ui.Conultas
                     else
                     {
                         
-                        dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                        Lista = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
@@ -197,7 +203,8 @@ namespace ProyectoTech.Ui.Conultas
                 button1.Enabled = false;
                
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = BLL.ArticuloBLL.GetListodo();
+                Lista= BLL.ArticuloBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
             if (comboBox1.SelectedIndex == 3)
@@ -220,6 +227,12 @@ namespace ProyectoTech.Ui.Conultas
         private void ConsultaArticulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new Ui.Reportes.Ventanas_Reportes.CReporteArticulos (Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteArticulos(Lista).Activate();
         }
     }
 }

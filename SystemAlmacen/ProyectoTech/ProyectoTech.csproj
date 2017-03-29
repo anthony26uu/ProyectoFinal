@@ -156,6 +156,30 @@
     <Compile Include="Ui\Registros\RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteArticulos.Designer.cs">
+      <DependentUpon>CReporteArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteCategorias.Designer.cs">
+      <DependentUpon>CReporteCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteClientes.Designer.cs">
+      <DependentUpon>CReporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.Designer.cs">
+      <DependentUpon>CReporteFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +220,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Registros\RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\ArticulosReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\CategoriasReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteArticulos.resx">
+      <DependentUpon>CReporteArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteCategorias.resx">
+      <DependentUpon>CReporteCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteClientes.resx">
+      <DependentUpon>CReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.resx">
+      <DependentUpon>CReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

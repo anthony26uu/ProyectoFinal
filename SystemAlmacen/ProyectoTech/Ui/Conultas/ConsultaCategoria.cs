@@ -13,6 +13,8 @@ namespace ProyectoTech.Ui.Conultas
     {
         private static ConsultaCategoria unico = null;
 
+        public  static List<Entidades.Categorias> Lista { get; set; }
+
         public static ConsultaCategoria Funcion()
         {
             if (unico == null)
@@ -77,7 +79,8 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
+                        Lista = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         
                         buttonImprimir.Enabled = true;
@@ -117,7 +120,8 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {   
-                        dataGridView1.DataSource = BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
+                        Lista= BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
+                        dataGridView1.DataSource = Lista;
                         buttonImprimir.Enabled = true;
                         errorProvider.Clear();
                     }
@@ -152,7 +156,8 @@ namespace ProyectoTech.Ui.Conultas
                 button1.Enabled = false;
                 dataGridView1.DataSource = null;
                 buttonImprimir.Enabled = false;
-                dataGridView1.DataSource = BLL.CategoriaBLL.GetListodo();
+                Lista = BLL.CategoriaBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
             if(comboBox1.SelectedIndex == 2)
@@ -184,6 +189,12 @@ namespace ProyectoTech.Ui.Conultas
         private void ConsultaCategoria_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new Ui.Reportes.Ventanas_Reportes.CReporteCategorias(Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteCategorias(Lista).Activate();
         }
     }
 }

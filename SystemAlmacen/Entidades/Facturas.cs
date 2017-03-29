@@ -18,7 +18,7 @@ namespace Entidades
         public string TipoVenta { get; set; }
         public int CantidadProd { get; set; }
         public decimal Total { get; set; }
-
+        public int Cantidadp { get; set; }
         //    public virtual List<Entidades.Articulos> ArticuloList { get; set; }
 
         public Facturas()

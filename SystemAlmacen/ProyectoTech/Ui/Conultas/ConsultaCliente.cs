@@ -16,6 +16,7 @@ namespace ProyectoTech.Ui.Conultas
             InitializeComponent();
         }
 
+        public List<Entidades.Clientes> Lista { get; set; }
         private static ConsultaCliente unico = null;
 
         public static ConsultaCliente Funcion()
@@ -74,7 +75,8 @@ namespace ProyectoTech.Ui.Conultas
 
 
 
-                        dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.Nombres == nombre);
+                        Lista = BLL.ClientesBLL.GetList(p => p.Nombres == nombre);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                         
@@ -115,7 +117,8 @@ namespace ProyectoTech.Ui.Conultas
                         maskedTextBoxId.Clear();
                     }else
                     {
-                        dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
+                        Lista = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
@@ -133,7 +136,8 @@ namespace ProyectoTech.Ui.Conultas
                 else
                 {
                     errorProvider.Clear();
-                    dataGridView1.DataSource = BLL.ClientesBLL.GetList(p => p.Sexo == nombre);
+                    Lista = BLL.ClientesBLL.GetList(p => p.Sexo == nombre);
+                    dataGridView1.DataSource = Lista;
                     errorProvider.Clear();
                     Sexo_comboBox.Text = null;
                     buttonImprimir.Enabled = true;
@@ -184,7 +188,8 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                
                 Sexo_comboBox.Enabled = false;
-                dataGridView1.DataSource = BLL.ClientesBLL.GetListodo();
+                Lista= BLL.ClientesBLL.GetListodo();
+                dataGridView1.DataSource = Lista; ;
                 buttonImprimir.Enabled = true;
 
             }
@@ -242,6 +247,12 @@ namespace ProyectoTech.Ui.Conultas
             {
                 Selecionar(buscaText.Text);
             }
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new Ui.Reportes.Ventanas_Reportes.CReporteClientes(Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteClientes(Lista).Activate();
         }
     }
 }

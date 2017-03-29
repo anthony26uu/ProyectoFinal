@@ -17,6 +17,7 @@ namespace ProyectoTech.Ui.Conultas
         }
 
         private static ConsultaUsuario unico = null;
+        public List<Entidades.Usuarios> Lista { get; set; }
 
         public static ConsultaUsuario Funcion()
         {
@@ -44,7 +45,8 @@ namespace ProyectoTech.Ui.Conultas
                     errorProvider.Clear();
                     if(BLL.UserBLL.GetList(p => p.Id == id)!=null)
                     {
-                        dataGridView1.DataSource = BLL.UserBLL.GetList(p => p.Id == id);
+                        Lista = BLL.UserBLL.GetList(p => p.Id == id);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                        
@@ -91,7 +93,8 @@ namespace ProyectoTech.Ui.Conultas
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Enabled = false;
-                dataGridView1.DataSource = BLL.UserBLL.GetListodo();
+                Lista= BLL.UserBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
                
 

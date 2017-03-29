@@ -17,6 +17,7 @@ namespace ProyectoTech.Ui.Conultas
         }
 
         private static ConsultaFactura unico = null;
+        public List<Entidades.Facturas> Lista { get; set; }
         public static ConsultaFactura Funcion()
         {
             if (unico == null)
@@ -67,7 +68,8 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.NombreUsuario == nombre);
+                        Lista = BLL.FacturaBLL.GetList(p => p.NombreUsuario == nombre);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
 
@@ -84,7 +86,8 @@ namespace ProyectoTech.Ui.Conultas
                 if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
                 {
 
-                    dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.FechaVenta >= desdeDateTimePicker.Value.Date && p.FechaVenta <= HastadateTimePicker1.Value.Date);
+                    Lista = BLL.FacturaBLL.GetList(p => p.FechaVenta >= desdeDateTimePicker.Value.Date && p.FechaVenta <= HastadateTimePicker1.Value.Date);
+                    dataGridView1.DataSource = Lista;
                     buttonImprimir.Enabled = true;
                 }
             }
@@ -93,7 +96,8 @@ namespace ProyectoTech.Ui.Conultas
             {
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
-                dataGridView1.DataSource = BLL.FacturaBLL.GetListodo();
+                Lista = BLL.FacturaBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
 
@@ -121,7 +125,8 @@ namespace ProyectoTech.Ui.Conultas
                     else
                     {
 
-                        dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.IdFactura == id);
+                        Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == id);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
@@ -152,7 +157,8 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.TipoVenta == nombre);
+                        Lista = BLL.FacturaBLL.GetList(p => p.TipoVenta == nombre);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
 
@@ -187,7 +193,8 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        dataGridView1.DataSource = BLL.FacturaBLL.GetList(p => p.Cliente == nombre);
+                        Lista = BLL.FacturaBLL.GetList(p => p.Cliente == nombre);
+                        dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
 
@@ -256,7 +263,8 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
-                dataGridView1.DataSource = BLL.FacturaBLL.GetListodo();
+                Lista = BLL.FacturaBLL.GetListodo();
+                dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
 
             }
@@ -321,6 +329,12 @@ namespace ProyectoTech.Ui.Conultas
         private void ConsultaFactura_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Activate();
         }
     }
 }
