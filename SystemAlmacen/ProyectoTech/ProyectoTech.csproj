@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\ProyectoTechDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoTechDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Conultas\ConsultaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,9 +209,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ui\Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\RegistrosDb.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -216,6 +219,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Ui\Reportes\ProyectoTechDataSet.xsc">
+      <DependentUpon>ProyectoTechDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Ui\Reportes\ProyectoTechDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProyectoTechDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ui\Reportes\ProyectoTechDataSet.xss">
+      <DependentUpon>ProyectoTechDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Eli.ico" />
     <None Include="Resources\BotonCancelar.png" />
     <None Include="Resources\BotonCancelar1.png" />

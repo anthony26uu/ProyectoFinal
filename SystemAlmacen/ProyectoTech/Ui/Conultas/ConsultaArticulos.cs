@@ -31,19 +31,13 @@ namespace ProyectoTech.Ui.Conultas
 
         public void Llenar()
         {
-
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "FECHA");
             comboBox1.Items.Insert(2, "Todo");
             comboBox1.Items.Insert(3, "ID");
-          
-            //    comboBox1.Items.Insert(2, "TODO");
-
-            //Si Colocas DiplayMember arriba no funcoina
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Nombre";
-
-
+            
         }
     
         public void Selecionar(string nombre)
@@ -73,10 +67,7 @@ namespace ProyectoTech.Ui.Conultas
                         dataGridView1.DataSource = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
-
                     }
-
-
 
                 }
 
@@ -129,10 +120,6 @@ namespace ProyectoTech.Ui.Conultas
                         buttonImprimir.Enabled = true;
                     }
 
-
-                      
-
-
                 }
             }
 
@@ -147,7 +134,6 @@ namespace ProyectoTech.Ui.Conultas
             buttonImprimir.Enabled = false;
             dataGridView1.DataSource = null;
             Llenar();
-           
             errorProvider.Clear();
             maskedTextBoxId.Enabled = true;
             comboBox1.Text = null;

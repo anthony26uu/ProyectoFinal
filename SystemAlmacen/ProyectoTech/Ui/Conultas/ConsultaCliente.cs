@@ -85,8 +85,6 @@ namespace ProyectoTech.Ui.Conultas
 
             }
 
-          
-
             else if (comboBox1.SelectedIndex == 1)
             {
                 buscaText.Enabled = false;
@@ -122,8 +120,6 @@ namespace ProyectoTech.Ui.Conultas
                         buttonImprimir.Enabled = true;
                     }
                    
-
-
                 }
             }
 
@@ -142,10 +138,6 @@ namespace ProyectoTech.Ui.Conultas
                     Sexo_comboBox.Text = null;
                     buttonImprimir.Enabled = true;
                 }
-                   
-
-
-
             }
 
 
