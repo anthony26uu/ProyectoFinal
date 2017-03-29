@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CReporteClientes));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -46,8 +47,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 324);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CReporteClientes";
-            this.Text = "CReporteClientes";
+            this.Text = "Reportes Clientes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CReporteClientes_FormClosed);
             this.Load += new System.EventHandler(this.CReporteClientes_Load);
             this.ResumeLayout(false);
