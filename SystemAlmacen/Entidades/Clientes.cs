@@ -17,10 +17,22 @@ namespace Entidades
         public DateTime FechaNacimiento { get; set; }
 
         public string Telefono { get; set; }
-    
-        
-    
 
+        public Clientes()
+        {
+
+        }
+
+        public Clientes(int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)
+        {
+
+            this.ClienteId = clienteId;
+            this.Nombres = nombres;
+            this.Direccion = direccion;
+            this.Email = email;
+            this.Sexo = sexo;
+            this.FechaNacimiento = fechaNacimiento;
+        }
 
 
 

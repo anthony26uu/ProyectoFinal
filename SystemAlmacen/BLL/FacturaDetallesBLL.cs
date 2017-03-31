@@ -22,6 +22,19 @@ namespace BLL
             }
         }
 
+        public static bool Mofidicar(FacturaDetalles existente)
+        {
+            bool eliminado = false;
+            using (var repositorio = new Repositorio<FacturaDetalles>())
+            {
+                eliminado = repositorio.Modificar(existente);
+            }
+
+            return eliminado;
+
+        }
+
+
         public static List<Entidades.FacturaDetalles> GetListado(Expression<Func<Entidades.FacturaDetalles, bool>> criterioBusqueda)
         {
             List<Entidades.FacturaDetalles> lista = new List<Entidades.FacturaDetalles>();

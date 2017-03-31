@@ -252,13 +252,14 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\RegistrosDb.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\RegistrosDb_log.ldf">
       <DependentUpon>RegistrosDb.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\ic_mode_edit_black_24dp_1x.png" />
     <None Include="Ui\Reportes\ProyectoTechDataSet.xsc">
       <DependentUpon>ProyectoTechDataSet.xsd</DependentUpon>
     </None>
@@ -324,6 +325,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{D3BB4909-526B-4F05-B96D-C5D09FB5D45B}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{e3c704ec-8203-48e5-9bca-1af83647c8d9}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{D8EFD694-63E5-4D20-8E78-D5E6CE7BE692}</Project>

@@ -121,6 +121,9 @@
   <data name="FlechaDerecha25x251" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlechaDerecha25x251.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondo_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,9 +160,6 @@
   <data name="Impresora1-25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impresora1-25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Plus_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,8 +181,8 @@
   <data name="BotonGuardar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonGuardar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shutdown-icon-9213" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shutdown-icon-9213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,14 +193,17 @@
   <data name="Plus_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Eli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eli.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icono_paquetes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_paquetes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clientes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clientes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plus_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +214,7 @@
   <data name="productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eli" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eli.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_mode_edit_black_24dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_mode_edit_black_24dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

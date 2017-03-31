@@ -106,6 +106,38 @@ namespace BLL
             return eliminado;
 
         }
+       
+        public static bool EliminarRelacion(Entidades.Facturas facturaG)
+
+        {
+             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
+                {
+                    bool relacionesEliminadas = true;
+               
+                List<Entidades.FacturaDetalles> listaRelaciones = BLL.FacturaDetallesBLL.GetList(R => R.IdDetalle == facturaG.IdFactura);
+                   
+                    foreach (var relacion in listaRelaciones)
+                    {
+                    listaRelaciones.Add(new FacturaDetalles(relacion.IdArticulo+1));
+
+
+                    if (!FacturaDetallesBLL.Eliminar(relacion))
+                        {
+                            relacionesEliminadas = false;
+                        }
+                    }
+
+                    if (relacionesEliminadas)
+                    {
+                     return   repositorio.Eliminar(facturaG);
+                    }
+                return false;
+
+            }
+
+            
+            
+        }
 
 
 

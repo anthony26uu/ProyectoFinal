@@ -25,7 +25,11 @@ public    class FacturaDetalles
             this.articulosDetalle = new Entidades.Articulos();
          
         }
-        public FacturaDetalles(int idDetalle, int idFactura, int idArticulo, decimal precio, int Cantidad)
+        public FacturaDetalles(int idart)
+        {
+            this.IdArticulo = idart;
+        }
+        public FacturaDetalles(int idDetalle, int idFactura, int idArticulo, decimal precio, int Cantidad )
         {
             this.IdDetalle = idDetalle;
             this.IdFactura = idFactura;

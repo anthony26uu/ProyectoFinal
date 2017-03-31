@@ -89,23 +89,19 @@ namespace DAL
             return Result;
         }
 
-        public bool Eliminar(TEntity laEntidad)
+    public bool Eliminar(TEntity entidad)
         {
-            bool Result = false;
-
             try
             {
-                //para que el contexto lo considere como si estubiera recien agregado
-                EntitySet.Attach(laEntidad);
-                EntitySet.Remove(laEntidad);
-                Result = Contex.SaveChanges() > 0;
+                EntitySet.Attach(entidad);
+                EntitySet.Remove(entidad);
+                return Contex.SaveChanges() > 0;
             }
-            catch {
-              //  throw;
+            catch (Exception)
+            {
+               throw;
                 return false;
             }
-
-            return Result;
         }
 
         public List<TEntity> Lista(Expression<Func<TEntity, bool>> criterioBusqueda)

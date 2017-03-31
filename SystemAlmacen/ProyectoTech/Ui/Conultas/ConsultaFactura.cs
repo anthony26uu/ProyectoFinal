@@ -263,9 +263,17 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
-                Lista = BLL.FacturaBLL.GetListodo();
-                dataGridView1.DataSource = Lista;
-                buttonImprimir.Enabled = true;
+                if (BLL.FacturaBLL.GetListodo()==null)
+                {
+                    MessageBox.Show("NO se ha registrado facturas");
+                }
+                else
+                {
+                    Lista = BLL.FacturaBLL.GetListodo();
+                    dataGridView1.DataSource = Lista;
+                    buttonImprimir.Enabled = true;
+                }
+               
 
             }
             if (comboBox1.SelectedIndex == 3)

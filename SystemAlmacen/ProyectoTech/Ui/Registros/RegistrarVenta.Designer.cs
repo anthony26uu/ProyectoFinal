@@ -82,10 +82,15 @@
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.button_Apagado = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.NombreM_textBox = new System.Windows.Forms.TextBox();
+            this.ModificarD_Button = new System.Windows.Forms.Button();
+            this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -272,12 +277,14 @@
             this.dataGridViewVenta.Name = "dataGridViewVenta";
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 216);
             this.dataGridViewVenta.TabIndex = 32;
+            this.dataGridViewVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellClick);
             // 
             // ColumnTotal
             // 
             this.ColumnTotal.HeaderText = "Total";
             this.ColumnTotal.Name = "ColumnTotal";
             this.ColumnTotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColumnTotal.Visible = false;
             // 
             // ColumnCantidad
             // 
@@ -626,17 +633,6 @@
             this.button_Apagado.UseVisualStyleBackColor = false;
             this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel3.BackgroundImage = global::ProyectoTech.Properties.Resources.icono_paquetes;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(668, 61);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 229);
-            this.panel3.TabIndex = 61;
-            // 
             // buttonImprimir
             // 
             this.buttonImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -686,14 +682,84 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(673, 124);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 70;
+            this.label14.Text = "Nombre";
+            // 
+            // NombreM_textBox
+            // 
+            this.NombreM_textBox.Location = new System.Drawing.Point(738, 124);
+            this.NombreM_textBox.Name = "NombreM_textBox";
+            this.NombreM_textBox.ReadOnly = true;
+            this.NombreM_textBox.Size = new System.Drawing.Size(97, 20);
+            this.NombreM_textBox.TabIndex = 77;
+            // 
+            // ModificarD_Button
+            // 
+            this.ModificarD_Button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ModificarD_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModificarD_Button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ModificarD_Button.Image = global::ProyectoTech.Properties.Resources.ic_mode_edit_black_24dp_1x;
+            this.ModificarD_Button.Location = new System.Drawing.Point(862, 93);
+            this.ModificarD_Button.Margin = new System.Windows.Forms.Padding(2);
+            this.ModificarD_Button.Name = "ModificarD_Button";
+            this.ModificarD_Button.Size = new System.Drawing.Size(75, 54);
+            this.ModificarD_Button.TabIndex = 78;
+            this.ModificarD_Button.Text = "Modificar";
+            this.ModificarD_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ModificarD_Button.UseVisualStyleBackColor = true;
+            this.ModificarD_Button.Click += new System.EventHandler(this.ModificarD_Button_Click);
+            // 
+            // CantidadD_masked
+            // 
+            this.CantidadD_masked.Location = new System.Drawing.Point(738, 151);
+            this.CantidadD_masked.Name = "CantidadD_masked";
+            this.CantidadD_masked.Size = new System.Drawing.Size(97, 20);
+            this.CantidadD_masked.TabIndex = 79;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(673, 158);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 80;
+            this.label12.Text = "Cantidad";
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonEliminar.Image = global::ProyectoTech.Properties.Resources.Eli;
+            this.buttonEliminar.Location = new System.Drawing.Point(862, 158);
+            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(75, 63);
+            this.buttonEliminar.TabIndex = 81;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 596);
+            this.Controls.Add(this.buttonEliminar);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.CantidadD_masked);
+            this.Controls.Add(this.ModificarD_Button);
+            this.Controls.Add(this.NombreM_textBox);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.Eliminar_button);
             this.Controls.Add(this.button_Apagado);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonGuardar);
@@ -775,12 +841,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Cliente_textBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_Apagado;
         private System.Windows.Forms.TextBox TipoVenta_textBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button Eliminar_button;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox NombreM_textBox;
+        private System.Windows.Forms.Button ModificarD_Button;
+        private System.Windows.Forms.MaskedTextBox CantidadD_masked;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCantidad;
-        private System.Windows.Forms.Button Eliminar_button;
+        private System.Windows.Forms.Button buttonEliminar;
     }
 }

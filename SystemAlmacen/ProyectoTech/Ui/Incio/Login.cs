@@ -73,6 +73,28 @@ namespace ProyectoTech.Ui.Incio
             if(nombreTextBox.Text=="root")
             {
                 usuario = new Entidades.Usuarios(1, "Admin", "1234", "Administrador");
+
+
+
+
+            //   int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)
+
+                var cliente = new Entidades.Clientes(1, "Anthony Santana","Villa", "anthony@gmail.com", "Macuelino", DateTime.Now);
+                BLL.ClientesBLL.Guardar(cliente);
+
+
+
+  
+            var producto = new Entidades.Articulos(1, "Calzado", 20, 20, 20, "222222222", DateTime.Now, 11);
+                BLL.ArticuloBLL.Guardar(producto);
+
+                var producto2= new Entidades.Articulos(1, "Zapatos", 20, 20, 20, "222222222", DateTime.Now, 11);
+                BLL.ArticuloBLL.Guardar(producto2);
+
+
+
+
+
             }
             else
             {

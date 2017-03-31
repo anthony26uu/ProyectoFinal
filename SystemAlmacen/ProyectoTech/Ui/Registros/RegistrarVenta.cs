@@ -14,7 +14,9 @@ namespace ProyectoTech.Ui.Registros
 
     public partial class RegistrarVenta : Form
     {
-     
+        int p=0;
+
+
         public RegistrarVenta()
         {
 
@@ -92,6 +94,7 @@ namespace ProyectoTech.Ui.Registros
 
         }
         
+        
         private void CalcularDevuelta()
         {
             if(string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
@@ -138,33 +141,36 @@ namespace ProyectoTech.Ui.Registros
         }
         private void CalcularFactura(int cantidad)
         {
-            facturaG.Cantidadp = cantidad;
+            //  cantidad = Utilidades.TOINT(textBoxCantidad.Text);
+
+            DataGridViewRow fila;
+           
+            Entidades.Articulos producto = (Entidades.Articulos)idArticuloComboBox.SelectedItem;
+        //    fila.Cells[0].Value = 0;
+        
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
               {
-                //detalle.Cantidad = Convert.ToInt32(textBoxCantidad.Value);
-                //row.Cells[1].Value = detalle.Cantidad;
                
-              
                 facturaG.Total += (Convert.ToDecimal(textBoxCantidad.Value)  * Convert.ToDecimal(row.Cells[5].Value) * Convert.ToDecimal(ItbsArticultextBox.Text));
-                row.Cells[1].Value = facturaG.Cantidadp.ToString();
                 TotalmaskedTextBox.Text = facturaG.Total.ToString();
-
-                //row.Cells[1].Value = cantidad;
-
-                //row.Cells[0].Value = total.ToString();
-                //    row.Cells[1].Value
-                //totalg += Convert.ToDouble(row.Cells[0].Value);
-
-
+                
             }
+         
+           
 
-              //TotalmaskedTextBox.Text = totalg.ToString();
-              //TotalmaskedTextBox.Text = totalg.ToString();
-             
         }
         private void LlenarFactura()
         {
-            facturaG = new Facturas( UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, Convert.ToInt32(textBoxCantidad.Text), Convert.ToDecimal(TotalmaskedTextBox.Text));
+
+            int cantidad = 0;
+            foreach (DataGridViewRow row in dataGridViewVenta.Rows)
+            {
+                DataGridViewRow fila = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
+              
+                cantidad = dataGridViewVenta.RowCount;
+            }
+
+                facturaG = new Facturas( UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, cantidad, Convert.ToDecimal(TotalmaskedTextBox.Text));
         }
 
         private void LlenarLabel()
@@ -283,13 +289,15 @@ namespace ProyectoTech.Ui.Registros
         private void AsiganarDatosArticulos()
         {
             decimal total1 = 0;
-            decimal total2 = 0;
+          
             decimal data = 0;
+            decimal itbs;
             decimal descuentod = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
-            total1 = (detalle.articulosDetalle.PrecioVenta * textBoxCantidad.Value) * detalle.articulosDetalle.ITBIS;
-            total2 = total1 - descuentod;
-            data = total2;
-            textBoxTotalArticlo.Text = total2.ToString();
+            itbs = detalle.articulosDetalle.PrecioVenta *detalle.articulosDetalle.ITBIS;
+            total1 = (detalle.articulosDetalle.PrecioVenta * textBoxCantidad.Value) + itbs;
+            data = total1;
+            textBoxTotalArticlo.Text = total1.ToString();
+
 
         }
         private void textBoxCantidad_ValueChanged(object sender, EventArgs e)
@@ -437,19 +445,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
                 {
-                //    bool agregado  =false;
-
-                //    foreach (var articulo in listadoArticulos)
-                //    {
-                //        if (articulo.IdArticulo == articulo.IdArticulo)
-                //        {
-                //            agregado = true;
-                //        }
-                //    }
-                //    if(!agregado)
-                //    {
-                //        MessageBox.Show("agregado");
-                //    }
+                   
                     errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
                     MessageBox.Show("Articulo Selecionado es: " + articulo.NombreArticulo + "\n Cantidad del articulo es ( " + articulo.Existencia + " )");
                     textBoxCantidad.ResetText();
@@ -460,17 +456,54 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
+                    bool agregado = false;
 
-                    Entidades.Articulos art = new Articulos();
-                    art = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
-                    int   cantidadg= Utilidades.TOINT(textBoxCantidad.Text); 
-                    listaRelaciones.Add(new FacturaDetalles(0,facturaG.IdFactura, idArticuloComboBox.SelectedIndex +1 ,art.PrecioVenta, detalle.Cantidad ));
+                    foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+                    {
+                        DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
+                        if (articulo.IdArticulo == Utilidades.TOINT(producto.Cells[2].Value.ToString()))
+                        {
+                            agregado = true;
+                        }
+                    }
+                    if (agregado)
+                    {
+                        MessageBox.Show("Articulo ya esta en factura \n  -Selecione otro \n  -Elimine el el ya agreado");
+                    }
+                    else
+                    {
+
+                        Entidades.Articulos art = new Articulos();
+                        art = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
+                        //NO Elimina asi              listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura + 1, idArticuloComboBox.SelectedIndex, art.PrecioVenta, detalle.Cantidad));
+
+                    //    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(idArticuloComboBox.SelectedIndex + 1));
+
+
+                        listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura + 1, idArticuloComboBox.SelectedIndex, art.PrecioVenta, detalle.Cantidad));
+
+                        listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(idArticuloComboBox.SelectedIndex + 1));
+
+
+
+
+
+
+                        RefreshDataGridView();
+                        CalcularFactura(Utilidades.TOINT(textBoxCantidad.Text));
+                        /*
+                        for (int i = 0; i < dataGridViewVenta.Rows.Count; i++)
+                        {
+
+                          //  dataGridView.Rows[i].Cells[0].Value=
+                    }
+                    */
+                    }
+
+
+
+
                    
-                    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB( idArticuloComboBox.SelectedIndex+1));
-
-                    RefreshDataGridView();
-
-                    CalcularFactura(cantidadg);
                }
            }
            
@@ -543,7 +576,8 @@ namespace ProyectoTech.Ui.Registros
                 listaRelaciones = BLL.FacturaDetallesBLL.GetListado(R => R.IdFactura == facturaG.IdFactura); //r.factura FUunciona
                 foreach (var relacion in listaRelaciones)
                 {
-                    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(relacion.IdArticulo)); // articulo
+                   
+                    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(relacion.IdArticulo+1)); // articulo
                 }
 
                 TipoVenta_textBox.Text = facturaG.TipoVenta;
@@ -601,40 +635,92 @@ namespace ProyectoTech.Ui.Registros
 
         private void Eliminar_button_Click(object sender, EventArgs e)
         {
-            int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
 
-            var user = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
-            bool autorEliminado = false;
-            bool relacionesEliminadas = true;
-            foreach (var relacion in listaRelaciones)
+            if (facturaG != null)
             {
-                if (!BLL.FacturaDetallesBLL.Eliminar(relacion))
+                DialogResult respuestaEliminar = MessageBox.Show("¿Seguro que desea eliminar el registro seleccionado?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuestaEliminar == DialogResult.Yes)
                 {
-                    relacionesEliminadas = false;
-                }
-            }
-            if (relacionesEliminadas)
-            {
-                autorEliminado= BLL.FacturaBLL.Eliminar(user);
-            }
-            if (autorEliminado)
-            {
-                Limpiar();
-                MessageBox.Show("Eliminado con exito.");
-            }
-               else
+                    if (BLL.FacturaBLL.EliminarRelacion(facturaG))
                     {
-                        MessageBox.Show("No se pudo eliminar .");
+                        Limpiar();
+                        MessageBox.Show("Eliminado Con exito");
                     }
-                
-                
-            
-        }
+                    else
+                    {
+                        MessageBox.Show("Problemas al eliminar");
+                    }
+                }
+            }   /*
+
+
+                 int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
+
+                var user = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
+                List<Entidades.FacturaDetalles>  listaRelaciones = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
+                if (facturaG!=null)
+                {
+                    bool autorEliminado = false;
+                    bool relacionesEliminadas = true;
+
+                foreach (var relacion in listaRelaciones)
+                {
+                    if (!BLL.FacturaDetallesBLL.Eliminar(relacion))
+                    {
+                        relacionesEliminadas = false;
+                    }
+                }
+                if (relacionesEliminadas==true)
+                {
+                    autorEliminado= BLL.FacturaBLL.Eliminar(user);
+                }
+                if (autorEliminado)
+                {
+                    Limpiar();
+                    MessageBox.Show("Eliminado con exito.");
+                }
+                   else
+                        {
+                            MessageBox.Show("No se pudo eliminar .");
+                        }
+
+                }
+
+                 */
+
+                }
 
 
         private void comboBoxNombreAr_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxCantidad.Value = 0;
+        }
+
+        private void dataGridViewVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+             p = dataGridViewVenta.CurrentRow.Index;
+
+            MessageBox.Show(p+"Es la posicion");
+            NombreM_textBox.Text = dataGridViewVenta[3, p].Value.ToString();
+
+
+        }
+
+        private void ModificarD_Button_Click(object sender, EventArgs e)
+        {
+            dataGridViewVenta[1, p].Value = CantidadD_masked.Text;
+            
+
+        }
+
+        private void buttonAñdir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+          
         }
     }
     }
