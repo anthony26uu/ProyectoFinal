@@ -84,7 +84,7 @@ namespace ProyectoTech.Ui.Registros
         private void Limpiar()
         {
             nombreUsuarioTextBox.Clear();
-            IdnumericUpDown.ResetText();
+            IdnumericUpDown.Value=0;
             passUsuarioTextBox.Clear();
             ConfirmaContextBox.Clear();
             nombreUsuarioTextBox.Focus();
@@ -177,7 +177,14 @@ namespace ProyectoTech.Ui.Registros
         }
 
         private void buttonbuscar_Click(object sender, EventArgs e)
-        {
+        {  if(string.IsNullOrWhiteSpace(IdnumericUpDown.Text))
+            {
+                errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
+            }
+            else
+
+            {
+                errorProviderTodo.Clear();
                 int id = int.Parse(IdnumericUpDown.Text);
                 var user = BLL.UserBLL.Buscar(p => p.Id == id);
                 if (user != null)
@@ -185,15 +192,19 @@ namespace ProyectoTech.Ui.Registros
                     IdnumericUpDown.Text = Convert.ToString(user.Id);
                     nombreUsuarioTextBox.Text = user.NombreUsuario;
                     TipoComboBox.Text = user.Tipo;
-                   // passUsuarioTextBox.Text = "*****";
-                   // ConfirmaContextBox.Text = "*****";
-                    MessageBox.Show("Este es el Usuario Contraseña Protegida por seguridad");
+                    passUsuarioTextBox.Text = user.PassUsuario;
+                    ConfirmaContextBox.Text = user.PassUsuario;
+                    errorProviderTodo.SetError(passUsuarioTextBox, "Contraseña Protegida por seguridad");
+                    errorProviderTodo.SetError(ConfirmaContextBox, "Contraseña Protegida por seguridad");
 
                 }
                 else
                 {
-                    MessageBox.Show("No existe ningun Usuario con ese Id.");
+                    errorProviderTodo.Clear();
+                    errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
                 }
+            }
+               
 
             }
 
@@ -205,6 +216,11 @@ namespace ProyectoTech.Ui.Registros
         private void RegistroUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void IdnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            errorProviderTodo.Clear();
         }
     }
     }

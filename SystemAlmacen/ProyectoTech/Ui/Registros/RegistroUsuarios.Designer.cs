@@ -119,27 +119,31 @@
             // 
             this.IdnumericUpDown.Location = new System.Drawing.Point(145, 9);
             this.IdnumericUpDown.Name = "IdnumericUpDown";
-            this.IdnumericUpDown.Size = new System.Drawing.Size(74, 20);
+            this.IdnumericUpDown.Size = new System.Drawing.Size(97, 20);
             this.IdnumericUpDown.TabIndex = 50;
+            this.IdnumericUpDown.ValueChanged += new System.EventHandler(this.IdnumericUpDown_ValueChanged);
             // 
             // ConfirmaContextBox
             // 
             this.ConfirmaContextBox.Location = new System.Drawing.Point(145, 128);
             this.ConfirmaContextBox.Name = "ConfirmaContextBox";
+            this.ConfirmaContextBox.PasswordChar = '*';
             this.ConfirmaContextBox.Size = new System.Drawing.Size(147, 20);
             this.ConfirmaContextBox.TabIndex = 46;
             // 
             // nombreUsuarioTextBox
             // 
             this.nombreUsuarioTextBox.Location = new System.Drawing.Point(145, 38);
+            this.nombreUsuarioTextBox.MaxLength = 50;
             this.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox";
-            this.nombreUsuarioTextBox.Size = new System.Drawing.Size(147, 20);
+            this.nombreUsuarioTextBox.Size = new System.Drawing.Size(145, 20);
             this.nombreUsuarioTextBox.TabIndex = 43;
             // 
             // passUsuarioTextBox
             // 
             this.passUsuarioTextBox.Location = new System.Drawing.Point(145, 102);
             this.passUsuarioTextBox.Name = "passUsuarioTextBox";
+            this.passUsuarioTextBox.PasswordChar = '*';
             this.passUsuarioTextBox.Size = new System.Drawing.Size(147, 20);
             this.passUsuarioTextBox.TabIndex = 45;
             // 
@@ -163,7 +167,7 @@
             this.buttonbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonbuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonbuscar.Image")));
             this.buttonbuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonbuscar.Location = new System.Drawing.Point(224, 4);
+            this.buttonbuscar.Location = new System.Drawing.Point(247, 9);
             this.buttonbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(43, 29);

@@ -278,6 +278,7 @@
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 216);
             this.dataGridViewVenta.TabIndex = 32;
             this.dataGridViewVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellClick);
+            this.dataGridViewVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellContentClick);
             // 
             // ColumnTotal
             // 

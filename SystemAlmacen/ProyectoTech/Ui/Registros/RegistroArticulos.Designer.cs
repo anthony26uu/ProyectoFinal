@@ -181,6 +181,7 @@
             this.ArticulonumericUpDown.Name = "ArticulonumericUpDown";
             this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.ArticulonumericUpDown.TabIndex = 12;
+            this.ArticulonumericUpDown.ValueChanged += new System.EventHandler(this.ArticulonumericUpDown_ValueChanged);
             // 
             // existenciaMaskedTextBox
             // 
@@ -194,8 +195,9 @@
             // nombreArticuloTextBox
             // 
             this.nombreArticuloTextBox.Location = new System.Drawing.Point(114, 49);
+            this.nombreArticuloTextBox.MaxLength = 70;
             this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
-            this.nombreArticuloTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nombreArticuloTextBox.Size = new System.Drawing.Size(198, 20);
             this.nombreArticuloTextBox.TabIndex = 0;
             // 
             // precioVentaMaskedTextBox
@@ -203,7 +205,7 @@
             this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(114, 101);
             this.precioVentaMaskedTextBox.Mask = "99999";
             this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
-            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.precioVentaMaskedTextBox.TabIndex = 2;
             this.precioVentaMaskedTextBox.ValidatingType = typeof(int);
             // 
@@ -212,7 +214,7 @@
             this.precioCompraMaskedTextBox.Location = new System.Drawing.Point(114, 127);
             this.precioCompraMaskedTextBox.Mask = "99999";
             this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
-            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.precioCompraMaskedTextBox.TabIndex = 3;
             this.precioCompraMaskedTextBox.ValidatingType = typeof(int);
             // 
@@ -221,7 +223,7 @@
             this.codigoArticuloMaskedTextBox.Location = new System.Drawing.Point(114, 180);
             this.codigoArticuloMaskedTextBox.Mask = "9-999999-999999";
             this.codigoArticuloMaskedTextBox.Name = "codigoArticuloMaskedTextBox";
-            this.codigoArticuloMaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.codigoArticuloMaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.codigoArticuloMaskedTextBox.TabIndex = 5;
             // 
             // fechaIngresoDateTimePicker
@@ -230,7 +232,7 @@
             this.fechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaIngresoDateTimePicker.Location = new System.Drawing.Point(114, 206);
             this.fechaIngresoDateTimePicker.Name = "fechaIngresoDateTimePicker";
-            this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaIngresoDateTimePicker.Size = new System.Drawing.Size(198, 20);
             this.fechaIngresoDateTimePicker.TabIndex = 6;
             // 
             // errorProviderTodo
@@ -242,7 +244,7 @@
             this.ITBISmaskedTextBox.Location = new System.Drawing.Point(114, 241);
             this.ITBISmaskedTextBox.Mask = "9.9999";
             this.ITBISmaskedTextBox.Name = "ITBISmaskedTextBox";
-            this.ITBISmaskedTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ITBISmaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.ITBISmaskedTextBox.TabIndex = 7;
             // 
             // panel1

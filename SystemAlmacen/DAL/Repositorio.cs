@@ -99,7 +99,7 @@ namespace DAL
             }
             catch (Exception)
             {
-               throw;
+               
                 return false;
             }
         }

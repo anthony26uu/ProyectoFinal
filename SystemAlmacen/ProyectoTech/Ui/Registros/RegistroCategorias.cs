@@ -99,20 +99,28 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonbuscar_Click(object sender, EventArgs e)
         {
-
-            int id = int.Parse(categoriaIdNumericUpDown.Text);
-            Categorias tipo;
-            tipo = BLL.CategoriaBLL.Buscar(p => p.CategoriaId == id);
-            if (tipo != null)
+            if (string.IsNullOrWhiteSpace(categoriaIdNumericUpDown.Text))
             {
-
-                nombreCategoriaTextBox.Text = tipo.NombreCategoria;
-                MessageBox.Show("Resultados de su busqueda");
+                errorProvider1.SetError(categoriaIdNumericUpDown, "No Existe Cliente con este id");
             }
             else
             {
-                MessageBox.Show("No existe ninguna categoria con ese Id.");
+                errorProvider1.Clear();
+                int id = int.Parse(categoriaIdNumericUpDown.Text);
+                Categorias tipo;
+                tipo = BLL.CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                if (tipo != null)
+                {
+
+                    nombreCategoriaTextBox.Text = tipo.NombreCategoria;
+                    MessageBox.Show("Resultados de su busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("No existe ninguna categoria con ese Id.");
+                }
             }
+               
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -142,6 +150,9 @@ namespace ProyectoTech.Ui.Registros
           
         }
 
-      
+        private void categoriaIdNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
     }
 }

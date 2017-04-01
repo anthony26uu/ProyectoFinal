@@ -127,28 +127,36 @@ namespace ProyectoTech.Ui.Registros
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-
-            int id = int.Parse(clienteIdNumericUpDown.Text);
-            Clientes cliente;
-
-            cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
-            if (cliente != null)
+            if (string.IsNullOrWhiteSpace(clienteIdNumericUpDown.Text))
             {
-
-                nombresTextBox.Text = cliente.Nombres;
-                direccionTextBox.Text = cliente.Direccion;
-                emailTextBox.Text = cliente.Email;
-                telefonoMaskedTextBox.Text = cliente.Telefono;
-                sexoComboBox.Text = cliente.Sexo;
-                fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
-
-
-                MessageBox.Show("Resultados de su busqueda");
+                NombreerrorProvider.SetError(clienteIdNumericUpDown, "No Existe Cliente con este id");
             }
             else
             {
-                MessageBox.Show("No existe ninguna categoria con ese Id.");
+                NombreerrorProvider.Clear();
+                int id = int.Parse(clienteIdNumericUpDown.Text);
+                Clientes cliente;
+
+                cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
+                if (cliente != null)
+                {
+
+                    nombresTextBox.Text = cliente.Nombres;
+                    direccionTextBox.Text = cliente.Direccion;
+                    emailTextBox.Text = cliente.Email;
+                    telefonoMaskedTextBox.Text = cliente.Telefono;
+                    sexoComboBox.Text = cliente.Sexo;
+                    fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
+
+
+                    MessageBox.Show("Resultados de su busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("No existe ninguna categoria con ese Id.");
+                }
             }
+               
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)
@@ -167,6 +175,11 @@ namespace ProyectoTech.Ui.Registros
             {
                 MessageBox.Show("No se pudo eliminar el cliente \n Compruebe Existencia");
             }
+        }
+
+        private void clienteIdNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            NombreerrorProvider.Clear();
         }
     }
 }

@@ -64,25 +64,28 @@
             nombreCategoriaLabel.BackColor = System.Drawing.Color.Transparent;
             nombreCategoriaLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
             nombreCategoriaLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            nombreCategoriaLabel.Location = new System.Drawing.Point(11, 46);
+            nombreCategoriaLabel.Location = new System.Drawing.Point(12, 45);
             nombreCategoriaLabel.Name = "nombreCategoriaLabel";
-            nombreCategoriaLabel.Size = new System.Drawing.Size(117, 15);
+            nombreCategoriaLabel.Size = new System.Drawing.Size(73, 15);
             nombreCategoriaLabel.TabIndex = 46;
-            nombreCategoriaLabel.Text = "Nombre Categoria:";
+            nombreCategoriaLabel.Text = "Descripcion";
             // 
             // categoriaIdNumericUpDown
             // 
-            this.categoriaIdNumericUpDown.Location = new System.Drawing.Point(127, 17);
+            this.categoriaIdNumericUpDown.Location = new System.Drawing.Point(104, 17);
             this.categoriaIdNumericUpDown.Name = "categoriaIdNumericUpDown";
             this.categoriaIdNumericUpDown.Size = new System.Drawing.Size(53, 20);
             this.categoriaIdNumericUpDown.TabIndex = 4;
+            this.categoriaIdNumericUpDown.ValueChanged += new System.EventHandler(this.categoriaIdNumericUpDown_ValueChanged);
             // 
             // nombreCategoriaTextBox
             // 
             this.nombreCategoriaTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.nombreCategoriaTextBox.Location = new System.Drawing.Point(127, 43);
+            this.nombreCategoriaTextBox.Location = new System.Drawing.Point(104, 43);
+            this.nombreCategoriaTextBox.MaxLength = 70;
+            this.nombreCategoriaTextBox.Multiline = true;
             this.nombreCategoriaTextBox.Name = "nombreCategoriaTextBox";
-            this.nombreCategoriaTextBox.Size = new System.Drawing.Size(120, 20);
+            this.nombreCategoriaTextBox.Size = new System.Drawing.Size(120, 39);
             this.nombreCategoriaTextBox.TabIndex = 0;
             // 
             // errorProvider1
@@ -93,10 +96,10 @@
             // 
             this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.categorias;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(253, 9);
+            this.panel1.Location = new System.Drawing.Point(230, 9);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(92, 75);
+            this.panel1.Size = new System.Drawing.Size(105, 75);
             this.panel1.TabIndex = 47;
             // 
             // buttonbuscar
@@ -105,7 +108,7 @@
             this.buttonbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonbuscar.Image = ((System.Drawing.Image)(resources.GetObject("buttonbuscar.Image")));
             this.buttonbuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonbuscar.Location = new System.Drawing.Point(185, 9);
+            this.buttonbuscar.Location = new System.Drawing.Point(181, 9);
             this.buttonbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(43, 29);

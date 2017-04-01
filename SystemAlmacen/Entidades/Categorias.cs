@@ -20,5 +20,11 @@ namespace Entidades
             this.ArticuloList = new List<Articulos>();
         }
 
+        public Categorias(int catgoriaID, string nombre)
+        {
+            this.CategoriaId = catgoriaID;
+            this.NombreCategoria = nombre;
+        }
+
     }
 }

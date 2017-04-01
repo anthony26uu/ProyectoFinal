@@ -31,14 +31,14 @@ namespace Entidades
         }
 
     
-  public Articulos(int idArticulo,  string nombreArticulo,int existencia,  decimal precioVenta,decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs)
+  public Articulos(int idArticulo,  string nombreArticulo,int existencia,  decimal precioVenta,decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
         {
            this.IdArticulo = idArticulo;
             this.NombreArticulo = nombreArticulo;
             this.Existencia = existencia;
             this.PrecioVenta = precioVenta;
             this.PrecioCompra = precioCompra;
-          //  this.Categoria = categoria;
+            this.Categoria = categoria;
            this.CodigoArticulo = codigoArticulo;
             this.FechaIngreso = fechaIngreso;
             this.ITBIS = itbs;

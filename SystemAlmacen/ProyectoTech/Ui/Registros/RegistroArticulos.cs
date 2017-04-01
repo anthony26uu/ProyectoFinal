@@ -176,28 +176,36 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonbuscar_Click(object sender, EventArgs e)
         {
-
-            int id = int.Parse(ArticulonumericUpDown.Text);
-            Articulos arte;
-
-            arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
-            if (arte != null)
+            if(string.IsNullOrWhiteSpace(ArticulonumericUpDown.Text))
             {
-                nombreArticuloTextBox.Text = arte.NombreArticulo;
-                existenciaMaskedTextBox.Text = Convert.ToString(arte.Existencia);
-                precioVentaMaskedTextBox.Text = Convert.ToString(arte.PrecioVenta);
-                precioCompraMaskedTextBox.Text = Convert.ToString(arte.PrecioCompra);
-                categoriaComboBox.SelectedIndex = arte.CategoriaId;
-                codigoArticuloMaskedTextBox.Text = Convert.ToString(arte.CodigoArticulo);
-                fechaIngresoDateTimePicker.Text = Convert.ToString(arte.FechaIngreso);
-                ITBISmaskedTextBox.Text = Convert.ToString(arte.ITBIS);
-
-                MessageBox.Show("Resultados de su busqueda");
+                errorProviderTodo.SetError(ArticulonumericUpDown, "Campo Vacio");
             }
             else
             {
-                MessageBox.Show("No existe ninguna categoria con ese Id.");
+                errorProviderTodo.Clear();
+                int id = int.Parse(ArticulonumericUpDown.Text);
+                Articulos arte;
+
+                arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
+                if (arte != null)
+                {
+                    nombreArticuloTextBox.Text = arte.NombreArticulo;
+                    existenciaMaskedTextBox.Text = Convert.ToString(arte.Existencia);
+                    precioVentaMaskedTextBox.Text = Convert.ToString(arte.PrecioVenta);
+                    precioCompraMaskedTextBox.Text = Convert.ToString(arte.PrecioCompra);
+                    categoriaComboBox.SelectedIndex = arte.CategoriaId;
+                    codigoArticuloMaskedTextBox.Text = Convert.ToString(arte.CodigoArticulo);
+                    fechaIngresoDateTimePicker.Text = Convert.ToString(arte.FechaIngreso);
+                    ITBISmaskedTextBox.Text = Convert.ToString(arte.ITBIS);
+
+                    MessageBox.Show("Resultados de su busqueda");
+                }
+                else
+                {
+                    MessageBox.Show("No existe ninguna categoria con ese Id.");
+                }
             }
+            
         }
 
         private void buttonEliminar_Click_1(object sender, EventArgs e)
@@ -220,6 +228,11 @@ namespace ProyectoTech.Ui.Registros
         private void RegistroArticulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+        }
+
+        private void ArticulonumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            errorProviderTodo.Clear();
         }
     }
     }

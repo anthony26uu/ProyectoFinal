@@ -75,24 +75,27 @@ namespace ProyectoTech.Ui.Incio
                 usuario = new Entidades.Usuarios(1, "Admin", "1234", "Administrador");
 
 
+               
 
+      //      int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)''
 
-            //   int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)
-
-                var cliente = new Entidades.Clientes(1, "Anthony Santana","Villa", "anthony@gmail.com", "Macuelino", DateTime.Now);
-                BLL.ClientesBLL.Guardar(cliente);
-
-
-
-  
-            var producto = new Entidades.Articulos(1, "Calzado", 20, 20, 20, "222222222", DateTime.Now, 11);
-                BLL.ArticuloBLL.Guardar(producto);
-
-                var producto2= new Entidades.Articulos(1, "Zapatos", 20, 20, 20, "222222222", DateTime.Now, 11);
-                BLL.ArticuloBLL.Guardar(producto2);
+             var cliente = new Entidades.Clientes(1, "Anthony Santana","Villa", "anthony@gmail.com", "Masculino", DateTime.Now);
+             BLL.ClientesBLL.Guardar(cliente);
 
 
 
+
+                             var producto = new Entidades.Articulos(1, "Tenis NIKE", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
+                             BLL.ArticuloBLL.Guardar(producto);
+
+                             var producto2= new Entidades.Articulos(2, "Zapatos", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
+                             BLL.ArticuloBLL.Guardar(producto2);
+
+
+                             var Cantegoria = new Entidades.Categorias(1, "CAZLADO");
+                             BLL.CategoriaBLL.Guardar(Cantegoria);
+
+                
 
 
             }

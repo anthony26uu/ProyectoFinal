@@ -14,30 +14,32 @@ namespace ProyectoTech.Ui.Registros
 
     public partial class RegistrarVenta : Form
     {
-        int p=0;
-
 
         public RegistrarVenta()
         {
 
             InitializeComponent();
-            //HOra y Fecha
             timer1.Enabled = true;
-            
             Limpiar();
         }
-     
+        int p = 0;
+
+        int devuelta = 0;
+        int descuento = 0;
+
         private static RegistrarVenta unico = null;
         private static Entidades.Usuarios UsuarioG = null;
         FacturaDetalles detalle;
         Facturas facturaG;
         Entidades.Articulos articulo;
-
-        
-        int devuelta = 0;
-        int descuento = 0;
-
-       
+        private static List<FacturaDetalles> listaRelaciones = null;
+        private static List<Articulos> listadoArticulos = null;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Actualizar cada segundo la Hora
+            labelHORA.Text = DateTime.Now.ToLongTimeString();
+            labelFecha.Text = DateTime.Now.ToLongDateString();
+        }
         public static RegistrarVenta Funcion()
         {
             if (unico == null)
@@ -47,7 +49,6 @@ namespace ProyectoTech.Ui.Registros
             return unico;
 
         }
-
         private void RefreshDataGridView()
         {
             dataGridViewVenta.DataSource = null;
@@ -58,26 +59,9 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.Columns["Categoria"].Visible = false;
             dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
             dataGridViewVenta.Columns["CategoriaId"].Visible = false;
-         //   dataGridViewVenta.Columns["PrecioCompra"].Visible = false;
+
 
         }
-
-
-
-        private static List<FacturaDetalles> listaRelaciones = null;
-        private static List<Articulos> listadoArticulos = null;
-
-
-
-        private void Refrescar()
-        {
-            dataGridViewVenta.DataSource = null;
-            dataGridViewVenta.DataSource = listadoArticulos;
-         
-        }
-
-
-      
         private void EliminarExitencia(int existencia)
         {
 
@@ -93,11 +77,9 @@ namespace ProyectoTech.Ui.Registros
             }
 
         }
-        
-        
         private void CalcularDevuelta()
         {
-            if(string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
+            if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(EfectivomaskedTextBox, "Ingrese Dinero");
             }
@@ -113,18 +95,18 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                    
-                        errorProviderTodo.Clear();
-                        double devuelta = Convert.ToDouble(EfectivomaskedTextBox.Text);
-                        double resultado =  devuelta- Convert.ToDouble(TotalmaskedTextBox.Text);
-                        textBoxDevuelta.Text = resultado.ToString();
-                    
+
+                    errorProviderTodo.Clear();
+                    double devuelta = Convert.ToDouble(EfectivomaskedTextBox.Text);
+                    double resultado = devuelta - Convert.ToDouble(TotalmaskedTextBox.Text);
+                    textBoxDevuelta.Text = resultado.ToString();
+
 
                 }
             }
-            
 
-          
+
+
         }
         private void ComprobarCantidad(int existencia)
         {
@@ -135,28 +117,25 @@ namespace ProyectoTech.Ui.Registros
             {
                 errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
                 dataGridViewVenta.Rows.Clear();
-                MessageBox.Show("Cantidad del articulo selecionado es ( " + articulo.Existencia+" )");
-               textBoxCantidad.ResetText();   
-            }  
+                MessageBox.Show("Cantidad del articulo selecionado es ( " + articulo.Existencia + " )");
+                textBoxCantidad.ResetText();
+            }
         }
         private void CalcularFactura(int cantidad)
         {
             //  cantidad = Utilidades.TOINT(textBoxCantidad.Text);
 
             DataGridViewRow fila;
-           
+
             Entidades.Articulos producto = (Entidades.Articulos)idArticuloComboBox.SelectedItem;
-        //    fila.Cells[0].Value = 0;
-        
+            //    fila.Cells[0].Value = 0;
+
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
-              {
-               
-                facturaG.Total += (Convert.ToDecimal(textBoxCantidad.Value)  * Convert.ToDecimal(row.Cells[5].Value) * Convert.ToDecimal(ItbsArticultextBox.Text));
+            {
+
+                facturaG.Total += (Convert.ToDecimal(textBoxCantidad.Value) * Convert.ToDecimal(row.Cells[5].Value) * Convert.ToDecimal(ItbsArticultextBox.Text));
                 TotalmaskedTextBox.Text = facturaG.Total.ToString();
-                
             }
-         
-           
 
         }
         private void LlenarFactura()
@@ -165,21 +144,19 @@ namespace ProyectoTech.Ui.Registros
             int cantidad = 0;
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
-                DataGridViewRow fila = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
-              
+
                 cantidad = dataGridViewVenta.RowCount;
             }
 
-                facturaG = new Facturas( UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, cantidad, Convert.ToDecimal(TotalmaskedTextBox.Text));
+            facturaG = new Facturas(UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, cantidad, Convert.ToDecimal(TotalmaskedTextBox.Text));
         }
-
         private void LlenarLabel()
         {
             UsuarioLabel.Text = Login.InsetarU().NombreUsuario;
             TipoUsuarioLabel.Text = Login.InsetarU().Tipo;
         }
         public static Entidades.Usuarios InsetarU()
-        { 
+        {
             return UsuarioG;
         }
         private bool Validar()
@@ -190,13 +167,13 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(clienteComboBox, "Campo Obligatorio");
                 retorno = false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(EfectivomaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(tipoVentaComboBox.Text))
             {
                 errorProviderTodo.SetError(tipoVentaComboBox, "Campo Obligatorio");
@@ -215,7 +192,7 @@ namespace ProyectoTech.Ui.Registros
 
             return retorno;
         }
-      
+
         private void Limpiar()
         {
             Cliente_textBox.Clear();
@@ -233,11 +210,11 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.DataSource = null;
             PreciotextBox.Clear();
             ItbsArticultextBox.Clear();
-            TotalmaskedTextBox.Clear();          
+            TotalmaskedTextBox.Clear();
             textBoxTotalArticlo.Clear();
             tipoVentaComboBox.Text = null;
+            articulo = null;
 
-            textBoxCantidad.Text = "0";
             textBoxCantidad.Value = 0;
             articulo = new Articulos();
             textBoxCantidad.Enabled = false;
@@ -264,16 +241,11 @@ namespace ProyectoTech.Ui.Registros
                 comboBoxNombreAr.DisplayMember = "NombreArticulo";
             }
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //Actualizar cada segundo la Hora
-            labelHORA.Text = DateTime.Now.ToLongTimeString();
-            labelFecha.Text = DateTime.Now.ToLongDateString();
-        }
+
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {
-           
-        
+
+
             listaRelaciones = new List<FacturaDetalles>();
             listadoArticulos = new List<Articulos>();
             LlenarLabel();
@@ -284,17 +256,20 @@ namespace ProyectoTech.Ui.Registros
             idArticuloComboBox.Enabled = true;
             clienteComboBox.Enabled = true;
             tipoVentaComboBox.Enabled = true;
-            //   EfectivomaskedTextBox.Enabled = true;
+
         }
         private void AsiganarDatosArticulos()
         {
+            Entidades.Articulos Entidada = new Articulos();
+            int id = Utilidades.TOINT(idArticuloComboBox.Text);
+            Entidada = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
             decimal total1 = 0;
-          
+
             decimal data = 0;
             decimal itbs;
             decimal descuentod = Convert.ToDecimal(Utilidades.TOINT(descuentoMaskedTextBox.Text));
-            itbs = detalle.articulosDetalle.PrecioVenta *detalle.articulosDetalle.ITBIS;
-            total1 = (detalle.articulosDetalle.PrecioVenta * textBoxCantidad.Value) + itbs;
+            itbs = Entidada.PrecioVenta * Entidada.ITBIS;
+            total1 = (Entidada.PrecioVenta * textBoxCantidad.Value) + itbs;
             data = total1;
             textBoxTotalArticlo.Text = total1.ToString();
 
@@ -324,13 +299,14 @@ namespace ProyectoTech.Ui.Registros
         }
         private void idArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-                Estado(true);
-               textBoxCantidad.Value = 0;
-               int id = Utilidades.TOINT(idArticuloComboBox.Text);
-                detalle.articulosDetalle = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
-                if (detalle.articulosDetalle != null)
-                {             
-                if (detalle.articulosDetalle.Existencia == 0)
+            Estado(true);
+            Entidades.Articulos articuloc = new Articulos();
+            textBoxCantidad.Value = 0;
+            int id = Utilidades.TOINT(idArticuloComboBox.Text);
+            articuloc = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
+            if (articuloc != null)
+            {
+                if (articuloc.Existencia == 0)
                 {
                     errorProviderTodo.SetError(idArticuloComboBox, "No Existe Unidades de este articulo");
                     textBoxCantidad.Enabled = false;
@@ -357,14 +333,14 @@ namespace ProyectoTech.Ui.Registros
                     textBoxCantidad.Enabled = true;
                     buttonAgregar.Enabled = true;
                     buttonGuardar.Enabled = true;
-                    PreciotextBox.Text = detalle.articulosDetalle.PrecioVenta.ToString();
-                    ItbsArticultextBox.Text = detalle.articulosDetalle.ITBIS.ToString();
+                    PreciotextBox.Text = articuloc.PrecioVenta.ToString();
+                    ItbsArticultextBox.Text = articuloc.ITBIS.ToString();
                     textBoxCantidad.Focus();
-                   
+
                 }
-               
-             }
-            
+
+            }
+
 
         }
         private void RegistrarVenta_FormClosed(object sender, FormClosedEventArgs e)
@@ -373,13 +349,14 @@ namespace ProyectoTech.Ui.Registros
             listaRelaciones = null;
             listadoArticulos = null;
         }
+
         private void maskedTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Enter)
             {
                 CalcularDevuelta();
-            }         
-        }  
+            }
+        }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
 
@@ -387,33 +364,37 @@ namespace ProyectoTech.Ui.Registros
             if (!Validar())
             {
                 MessageBox.Show("Por favor llenar los campos");
-               
+
                 Limpiar();
             }
             else
             {
                 LlenarFactura();
                 bool guardadoRelacion = true;
-            
-                if(facturaG != null)
+
+                if (BLL.FacturaBLL.Guardar(facturaG) != null)
                 {
-                    if (BLL.FacturaBLL.Guardar(facturaG) != null)
-                    {
-                        EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
-                    }
+                    EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
+                }
+
+                if (facturaG != null)
+                {
 
                     foreach (var relacion in listaRelaciones)
                     {
-                    
-                        relacion.IdDetalle = facturaG.IdFactura;
+
+
                         relacion.IdFactura = facturaG.IdFactura;
-                      
+
                         if (BLL.FacturaDetallesBLL.Guardar(relacion) == false)
                         {
                             guardadoRelacion = false;
-                            break;
+
                         }
                     }
+
+
+
                 }
 
                 if (facturaG != null && guardadoRelacion)
@@ -425,17 +406,20 @@ namespace ProyectoTech.Ui.Registros
                     MessageBox.Show("Error");
                 }
 
-               
+
                 Limpiar();
                 clienteComboBox.Focus();
-               
+
             }
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
 
+
+
             articulo = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
+
 
             if (string.IsNullOrWhiteSpace(idArticuloComboBox.Text))
             {
@@ -445,7 +429,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 if (Utilidades.TOINT(textBoxCantidad.Text) > articulo.Existencia)
                 {
-                   
+
                     errorProviderTodo.SetError(textBoxCantidad, "Cantidad Excede existencia");
                     MessageBox.Show("Articulo Selecionado es: " + articulo.NombreArticulo + "\n Cantidad del articulo es ( " + articulo.Existencia + " )");
                     textBoxCantidad.ResetText();
@@ -473,67 +457,67 @@ namespace ProyectoTech.Ui.Registros
                     else
                     {
 
-                        Entidades.Articulos art = new Articulos();
-                        art = BLL.ArticuloBLL.BuscarB(Utilidades.TOINT(idArticuloComboBox.Text));
-                        //NO Elimina asi              listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura + 1, idArticuloComboBox.SelectedIndex, art.PrecioVenta, detalle.Cantidad));
-
-                    //    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(idArticuloComboBox.SelectedIndex + 1));
-
-
-                        listaRelaciones.Add(new FacturaDetalles(0, facturaG.IdFactura + 1, idArticuloComboBox.SelectedIndex, art.PrecioVenta, detalle.Cantidad));
-
-                        listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(idArticuloComboBox.SelectedIndex + 1));
-
-
-
-
-
-
-                        RefreshDataGridView();
-                        CalcularFactura(Utilidades.TOINT(textBoxCantidad.Text));
-                        /*
-                        for (int i = 0; i < dataGridViewVenta.Rows.Count; i++)
+                        if (textBoxCantidad.Value > 0)
                         {
 
-                          //  dataGridView.Rows[i].Cells[0].Value=
+                            errorProviderTodo.Clear();
+                           
+                            if (articulo != null)
+                            {
+                                bool estaEnLista = false;
+                                foreach (var lista in listadoArticulos)
+                                {
+                                    if (lista.IdArticulo == articulo.IdArticulo)
+                                    {
+                                        estaEnLista = true;
+                                        break;
+                                    }
+                                }
+
+                                if (!estaEnLista)
+                                {
+                                    listadoArticulos.Add(articulo);
+                                    listaRelaciones.Add(new FacturaDetalles(0, 0, articulo.IdArticulo, articulo.PrecioVenta, detalle.Cantidad));
+
+                                    RefreshDataGridView();
+
+                                    CalcularFactura(Utilidades.TOINT(textBoxCantidad.Text));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            errorProviderTodo.SetError(textBoxCantidad, "Campo esta en 0");
+                        }
+
                     }
-                    */
-                    }
 
+                }
+            }
 
-
-
-                   
-               }
-           }
-           
 
         }
 
         private void Estado(bool condicion)
         {
-           // condicion=false;
-            if(condicion== false)
+            if (condicion == false)
             {
                 idArticuloComboBox.Enabled = false;
                 buttonAgregar.Enabled = false;
                 EfectivomaskedTextBox.Enabled = false;
                 textBoxDevuelta.Enabled = false;
                 buttonGuardar.Enabled = false;
-
                 Nuevo_Cliente.Enabled = false;
-                clienteComboBox.Enabled=false;
+                clienteComboBox.Enabled = false;
                 tipoVentaComboBox.Enabled = false;
-                
                 comboBoxNombreAr.Enabled = false;
                 textBoxCantidad.Enabled = false;
                 descuentoMaskedTextBox.Enabled = false;
                 buttonImprimir.Enabled = false;
             }
-            else if(condicion==true)
+            else if (condicion == true)
             {
                 buttonGuardar.Enabled = true;
-
                 idArticuloComboBox.Enabled = true;
                 buttonAgregar.Enabled = true;
                 buttonImprimir.Enabled = true;
@@ -544,10 +528,9 @@ namespace ProyectoTech.Ui.Registros
                 clienteComboBox.Enabled = true;
                 tipoVentaComboBox.Enabled = true;
                 EfectivomaskedTextBox.Enabled = true;
-            
-                //s   textBoxCantidad.Enabled = true;
+
             }
-            
+
         }
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
@@ -562,41 +545,57 @@ namespace ProyectoTech.Ui.Registros
         {
             Ui.Registros.RegistroClientes.Funcion().Show();
             RegistroClientes.Funcion().Activate();
-            //RegistrarVenta_Load();
+
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-        
-            facturaG = BLL.FacturaBLL.BuscarB( Utilidades.TOINT(BusquedamaskedTextBoxId.Text));
-            if (facturaG != null)
+            if (!string.IsNullOrWhiteSpace(BusquedamaskedTextBoxId.Text))
             {
-                listadoArticulos = new List<Entidades.Articulos>();
-
-                listaRelaciones = BLL.FacturaDetallesBLL.GetListado(R => R.IdFactura == facturaG.IdFactura); //r.factura FUunciona
-                foreach (var relacion in listaRelaciones)
-                {
-                   
-                    listadoArticulos.Add(BLL.ArticuloBLL.BuscarB(relacion.IdArticulo+1)); // articulo
-                }
-
-                TipoVenta_textBox.Text = facturaG.TipoVenta;
-                clienteComboBox.Enabled = false;
-                RealizoVentatextBox.Text = facturaG.NombreUsuario;
-                FechaVentatextBox.Text = facturaG.FechaVenta.ToString();
-                Cliente_textBox.Text = facturaG.Cliente;
-                TotalmaskedTextBox.Text = facturaG.Total.ToString();
-                RefreshDataGridView();
-
-             //   CalcularFactura();
-                MessageBox.Show("Correcto");
+                errorProviderTodo.SetError(BusquedamaskedTextBoxId, "Campo vacio");
+                    
 
             }
             else
             {
-                MessageBox.Show("No hay Factura Registrada con ese Id");
-            }
+                int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
+                Limpiar();
+                facturaG = BLL.FacturaBLL.Buscar(C => C.IdFactura == id);
 
+                if (facturaG != null)
+                {
+                    TipoVenta_textBox.Text = facturaG.TipoVenta;
+                    clienteComboBox.Enabled = false;
+                    RealizoVentatextBox.Text = facturaG.NombreUsuario;
+                    FechaVentatextBox.Text = facturaG.FechaVenta.ToString();
+                    Cliente_textBox.Text = facturaG.Cliente;
+                    TotalmaskedTextBox.Text = facturaG.Total.ToString();
+                    RefreshDataGridView();
+
+                    listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
+                    foreach (var relacion in listaRelaciones)
+                    {
+                        listadoArticulos.Add(BLL.ArticuloBLL.Buscar(A => A.IdArticulo == relacion.IdArticulo));
+                    }
+
+                    foreach (var articulo in listadoArticulos)
+                    {
+                        articulo.IdArticulo = BLL.ArticuloBLL.Buscar(A => A.IdArticulo == articulo.IdArticulo).IdArticulo;
+                    }
+
+
+                    RefreshDataGridView();
+
+                    //Refresco para selecionar filas en caso de Edicion
+                    dataGridViewVenta.Refresh();
+                    CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[listadoArticulos];
+                    myCurrencyManager.Refresh();
+                }
+                else
+                {
+                    errorProviderTodo.SetError(BusquedamaskedTextBoxId, "Factura no registrada");
+                }
+            }
 
 
         }
@@ -606,11 +605,8 @@ namespace ProyectoTech.Ui.Registros
 
             if ((Keys)e.KeyChar == Keys.Enter)
             {
-             
-
                 if (descuentoMaskedTextBox.Text != null)
                 {
-
                     int efectivo = Utilidades.TOINT(EfectivomaskedTextBox.Text);
                     descuento = Utilidades.TOINT(descuentoMaskedTextBox.Text);
                     devuelta = Utilidades.TOINT(TotalmaskedTextBox.Text) - descuento;
@@ -638,8 +634,8 @@ namespace ProyectoTech.Ui.Registros
 
             if (facturaG != null)
             {
-                DialogResult respuestaEliminar = MessageBox.Show("¿Seguro que desea eliminar el registro seleccionado?", "¡Advertencia!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuestaEliminar == DialogResult.Yes)
+                DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar la factura?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
                 {
                     if (BLL.FacturaBLL.EliminarRelacion(facturaG))
                     {
@@ -651,46 +647,12 @@ namespace ProyectoTech.Ui.Registros
                         MessageBox.Show("Problemas al eliminar");
                     }
                 }
-            }   /*
-
-
-                 int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
-
-                var user = BLL.FacturaBLL.Buscar(p => p.IdFactura == id);
-                List<Entidades.FacturaDetalles>  listaRelaciones = BLL.FacturaDetallesBLL.GetList(p => p.IdDetalle == id);
-                if (facturaG!=null)
-                {
-                    bool autorEliminado = false;
-                    bool relacionesEliminadas = true;
-
-                foreach (var relacion in listaRelaciones)
-                {
-                    if (!BLL.FacturaDetallesBLL.Eliminar(relacion))
-                    {
-                        relacionesEliminadas = false;
-                    }
-                }
-                if (relacionesEliminadas==true)
-                {
-                    autorEliminado= BLL.FacturaBLL.Eliminar(user);
-                }
-                if (autorEliminado)
-                {
-                    Limpiar();
-                    MessageBox.Show("Eliminado con exito.");
-                }
-                   else
-                        {
-                            MessageBox.Show("No se pudo eliminar .");
-                        }
-
-                }
-
-                 */
-
-                }
-
-
+            }
+            else
+            {
+                MessageBox.Show("No hay facturas Registradas");
+            }
+        }
         private void comboBoxNombreAr_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxCantidad.Value = 0;
@@ -698,18 +660,19 @@ namespace ProyectoTech.Ui.Registros
 
         private void dataGridViewVenta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-             p = dataGridViewVenta.CurrentRow.Index;
+            dataGridViewVenta.Refresh();
 
-            MessageBox.Show(p+"Es la posicion");
+           
+
+
+            p = dataGridViewVenta.CurrentRow.Index;
+            MessageBox.Show("Seleciono la posicion " + p);
             NombreM_textBox.Text = dataGridViewVenta[3, p].Value.ToString();
-
-
         }
 
         private void ModificarD_Button_Click(object sender, EventArgs e)
         {
             dataGridViewVenta[1, p].Value = CantidadD_masked.Text;
-            
 
         }
 
@@ -720,8 +683,31 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-          
+            dataGridViewVenta.Refresh();
+            int id = 0;
+            foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+            {
+                DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
+                id =   Utilidades.TOINT(producto.Cells[2].Value.ToString());
+           
+            }
+
+
+            if(id!=0)
+            {
+
+                listadoArticulos.RemoveAt(id);
+            }
+            else
+            {
+                MessageBox.Show("ID a eliminar esta null");
+            }
+
+        }
+
+        private void dataGridViewVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
-    }
-
+}
