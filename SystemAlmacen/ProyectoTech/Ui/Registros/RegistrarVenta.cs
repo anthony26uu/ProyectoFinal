@@ -49,7 +49,7 @@ namespace ProyectoTech.Ui.Registros
             return unico;
 
         }
-        private void RefreshDataGridView()
+        private void RefreshListaArticulo()
         {
             dataGridViewVenta.DataSource = null;
             dataGridViewVenta.DataSource = listadoArticulos;
@@ -62,7 +62,45 @@ namespace ProyectoTech.Ui.Registros
 
 
         }
-        private void EliminarExitencia(int existencia)
+
+
+        private void RefreshListaRelciones()
+        {
+            dataGridViewVenta.DataSource = null;
+            dataGridViewVenta.DataSource = listaRelaciones;
+            
+
+            dataGridViewVenta.Columns["IdDetalle"].Visible = false;
+            dataGridViewVenta.Columns["IdFactura"].Visible = false;
+          //  dataGridViewVenta.Columns["IdArticulo"].Visible = false;
+          //  dataGridViewVenta.Columns["Precio"].Visible = false;
+            //dataGridViewVenta.Columns["Categoria"].Visible = false;
+            //dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
+            //dataGridViewVenta.Columns["CategoriaId"].Visible = false;
+
+
+        }
+
+
+        private void EliminarExitencia()
+        {
+
+            foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+            {
+                DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
+
+                Entidades.Articulos arti = new Articulos();
+                int productoId = Utilidades.TOINT(producto.Cells[0].Value.ToString());
+                int descuento = Utilidades.TOINT(producto.Cells[2].Value.ToString());
+
+                arti = BLL.ArticuloBLL.BuscarB(productoId);
+                arti.Existencia = arti.Existencia - descuento;
+                BLL.ArticuloBLL.Mofidicar(arti);
+            }
+
+        }
+
+        private void SumarExistencia(int existencia)
         {
 
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
@@ -72,11 +110,13 @@ namespace ProyectoTech.Ui.Registros
 
 
                 arti = BLL.ArticuloBLL.BuscarB(productoId);
-                arti.Existencia = arti.Existencia - existencia;
+                arti.Existencia = arti.Existencia + existencia;
                 BLL.ArticuloBLL.Mofidicar(arti);
             }
 
         }
+
+
         private void CalcularDevuelta()
         {
             if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
@@ -123,18 +163,18 @@ namespace ProyectoTech.Ui.Registros
         }
         private void CalcularFactura(int cantidad)
         {
-            //  cantidad = Utilidades.TOINT(textBoxCantidad.Text);
-
-            DataGridViewRow fila;
-
-            Entidades.Articulos producto = (Entidades.Articulos)idArticuloComboBox.SelectedItem;
-            //    fila.Cells[0].Value = 0;
-
+          
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
+                // Utilidades.TOINT(producto.Cells[2].Value.ToString()))
 
-                facturaG.Total += (Convert.ToDecimal(textBoxCantidad.Value) * Convert.ToDecimal(row.Cells[5].Value) * Convert.ToDecimal(ItbsArticultextBox.Text));
+                decimal itbis = articulo.PrecioVenta * articulo.ITBIS;
+
+                decimal subtotal =articulo.PrecioVenta * cantidad;
+                facturaG.Total +=  subtotal + itbis;
+
                 TotalmaskedTextBox.Text = facturaG.Total.ToString();
+
             }
 
         }
@@ -374,7 +414,7 @@ namespace ProyectoTech.Ui.Registros
 
                 if (BLL.FacturaBLL.Guardar(facturaG) != null)
                 {
-                    EliminarExitencia(Utilidades.TOINT(textBoxCantidad.Text));
+                    EliminarExitencia();
                 }
 
                 if (facturaG != null)
@@ -389,6 +429,7 @@ namespace ProyectoTech.Ui.Registros
                         if (BLL.FacturaDetallesBLL.Guardar(relacion) == false)
                         {
                             guardadoRelacion = false;
+                         
 
                         }
                     }
@@ -445,13 +486,16 @@ namespace ProyectoTech.Ui.Registros
                     foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
                     {
                         DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
-                        if (articulo.IdArticulo == Utilidades.TOINT(producto.Cells[2].Value.ToString()))
+                        if (articulo.IdArticulo == Utilidades.TOINT(producto.Cells[0].Value.ToString()))
                         {
                             agregado = true;
+                            break;
+
                         }
                     }
                     if (agregado)
                     {
+                        errorProviderTodo.SetError(idArticuloComboBox, "Articulo ya esta en factura");
                         MessageBox.Show("Articulo ya esta en factura \n  -Selecione otro \n  -Elimine el el ya agreado");
                     }
                     else
@@ -477,9 +521,9 @@ namespace ProyectoTech.Ui.Registros
                                 if (!estaEnLista)
                                 {
                                     listadoArticulos.Add(articulo);
-                                    listaRelaciones.Add(new FacturaDetalles(0, 0, articulo.IdArticulo, articulo.PrecioVenta, detalle.Cantidad));
+                                    listaRelaciones.Add(new FacturaDetalles(0, 0, articulo.IdArticulo, articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text), articulo.NombreArticulo, Convert.ToDecimal(articulo.ITBIS)));
 
-                                    RefreshDataGridView();
+                                    RefreshListaRelciones();
 
                                     CalcularFactura(Utilidades.TOINT(textBoxCantidad.Text));
                                 }
@@ -550,7 +594,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(BusquedamaskedTextBoxId.Text))
+            if (string.IsNullOrWhiteSpace(BusquedamaskedTextBoxId.Text))
             {
                 errorProviderTodo.SetError(BusquedamaskedTextBoxId, "Campo vacio");
                     
@@ -570,7 +614,7 @@ namespace ProyectoTech.Ui.Registros
                     FechaVentatextBox.Text = facturaG.FechaVenta.ToString();
                     Cliente_textBox.Text = facturaG.Cliente;
                     TotalmaskedTextBox.Text = facturaG.Total.ToString();
-                    RefreshDataGridView();
+                    RefreshListaRelciones();
 
                     listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == facturaG.IdFactura);
                     foreach (var relacion in listaRelaciones)
@@ -584,10 +628,11 @@ namespace ProyectoTech.Ui.Registros
                     }
 
 
-                    RefreshDataGridView();
-
+                    RefreshListaRelciones();
+                    //RefreshListaArticulo();
                     //Refresco para selecionar filas en caso de Edicion
                     dataGridViewVenta.Refresh();
+                //    CalcularFactura(0);
                     CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[listadoArticulos];
                     myCurrencyManager.Refresh();
                 }
@@ -641,6 +686,13 @@ namespace ProyectoTech.Ui.Registros
                     {
                         Limpiar();
                         MessageBox.Show("Eliminado Con exito");
+                        foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+                        {
+                         
+                            
+                            SumarExistencia(Convert.ToInt32(producto.Cells[2].Value));
+
+                        }
                     }
                     else
                     {
@@ -685,6 +737,10 @@ namespace ProyectoTech.Ui.Registros
         {
             dataGridViewVenta.Refresh();
             int id = 0;
+
+
+
+
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
             {
                 DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
@@ -696,7 +752,7 @@ namespace ProyectoTech.Ui.Registros
             if(id!=0)
             {
 
-                listadoArticulos.RemoveAt(id);
+               
             }
             else
             {

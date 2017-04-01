@@ -14,19 +14,22 @@ public    class FacturaDetalles
         public int IdArticulo { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-
+        public string Nombre { get; set; }
+        public decimal ITBIS { get; set; }
         public FacturaDetalles()
         {
 
         }
     
-        public FacturaDetalles(int idDetalle, int idFactura, int idArticulo, decimal precio, int Cantidad )
+        public FacturaDetalles(int idDetalle, int idFactura, int idArticulo, decimal precio, int Cantidad, string nombre, decimal itbis )
         {
             this.IdDetalle = idDetalle;
             this.IdFactura = idFactura;
             this.IdArticulo = idArticulo;
             this.Precio = precio;
             this.Cantidad = Cantidad;
+            this.Nombre = nombre;
+            this.ITBIS = itbis;
            
 
         }

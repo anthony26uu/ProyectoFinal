@@ -85,7 +85,7 @@ namespace ProyectoTech.Ui.Incio
 
 
 
-                             var producto = new Entidades.Articulos(1, "Tenis NIKE", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
+                             var producto = new Entidades.Articulos(1, "Tenis NIKE",20, 222, 20, "222222222", DateTime.Now, 11, "CAZLADO");
                              BLL.ArticuloBLL.Guardar(producto);
 
                              var producto2= new Entidades.Articulos(2, "Zapatos", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
