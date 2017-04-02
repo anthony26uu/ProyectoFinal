@@ -31,6 +31,7 @@ namespace ProyectoTech.Ui.Incio
         {
 
             LabelUsuario.Text = Login.InsetarU().NombreUsuario;
+          
             LabelTipo.Text = Login.InsetarU().Tipo;
             
 

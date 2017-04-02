@@ -39,10 +39,10 @@ namespace ProyectoTech.Ui.Registros
         private static List<Articulos> listadoArticulos = null;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //Actualizar cada segundo la Hora
+       
             labelHORA.Text = DateTime.Now.ToLongTimeString();
             labelFecha.Text = DateTime.Now.ToLongDateString();
-         //   clienteComboBox.Refresh();
+        
          
          
         }
@@ -55,21 +55,7 @@ namespace ProyectoTech.Ui.Registros
             return unico;
 
         }
-        private void RefreshListaArticulo()
-        {
-            //dataGridViewVenta.DataSource = null;
-            //dataGridViewVenta.DataSource = listadoArticulos;
-
-
-            //dataGridViewVenta.Columns["PrecioCompra"].Visible = false;
-            //dataGridViewVenta.Columns["Categoria"].Visible = false;
-            //dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
-            //dataGridViewVenta.Columns["CategoriaId"].Visible = false;
-
-
-        }
-
-
+    
         private void RefreshListaRelciones()
         {
             dataGridViewVenta.DataSource = null;
@@ -79,12 +65,7 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.Columns["IdDetalle"].Visible = false;
             dataGridViewVenta.Columns["IdFactura"].Visible = false;
             dataGridViewVenta.Columns["Articulo"].Visible = false;
-         //     dataGridViewVenta.Columns["IdArticulo"].Visible = false;
-            //  dataGridViewVenta.Columns["Precio"].Visible = false;
-            //dataGridViewVenta.Columns["Categoria"].Visible = false;
-            //dataGridViewVenta.Columns["FechaIngreso"].Visible = false;
-            //dataGridViewVenta.Columns["CategoriaId"].Visible = false;
-
+         
 
         }
 
@@ -173,8 +154,7 @@ namespace ProyectoTech.Ui.Registros
           
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
-                // Utilidades.TOINT(producto.Cells[2].Value.ToString()))
-
+               
                 decimal itbis = articulo.PrecioVenta * articulo.ITBIS;
 
                 decimal subtotal =articulo.PrecioVenta * cantidad;
@@ -196,7 +176,7 @@ namespace ProyectoTech.Ui.Registros
             }
 
             facturaG = new Facturas(UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, cantidad, Convert.ToDecimal(TotalmaskedTextBox.Text));
-           //    public List<Entidades.Facturas> Lista;
+          
     }
         private void LlenarLabel()
         {
@@ -836,6 +816,10 @@ namespace ProyectoTech.Ui.Registros
 
         private void EfectivomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                CalcularDevuelta();
+            }
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
             {
                 e.Handled = false;

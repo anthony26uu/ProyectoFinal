@@ -147,7 +147,7 @@ namespace ProyectoTech.Ui.Registros
                     telefonoMaskedTextBox.Text = cliente.Telefono;
                     sexoComboBox.Text = cliente.Sexo;
                     fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
-
+                    
 
                     MessageBox.Show("Resultados de su busqueda");
                 }

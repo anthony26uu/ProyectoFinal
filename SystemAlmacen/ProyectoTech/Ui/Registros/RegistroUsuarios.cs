@@ -125,6 +125,7 @@ namespace ProyectoTech.Ui.Registros
                     guardar.NombreUsuario = nombreUsuarioTextBox.Text;
                     guardar.PassUsuario = passUsuarioTextBox.Text;
                     guardar.Id = (Utilidades.TOINT(nombreUsuarioTextBox.Text));
+                    guardar.Tipo = TipoComboBox.Text;
                    if(passUsuarioTextBox.Text== ConfirmaContextBox.Text)
                     {
                         if (id != guardar.Id)
