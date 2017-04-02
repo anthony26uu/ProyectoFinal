@@ -190,7 +190,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConsultaCliente";
+            this.Text = "Consulta Cliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaCliente_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

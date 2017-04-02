@@ -181,9 +181,10 @@
               <TextRun>
                 <Value>Reporte Categorias</Value>
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -196,9 +197,10 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -207,12 +209,15 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>0.86431cm</Top>
-        <Left>4.15079cm</Left>
+        <Left>0.1203cm</Left>
         <Height>1.52604cm</Height>
-        <Width>8.37916cm</Width>
+        <Width>14.14074cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
-          <Border />
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -223,7 +228,9 @@
     <Height>4.73958in</Height>
     <Style>
       <Border>
-        <Style>Solid</Style>
+        <Color>LightGrey</Color>
+        <Style>Double</Style>
+        <Width>2pt</Width>
       </Border>
       <BackgroundImage>
         <Source>Embedded</Source>
@@ -231,7 +238,7 @@
       </BackgroundImage>
     </Style>
   </Body>
-  <Width>6.17708in</Width>
+  <Width>5.71875in</Width>
   <Page>
     <PageHeader>
       <Height>3.53412cm</Height>
@@ -273,6 +280,137 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Página:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.605cm</Top>
+          <Left>5.29797cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.35224cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>1.605cm</Top>
+          <Left>6.73135cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.15239cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>de</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.605cm</Top>
+          <Left>8.12848cm</Left>
+          <Height>0.6cm</Height>
+          <Width>0.58495cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="TotalPages">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!TotalPages</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>TotalPages</rd:DefaultName>
+          <Top>1.605cm</Top>
+          <Left>8.30068cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.15239cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
