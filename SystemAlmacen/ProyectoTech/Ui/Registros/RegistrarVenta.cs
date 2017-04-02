@@ -285,7 +285,8 @@ namespace ProyectoTech.Ui.Registros
 
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {
-
+            TotalmaskedTextBox.BackColor = Color.YellowGreen;
+            textBoxDevuelta.BackColor = Color.Green;
 
             listaRelaciones = new List<FacturaDetalles>();
             listadoArticulos = new List<Articulos>();

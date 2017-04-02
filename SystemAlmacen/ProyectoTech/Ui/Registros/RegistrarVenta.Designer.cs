@@ -788,7 +788,7 @@
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewVenta);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarVenta";
