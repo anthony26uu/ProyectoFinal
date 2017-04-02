@@ -54,6 +54,7 @@
             this.labelFecha = new System.Windows.Forms.Label();
             this.button_Apagado = new System.Windows.Forms.Button();
             this.button_CambiarUser = new System.Windows.Forms.Button();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,8 @@
             this.archivoToolStripMenuItem,
             this.registrosToolStripMenuItem,
             this.consultaToolStripMenuItem,
-            this.puntoDeVentasToolStripMenuItem});
+            this.puntoDeVentasToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(513, 24);
@@ -159,7 +161,7 @@
             // 
             this.articulosToolStripMenuItem1.Image = global::ProyectoTech.Properties.Resources.productos;
             this.articulosToolStripMenuItem1.Name = "articulosToolStripMenuItem1";
-            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.articulosToolStripMenuItem1.Text = "Articulos";
             this.articulosToolStripMenuItem1.Click += new System.EventHandler(this.articulosToolStripMenuItem1_Click);
             // 
@@ -167,7 +169,7 @@
             // 
             this.usuarioToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.empleados;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
@@ -175,7 +177,7 @@
             // 
             this.canteogiraToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.categorias;
             this.canteogiraToolStripMenuItem.Name = "canteogiraToolStripMenuItem";
-            this.canteogiraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.canteogiraToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.canteogiraToolStripMenuItem.Text = "Cantegorias";
             this.canteogiraToolStripMenuItem.Click += new System.EventHandler(this.canteogiraToolStripMenuItem_Click);
             // 
@@ -183,7 +185,7 @@
             // 
             this.clientesToolStripMenuItem1.Image = global::ProyectoTech.Properties.Resources.clientes;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
@@ -191,8 +193,8 @@
             // 
             this.facturaToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.facturaToolStripMenuItem.Text = "Factura";
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.facturaToolStripMenuItem.Text = "Cuadres Facturas";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
             // puntoDeVentasToolStripMenuItem
@@ -208,7 +210,7 @@
             // 
             this.venderToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -302,6 +304,15 @@
             this.button_CambiarUser.UseVisualStyleBackColor = false;
             this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
             // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Checked = true;
+            this.ayudaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +365,6 @@
         private System.Windows.Forms.ToolStripMenuItem canteogiraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
