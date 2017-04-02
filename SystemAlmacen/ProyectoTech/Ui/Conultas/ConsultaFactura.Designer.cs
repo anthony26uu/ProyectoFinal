@@ -46,6 +46,7 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.textBoxTotalArticlo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +112,7 @@
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 58;
             this.label3.Text = "SELECIONE";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -215,12 +217,25 @@
             this.label6.TabIndex = 67;
             this.label6.Text = "Total:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(335, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(268, 31);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "CUADRE FACTURAS";
+            // 
             // ConsultaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(922, 372);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxTotalArticlo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonImprimir);
@@ -268,5 +283,6 @@
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.TextBox textBoxTotalArticlo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -371,5 +371,10 @@ namespace ProyectoTech.Ui.Conultas
             new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Show();
             new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Activate();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
