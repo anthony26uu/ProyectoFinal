@@ -80,6 +80,7 @@ CREATE TABLE [dbo].[Clientes] (
     [Telefono]        VARCHAR (80)  NULL,
     [Sexo]            VARCHAR (50)  NULL,
     [FechaNacimiento] DATETIME      NULL,
+	[Cedula] VARCHAR (80)       NULL,
     PRIMARY KEY CLUSTERED ([ClienteId] ASC)
 );
 

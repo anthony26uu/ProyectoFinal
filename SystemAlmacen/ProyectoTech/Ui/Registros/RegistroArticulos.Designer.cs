@@ -41,10 +41,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroArticulos));
             this.categoriaComboBox = new System.Windows.Forms.ComboBox();
             this.ArticulonumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.existenciaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nombreArticuloTextBox = new System.Windows.Forms.TextBox();
-            this.precioVentaMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.precioCompraMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.codigoArticuloMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.fechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
@@ -54,6 +51,9 @@
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
+            this.existenciaMaskedTextBox = new System.Windows.Forms.TextBox();
+            this.precioCompraMaskedTextBox = new System.Windows.Forms.TextBox();
+            this.precioVentaMaskedTextBox = new System.Windows.Forms.TextBox();
             idArticuloLabel = new System.Windows.Forms.Label();
             nombreArticuloLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -183,15 +183,6 @@
             this.ArticulonumericUpDown.TabIndex = 12;
             this.ArticulonumericUpDown.ValueChanged += new System.EventHandler(this.ArticulonumericUpDown_ValueChanged);
             // 
-            // existenciaMaskedTextBox
-            // 
-            this.existenciaMaskedTextBox.Location = new System.Drawing.Point(114, 75);
-            this.existenciaMaskedTextBox.Mask = "99999";
-            this.existenciaMaskedTextBox.Name = "existenciaMaskedTextBox";
-            this.existenciaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.existenciaMaskedTextBox.TabIndex = 1;
-            this.existenciaMaskedTextBox.ValidatingType = typeof(int);
-            // 
             // nombreArticuloTextBox
             // 
             this.nombreArticuloTextBox.Location = new System.Drawing.Point(114, 49);
@@ -199,24 +190,6 @@
             this.nombreArticuloTextBox.Name = "nombreArticuloTextBox";
             this.nombreArticuloTextBox.Size = new System.Drawing.Size(198, 20);
             this.nombreArticuloTextBox.TabIndex = 0;
-            // 
-            // precioVentaMaskedTextBox
-            // 
-            this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(114, 101);
-            this.precioVentaMaskedTextBox.Mask = "99999";
-            this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
-            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.precioVentaMaskedTextBox.TabIndex = 2;
-            this.precioVentaMaskedTextBox.ValidatingType = typeof(int);
-            // 
-            // precioCompraMaskedTextBox
-            // 
-            this.precioCompraMaskedTextBox.Location = new System.Drawing.Point(114, 127);
-            this.precioCompraMaskedTextBox.Mask = "99999";
-            this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
-            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.precioCompraMaskedTextBox.TabIndex = 3;
-            this.precioCompraMaskedTextBox.ValidatingType = typeof(int);
             // 
             // codigoArticuloMaskedTextBox
             // 
@@ -242,7 +215,7 @@
             // ITBISmaskedTextBox
             // 
             this.ITBISmaskedTextBox.Location = new System.Drawing.Point(114, 241);
-            this.ITBISmaskedTextBox.Mask = "9.9999";
+            this.ITBISmaskedTextBox.Mask = "9.9";
             this.ITBISmaskedTextBox.Name = "ITBISmaskedTextBox";
             this.ITBISmaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.ITBISmaskedTextBox.TabIndex = 7;
@@ -281,7 +254,7 @@
             this.buttonEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
             this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonEliminar.Location = new System.Drawing.Point(320, 211);
+            this.buttonEliminar.Location = new System.Drawing.Point(324, 214);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(86, 52);
@@ -299,7 +272,7 @@
             this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.Image")));
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGuardar.Location = new System.Drawing.Point(320, 149);
+            this.buttonGuardar.Location = new System.Drawing.Point(324, 152);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(87, 52);
@@ -315,7 +288,7 @@
             this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonNuevo.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevo.Image")));
-            this.buttonNuevo.Location = new System.Drawing.Point(320, 92);
+            this.buttonNuevo.Location = new System.Drawing.Point(324, 95);
             this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(86, 51);
@@ -325,12 +298,41 @@
             this.buttonNuevo.UseVisualStyleBackColor = true;
             this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
+            // existenciaMaskedTextBox
+            // 
+            this.existenciaMaskedTextBox.Location = new System.Drawing.Point(114, 75);
+            this.existenciaMaskedTextBox.Name = "existenciaMaskedTextBox";
+            this.existenciaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.existenciaMaskedTextBox.TabIndex = 68;
+            this.existenciaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.existenciaMaskedTextBox_KeyPress);
+            // 
+            // precioCompraMaskedTextBox
+            // 
+            this.precioCompraMaskedTextBox.Location = new System.Drawing.Point(114, 129);
+            this.precioCompraMaskedTextBox.MaxLength = 10;
+            this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
+            this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.precioCompraMaskedTextBox.TabIndex = 69;
+            this.precioCompraMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioCompraMaskedTextBox_KeyPress);
+            // 
+            // precioVentaMaskedTextBox
+            // 
+            this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(114, 103);
+            this.precioVentaMaskedTextBox.MaxLength = 10;
+            this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
+            this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
+            this.precioVentaMaskedTextBox.TabIndex = 70;
+            this.precioVentaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioVentaMaskedTextBox_KeyPress);
+            // 
             // RegistroArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
-            this.ClientSize = new System.Drawing.Size(412, 272);
+            this.ClientSize = new System.Drawing.Size(420, 275);
+            this.Controls.Add(this.precioVentaMaskedTextBox);
+            this.Controls.Add(this.precioCompraMaskedTextBox);
+            this.Controls.Add(this.existenciaMaskedTextBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(label1);
             this.Controls.Add(this.ITBISmaskedTextBox);
@@ -340,15 +342,12 @@
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.categoriaComboBox);
             this.Controls.Add(this.ArticulonumericUpDown);
-            this.Controls.Add(this.existenciaMaskedTextBox);
             this.Controls.Add(idArticuloLabel);
             this.Controls.Add(nombreArticuloLabel);
             this.Controls.Add(this.nombreArticuloTextBox);
             this.Controls.Add(existenciaLabel);
             this.Controls.Add(precioVentaLabel);
-            this.Controls.Add(this.precioVentaMaskedTextBox);
             this.Controls.Add(precioCompraLabel);
-            this.Controls.Add(this.precioCompraMaskedTextBox);
             this.Controls.Add(categoriaLabel);
             this.Controls.Add(codigoArticuloLabel);
             this.Controls.Add(this.codigoArticuloMaskedTextBox);
@@ -372,10 +371,7 @@
         #endregion
         private System.Windows.Forms.ComboBox categoriaComboBox;
         private System.Windows.Forms.NumericUpDown ArticulonumericUpDown;
-        private System.Windows.Forms.MaskedTextBox existenciaMaskedTextBox;
         private System.Windows.Forms.TextBox nombreArticuloTextBox;
-        private System.Windows.Forms.MaskedTextBox precioVentaMaskedTextBox;
-        private System.Windows.Forms.MaskedTextBox precioCompraMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox codigoArticuloMaskedTextBox;
         private System.Windows.Forms.DateTimePicker fechaIngresoDateTimePicker;
         private System.Windows.Forms.Button buttonEliminar;
@@ -385,5 +381,8 @@
         private System.Windows.Forms.ErrorProvider errorProviderTodo;
         private System.Windows.Forms.MaskedTextBox ITBISmaskedTextBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox existenciaMaskedTextBox;
+        private System.Windows.Forms.TextBox precioVentaMaskedTextBox;
+        private System.Windows.Forms.TextBox precioCompraMaskedTextBox;
     }
 }

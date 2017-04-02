@@ -37,6 +37,7 @@
             System.Windows.Forms.Label sexoLabel;
             System.Windows.Forms.Label fechaNacimientoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroClientes));
+            System.Windows.Forms.Label label1;
             this.clienteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             this.NewButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.Deletebutton = new System.Windows.Forms.Button();
+            this.Cedula_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             clienteIdLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -57,6 +59,7 @@
             telefonoLabel = new System.Windows.Forms.Label();
             sexoLabel = new System.Windows.Forms.Label();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +106,7 @@
             emailLabel.BackColor = System.Drawing.Color.Transparent;
             emailLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
             emailLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            emailLabel.Location = new System.Drawing.Point(0, 122);
+            emailLabel.Location = new System.Drawing.Point(0, 147);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(43, 15);
             emailLabel.TabIndex = 7;
@@ -115,7 +118,7 @@
             telefonoLabel.BackColor = System.Drawing.Color.Transparent;
             telefonoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
             telefonoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            telefonoLabel.Location = new System.Drawing.Point(0, 148);
+            telefonoLabel.Location = new System.Drawing.Point(0, 173);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(61, 15);
             telefonoLabel.TabIndex = 9;
@@ -127,7 +130,7 @@
             sexoLabel.BackColor = System.Drawing.Color.Transparent;
             sexoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
             sexoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            sexoLabel.Location = new System.Drawing.Point(1, 175);
+            sexoLabel.Location = new System.Drawing.Point(1, 200);
             sexoLabel.Name = "sexoLabel";
             sexoLabel.Size = new System.Drawing.Size(41, 15);
             sexoLabel.TabIndex = 27;
@@ -139,7 +142,7 @@
             fechaNacimientoLabel.BackColor = System.Drawing.Color.Transparent;
             fechaNacimientoLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
             fechaNacimientoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(1, 195);
+            fechaNacimientoLabel.Location = new System.Drawing.Point(1, 220);
             fechaNacimientoLabel.Name = "fechaNacimientoLabel";
             fechaNacimientoLabel.Size = new System.Drawing.Size(112, 15);
             fechaNacimientoLabel.TabIndex = 29;
@@ -172,7 +175,7 @@
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(112, 114);
+            this.emailTextBox.Location = new System.Drawing.Point(112, 139);
             this.emailTextBox.MaxLength = 80;
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(120, 20);
@@ -180,7 +183,7 @@
             // 
             // telefonoMaskedTextBox
             // 
-            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(112, 140);
+            this.telefonoMaskedTextBox.Location = new System.Drawing.Point(112, 165);
             this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(120, 20);
@@ -197,7 +200,7 @@
             this.sexoComboBox.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.sexoComboBox.Location = new System.Drawing.Point(112, 166);
+            this.sexoComboBox.Location = new System.Drawing.Point(112, 191);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(120, 21);
             this.sexoComboBox.TabIndex = 4;
@@ -205,7 +208,7 @@
             // fechaNacimientoDateTimePicker
             // 
             this.fechaNacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 193);
+            this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 218);
             this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.fechaNacimientoDateTimePicker.TabIndex = 5;
@@ -281,12 +284,34 @@
             this.Deletebutton.UseVisualStyleBackColor = true;
             this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(0, 114);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(52, 15);
+            label1.TabIndex = 32;
+            label1.Text = "Cedula:";
+            // 
+            // Cedula_maskedTextBox
+            // 
+            this.Cedula_maskedTextBox.Location = new System.Drawing.Point(112, 114);
+            this.Cedula_maskedTextBox.Mask = "999-9999999-9";
+            this.Cedula_maskedTextBox.Name = "Cedula_maskedTextBox";
+            this.Cedula_maskedTextBox.Size = new System.Drawing.Size(120, 20);
+            this.Cedula_maskedTextBox.TabIndex = 31;
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(467, 269);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.Cedula_maskedTextBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(fechaNacimientoLabel);
             this.Controls.Add(this.fechaNacimientoDateTimePicker);
@@ -335,5 +360,6 @@
         private System.Windows.Forms.DateTimePicker fechaNacimientoDateTimePicker;
         private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MaskedTextBox Cedula_maskedTextBox;
     }
 }

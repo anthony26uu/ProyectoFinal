@@ -79,7 +79,7 @@ namespace ProyectoTech.Ui.Incio
 
       //      int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)''
 
-             var cliente = new Entidades.Clientes(1, "Anthony Santana","Villa", "anthony@gmail.com", "Masculino", DateTime.Now);
+             var cliente = new Entidades.Clientes(1, "Anthony Santana","Villa", "anthony@gmail.com", "Masculino", DateTime.Now, "00000000000000");
              BLL.ClientesBLL.Guardar(cliente);
 
 

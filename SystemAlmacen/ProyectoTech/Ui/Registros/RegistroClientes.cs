@@ -46,9 +46,9 @@ namespace ProyectoTech.Ui.Registros
                 retorno = false;
             }
             
-            if (string.IsNullOrEmpty(telefonoMaskedTextBox.Text))
+            if (telefonoMaskedTextBox.Text.Length < 14)
             {
-                NombreerrorProvider.SetError(telefonoMaskedTextBox, "Por favor llenar el campo vacio.");
+                NombreerrorProvider.SetError(telefonoMaskedTextBox, "Por favor llenar el campo.");
                 retorno = false;
             }
          
@@ -91,7 +91,7 @@ namespace ProyectoTech.Ui.Registros
                 else
                 {
                     guardar.ClienteId = (Utilidades.TOINT(clienteIdNumericUpDown.Text));
-
+                    guardar.Cedula = Cedula_maskedTextBox.Text;
                     guardar.Nombres = nombresTextBox.Text;
                     guardar.Direccion = direccionTextBox.Text;
                     guardar.Telefono = telefonoMaskedTextBox.Text;
@@ -140,7 +140,7 @@ namespace ProyectoTech.Ui.Registros
                 cliente = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
                 if (cliente != null)
                 {
-
+                    Cedula_maskedTextBox.Text = cliente.Cedula;
                     nombresTextBox.Text = cliente.Nombres;
                     direccionTextBox.Text = cliente.Direccion;
                     emailTextBox.Text = cliente.Email;

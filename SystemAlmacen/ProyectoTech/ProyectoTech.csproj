@@ -79,7 +79,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegistrosDbDataSet.Designer.cs">
+    <Compile Include="Ui\Reportes\RegistrosDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
@@ -179,6 +179,12 @@
     <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteClientes.Designer.cs">
       <DependentUpon>CReporteClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteDetalleF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteDetalleF.Designer.cs">
+      <DependentUpon>CReporteDetalleF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteClientes.resx">
       <DependentUpon>CReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteDetalleF.resx">
+      <DependentUpon>CReporteDetalleF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.resx">
       <DependentUpon>CReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,15 +274,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
-    <None Include="RegistrosDbDataSet.xsc">
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>
-    <None Include="RegistrosDbDataSet.xsd">
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="RegistrosDbDataSet.xss">
+    <None Include="Ui\Reportes\RegistrosDbDataSet.xss">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\Shopping Cart Loaded_26px.png" />

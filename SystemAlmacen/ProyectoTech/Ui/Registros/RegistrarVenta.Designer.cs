@@ -76,7 +76,6 @@
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
-            this.EfectivomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -91,6 +90,7 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.EfectivomaskedTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -569,16 +569,6 @@
             this.TotalmaskedTextBox.Size = new System.Drawing.Size(82, 20);
             this.TotalmaskedTextBox.TabIndex = 42;
             // 
-            // EfectivomaskedTextBox
-            // 
-            this.EfectivomaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(212, 25);
-            this.EfectivomaskedTextBox.Mask = "9999999999";
-            this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
-            this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.EfectivomaskedTextBox.TabIndex = 52;
-            this.EfectivomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
-            // 
             // textBoxDevuelta
             // 
             this.textBoxDevuelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -591,10 +581,10 @@
             // groupBoxDinero
             // 
             this.groupBoxDinero.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxDinero.Controls.Add(this.EfectivomaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.textBoxDevuelta);
             this.groupBoxDinero.Controls.Add(this.label9);
             this.groupBoxDinero.Controls.Add(this.label3);
-            this.groupBoxDinero.Controls.Add(this.EfectivomaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.TotalmaskedTextBox);
             this.groupBoxDinero.Controls.Add(this.label4);
             this.groupBoxDinero.Location = new System.Drawing.Point(221, 539);
@@ -733,6 +723,7 @@
             this.buttonImprimir.Text = "Imprimir";
             this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // buttonNuevo
             // 
@@ -767,6 +758,15 @@
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // EfectivomaskedTextBox
+            // 
+            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(202, 26);
+            this.EfectivomaskedTextBox.MaxLength = 10;
+            this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
+            this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.EfectivomaskedTextBox.TabIndex = 83;
+            this.EfectivomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EfectivomaskedTextBox_KeyPress);
             // 
             // RegistrarVenta
             // 
@@ -829,7 +829,6 @@
         private System.Windows.Forms.Button Nuevo_Cliente;
         private System.Windows.Forms.ComboBox comboBoxNombreAr;
         private System.Windows.Forms.TextBox textBoxDevuelta;
-        private System.Windows.Forms.MaskedTextBox EfectivomaskedTextBox;
         private System.Windows.Forms.GroupBox groupBoxDinero;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonAgregar;
@@ -871,5 +870,6 @@
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.GroupBox Edicion_groupBox;
         private System.Windows.Forms.Button button_LimpiarFactura;
+        private System.Windows.Forms.TextBox EfectivomaskedTextBox;
     }
 }

@@ -26,7 +26,8 @@ namespace ProyectoTech.Ui.Registros
 
         int devuelta = 0;
         int descuento = 0;
-
+        public List<Entidades.Facturas> Lista = null;
+      //  public List<Entidades.FacturaDetalles> ListaReporte = null;
         private static RegistrarVenta unico = null;
         private static Entidades.Usuarios UsuarioG = null;
         FacturaDetalles detalle;
@@ -195,7 +196,8 @@ namespace ProyectoTech.Ui.Registros
             }
 
             facturaG = new Facturas(UsuarioLabel.Text, DateTime.Now, clienteComboBox.Text, tipoVentaComboBox.Text, cantidad, Convert.ToDecimal(TotalmaskedTextBox.Text));
-        }
+           //    public List<Entidades.Facturas> Lista;
+    }
         private void LlenarLabel()
         {
             UsuarioLabel.Text = Login.InsetarU().NombreUsuario;
@@ -248,6 +250,8 @@ namespace ProyectoTech.Ui.Registros
 
         private void Limpiar()
         {
+            //ListaReporte = new List<FacturaDetalles>();
+            
             TipoVenta_textBox.Clear();
             lista = new List<Clientes>();
             textBoxDevuelta.Clear();
@@ -438,15 +442,27 @@ namespace ProyectoTech.Ui.Registros
                     {
 
 
-                        relacion.IdFactura = facturaG.IdFactura;
 
+                        relacion.IdFactura = facturaG.IdFactura;
                         if (BLL.FacturaDetallesBLL.Guardar(relacion) == false)
                         {
+                          
                             guardadoRelacion = false;
                          
 
                         }
                     }
+
+
+                 
+                    Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == facturaG.IdFactura);
+
+
+                    foreach (var relacion in Lista)
+                    {
+                        listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == relacion.IdFactura);
+                    }
+                       
 
 
 
@@ -456,7 +472,13 @@ namespace ProyectoTech.Ui.Registros
                 {
                     MessageBox.Show("Factura Guardad con exito");
                     Estado(false);
+                
+                   
+                   
+                    new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Show();
+                    new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Activate();
                     Limpiar();
+
                 }
                 else
                 {
@@ -795,6 +817,33 @@ namespace ProyectoTech.Ui.Registros
             LlenarComboClientes();
         }
 
-       
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+           
+            int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
+            Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == id);
+
+            foreach (var relacion in Lista)
+            {
+                listaRelaciones = BLL.FacturaDetallesBLL.GetList(A => A.IdFactura == relacion.IdFactura);
+            }
+
+            Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == facturaG.IdFactura);
+
+            new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Activate();
+        }
+
+        private void EfectivomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

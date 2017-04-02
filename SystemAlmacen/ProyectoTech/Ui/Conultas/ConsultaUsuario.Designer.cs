@@ -33,11 +33,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.buscaText = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonImprimir = new System.Windows.Forms.Button();
+            this.buscaText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -73,13 +73,6 @@
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 61;
             this.label3.Text = "SELECIONE";
-            // 
-            // buscaText
-            // 
-            this.buscaText.Location = new System.Drawing.Point(213, 5);
-            this.buscaText.Name = "buscaText";
-            this.buscaText.Size = new System.Drawing.Size(193, 20);
-            this.buscaText.TabIndex = 60;
             // 
             // dataGridView1
             // 
@@ -123,18 +116,26 @@
             this.buttonImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonImprimir.UseVisualStyleBackColor = true;
             // 
+            // buscaText
+            // 
+            this.buscaText.Location = new System.Drawing.Point(213, 7);
+            this.buscaText.Name = "buscaText";
+            this.buscaText.Size = new System.Drawing.Size(193, 20);
+            this.buscaText.TabIndex = 66;
+            this.buscaText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buscaText_KeyPress);
+            // 
             // ConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(854, 287);
+            this.Controls.Add(this.buscaText);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.buscaText);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -155,10 +156,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox buscaText;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.TextBox buscaText;
     }
 }

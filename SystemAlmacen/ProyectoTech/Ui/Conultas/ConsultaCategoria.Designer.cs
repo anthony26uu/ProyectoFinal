@@ -89,6 +89,7 @@
             // buscaText
             // 
             this.buscaText.Location = new System.Drawing.Point(79, 86);
+            this.buscaText.MaxLength = 70;
             this.buscaText.Name = "buscaText";
             this.buscaText.Size = new System.Drawing.Size(193, 20);
             this.buscaText.TabIndex = 66;

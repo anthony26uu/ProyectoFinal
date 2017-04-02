@@ -126,6 +126,7 @@
             // ConfirmaContextBox
             // 
             this.ConfirmaContextBox.Location = new System.Drawing.Point(145, 128);
+            this.ConfirmaContextBox.MaxLength = 70;
             this.ConfirmaContextBox.Name = "ConfirmaContextBox";
             this.ConfirmaContextBox.PasswordChar = '*';
             this.ConfirmaContextBox.Size = new System.Drawing.Size(147, 20);
@@ -142,6 +143,7 @@
             // passUsuarioTextBox
             // 
             this.passUsuarioTextBox.Location = new System.Drawing.Point(145, 102);
+            this.passUsuarioTextBox.MaxLength = 70;
             this.passUsuarioTextBox.Name = "passUsuarioTextBox";
             this.passUsuarioTextBox.PasswordChar = '*';
             this.passUsuarioTextBox.Size = new System.Drawing.Size(147, 20);

@@ -16,6 +16,7 @@ namespace Entidades
         public string Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
 
+        public string Cedula { get; set; }
         public string Telefono { get; set; }
 
         public Clientes()
@@ -23,9 +24,9 @@ namespace Entidades
 
         }
 
-        public Clientes(int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento)
+        public Clientes(int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento, string cedula)
         {
-
+            this.Cedula =cedula;
             this.ClienteId = clienteId;
             this.Nombres = nombres;
             this.Direccion = direccion;
