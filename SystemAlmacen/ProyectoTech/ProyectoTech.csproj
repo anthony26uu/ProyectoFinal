@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrosDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\ProyectoTechDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +229,7 @@
     <EmbeddedResource Include="Ui\Reportes\ArticulosReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\CategoriasReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\Factura.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteArticulos.resx">
       <DependentUpon>CReporteArticulos.cs</DependentUpon>
@@ -259,6 +265,28 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="RegistrosDbDataSet.xsc">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RegistrosDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RegistrosDbDataSet.xss">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Shopping Cart Loaded_26px.png" />
+    <None Include="Resources\Clear Shopping Cart_26px.png" />
+    <None Include="Resources\Shutdown_32.png" />
+    <None Include="Resources\Search_16.png" />
+    <None Include="Resources\New_Copy_32.png" />
+    <None Include="Resources\Save_48.png" />
+    <None Include="Resources\sssSave_32.png" />
+    <None Include="Resources\Save_32.png" />
+    <None Include="Resources\Save_16.png" />
+    <None Include="Resources\Edit_User_Male_32.png" />
+    <None Include="Resources\Trash_32.png" />
     <None Include="Resources\ic_mode_edit_black_24dp_1x.png" />
     <None Include="Ui\Reportes\ProyectoTechDataSet.xsc">
       <DependentUpon>ProyectoTechDataSet.xsd</DependentUpon>

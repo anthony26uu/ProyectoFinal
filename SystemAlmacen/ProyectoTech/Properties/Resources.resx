@@ -127,6 +127,9 @@
   <data name="fondo_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Search_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cambiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cambiar.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,12 @@
   <data name="Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ic_mode_edit_black_24dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_mode_edit_black_24dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="categorias" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\categorias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,14 +166,29 @@
   <data name="BotonBusqueda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonBusqueda1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Trash_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Impresora1-25x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impresora1-25x25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Plus_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="New_Copy_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New_Copy_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clear Shopping Cart_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clear Shopping Cart_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +205,11 @@
   <data name="BotonGuardar11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonGuardar11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit_User_Male_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit_User_Male_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shutdown-icon-9213" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shutdown-icon-9213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +220,14 @@
   <data name="Plus_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Shutdown_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shutdown_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Eli" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eli.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plus_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plus_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icono_paquetes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_paquetes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +238,8 @@
   <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Plus_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sssSave_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sssSave_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,7 +247,7 @@
   <data name="productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_mode_edit_black_24dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_mode_edit_black_24dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shopping Cart Loaded_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shopping Cart Loaded_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -12,8 +12,9 @@ namespace ProyectoTech.Ui.Registros
 {
     public partial class RegistroArticulos : Form
     {
-        Articulos articulo = new Articulos();
+      Articulos articulo = new Articulos();
       private static   RegistroArticulos unico=null;
+   
         public RegistroArticulos()
         {
             InitializeComponent();
@@ -228,6 +229,7 @@ namespace ProyectoTech.Ui.Registros
         private void RegistroArticulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             unico = null;
+
         }
 
         private void ArticulonumericUpDown_ValueChanged(object sender, EventArgs e)

@@ -2,63 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox82">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Reporte </Value>
-                <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
-                  <FontSize>26pt</FontSize>
-                  <Format>0.00%</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Facturas</Value>
-                <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
-                  <FontSize>26pt</FontSize>
-                  <Format>0.00%</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
-                  <FontSize>26pt</FontSize>
-                  <Format>0.00%</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>1.66991cm</Top>
-        <Left>6.0365cm</Left>
-        <Height>2.32226cm</Height>
-        <Width>5.12491cm</Width>
-        <Style>
-          <Border />
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
@@ -541,11 +484,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>FacturasDataSet</DataSetName>
-        <Top>4.75933cm</Top>
+        <Top>2.51037cm</Top>
         <Left>0.34859cm</Left>
         <Height>1.2cm</Height>
         <Width>17.5cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -556,8 +498,28 @@
     <Height>4.79167in</Height>
     <Style>
       <Border>
-        <Style>None</Style>
+        <Style>Solid</Style>
       </Border>
+      <TopBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </TopBorder>
+      <BottomBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </BottomBorder>
+      <LeftBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </LeftBorder>
+      <RightBorder>
+        <Color>Black</Color>
+        <Style>Solid</Style>
+        <Width>1pt</Width>
+      </RightBorder>
       <BackgroundImage>
         <Source>Embedded</Source>
         <Value>Bombilla_sin_fondo</Value>
@@ -566,6 +528,66 @@
   </Body>
   <Width>7.06867in</Width>
   <Page>
+    <PageHeader>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox82">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cuadre Facturas</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>26pt</FontSize>
+                    <Format>0.00%</Format>
+                    <Color>DimGray</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>26pt</FontSize>
+                    <Format>0.00%</Format>
+                    <Color>DimGray</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox82</rd:DefaultName>
+          <Top>0.21774cm</Top>
+          <Left>5.34859cm</Left>
+          <Height>1.92538cm</Height>
+          <Width>7.5cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>

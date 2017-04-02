@@ -59,7 +59,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.registrosToolStripMenuItem,
@@ -114,7 +114,7 @@
             // 
             this.articulosToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.productos;
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.articulosToolStripMenuItem.Text = "Articulos";
             this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
@@ -122,7 +122,7 @@
             // 
             this.categoriaToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.categorias;
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
@@ -130,7 +130,7 @@
             // 
             this.usuariosToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.empleados;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             // 
             this.clientesToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.clientes1;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             // 
             this.articulosToolStripMenuItem1.Image = global::ProyectoTech.Properties.Resources.productos;
             this.articulosToolStripMenuItem1.Name = "articulosToolStripMenuItem1";
-            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.articulosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.articulosToolStripMenuItem1.Text = "Articulos";
             this.articulosToolStripMenuItem1.Click += new System.EventHandler(this.articulosToolStripMenuItem1_Click);
             // 
@@ -167,7 +167,7 @@
             // 
             this.usuarioToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.empleados;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             // 
             this.canteogiraToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.categorias;
             this.canteogiraToolStripMenuItem.Name = "canteogiraToolStripMenuItem";
-            this.canteogiraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.canteogiraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.canteogiraToolStripMenuItem.Text = "Cantegorias";
             this.canteogiraToolStripMenuItem.Click += new System.EventHandler(this.canteogiraToolStripMenuItem_Click);
             // 
@@ -183,7 +183,7 @@
             // 
             this.clientesToolStripMenuItem1.Image = global::ProyectoTech.Properties.Resources.clientes;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
@@ -191,7 +191,7 @@
             // 
             this.facturaToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facturaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.facturaToolStripMenuItem.Text = "Factura";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
@@ -208,7 +208,7 @@
             // 
             this.venderToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -274,10 +274,10 @@
             this.button_Apagado.FlatAppearance.BorderSize = 0;
             this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.Icon;
-            this.button_Apagado.Location = new System.Drawing.Point(443, 256);
+            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.Shutdown_32;
+            this.button_Apagado.Location = new System.Drawing.Point(443, 244);
             this.button_Apagado.Name = "button_Apagado";
-            this.button_Apagado.Size = new System.Drawing.Size(58, 56);
+            this.button_Apagado.Size = new System.Drawing.Size(58, 68);
             this.button_Apagado.TabIndex = 15;
             this.button_Apagado.Text = "Cerrar";
             this.button_Apagado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -293,9 +293,9 @@
             this.button_CambiarUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_CambiarUser.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_CambiarUser.Image = global::ProyectoTech.Properties.Resources.user3;
-            this.button_CambiarUser.Location = new System.Drawing.Point(346, 244);
+            this.button_CambiarUser.Location = new System.Drawing.Point(366, 244);
             this.button_CambiarUser.Name = "button_CambiarUser";
-            this.button_CambiarUser.Size = new System.Drawing.Size(93, 69);
+            this.button_CambiarUser.Size = new System.Drawing.Size(73, 69);
             this.button_CambiarUser.TabIndex = 16;
             this.button_CambiarUser.Text = "Usuario";
             this.button_CambiarUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

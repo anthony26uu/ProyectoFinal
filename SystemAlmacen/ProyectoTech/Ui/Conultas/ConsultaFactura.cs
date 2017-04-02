@@ -70,6 +70,7 @@ namespace ProyectoTech.Ui.Conultas
                     {
                         Lista = BLL.FacturaBLL.GetList(p => p.NombreUsuario == nombre);
                         dataGridView1.DataSource = Lista;
+                        CalcularTotal();
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
 
@@ -88,6 +89,7 @@ namespace ProyectoTech.Ui.Conultas
 
                     Lista = BLL.FacturaBLL.GetList(p => p.FechaVenta >= desdeDateTimePicker.Value.Date && p.FechaVenta <= HastadateTimePicker1.Value.Date);
                     dataGridView1.DataSource = Lista;
+                    CalcularTotal();
                     buttonImprimir.Enabled = true;
                 }
             }
@@ -97,6 +99,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 Lista = BLL.FacturaBLL.GetListodo();
+                CalcularTotal();
                 dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
@@ -127,6 +130,7 @@ namespace ProyectoTech.Ui.Conultas
 
                         Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == id);
                         dataGridView1.DataSource = Lista;
+                        CalcularTotal();
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
@@ -160,6 +164,7 @@ namespace ProyectoTech.Ui.Conultas
                         Lista = BLL.FacturaBLL.GetList(p => p.TipoVenta == nombre);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
+                        CalcularTotal();
                         buttonImprimir.Enabled = true;
 
                     }
@@ -196,6 +201,7 @@ namespace ProyectoTech.Ui.Conultas
                         Lista = BLL.FacturaBLL.GetList(p => p.Cliente == nombre);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
+                        CalcularTotal();
                         buttonImprimir.Enabled = true;
 
                     }
@@ -208,7 +214,27 @@ namespace ProyectoTech.Ui.Conultas
 
 
         }
+        private void CalcularTotal()
+        {
+            decimal total = new decimal();
+            foreach (var producto in Lista)
+            {/*
 
+                
+                */
+                dataGridView1.Refresh();
+                DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+               
+                total += producto.Total;
+              //  = Convert.ToDecimal(row.Cells[6].Value);
+               
+                dataGridView1.Refresh();
+
+
+
+            }
+            textBoxTotalArticlo.Text = total.ToString();
+        }
         private void ConsultaFactura_Load(object sender, EventArgs e)
         {
             buttonImprimir.Enabled = false;
@@ -271,6 +297,7 @@ namespace ProyectoTech.Ui.Conultas
                 {
                     Lista = BLL.FacturaBLL.GetListodo();
                     dataGridView1.DataSource = Lista;
+                    CalcularTotal();
                     buttonImprimir.Enabled = true;
                 }
                

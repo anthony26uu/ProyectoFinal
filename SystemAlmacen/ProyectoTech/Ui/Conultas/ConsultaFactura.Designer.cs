@@ -44,6 +44,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonImprimir = new System.Windows.Forms.Button();
+            this.textBoxTotalArticlo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -191,12 +193,35 @@
             this.buttonImprimir.UseVisualStyleBackColor = true;
             this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
+            // textBoxTotalArticlo
+            // 
+            this.textBoxTotalArticlo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxTotalArticlo.Location = new System.Drawing.Point(804, 347);
+            this.textBoxTotalArticlo.Name = "textBoxTotalArticlo";
+            this.textBoxTotalArticlo.ReadOnly = true;
+            this.textBoxTotalArticlo.Size = new System.Drawing.Size(108, 20);
+            this.textBoxTotalArticlo.TabIndex = 68;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(761, 351);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "Total:";
+            // 
             // ConsultaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
             this.ClientSize = new System.Drawing.Size(922, 372);
+            this.Controls.Add(this.textBoxTotalArticlo);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.maskedTextBoxId);
@@ -240,5 +265,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button buttonImprimir;
+        private System.Windows.Forms.TextBox textBoxTotalArticlo;
+        private System.Windows.Forms.Label label6;
     }
 }
