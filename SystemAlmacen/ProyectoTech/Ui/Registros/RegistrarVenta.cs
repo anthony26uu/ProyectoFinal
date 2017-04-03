@@ -654,7 +654,7 @@ namespace ProyectoTech.Ui.Registros
                  
                     dataGridViewVenta.Refresh();
                     Edicion_groupBox.Enabled = false;
-
+                    buttonImprimir.Enabled = true;
                     CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[listadoArticulos];
                     myCurrencyManager.Refresh();
                 }
@@ -693,7 +693,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void button_Apagado_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Eliminar_button_Click(object sender, EventArgs e)

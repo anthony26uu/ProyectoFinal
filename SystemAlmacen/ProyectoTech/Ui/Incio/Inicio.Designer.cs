@@ -47,14 +47,15 @@
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntoDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelTipo = new System.Windows.Forms.Label();
             this.LabelUsuario = new System.Windows.Forms.Label();
             this.timer1Hora = new System.Windows.Forms.Timer(this.components);
             this.labelHORA = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
-            this.button_Apagado = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button_CambiarUser = new System.Windows.Forms.Button();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_Apagado = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -210,9 +211,18 @@
             // 
             this.venderToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Checked = true;
+            this.ayudaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // LabelTipo
             // 
@@ -268,23 +278,17 @@
             this.labelFecha.TabIndex = 14;
             this.labelFecha.Text = "Fecha";
             // 
-            // button_Apagado
+            // panel1
             // 
-            this.button_Apagado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Apagado.BackColor = System.Drawing.Color.DimGray;
-            this.button_Apagado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Apagado.FlatAppearance.BorderSize = 0;
-            this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.Shutdown_32;
-            this.button_Apagado.Location = new System.Drawing.Point(443, 244);
-            this.button_Apagado.Name = "button_Apagado";
-            this.button_Apagado.Size = new System.Drawing.Size(58, 68);
-            this.button_Apagado.TabIndex = 15;
-            this.button_Apagado.Text = "Cerrar";
-            this.button_Apagado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_Apagado.UseVisualStyleBackColor = false;
-            this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.logo_elalmacen;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(16, 81);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(272, 117);
+            this.panel1.TabIndex = 68;
             // 
             // button_CambiarUser
             // 
@@ -304,21 +308,31 @@
             this.button_CambiarUser.UseVisualStyleBackColor = false;
             this.button_CambiarUser.Click += new System.EventHandler(this.button_CambiarUser_Click);
             // 
-            // ayudaToolStripMenuItem
+            // button_Apagado
             // 
-            this.ayudaToolStripMenuItem.Checked = true;
-            this.ayudaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.button_Apagado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Apagado.BackColor = System.Drawing.Color.DimGray;
+            this.button_Apagado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Apagado.FlatAppearance.BorderSize = 0;
+            this.button_Apagado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Apagado.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Apagado.Image = global::ProyectoTech.Properties.Resources.Shutdown_32;
+            this.button_Apagado.Location = new System.Drawing.Point(443, 244);
+            this.button_Apagado.Name = "button_Apagado";
+            this.button_Apagado.Size = new System.Drawing.Size(58, 68);
+            this.button_Apagado.TabIndex = 15;
+            this.button_Apagado.Text = "Cerrar";
+            this.button_Apagado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_Apagado.UseVisualStyleBackColor = false;
+            this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(513, 321);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_CambiarUser);
             this.Controls.Add(this.button_Apagado);
             this.Controls.Add(this.labelFecha);
@@ -330,6 +344,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Inicio_FormClosed);
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.VisibleChanged += new System.EventHandler(this.Inicio_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);
@@ -366,5 +381,6 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -221,5 +221,10 @@ namespace ProyectoTech.Ui.Incio
             Ui.Reportes.Ventanas_Reportes.CReporteFacturas.Funcion().Show();
             Ui.Reportes.Ventanas_Reportes.CReporteFacturas.Funcion().Activate();
         }
+
+        private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

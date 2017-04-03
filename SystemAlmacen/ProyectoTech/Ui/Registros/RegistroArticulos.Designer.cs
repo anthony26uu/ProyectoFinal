@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(420, 275);
             this.Controls.Add(this.precioVentaMaskedTextBox);
             this.Controls.Add(this.precioCompraMaskedTextBox);

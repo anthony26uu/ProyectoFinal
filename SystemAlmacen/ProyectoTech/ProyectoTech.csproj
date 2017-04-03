@@ -284,6 +284,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\logo-elalmacen.png" />
     <None Include="Ui\Reportes\RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </None>

@@ -150,5 +150,10 @@ namespace ProyectoTech.Ui.Incio
         {
             Application.Exit();
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            unico = null;
+        }
     }
 }

@@ -78,6 +78,7 @@
             this.TotalmaskedTextBox = new System.Windows.Forms.TextBox();
             this.textBoxDevuelta = new System.Windows.Forms.TextBox();
             this.groupBoxDinero = new System.Windows.Forms.GroupBox();
+            this.EfectivomaskedTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.NombreM_textBox = new System.Windows.Forms.TextBox();
             this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
@@ -90,7 +91,6 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.EfectivomaskedTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,9 +123,9 @@
             this.descuentoLabel.AutoSize = true;
             this.descuentoLabel.Location = new System.Drawing.Point(6, 76);
             this.descuentoLabel.Name = "descuentoLabel";
-            this.descuentoLabel.Size = new System.Drawing.Size(93, 13);
+            this.descuentoLabel.Size = new System.Drawing.Size(70, 13);
             this.descuentoLabel.TabIndex = 9;
-            this.descuentoLabel.Text = "Dinero Descuento";
+            this.descuentoLabel.Text = "% Descuento";
             // 
             // clienteLabel
             // 
@@ -594,6 +594,15 @@
             this.groupBoxDinero.TabStop = false;
             this.groupBoxDinero.Text = "Dinero";
             // 
+            // EfectivomaskedTextBox
+            // 
+            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(202, 26);
+            this.EfectivomaskedTextBox.MaxLength = 10;
+            this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
+            this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
+            this.EfectivomaskedTextBox.TabIndex = 83;
+            this.EfectivomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EfectivomaskedTextBox_KeyPress);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -758,15 +767,6 @@
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // EfectivomaskedTextBox
-            // 
-            this.EfectivomaskedTextBox.Location = new System.Drawing.Point(202, 26);
-            this.EfectivomaskedTextBox.MaxLength = 10;
-            this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
-            this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.EfectivomaskedTextBox.TabIndex = 83;
-            this.EfectivomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EfectivomaskedTextBox_KeyPress);
             // 
             // RegistrarVenta
             // 
