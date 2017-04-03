@@ -37,7 +37,6 @@ namespace ProyectoTech.Ui.Registros
 
         private Articulos llenarCampos()
         {
-
             articulo.IdArticulo = (Utilidades.TOINT(ArticulonumericUpDown.Text));
             articulo.NombreArticulo = nombreArticuloTextBox.Text;
             articulo.Existencia = (Utilidades.TOINT(existenciaMaskedTextBox.Text));
@@ -99,11 +98,21 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(categoriaComboBox, "Campo Obligatorio");
                 retorno = false;
             }
-            if (string.IsNullOrWhiteSpace(codigoArticuloMaskedTextBox.Text))
+          
+
+            if (codigoArticuloMaskedTextBox.Text.Length < 15)
             {
                 errorProviderTodo.SetError(codigoArticuloMaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
+
+
+            if (string.IsNullOrWhiteSpace(ITBISmaskedTextBox.Text))
+            {
+                errorProviderTodo.SetError(ITBISmaskedTextBox, "Campo Obligatorio");
+                retorno = false;
+            }
+
             return retorno;
         }
 
@@ -140,12 +149,12 @@ namespace ProyectoTech.Ui.Registros
                     }
                     else
                     {
-
+                      
                         BLL.ArticuloBLL.Guardar(articulo);
                         MessageBox.Show("Nuevo Articulo agregado con exito!");
                     }
                 }
-                Limpiar();
+                errorProviderTodo.Clear();
             }
             catch (Exception)
             {

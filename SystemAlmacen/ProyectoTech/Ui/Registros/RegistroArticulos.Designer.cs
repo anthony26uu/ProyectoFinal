@@ -180,7 +180,7 @@
             this.ArticulonumericUpDown.Location = new System.Drawing.Point(114, 20);
             this.ArticulonumericUpDown.Name = "ArticulonumericUpDown";
             this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.ArticulonumericUpDown.TabIndex = 12;
+            this.ArticulonumericUpDown.TabIndex = 10;
             this.ArticulonumericUpDown.ValueChanged += new System.EventHandler(this.ArticulonumericUpDown_ValueChanged);
             // 
             // nombreArticuloTextBox
@@ -258,7 +258,7 @@
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(86, 52);
-            this.buttonEliminar.TabIndex = 10;
+            this.buttonEliminar.TabIndex = 12;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonEliminar.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.existenciaMaskedTextBox.Location = new System.Drawing.Point(114, 75);
             this.existenciaMaskedTextBox.Name = "existenciaMaskedTextBox";
             this.existenciaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.existenciaMaskedTextBox.TabIndex = 68;
+            this.existenciaMaskedTextBox.TabIndex = 1;
             this.existenciaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.existenciaMaskedTextBox_KeyPress);
             // 
             // precioCompraMaskedTextBox
@@ -312,7 +312,7 @@
             this.precioCompraMaskedTextBox.MaxLength = 10;
             this.precioCompraMaskedTextBox.Name = "precioCompraMaskedTextBox";
             this.precioCompraMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.precioCompraMaskedTextBox.TabIndex = 69;
+            this.precioCompraMaskedTextBox.TabIndex = 3;
             this.precioCompraMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioCompraMaskedTextBox_KeyPress);
             // 
             // precioVentaMaskedTextBox
@@ -321,7 +321,7 @@
             this.precioVentaMaskedTextBox.MaxLength = 10;
             this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
             this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
-            this.precioVentaMaskedTextBox.TabIndex = 70;
+            this.precioVentaMaskedTextBox.TabIndex = 2;
             this.precioVentaMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioVentaMaskedTextBox_KeyPress);
             // 
             // RegistroArticulos

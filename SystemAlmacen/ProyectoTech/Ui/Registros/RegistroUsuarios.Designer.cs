@@ -120,7 +120,7 @@
             this.IdnumericUpDown.Location = new System.Drawing.Point(145, 9);
             this.IdnumericUpDown.Name = "IdnumericUpDown";
             this.IdnumericUpDown.Size = new System.Drawing.Size(97, 20);
-            this.IdnumericUpDown.TabIndex = 50;
+            this.IdnumericUpDown.TabIndex = 6;
             this.IdnumericUpDown.ValueChanged += new System.EventHandler(this.IdnumericUpDown_ValueChanged);
             // 
             // ConfirmaContextBox
@@ -130,7 +130,7 @@
             this.ConfirmaContextBox.Name = "ConfirmaContextBox";
             this.ConfirmaContextBox.PasswordChar = '*';
             this.ConfirmaContextBox.Size = new System.Drawing.Size(147, 20);
-            this.ConfirmaContextBox.TabIndex = 46;
+            this.ConfirmaContextBox.TabIndex = 3;
             // 
             // nombreUsuarioTextBox
             // 
@@ -138,7 +138,7 @@
             this.nombreUsuarioTextBox.MaxLength = 50;
             this.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox";
             this.nombreUsuarioTextBox.Size = new System.Drawing.Size(145, 20);
-            this.nombreUsuarioTextBox.TabIndex = 43;
+            this.nombreUsuarioTextBox.TabIndex = 0;
             // 
             // passUsuarioTextBox
             // 
@@ -147,7 +147,7 @@
             this.passUsuarioTextBox.Name = "passUsuarioTextBox";
             this.passUsuarioTextBox.PasswordChar = '*';
             this.passUsuarioTextBox.Size = new System.Drawing.Size(147, 20);
-            this.passUsuarioTextBox.TabIndex = 45;
+            this.passUsuarioTextBox.TabIndex = 2;
             // 
             // errorProviderTodo
             // 
@@ -160,7 +160,7 @@
             this.TipoComboBox.Location = new System.Drawing.Point(145, 72);
             this.TipoComboBox.Name = "TipoComboBox";
             this.TipoComboBox.Size = new System.Drawing.Size(145, 21);
-            this.TipoComboBox.TabIndex = 63;
+            this.TipoComboBox.TabIndex = 1;
             this.TipoComboBox.SelectedIndexChanged += new System.EventHandler(this.categoriaComboBox_SelectedIndexChanged);
             // 
             // buttonbuscar
@@ -173,7 +173,7 @@
             this.buttonbuscar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(43, 29);
-            this.buttonbuscar.TabIndex = 62;
+            this.buttonbuscar.TabIndex = 7;
             this.buttonbuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonbuscar.UseVisualStyleBackColor = true;
             this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
@@ -189,7 +189,7 @@
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(60, 52);
-            this.buttonEliminar.TabIndex = 61;
+            this.buttonEliminar.TabIndex = 8;
             this.buttonEliminar.Text = "Eliminar";
             this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonEliminar.UseVisualStyleBackColor = true;
@@ -206,7 +206,7 @@
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(66, 52);
-            this.buttonGuardar.TabIndex = 60;
+            this.buttonGuardar.TabIndex = 4;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNuevo.Name = "buttonNuevo";
             this.buttonNuevo.Size = new System.Drawing.Size(66, 51);
-            this.buttonNuevo.TabIndex = 59;
+            this.buttonNuevo.TabIndex = 5;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNuevo.UseVisualStyleBackColor = true;
