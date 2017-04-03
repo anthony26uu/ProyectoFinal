@@ -162,7 +162,7 @@ namespace ProyectoTech.Ui.Incio
 
         private void button_Apagado_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button_CambiarUser_Click(object sender, EventArgs e)

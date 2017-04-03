@@ -676,20 +676,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image2">
-        <Source>Embedded</Source>
-        <Value>Product_96px</Value>
-        <Sizing>FitProportional</Sizing>
-        <Left>0.04974cm</Left>
-        <Height>2.95521cm</Height>
-        <Width>3.88125cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
     </ReportItems>
     <Height>4.13542in</Height>
     <Style>
@@ -698,10 +684,6 @@
         <Width>2.25pt</Width>
       </Border>
       <BackgroundColor>White</BackgroundColor>
-      <BackgroundImage>
-        <Source>Embedded</Source>
-        <Value>estrategiaventas</Value>
-      </BackgroundImage>
     </Style>
   </Body>
   <Width>6.5536in</Width>

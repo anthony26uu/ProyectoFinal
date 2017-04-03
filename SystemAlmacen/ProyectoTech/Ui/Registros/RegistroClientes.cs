@@ -46,7 +46,7 @@ namespace ProyectoTech.Ui.Registros
                 retorno = false;
             }
             
-            if (telefonoMaskedTextBox.Text.Length < 14)
+            if (telefonoMaskedTextBox.Text.Length < 10)
             {
                 NombreerrorProvider.SetError(telefonoMaskedTextBox, "Por favor llenar el campo.");
                 retorno = false;
@@ -57,6 +57,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void Limpiar()
         {
+            telefonoMaskedTextBox.Clear();
             clienteIdNumericUpDown.ResetText();
             nombresTextBox.Clear();
             direccionTextBox.Clear();

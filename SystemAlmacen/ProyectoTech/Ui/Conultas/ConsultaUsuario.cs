@@ -124,5 +124,11 @@ namespace ProyectoTech.Ui.Conultas
                 e.Handled = true;
             }
         }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            new Ui.Reportes.Ventanas_Reportes.CReporteUsuarios(Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteUsuarios(Lista).Activate();
+        }
     }
 }

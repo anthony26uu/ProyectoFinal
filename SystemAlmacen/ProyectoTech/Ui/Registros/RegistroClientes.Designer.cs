@@ -36,8 +36,8 @@
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label sexoLabel;
             System.Windows.Forms.Label fechaNacimientoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroClientes));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroClientes));
             this.clienteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
@@ -148,6 +148,18 @@
             fechaNacimientoLabel.TabIndex = 29;
             fechaNacimientoLabel.Text = "Fecha Nacimiento:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(0, 114);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(52, 15);
+            label1.TabIndex = 32;
+            label1.Text = "Cedula:";
+            // 
             // clienteIdNumericUpDown
             // 
             this.clienteIdNumericUpDown.Location = new System.Drawing.Point(112, 7);
@@ -179,7 +191,7 @@
             this.emailTextBox.MaxLength = 80;
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(120, 20);
-            this.emailTextBox.TabIndex = 2;
+            this.emailTextBox.TabIndex = 3;
             // 
             // telefonoMaskedTextBox
             // 
@@ -187,7 +199,7 @@
             this.telefonoMaskedTextBox.Mask = "(999)000-0000";
             this.telefonoMaskedTextBox.Name = "telefonoMaskedTextBox";
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(120, 20);
-            this.telefonoMaskedTextBox.TabIndex = 3;
+            this.telefonoMaskedTextBox.TabIndex = 4;
             // 
             // NombreerrorProvider
             // 
@@ -203,7 +215,7 @@
             this.sexoComboBox.Location = new System.Drawing.Point(112, 191);
             this.sexoComboBox.Name = "sexoComboBox";
             this.sexoComboBox.Size = new System.Drawing.Size(120, 21);
-            this.sexoComboBox.TabIndex = 4;
+            this.sexoComboBox.TabIndex = 5;
             // 
             // fechaNacimientoDateTimePicker
             // 
@@ -211,7 +223,7 @@
             this.fechaNacimientoDateTimePicker.Location = new System.Drawing.Point(112, 218);
             this.fechaNacimientoDateTimePicker.Name = "fechaNacimientoDateTimePicker";
             this.fechaNacimientoDateTimePicker.Size = new System.Drawing.Size(120, 20);
-            this.fechaNacimientoDateTimePicker.TabIndex = 5;
+            this.fechaNacimientoDateTimePicker.TabIndex = 6;
             // 
             // panel1
             // 
@@ -242,11 +254,11 @@
             // 
             this.NewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewButton.Image = ((System.Drawing.Image)(resources.GetObject("NewButton.Image")));
-            this.NewButton.Location = new System.Drawing.Point(398, 216);
+            this.NewButton.Location = new System.Drawing.Point(401, 164);
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 51);
-            this.NewButton.TabIndex = 7;
+            this.NewButton.TabIndex = 8;
             this.NewButton.Text = "Nuevo";
             this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NewButton.UseVisualStyleBackColor = true;
@@ -258,11 +270,11 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(237, 215);
+            this.SaveButton.Location = new System.Drawing.Point(240, 163);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(66, 52);
-            this.SaveButton.TabIndex = 6;
+            this.SaveButton.TabIndex = 7;
             this.SaveButton.Text = "Guardar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -274,27 +286,15 @@
             this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Deletebutton.Location = new System.Drawing.Point(324, 215);
+            this.Deletebutton.Location = new System.Drawing.Point(327, 163);
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(60, 52);
-            this.Deletebutton.TabIndex = 8;
+            this.Deletebutton.TabIndex = 11;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
             this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F);
-            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label1.Location = new System.Drawing.Point(0, 114);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(52, 15);
-            label1.TabIndex = 32;
-            label1.Text = "Cedula:";
             // 
             // Cedula_maskedTextBox
             // 
@@ -302,14 +302,14 @@
             this.Cedula_maskedTextBox.Mask = "999-9999999-9";
             this.Cedula_maskedTextBox.Name = "Cedula_maskedTextBox";
             this.Cedula_maskedTextBox.Size = new System.Drawing.Size(120, 20);
-            this.Cedula_maskedTextBox.TabIndex = 31;
+            this.Cedula_maskedTextBox.TabIndex = 2;
             // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoTech.Properties.Resources.fondo_login;
-            this.ClientSize = new System.Drawing.Size(467, 269);
+            this.ClientSize = new System.Drawing.Size(467, 254);
             this.Controls.Add(label1);
             this.Controls.Add(this.Cedula_maskedTextBox);
             this.Controls.Add(this.panel1);

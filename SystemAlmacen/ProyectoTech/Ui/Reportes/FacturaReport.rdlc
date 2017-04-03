@@ -494,7 +494,7 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox82">
+      <Textbox Name="Textbox83">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -503,10 +503,10 @@
               <TextRun>
                 <Value>Cuadre Facturas</Value>
                 <Style>
-                  <FontFamily>Times New Roman</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
-                  <Color>DimGray</Color>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -519,10 +519,10 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontFamily>Times New Roman</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
-                  <Color>DimGray</Color>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -530,14 +530,15 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>0.10583cm</Top>
-        <Left>5.34859cm</Left>
-        <Height>1.31684cm</Height>
-        <Width>8.08208cm</Width>
+        <Top>0.37469cm</Top>
+        <Left>2.27726cm</Left>
+        <Height>1.52604cm</Height>
+        <Width>14.14074cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>2pt</Width>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -551,30 +552,6 @@
       <Border>
         <Style>Solid</Style>
       </Border>
-      <TopBorder>
-        <Color>Black</Color>
-        <Style>Solid</Style>
-        <Width>1pt</Width>
-      </TopBorder>
-      <BottomBorder>
-        <Color>Black</Color>
-        <Style>Solid</Style>
-        <Width>1pt</Width>
-      </BottomBorder>
-      <LeftBorder>
-        <Color>Black</Color>
-        <Style>Solid</Style>
-        <Width>1pt</Width>
-      </LeftBorder>
-      <RightBorder>
-        <Color>Black</Color>
-        <Style>Solid</Style>
-        <Width>1pt</Width>
-      </RightBorder>
-      <BackgroundImage>
-        <Source>Embedded</Source>
-        <Value>Bombilla_sin_fondo</Value>
-      </BackgroundImage>
     </Style>
   </Body>
   <Width>7.06867in</Width>

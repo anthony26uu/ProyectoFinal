@@ -191,6 +191,12 @@
     <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.Designer.cs">
       <DependentUpon>CReporteFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteUsuarios.Designer.cs">
+      <DependentUpon>CReporteUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -237,6 +243,7 @@
     <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\Factura.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\UsuariosReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteArticulos.resx">
       <DependentUpon>CReporteArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.resx">
       <DependentUpon>CReporteFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteUsuarios.resx">
+      <DependentUpon>CReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

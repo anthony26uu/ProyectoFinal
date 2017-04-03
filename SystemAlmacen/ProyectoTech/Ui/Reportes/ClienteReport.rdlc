@@ -494,7 +494,7 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox82">
+      <Textbox Name="Textbox83">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -503,14 +503,15 @@
               <TextRun>
                 <Value>Reporte Clientes</Value>
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -518,9 +519,10 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <Format>0.00%</Format>
+                  <Color>Gray</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -528,13 +530,16 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>0.38129cm</Top>
-        <Left>5.71075cm</Left>
-        <Height>1.15809cm</Height>
-        <Width>7.77074cm</Width>
+        <Top>2.09448cm</Top>
+        <Left>0.95463cm</Left>
+        <Height>1.52604cm</Height>
+        <Width>14.14074cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
-          <Border />
+          <Border>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -547,10 +552,6 @@
       <Border>
         <Style>Solid</Style>
       </Border>
-      <BackgroundImage>
-        <Source>Embedded</Source>
-        <Value>estrategiaventas</Value>
-      </BackgroundImage>
     </Style>
   </Body>
   <Width>6.3189in</Width>
