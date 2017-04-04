@@ -631,7 +631,7 @@
               <TextRun>
                 <Value>Reporte Articulos</Value>
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Format>0.00%</Format>
@@ -648,7 +648,7 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontFamily>Tempus Sans ITC</FontFamily>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>26pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Format>0.00%</Format>
@@ -660,16 +660,12 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
-        <Top>0.17639cm</Top>
-        <Left>5.18781cm</Left>
+        <Top>1.89618cm</Top>
         <Height>1.52604cm</Height>
-        <Width>8.96125cm</Width>
+        <Width>16.51383cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
-          <Border>
-            <Style>Dotted</Style>
-            <Width>2pt</Width>
-          </Border>
+          <Border />
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -680,8 +676,9 @@
     <Height>4.13542in</Height>
     <Style>
       <Border>
-        <Style>Solid</Style>
-        <Width>2.25pt</Width>
+        <Color>Gray</Color>
+        <Style>Double</Style>
+        <Width>2pt</Width>
       </Border>
       <BackgroundColor>White</BackgroundColor>
     </Style>

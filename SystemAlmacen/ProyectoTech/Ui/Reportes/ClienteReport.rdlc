@@ -6,25 +6,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96642cm</Width>
+              <Width>1.98815cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.52173cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.52173cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -228,6 +231,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cedula</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -458,12 +491,43 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cedula">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cedula.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cedula</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -484,10 +548,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ClienteDataSet</DataSetName>
-        <Top>5.84327cm</Top>
-        <Left>1.00356cm</Left>
+        <Top>3.99466cm</Top>
         <Height>2.36416cm</Height>
-        <Width>14.29852cm</Width>
+        <Width>16.97239cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -531,9 +594,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>2.09448cm</Top>
-        <Left>0.95463cm</Left>
         <Height>1.52604cm</Height>
-        <Width>14.14074cm</Width>
+        <Width>16.05001cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -550,11 +612,13 @@
     <Height>4.1875in</Height>
     <Style>
       <Border>
+        <Color>Gray</Color>
         <Style>Solid</Style>
+        <Width>2pt</Width>
       </Border>
     </Style>
   </Body>
-  <Width>6.3189in</Width>
+  <Width>6.68204in</Width>
   <Page>
     <PageHeader>
       <Height>3.26525cm</Height>
@@ -779,10 +843,14 @@
           <DataField>FechaNacimiento</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="Cedula">
+          <DataField>Cedula</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ProyectoTechDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\antho\OneDrive - Universidad Católica Nordestana (UCNE)\Tareas de Anthony\Semestre 7\Aplicada I\Repositorios\ProyectoFinal\SystemAlmacen\ProyectoTech\Ui\Reportes\ProyectoTechDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>DbDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\antho\OneDrive - Universidad Católica Nordestana (UCNE)\Tareas de Anthony\Semestre 7\Aplicada I\Repositorios\ProyectoFinal\SystemAlmacen\ProyectoTech\Ui\Reportes\DbDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Clientes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

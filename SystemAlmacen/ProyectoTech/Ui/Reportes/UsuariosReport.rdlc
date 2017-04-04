@@ -39,9 +39,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>0.37469cm</Top>
-        <Left>0.92005cm</Left>
+        <Left>0.00198cm</Left>
         <Height>1.52604cm</Height>
-        <Width>14.14074cm</Width>
+        <Width>15.79365cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -354,7 +354,12 @@
       </Tablix>
     </ReportItems>
     <Height>4.35417in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>Double</Style>
+        <Width>2pt</Width>
+      </Border>
+    </Style>
   </Body>
   <Width>6.21875in</Width>
   <Page>

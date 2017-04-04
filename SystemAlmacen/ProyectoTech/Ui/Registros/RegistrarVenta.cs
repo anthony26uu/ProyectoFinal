@@ -495,7 +495,7 @@ namespace ProyectoTech.Ui.Registros
                 LlenarFactura();
                 if (BLL.FacturaBLL.Guardar2(facturaG, listaRelaciones,  Moodifica, identificador))
                 {
-                    //  libroIdTextBox.Text = libro.LibroId.ToString();
+                  
                     MessageBox.Show("FActura Guardo con exito");
                     facturaG = new Facturas();
                 }

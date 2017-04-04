@@ -531,9 +531,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>0.37469cm</Top>
-        <Left>2.27726cm</Left>
         <Height>1.52604cm</Height>
-        <Width>14.14074cm</Width>
+        <Width>17.84859cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -550,7 +549,9 @@
     <Height>4.79167in</Height>
     <Style>
       <Border>
-        <Style>Solid</Style>
+        <Color>Gray</Color>
+        <Style>Double</Style>
+        <Width>2pt</Width>
       </Border>
     </Style>
   </Body>
