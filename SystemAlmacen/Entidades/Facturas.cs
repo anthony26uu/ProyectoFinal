@@ -26,9 +26,9 @@ namespace Entidades
        //     ArticuloList = new List<Entidades.Articulos>();
 
         }
-        public Facturas( string nombreUsuario,  DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd, decimal total  )
+        public Facturas(int idFactura ,string nombreUsuario,  DateTime fechaVenta,string cliente, string tipoventa, int cantidadProd, decimal total  )
         {
-          
+            this.IdFactura = idFactura;
             this.NombreUsuario = nombreUsuario;
             this.FechaVenta = fechaVenta;       
             this.Cliente = cliente;

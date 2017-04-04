@@ -39,6 +39,20 @@ namespace DAL
             }
         }
 
+        public bool GuardarBool(TEntity entidad)
+        {
+            try
+            {
+                EntitySet.Add(entidad);
+                return Contex.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+                return false;
+            }
+        }
+
         public TEntity Guardar(TEntity laEntidad)
         {
             TEntity Result = null;

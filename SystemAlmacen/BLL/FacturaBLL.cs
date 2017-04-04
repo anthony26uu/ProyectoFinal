@@ -21,6 +21,67 @@ namespace BLL
             return creado;
         }
 
+
+
+
+
+
+
+
+
+        public static bool Guardar2(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, bool Moodifica, int identificador)
+        {
+            using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
+            {
+                bool FacuraGuardada;
+                bool relacionesGuardadas = false;
+                if (Buscar(L => L.IdFactura == Facturag.IdFactura) == null)
+                {
+                    FacuraGuardada = repositorio.GuardarBool(Facturag);
+                }
+                else
+                {
+                    FacuraGuardada = repositorio.Modificar(Facturag);
+                }
+                if (FacuraGuardada)
+                {
+                    relacionesGuardadas = true;
+                    if (listaRelaciones != null)
+                    {
+                        if (Moodifica == false)
+                        {
+                            foreach (var relacion in listaRelaciones)
+                            {
+                                relacion.IdFactura = Facturag.IdFactura;
+                                if (!BLL.FacturaDetallesBLL.Guardar(relacion))
+                                {
+                                    relacionesGuardadas = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
+                            foreach (var relacion in listaRelaciones)
+                            {
+                                if(!BLL.FacturaDetallesBLL.Mofidicar(relacion))
+                                {
+                                    relacionesGuardadas = false;
+                                }
+                               
+                            }
+
+                        }
+                       
+                    }
+                }
+                return relacionesGuardadas;
+            }
+        }
+
+
+
+
         public static List<Entidades.Facturas> GetList(Expression<Func<Entidades.Facturas, bool>> criterioBusqueda)
         {
             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
