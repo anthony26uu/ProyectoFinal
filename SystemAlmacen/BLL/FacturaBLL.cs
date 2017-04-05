@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,26 +11,8 @@ namespace BLL
 {
     public class FacturaBLL
     {
-        public static Facturas Guardar(Entidades.Facturas cliente)
-        {
-            Entidades.Facturas creado = null;
-            using (var repositorio = new Repositorio<Entidades.Facturas>())
-            {
-                creado = repositorio.Guardar(cliente);
-            }
 
-            return creado;
-        }
-
-
-
-
-
-
-
-
-
-        public static bool Guardar2(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, bool Moodifica, int identificador)
+        public static bool Guardar(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, bool Moodifica, int identificador)
         {
             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
             {
@@ -61,10 +44,12 @@ namespace BLL
                         }
                         else
                         {
-                            listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
+                            
                             foreach (var relacion in listaRelaciones)
                             {
-                                if(!BLL.FacturaDetallesBLL.Mofidicar(relacion))
+                                relacion.IdFactura = Facturag.IdFactura;
+
+                                if (!BLL.FacturaDetallesBLL.Mofidicar(relacion))
                                 {
                                     relacionesGuardadas = false;
                                 }

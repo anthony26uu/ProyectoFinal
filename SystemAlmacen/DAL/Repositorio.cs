@@ -70,7 +70,7 @@ namespace DAL
 
             return Result;
         }
-
+     
         public bool Modificar(TEntity laEntidad)
         {
             bool Result = false;

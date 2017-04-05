@@ -15,7 +15,7 @@ namespace ProyectoTech.Ui.Registros
     public partial class RegistrarVenta : Form
     {
 
-        bool Moodifica;
+        bool Moodifica=false;
         int identificador = 0;
       
         public RegistrarVenta()
@@ -414,48 +414,30 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.Refresh();
             
             bool agregado = false;
+            Moodifica = false;
 
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
             {
                 DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
-                identificador = Utilidades.TOINT(producto.Cells[0].Value.ToString());
 
+                identificador=Utilidades.TOINT( dataGridViewVenta[2, p].Value.ToString());
+            
             }
 
 
             if (identificador != 0)
             {
-                foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
-                {
-
-                    if (articulo.IdArticulo == Utilidades.TOINT(producto.Cells[0].Value.ToString()))
+                
+                if (listaRelaciones != null)
                     {
-                        agregado = true;
-                        break;
-
-                    }
-                }
-                if (agregado)
-                {
-                    errorProviderTodo.SetError(idArticuloComboBox, "Articulo ya esta en factura");
-                    MessageBox.Show("Articulo ya esta en factura \n  -Selecione otro \n  -Elimine el el ya agreado");
-                }
-                else
-                {
-
-                    if (listaRelaciones != null)
-                    {
-
-
-
                         listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
                         foreach (var relacion in listaRelaciones)
                         {
                             relacion.IdFactura = facturaG.IdFactura;
 
-                            if (BLL.FacturaDetallesBLL.Mofidicar(relacion) == false)
+                            if (BLL.FacturaDetallesBLL.Eliminar(relacion) == false)
                             {
-                               
+                               Moodifica = false;
                             }
                             else
                             {
@@ -464,7 +446,7 @@ namespace ProyectoTech.Ui.Registros
                             }
 
 
-                        }
+                        
                     }
                 }
 
@@ -493,15 +475,17 @@ namespace ProyectoTech.Ui.Registros
             {
 
                 LlenarFactura();
-                if (BLL.FacturaBLL.Guardar2(facturaG, listaRelaciones,  Moodifica, identificador))
+                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones,  Moodifica, identificador))
                 {
                   
                     MessageBox.Show("FActura Guardo con exito");
                     facturaG = new Facturas();
+                    Moodifica = false;
                 }
                 else
                 {
                     MessageBox.Show("Error");
+                    Moodifica = false;
                 }
 
 
@@ -883,11 +867,17 @@ namespace ProyectoTech.Ui.Registros
 
            
 
+         if(listaRelaciones.Count!=0)
+            {
 
-            p = dataGridViewVenta.CurrentRow.Index;
-            MessageBox.Show("Seleciono la posicion " + p);
-            NombreM_textBox.Text = dataGridViewVenta[5, p].Value.ToString();
-            CantidadD_masked.Text = dataGridViewVenta[4, p].Value.ToString();
+                p = dataGridViewVenta.CurrentRow.Index;
+                MessageBox.Show("Seleciono la posicion " + p);
+                NombreM_textBox.Text = dataGridViewVenta[5, p].Value.ToString();
+                CantidadD_masked.Text = dataGridViewVenta[4, p].Value.ToString();
+            }else
+            {
+                MessageBox.Show("Lista Vacia");
+            }
 
         }
 
