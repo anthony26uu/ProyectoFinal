@@ -412,16 +412,16 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             dataGridViewVenta.Refresh();
-            
-            bool agregado = false;
+            identificador = 0;
+          
             Moodifica = false;
-
+            MessageBox.Show("Seleciono fila " + p);
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
             {
-                DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
+           //     DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
 
-                identificador=Utilidades.TOINT( dataGridViewVenta[2, p].Value.ToString());
-            
+                identificador= Convert.ToInt32(dataGridViewVenta[2, p].Value);
+                string nombre = dataGridViewVenta[5, p].Value.ToString();
             }
 
 
@@ -430,20 +430,25 @@ namespace ProyectoTech.Ui.Registros
                 
                 if (listaRelaciones != null)
                     {
-                        listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
-                        foreach (var relacion in listaRelaciones)
-                        {
-                            relacion.IdFactura = facturaG.IdFactura;
-
+                    listaRelaciones.RemoveAll(p=> p.IdArticulo== identificador);
+                     
+                     foreach (var relacion in listaRelaciones)
+                      {
+                           
+                           relacion.IdFactura = facturaG.IdFactura;
+                            //relacion.IdArticulo = identificador;
                             if (BLL.FacturaDetallesBLL.Eliminar(relacion) == false)
                             {
                                Moodifica = false;
                             }
                             else
                             {
+                         //   BLL.FacturaDetallesBLL.Guardar(relacion);
                                 MessageBox.Show("Modifico");
-                                Moodifica = true;
+                            
+                            Moodifica = true;
                             }
+                           
 
 
                         
@@ -475,12 +480,12 @@ namespace ProyectoTech.Ui.Registros
             {
 
                 LlenarFactura();
-                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones,  Moodifica, identificador))
+                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador))
                 {
                   
                     MessageBox.Show("FActura Guardo con exito");
                     facturaG = new Facturas();
-                    Moodifica = false;
+                   
                 }
                 else
                 {
@@ -823,37 +828,37 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-
-                
-            if (facturaG != null)
-            {
-                    errorProviderTodo.Clear();
-                    DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar la factura?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
+                if(dataGridViewVenta.DataSource!= null)
                 {
-                    if (BLL.FacturaBLL.EliminarRelacion(facturaG))
+                    if (facturaG != null)
                     {
-                       
-                        SumarExistencia(textBoxCantidad.Value);
-                        Limpiar();
-                        MessageBox.Show("Eliminado Con exito");
-                            facturaG = new Facturas();
-
-
-
-
-
+                        errorProviderTodo.Clear();
+                        DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar la factura?", "¡Atencion!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (respuesta == DialogResult.Yes)
+                        {
+                            if (BLL.FacturaBLL.EliminarRelacion(facturaG))
+                            {
+                                SumarExistencia(textBoxCantidad.Value);
+                                Limpiar();
+                                MessageBox.Show("Eliminado Con exito");
+                                facturaG = new Facturas();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Problemas al eliminar");
+                            }
                         }
+                    }
                     else
                     {
-                        MessageBox.Show("Problemas al eliminar");
+                        MessageBox.Show("No hay facturas Registradas");
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("No hay facturas Registradas");
-            }
+                else
+                {
+                    MessageBox.Show("No ha realizado busqeuda");
+                }
+           
         }
         }
         private void comboBoxNombreAr_SelectedIndexChanged(object sender, EventArgs e)
@@ -864,10 +869,7 @@ namespace ProyectoTech.Ui.Registros
         private void dataGridViewVenta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridViewVenta.Refresh();
-
-           
-
-         if(listaRelaciones.Count!=0)
+          if(listaRelaciones.Count!=0)
             {
 
                 p = dataGridViewVenta.CurrentRow.Index;

@@ -12,13 +12,13 @@ namespace BLL
     public class FacturaBLL
     {
 
-        public static bool Guardar(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, bool Moodifica, int identificador)
+        public static bool Guardar(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, int identificador)
         {
             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
             {
                 bool FacuraGuardada;
                 bool relacionesGuardadas = false;
-                if (Buscar(L => L.IdFactura == Facturag.IdFactura) == null)
+                if (Buscar(P => P.IdFactura == Facturag.IdFactura) == null)
                 {
                     FacuraGuardada = repositorio.GuardarBool(Facturag);
                 }
@@ -30,9 +30,10 @@ namespace BLL
                 {
                     relacionesGuardadas = true;
                     if (listaRelaciones != null)
-                    {
-                        if (Moodifica == false)
+                    {  
+                        if(BLL.FacturaDetallesBLL.Buscar(p=> p.IdArticulo== identificador)==null)
                         {
+                          //  listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
                             foreach (var relacion in listaRelaciones)
                             {
                                 relacion.IdFactura = Facturag.IdFactura;
@@ -44,20 +45,20 @@ namespace BLL
                         }
                         else
                         {
-                            
                             foreach (var relacion in listaRelaciones)
                             {
-                                relacion.IdFactura = Facturag.IdFactura;
-
+                                 relacion.IdFactura = Facturag.IdFactura;
                                 if (!BLL.FacturaDetallesBLL.Mofidicar(relacion))
                                 {
-                                    relacionesGuardadas = false;
+                                    relacionesGuardadas = true;
                                 }
-                               
                             }
 
                         }
-                       
+                        //      listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
+
+
+
                     }
                 }
                 return relacionesGuardadas;
