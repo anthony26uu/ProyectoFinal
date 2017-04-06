@@ -646,7 +646,7 @@
             this.Edicion_groupBox.Controls.Add(this.ModificarD_Button);
             this.Edicion_groupBox.Controls.Add(this.NombreM_textBox);
             this.Edicion_groupBox.Controls.Add(this.label14);
-            this.Edicion_groupBox.Location = new System.Drawing.Point(656, 77);
+            this.Edicion_groupBox.Location = new System.Drawing.Point(657, 77);
             this.Edicion_groupBox.Name = "Edicion_groupBox";
             this.Edicion_groupBox.Size = new System.Drawing.Size(293, 222);
             this.Edicion_groupBox.TabIndex = 82;

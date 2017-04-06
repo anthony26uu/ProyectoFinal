@@ -49,8 +49,11 @@ namespace ProyectoTech.Ui.Reportes.Ventanas_Reportes
             this.reportViewer1.ProcessingMode = ProcessingMode.Local;
             this.reportViewer1.LocalReport.ReportPath = @"C:\Users\antho\OneDrive - Universidad Católica Nordestana (UCNE)\Tareas de Anthony\Semestre 7\Aplicada I\Repositorios\ProyectoFinal\SystemAlmacen\ProyectoTech\Ui\Reportes\FacturaReport.rdlc";
 
-            ReportDataSource source = new ReportDataSource("FacturasDataSet", Lista);
+            ReportDataSource source = new ReportDataSource("FacturasDataSet", Lista); 
+            ReportDataSource source1 = new ReportDataSource("DetallesSet", Lista);
+            
             this.reportViewer1.LocalReport.DataSources.Add(source);
+            this.reportViewer1.LocalReport.DataSources.Add(source1);
             this.reportViewer1.RefreshReport();
 
             this.reportViewer1.RefreshReport();

@@ -91,8 +91,11 @@ namespace ProyectoTech.Ui.Incio
                              var producto2= new Entidades.Articulos(2, "Zapatos", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
                              BLL.ArticuloBLL.Guardar(producto2);
 
+                var producto3 = new Entidades.Articulos(3, "Calzado", 20, 20, 20, "222222222", DateTime.Now, 11, "CAZLADO");
+                BLL.ArticuloBLL.Guardar(producto3);
 
-                             var Cantegoria = new Entidades.Categorias(1, "CAZLADO");
+
+                var Cantegoria = new Entidades.Categorias(1, "CAZLADO");
                              BLL.CategoriaBLL.Guardar(Cantegoria);
 
                 

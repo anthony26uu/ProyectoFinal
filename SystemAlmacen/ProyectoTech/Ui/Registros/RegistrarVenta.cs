@@ -66,9 +66,9 @@ namespace ProyectoTech.Ui.Registros
             dataGridViewVenta.DataSource = listaRelaciones;
             
 
-            dataGridViewVenta.Columns["IdDetalle"].Visible = false;
-            dataGridViewVenta.Columns["IdFactura"].Visible = false;
-            dataGridViewVenta.Columns["Articulo"].Visible = false;
+        dataGridViewVenta.Columns["IdDetalle"].Visible = false;
+         dataGridViewVenta.Columns["IdFactura"].Visible = false;
+         dataGridViewVenta.Columns["Articulo"].Visible = false;
          
 
         }
@@ -158,7 +158,7 @@ namespace ProyectoTech.Ui.Registros
         
             foreach (DataGridViewRow row in dataGridViewVenta.Rows)
             {
-               
+             
                 decimal itbis = articulo.PrecioVenta * articulo.ITBIS;
 
                 decimal subtotal =articulo.PrecioVenta * cantidad;
@@ -412,49 +412,34 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             dataGridViewVenta.Refresh();
-            identificador = 0;
-          
+            identificador = 0;     
             Moodifica = false;
             MessageBox.Show("Seleciono fila " + p);
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
             {
-           //     DataGridViewRow row = (DataGridViewRow)dataGridViewVenta.Rows[0].Clone();
-
                 identificador= Convert.ToInt32(dataGridViewVenta[2, p].Value);
-                string nombre = dataGridViewVenta[5, p].Value.ToString();
+           
             }
-
 
             if (identificador != 0)
             {
                 
                 if (listaRelaciones != null)
                     {
-                    listaRelaciones.RemoveAll(p=> p.IdArticulo== identificador);
-                     
-                     foreach (var relacion in listaRelaciones)
-                      {
-                           
-                           relacion.IdFactura = facturaG.IdFactura;
-                            //relacion.IdArticulo = identificador;
-                            if (BLL.FacturaDetallesBLL.Eliminar(relacion) == false)
-                            {
-                               Moodifica = false;
-                            }
-                            else
-                            {
-                         //   BLL.FacturaDetallesBLL.Guardar(relacion);
-                                MessageBox.Show("Modifico");
-                            
-                            Moodifica = true;
-                            }
-                           
+                    var itemToRemove = listaRelaciones.SingleOrDefault(r => r.IdArticulo == identificador);
+                    listaRelaciones.Remove(itemToRemove);    
 
-
-                        
+                    if (BLL.FacturaDetallesBLL.Eliminar(itemToRemove) == false)
+                    {
+                        Moodifica = false;
                     }
-                }
+                    else
+                    {
 
+                        Moodifica = true;
+                    }
+
+                }
 
             }
             else
@@ -480,12 +465,19 @@ namespace ProyectoTech.Ui.Registros
             {
 
                 LlenarFactura();
-                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador))
+                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador, Moodifica))
                 {
                   
                     MessageBox.Show("FActura Guardo con exito");
                     facturaG = new Facturas();
-                   
+                    identificador = 0;
+                    Moodifica = false;
+                    Estado(false);
+                    new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Show();
+                    new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Activate();
+                    Limpiar();
+
+
                 }
                 else
                 {
@@ -645,7 +637,16 @@ namespace ProyectoTech.Ui.Registros
                                 {
                                     listadoArticulos.Add(articulo);
                                     listaRelaciones.Add(new FacturaDetalles(articulo.IdArticulo, 0, 0,  articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text), articulo.NombreArticulo, Convert.ToDecimal(articulo.ITBIS)));
-
+                                 //   RefreshListaRelciones();
+                                   
+                                  
+                                  /*  if (Moodifica)
+                                    {
+                                     //   ElementAt(articulo.IdArticulo);
+                                        var itemToRemove = listaRelaciones.ElementAt(articulo.IdArticulo);
+                                        BLL.FacturaDetallesBLL.Guardar(itemToRemove);
+                                    }
+                                    */
                                     RefreshListaRelciones();
                                     Edicion_groupBox.Enabled = true;
                                     CalcularFactura(Utilidades.TOINT(textBoxCantidad.Text));
@@ -706,6 +707,7 @@ namespace ProyectoTech.Ui.Registros
         {
             Limpiar();
             Estado(false);
+            Moodifica = false;
             idArticuloComboBox.Enabled = true;
             clienteComboBox.Enabled = true;
             tipoVentaComboBox.Enabled = true;
@@ -728,7 +730,7 @@ namespace ProyectoTech.Ui.Registros
             else
             {
                 int id = Utilidades.TOINT(BusquedamaskedTextBoxId.Text);
-              
+                Moodifica = true;
                 facturaG = BLL.FacturaBLL.Buscar(C => C.IdFactura == id);
                 errorProviderTodo.Clear();
                 if (facturaG != null)
