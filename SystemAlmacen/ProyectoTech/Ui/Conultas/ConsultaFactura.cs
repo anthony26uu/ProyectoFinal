@@ -228,8 +228,7 @@ namespace ProyectoTech.Ui.Conultas
                 DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
                
                 total += producto.Total;
-              //  = Convert.ToDecimal(row.Cells[6].Value);
-               
+             
                 dataGridView1.Refresh();
 
 

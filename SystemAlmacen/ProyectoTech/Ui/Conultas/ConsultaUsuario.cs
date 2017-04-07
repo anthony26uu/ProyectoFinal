@@ -106,11 +106,6 @@ namespace ProyectoTech.Ui.Conultas
 
                 }
 
-
-
-
-
-                // Selecionar(Utilidades.TOINT(buscaText.Text));
             }
             if (comboBox1.SelectedIndex == 1)
             {

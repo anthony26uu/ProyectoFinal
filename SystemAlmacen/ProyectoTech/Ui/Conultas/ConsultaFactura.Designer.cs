@@ -255,7 +255,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultaFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta Factura";
+            this.Text = "Cuadre Factura";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsultaFactura_FormClosed);
             this.Load += new System.EventHandler(this.ConsultaFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
