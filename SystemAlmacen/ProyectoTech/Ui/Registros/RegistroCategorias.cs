@@ -58,7 +58,7 @@ namespace ProyectoTech.Ui.Registros
 
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
-        { var guardar = new Categorias();
+        {  var guardar = new Categorias();
                 int id = 0;
             try
             {
@@ -82,6 +82,7 @@ namespace ProyectoTech.Ui.Registros
                         CategoriaBLL.Guardar(guardar);
                         MessageBox.Show("Nueva Categoria agregada con exito!");
                     }
+
                 }
                 Limpiar();
             }

@@ -20,8 +20,11 @@ Email varchar(50),
 Telefono varchar(15),
 );
 
+create table Deudasclientes(IdDeudas int identity(1,1) primary key, 
+Cliente varchar(80), 
+Deuda decimal,
 
-
+);
 
 
 create table Usuarios(Id int primary key identity(1,1), 

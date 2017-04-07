@@ -15,6 +15,7 @@ namespace ProyectoTech.Ui.Registros
     public partial class RegistrarVenta : Form
     {
 
+        bool bandera = false;
         bool Moodifica = false;
         int identificador = 0;
 
@@ -212,18 +213,23 @@ namespace ProyectoTech.Ui.Registros
                 retorno = false;
             }
 
-            if (string.IsNullOrWhiteSpace(textBoxDevuelta.Text))
+            if(!bandera)
             {
-                errorProviderTodo.SetError(textBoxDevuelta, "Primero Calcule Devuelta");
-                retorno = false;
+                if (string.IsNullOrWhiteSpace(textBoxDevuelta.Text))
+                {
+                    errorProviderTodo.SetError(textBoxDevuelta, "Primero Calcule Devuelta");
+                    retorno = false;
+                }
+                if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
+                {
+                    errorProviderTodo.SetError(EfectivomaskedTextBox, "Campo Obligatorio");
+                    retorno = false;
+                }
+
             }
 
 
-            if (string.IsNullOrWhiteSpace(EfectivomaskedTextBox.Text))
-            {
-                errorProviderTodo.SetError(EfectivomaskedTextBox, "Campo Obligatorio");
-                retorno = false;
-            }
+          
 
             if (string.IsNullOrWhiteSpace(tipoVentaComboBox.Text))
             {
@@ -348,6 +354,15 @@ namespace ProyectoTech.Ui.Registros
         private void idArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Estado(true);
+            if(bandera)
+            {
+                textBoxDevuelta.Enabled = false;
+                textBoxDevuelta.Clear();
+                bandera = true;
+                textBoxDevuelta.Clear();
+
+                EfectivomaskedTextBox.Enabled = false;
+            }
             Entidades.Articulos articuloc = new Articulos();
             textBoxCantidad.Value = 0;
             int id = Utilidades.TOINT(idArticuloComboBox.Text);
@@ -472,6 +487,7 @@ namespace ProyectoTech.Ui.Registros
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            var guardar = new Entidades.Deudasclientes();
             if (!Validar())
             {
                 MessageBox.Show("Por favor llenar los campos");
@@ -491,6 +507,22 @@ namespace ProyectoTech.Ui.Registros
                     facturaG = new Facturas();
                     identificador = 0;
                     Moodifica = false;
+                    if(bandera)
+                    {
+                        guardar.Cliente = clienteComboBox.Text;
+                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
+                       // guardar.IdDeudas = (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
+                        //if (id != guardar.CategoriaId)
+                        //{
+                        //    CategoriaBLL.Mofidicar(guardar);
+                        //    MessageBox.Show("Categoria modificada");
+                        //}
+                                               
+                            BLL.DeudasclientesBLL.Guardar(guardar);
+                            MessageBox.Show("Nueva deuda agregada al clinete! "+ clienteComboBox.Text );
+                        
+                       
+                    }
 
 
                 }
@@ -890,6 +922,23 @@ namespace ProyectoTech.Ui.Registros
 
         }
 
-
+        private void tipoVentaComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tipoVentaComboBox.Text == "Credito")
+            {
+                textBoxDevuelta.Enabled = false;
+                textBoxDevuelta.Clear();
+                bandera = true;
+                textBoxDevuelta.Clear();
+                
+                EfectivomaskedTextBox.Enabled = false;
+            }
+            if (tipoVentaComboBox.Text == "Contado")
+            {
+                bandera = false;
+                EfectivomaskedTextBox.Enabled = true;
+                textBoxDevuelta.Enabled = true;
+            }
+        }
     }
 }

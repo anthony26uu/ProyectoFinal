@@ -377,6 +377,7 @@
             this.tipoVentaComboBox.Name = "tipoVentaComboBox";
             this.tipoVentaComboBox.Size = new System.Drawing.Size(198, 21);
             this.tipoVentaComboBox.TabIndex = 56;
+            this.tipoVentaComboBox.SelectedIndexChanged += new System.EventHandler(this.tipoVentaComboBox_SelectedIndexChanged);
             // 
             // label7
             // 

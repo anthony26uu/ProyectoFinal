@@ -51,6 +51,7 @@
     <Compile Include="ArticuloBLL.cs" />
     <Compile Include="CategoriaBLL.cs" />
     <Compile Include="ClientesBLL.cs" />
+    <Compile Include="DeudasclientesBLL.cs" />
     <Compile Include="FacturaBLL.cs" />
     <Compile Include="FacturaDetallesBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

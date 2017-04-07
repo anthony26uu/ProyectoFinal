@@ -226,5 +226,16 @@ namespace ProyectoTech.Ui.Incio
         {
             Application.Exit();
         }
+
+        private void puntoDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consultaDeudasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Conultas.ConsultaDeudas.Funcion().Show();
+            Ui.Conultas.ConsultaDeudas.Funcion().Activate();
+        }
     }
 }

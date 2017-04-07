@@ -56,6 +56,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_CambiarUser = new System.Windows.Forms.Button();
             this.button_Apagado = new System.Windows.Forms.Button();
+            this.consultaDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,7 +153,8 @@
             this.usuarioToolStripMenuItem,
             this.canteogiraToolStripMenuItem,
             this.clientesToolStripMenuItem1,
-            this.facturaToolStripMenuItem});
+            this.facturaToolStripMenuItem,
+            this.consultaDeudasToolStripMenuItem});
             this.consultaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
@@ -206,12 +208,13 @@
             this.puntoDeVentasToolStripMenuItem.Name = "puntoDeVentasToolStripMenuItem";
             this.puntoDeVentasToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
             this.puntoDeVentasToolStripMenuItem.Text = "Punto de Ventas";
+            this.puntoDeVentasToolStripMenuItem.Click += new System.EventHandler(this.puntoDeVentasToolStripMenuItem_Click);
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -326,6 +329,13 @@
             this.button_Apagado.UseVisualStyleBackColor = false;
             this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
+            // consultaDeudasToolStripMenuItem
+            // 
+            this.consultaDeudasToolStripMenuItem.Name = "consultaDeudasToolStripMenuItem";
+            this.consultaDeudasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.consultaDeudasToolStripMenuItem.Text = "Consulta Deudas";
+            this.consultaDeudasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeudasToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,5 +392,6 @@
         private System.Windows.Forms.ToolStripMenuItem facturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeudasToolStripMenuItem;
     }
 }

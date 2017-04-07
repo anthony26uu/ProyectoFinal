@@ -71,6 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ui\Conultas\ConsultaDeudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Conultas\ConsultaDeudas.Designer.cs">
+      <DependentUpon>ConsultaDeudas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Incio\SaldarDeudasFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Incio\SaldarDeudasFrom.Designer.cs">
+      <DependentUpon>SaldarDeudasFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\DbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,6 +228,9 @@
     <EmbeddedResource Include="Ui\Conultas\ConsultaCliente.resx">
       <DependentUpon>ConsultaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Conultas\ConsultaDeudas.resx">
+      <DependentUpon>ConsultaDeudas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Conultas\ConsultaFactura.resx">
       <DependentUpon>ConsultaFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Incio\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Incio\SaldarDeudasFrom.resx">
+      <DependentUpon>SaldarDeudasFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ui\Registros\RegistrarVenta.resx">
       <DependentUpon>RegistrarVenta.cs</DependentUpon>
