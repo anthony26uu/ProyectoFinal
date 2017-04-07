@@ -469,7 +469,7 @@
             this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.Shopping_Cart_Loaded_26px;
-            this.buttonAgregar.Location = new System.Drawing.Point(462, 30);
+            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(75, 54);
