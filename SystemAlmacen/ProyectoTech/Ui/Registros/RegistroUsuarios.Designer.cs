@@ -119,6 +119,7 @@
             // 
             this.IdnumericUpDown.Location = new System.Drawing.Point(145, 9);
             this.IdnumericUpDown.Name = "IdnumericUpDown";
+            this.IdnumericUpDown.ReadOnly = true;
             this.IdnumericUpDown.Size = new System.Drawing.Size(97, 20);
             this.IdnumericUpDown.TabIndex = 6;
             this.IdnumericUpDown.ValueChanged += new System.EventHandler(this.IdnumericUpDown_ValueChanged);

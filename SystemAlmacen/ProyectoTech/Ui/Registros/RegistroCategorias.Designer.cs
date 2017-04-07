@@ -74,6 +74,7 @@
             // 
             this.categoriaIdNumericUpDown.Location = new System.Drawing.Point(104, 17);
             this.categoriaIdNumericUpDown.Name = "categoriaIdNumericUpDown";
+            this.categoriaIdNumericUpDown.ReadOnly = true;
             this.categoriaIdNumericUpDown.Size = new System.Drawing.Size(53, 20);
             this.categoriaIdNumericUpDown.TabIndex = 4;
             this.categoriaIdNumericUpDown.ValueChanged += new System.EventHandler(this.categoriaIdNumericUpDown_ValueChanged);

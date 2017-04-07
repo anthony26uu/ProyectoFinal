@@ -179,6 +179,7 @@
             // 
             this.ArticulonumericUpDown.Location = new System.Drawing.Point(114, 20);
             this.ArticulonumericUpDown.Name = "ArticulonumericUpDown";
+            this.ArticulonumericUpDown.ReadOnly = true;
             this.ArticulonumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.ArticulonumericUpDown.TabIndex = 10;
             this.ArticulonumericUpDown.ValueChanged += new System.EventHandler(this.ArticulonumericUpDown_ValueChanged);

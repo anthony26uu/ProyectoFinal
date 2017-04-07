@@ -260,7 +260,8 @@ namespace ProyectoTech.Ui.Registros
         private void Limpiar()
         {
             //ListaReporte = new List<FacturaDetalles>();
-            
+            ITBIS_Modifica.Clear();
+            NombreM_textBox.Clear();
             CantidadD_masked.Clear();
             NombreM_textBox.Clear();
             TipoVenta_textBox.Clear();
@@ -316,6 +317,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void RegistrarVenta_Load(object sender, EventArgs e)
         {
+            
             TotalmaskedTextBox.BackColor = Color.YellowGreen;
             textBoxDevuelta.BackColor = Color.Green;
 
@@ -433,7 +435,7 @@ namespace ProyectoTech.Ui.Registros
             identificador = 0;
             decimal descuento = 0;
             Moodifica = false;
-            MessageBox.Show("Seleciono fila " + p);
+          
             foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
             {
                 identificador= Convert.ToInt32(dataGridViewVenta[2, p].Value);
@@ -491,27 +493,18 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-             //   listaRelaciones.Exists(p => p.IdArticulo == id)
-
-
+            
                 LlenarFactura();
                 if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador, Moodifica))
                 {
                   
                     MessageBox.Show("Factura registrada con exito");
-
-
                     EliminarExitencia();                   
                     imrpimir();
                     facturaG = new Facturas();
                     identificador = 0;
                     Moodifica = false;
                     Estado(false);
-
-
-                 
-
-
 
                 }
                 else
@@ -586,10 +579,6 @@ namespace ProyectoTech.Ui.Registros
                                 {
                                     listadoArticulos.Add(articulo);
                                     listaRelaciones.Add(new FacturaDetalles(articulo.IdArticulo, 0, 0,  articulo.PrecioVenta, Utilidades.TOINT(textBoxCantidad.Text), articulo.NombreArticulo, Convert.ToDecimal(articulo.ITBIS)));
-                                 //   RefreshListaRelciones();
-                                   
-                                  
-                                  
                                     RefreshListaRelciones();
                                     Edicion_groupBox.Enabled = true;
                                     CalcularFactura();
@@ -618,7 +607,7 @@ namespace ProyectoTech.Ui.Registros
                 EfectivomaskedTextBox.Enabled = false;
                 textBoxDevuelta.Enabled = false;
                 buttonGuardar.Enabled = false;
-                button_LimpiarFactura.Enabled = false;
+               
                 Edicion_groupBox.Enabled = false;
                 clienteComboBox.Enabled = false;
                 tipoVentaComboBox.Enabled = false;
@@ -629,7 +618,7 @@ namespace ProyectoTech.Ui.Registros
             }
             else if (condicion == true)
             {
-                button_LimpiarFactura.Enabled = true;
+               
                 buttonGuardar.Enabled = true;
                 idArticuloComboBox.Enabled = true;
                 buttonAgregar.Enabled = true;
@@ -820,7 +809,7 @@ namespace ProyectoTech.Ui.Registros
                 MessageBox.Show("Seleciono la posicion " + p);
                 NombreM_textBox.Text = dataGridViewVenta[5, p].Value.ToString();
                 CantidadD_masked.Text = dataGridViewVenta[4, p].Value.ToString();
-                //maskedTextBox1.Text= dataGridViewVenta[5, p].Value.ToString();
+                ITBIS_Modifica.Text= dataGridViewVenta[6, p].Value.ToString();
             }
             else
             {
@@ -832,7 +821,7 @@ namespace ProyectoTech.Ui.Registros
         private void ModificarD_Button_Click(object sender, EventArgs e)
         {
             dataGridViewVenta[1, p].Value = CantidadD_masked.Text;
-         //   dataGridViewVenta[5, p].Value = maskedTextBox1.Text;
+            dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
 
 
 
@@ -901,5 +890,7 @@ namespace ProyectoTech.Ui.Registros
         {
            
         }
+
+        
     }
 }

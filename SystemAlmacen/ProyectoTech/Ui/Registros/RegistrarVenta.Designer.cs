@@ -63,7 +63,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Nuevo_Cliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button_LimpiarFactura = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxNombreAr = new System.Windows.Forms.ComboBox();
             this.buttonAgregar = new System.Windows.Forms.Button();
@@ -91,6 +90,8 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
             this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
+            this.ITBIS_Label = new System.Windows.Forms.Label();
+            this.ITBIS_Modifica = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -419,7 +420,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button_LimpiarFactura);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.comboBoxNombreAr);
             this.groupBox2.Controls.Add(this.label8);
@@ -441,21 +441,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Articulo";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // button_LimpiarFactura
-            // 
-            this.button_LimpiarFactura.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_LimpiarFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LimpiarFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button_LimpiarFactura.Image = global::ProyectoTech.Properties.Resources.Clear_Shopping_Cart_26px;
-            this.button_LimpiarFactura.Location = new System.Drawing.Point(369, 30);
-            this.button_LimpiarFactura.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LimpiarFactura.Name = "button_LimpiarFactura";
-            this.button_LimpiarFactura.Size = new System.Drawing.Size(75, 54);
-            this.button_LimpiarFactura.TabIndex = 69;
-            this.button_LimpiarFactura.Text = "Limpiar F.";
-            this.button_LimpiarFactura.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button_LimpiarFactura.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -498,8 +483,10 @@
             // 
             this.textBoxCantidad.Location = new System.Drawing.Point(63, 120);
             this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.ReadOnly = true;
             this.textBoxCantidad.Size = new System.Drawing.Size(82, 20);
             this.textBoxCantidad.TabIndex = 45;
+            this.textBoxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxCantidad.ValueChanged += new System.EventHandler(this.textBoxCantidad_ValueChanged);
             // 
             // PreciotextBox
@@ -622,6 +609,8 @@
             // 
             // Edicion_groupBox
             // 
+            this.Edicion_groupBox.Controls.Add(this.ITBIS_Label);
+            this.Edicion_groupBox.Controls.Add(this.ITBIS_Modifica);
             this.Edicion_groupBox.Controls.Add(this.buttonEliminar);
             this.Edicion_groupBox.Controls.Add(this.label12);
             this.Edicion_groupBox.Controls.Add(this.CantidadD_masked);
@@ -762,12 +751,31 @@
             // 
             // idArticuloComboBox
             // 
+            this.idArticuloComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idArticuloComboBox.FormattingEnabled = true;
             this.idArticuloComboBox.Location = new System.Drawing.Point(74, 30);
             this.idArticuloComboBox.Name = "idArticuloComboBox";
             this.idArticuloComboBox.Size = new System.Drawing.Size(130, 21);
             this.idArticuloComboBox.TabIndex = 6;
             this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
+            // 
+            // ITBIS_Label
+            // 
+            this.ITBIS_Label.AutoSize = true;
+            this.ITBIS_Label.Location = new System.Drawing.Point(18, 111);
+            this.ITBIS_Label.Name = "ITBIS_Label";
+            this.ITBIS_Label.Size = new System.Drawing.Size(34, 13);
+            this.ITBIS_Label.TabIndex = 83;
+            this.ITBIS_Label.Text = "ITBIS";
+            // 
+            // ITBIS_Modifica
+            // 
+            this.ITBIS_Modifica.Location = new System.Drawing.Point(83, 104);
+            this.ITBIS_Modifica.Mask = "9.9";
+            this.ITBIS_Modifica.Name = "ITBIS_Modifica";
+            this.ITBIS_Modifica.Size = new System.Drawing.Size(97, 20);
+            this.ITBIS_Modifica.TabIndex = 82;
+            this.ITBIS_Modifica.ValidatingType = typeof(int);
             // 
             // RegistrarVenta
             // 
@@ -870,9 +878,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.GroupBox Edicion_groupBox;
-        private System.Windows.Forms.Button button_LimpiarFactura;
         private System.Windows.Forms.TextBox EfectivomaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CantidadD_masked;
         private System.Windows.Forms.ComboBox idArticuloComboBox;
+        private System.Windows.Forms.Label ITBIS_Label;
+        private System.Windows.Forms.MaskedTextBox ITBIS_Modifica;
     }
 }
