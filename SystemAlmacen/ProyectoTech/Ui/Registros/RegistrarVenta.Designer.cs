@@ -292,7 +292,7 @@
             this.groupBox1.Controls.Add(this.tipoVentaLabel);
             this.groupBox1.Location = new System.Drawing.Point(2, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(568, 138);
+            this.groupBox1.Size = new System.Drawing.Size(581, 138);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Factura";
@@ -302,7 +302,7 @@
             this.TipoVenta_textBox.Location = new System.Drawing.Point(463, 106);
             this.TipoVenta_textBox.Name = "TipoVenta_textBox";
             this.TipoVenta_textBox.ReadOnly = true;
-            this.TipoVenta_textBox.Size = new System.Drawing.Size(99, 20);
+            this.TipoVenta_textBox.Size = new System.Drawing.Size(112, 20);
             this.TipoVenta_textBox.TabIndex = 68;
             // 
             // label11
@@ -319,7 +319,7 @@
             this.Cliente_textBox.Location = new System.Drawing.Point(463, 76);
             this.Cliente_textBox.Name = "Cliente_textBox";
             this.Cliente_textBox.ReadOnly = true;
-            this.Cliente_textBox.Size = new System.Drawing.Size(99, 20);
+            this.Cliente_textBox.Size = new System.Drawing.Size(112, 20);
             this.Cliente_textBox.TabIndex = 66;
             // 
             // label10
@@ -336,7 +336,7 @@
             this.FechaVentatextBox.Location = new System.Drawing.Point(463, 44);
             this.FechaVentatextBox.Name = "FechaVentatextBox";
             this.FechaVentatextBox.ReadOnly = true;
-            this.FechaVentatextBox.Size = new System.Drawing.Size(99, 20);
+            this.FechaVentatextBox.Size = new System.Drawing.Size(112, 20);
             this.FechaVentatextBox.TabIndex = 64;
             // 
             // BusquedamaskedTextBoxId
@@ -352,7 +352,7 @@
             this.RealizoVentatextBox.Location = new System.Drawing.Point(463, 9);
             this.RealizoVentatextBox.Name = "RealizoVentatextBox";
             this.RealizoVentatextBox.ReadOnly = true;
-            this.RealizoVentatextBox.Size = new System.Drawing.Size(99, 20);
+            this.RealizoVentatextBox.Size = new System.Drawing.Size(112, 20);
             this.RealizoVentatextBox.TabIndex = 63;
             // 
             // buttonBuscar
@@ -436,7 +436,7 @@
             this.groupBox2.Controls.Add(this.idArticuloComboBox);
             this.groupBox2.Location = new System.Drawing.Point(2, 153);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(568, 146);
+            this.groupBox2.Size = new System.Drawing.Size(581, 146);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Articulo";
@@ -469,7 +469,7 @@
             this.buttonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonAgregar.Image = global::ProyectoTech.Properties.Resources.Shopping_Cart_Loaded_26px;
-            this.buttonAgregar.Location = new System.Drawing.Point(456, 30);
+            this.buttonAgregar.Location = new System.Drawing.Point(462, 30);
             this.buttonAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(75, 54);

@@ -164,6 +164,7 @@
             // 
             this.clienteIdNumericUpDown.Location = new System.Drawing.Point(112, 7);
             this.clienteIdNumericUpDown.Name = "clienteIdNumericUpDown";
+            this.clienteIdNumericUpDown.ReadOnly = true;
             this.clienteIdNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.clienteIdNumericUpDown.TabIndex = 9;
             this.clienteIdNumericUpDown.ValueChanged += new System.EventHandler(this.clienteIdNumericUpDown_ValueChanged);
