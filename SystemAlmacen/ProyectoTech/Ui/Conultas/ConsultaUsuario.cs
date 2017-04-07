@@ -93,10 +93,22 @@ namespace ProyectoTech.Ui.Conultas
                 errorProvider.Clear();
                 buscaText.Clear();
                 buscaText.Enabled = false;
-                Lista= BLL.UserBLL.GetListodo();
-                dataGridView1.DataSource = Lista;
-                buttonImprimir.Enabled = true;
-               
+
+                if (BLL.UserBLL.GetListodo().Count == 0)
+                {
+                    MessageBox.Show("No se han registrado Usuarios");
+                }
+                else
+                {
+                    Lista = BLL.UserBLL.GetListodo();
+                    dataGridView1.DataSource = Lista;
+                    buttonImprimir.Enabled = true;
+
+                }
+
+
+
+
 
                 // Selecionar(Utilidades.TOINT(buscaText.Text));
             }

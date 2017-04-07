@@ -70,6 +70,7 @@
             this.PreciotextBox = new System.Windows.Forms.TextBox();
             this.ItbsArticultextBox = new System.Windows.Forms.TextBox();
             this.textBoxTotalArticlo = new System.Windows.Forms.TextBox();
+            this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
             this.TipoUsuarioLabel = new System.Windows.Forms.Label();
             this.UsuarioLabel = new System.Windows.Forms.Label();
             this.errorProviderTodo = new System.Windows.Forms.ErrorProvider(this.components);
@@ -81,17 +82,16 @@
             this.NombreM_textBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Edicion_groupBox = new System.Windows.Forms.GroupBox();
+            this.ITBIS_Label = new System.Windows.Forms.Label();
+            this.ITBIS_Modifica = new System.Windows.Forms.MaskedTextBox();
             this.buttonEliminar = new System.Windows.Forms.Button();
+            this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
             this.ModificarD_Button = new System.Windows.Forms.Button();
             this.Eliminar_button = new System.Windows.Forms.Button();
             this.button_Apagado = new System.Windows.Forms.Button();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
-            this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
-            this.ITBIS_Label = new System.Windows.Forms.Label();
-            this.ITBIS_Modifica = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -516,6 +516,16 @@
             this.textBoxTotalArticlo.Size = new System.Drawing.Size(75, 20);
             this.textBoxTotalArticlo.TabIndex = 35;
             // 
+            // idArticuloComboBox
+            // 
+            this.idArticuloComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idArticuloComboBox.FormattingEnabled = true;
+            this.idArticuloComboBox.Location = new System.Drawing.Point(74, 30);
+            this.idArticuloComboBox.Name = "idArticuloComboBox";
+            this.idArticuloComboBox.Size = new System.Drawing.Size(130, 21);
+            this.idArticuloComboBox.TabIndex = 6;
+            this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
+            // 
             // TipoUsuarioLabel
             // 
             this.TipoUsuarioLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -590,7 +600,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(18, 48);
+            this.label14.Location = new System.Drawing.Point(15, 29);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 13);
             this.label14.TabIndex = 70;
@@ -598,7 +608,7 @@
             // 
             // NombreM_textBox
             // 
-            this.NombreM_textBox.Location = new System.Drawing.Point(83, 48);
+            this.NombreM_textBox.Location = new System.Drawing.Point(80, 29);
             this.NombreM_textBox.Name = "NombreM_textBox";
             this.NombreM_textBox.ReadOnly = true;
             this.NombreM_textBox.Size = new System.Drawing.Size(97, 20);
@@ -607,7 +617,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 82);
+            this.label12.Location = new System.Drawing.Point(15, 63);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 13);
             this.label12.TabIndex = 80;
@@ -615,6 +625,7 @@
             // 
             // Edicion_groupBox
             // 
+            this.Edicion_groupBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Edicion_groupBox.Controls.Add(this.ITBIS_Label);
             this.Edicion_groupBox.Controls.Add(this.ITBIS_Modifica);
             this.Edicion_groupBox.Controls.Add(this.buttonEliminar);
@@ -623,12 +634,30 @@
             this.Edicion_groupBox.Controls.Add(this.ModificarD_Button);
             this.Edicion_groupBox.Controls.Add(this.NombreM_textBox);
             this.Edicion_groupBox.Controls.Add(this.label14);
-            this.Edicion_groupBox.Location = new System.Drawing.Point(657, 76);
+            this.Edicion_groupBox.Location = new System.Drawing.Point(597, 57);
             this.Edicion_groupBox.Name = "Edicion_groupBox";
-            this.Edicion_groupBox.Size = new System.Drawing.Size(293, 222);
+            this.Edicion_groupBox.Size = new System.Drawing.Size(195, 213);
             this.Edicion_groupBox.TabIndex = 82;
             this.Edicion_groupBox.TabStop = false;
             this.Edicion_groupBox.Text = "Edicion";
+            // 
+            // ITBIS_Label
+            // 
+            this.ITBIS_Label.AutoSize = true;
+            this.ITBIS_Label.Location = new System.Drawing.Point(15, 92);
+            this.ITBIS_Label.Name = "ITBIS_Label";
+            this.ITBIS_Label.Size = new System.Drawing.Size(34, 13);
+            this.ITBIS_Label.TabIndex = 83;
+            this.ITBIS_Label.Text = "ITBIS";
+            // 
+            // ITBIS_Modifica
+            // 
+            this.ITBIS_Modifica.Location = new System.Drawing.Point(80, 85);
+            this.ITBIS_Modifica.Mask = "9.9";
+            this.ITBIS_Modifica.Name = "ITBIS_Modifica";
+            this.ITBIS_Modifica.Size = new System.Drawing.Size(97, 20);
+            this.ITBIS_Modifica.TabIndex = 82;
+            this.ITBIS_Modifica.ValidatingType = typeof(int);
             // 
             // buttonEliminar
             // 
@@ -636,7 +665,7 @@
             this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonEliminar.Image = global::ProyectoTech.Properties.Resources.Trash_32;
-            this.buttonEliminar.Location = new System.Drawing.Point(207, 82);
+            this.buttonEliminar.Location = new System.Drawing.Point(102, 125);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(75, 63);
@@ -646,16 +675,27 @@
             this.buttonEliminar.UseVisualStyleBackColor = true;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
             // 
+            // CantidadD_masked
+            // 
+            this.CantidadD_masked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CantidadD_masked.Location = new System.Drawing.Point(80, 56);
+            this.CantidadD_masked.Mask = "99999";
+            this.CantidadD_masked.Name = "CantidadD_masked";
+            this.CantidadD_masked.Size = new System.Drawing.Size(97, 20);
+            this.CantidadD_masked.TabIndex = 79;
+            this.CantidadD_masked.ValidatingType = typeof(int);
+            this.CantidadD_masked.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadD_masked_KeyPress);
+            // 
             // ModificarD_Button
             // 
             this.ModificarD_Button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.ModificarD_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModificarD_Button.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ModificarD_Button.Image = global::ProyectoTech.Properties.Resources.ic_mode_edit_black_24dp_1x;
-            this.ModificarD_Button.Location = new System.Drawing.Point(207, 17);
+            this.ModificarD_Button.Location = new System.Drawing.Point(18, 125);
             this.ModificarD_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ModificarD_Button.Name = "ModificarD_Button";
-            this.ModificarD_Button.Size = new System.Drawing.Size(75, 54);
+            this.ModificarD_Button.Size = new System.Drawing.Size(75, 63);
             this.ModificarD_Button.TabIndex = 78;
             this.ModificarD_Button.Text = "Modificar";
             this.ModificarD_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -744,45 +784,6 @@
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // CantidadD_masked
-            // 
-            this.CantidadD_masked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CantidadD_masked.Location = new System.Drawing.Point(83, 75);
-            this.CantidadD_masked.Mask = "99999";
-            this.CantidadD_masked.Name = "CantidadD_masked";
-            this.CantidadD_masked.Size = new System.Drawing.Size(97, 20);
-            this.CantidadD_masked.TabIndex = 79;
-            this.CantidadD_masked.ValidatingType = typeof(int);
-            this.CantidadD_masked.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadD_masked_KeyPress);
-            // 
-            // idArticuloComboBox
-            // 
-            this.idArticuloComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.idArticuloComboBox.FormattingEnabled = true;
-            this.idArticuloComboBox.Location = new System.Drawing.Point(74, 30);
-            this.idArticuloComboBox.Name = "idArticuloComboBox";
-            this.idArticuloComboBox.Size = new System.Drawing.Size(130, 21);
-            this.idArticuloComboBox.TabIndex = 6;
-            this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
-            // 
-            // ITBIS_Label
-            // 
-            this.ITBIS_Label.AutoSize = true;
-            this.ITBIS_Label.Location = new System.Drawing.Point(18, 111);
-            this.ITBIS_Label.Name = "ITBIS_Label";
-            this.ITBIS_Label.Size = new System.Drawing.Size(34, 13);
-            this.ITBIS_Label.TabIndex = 83;
-            this.ITBIS_Label.Text = "ITBIS";
-            // 
-            // ITBIS_Modifica
-            // 
-            this.ITBIS_Modifica.Location = new System.Drawing.Point(83, 104);
-            this.ITBIS_Modifica.Mask = "9.9";
-            this.ITBIS_Modifica.Name = "ITBIS_Modifica";
-            this.ITBIS_Modifica.Size = new System.Drawing.Size(97, 20);
-            this.ITBIS_Modifica.TabIndex = 82;
-            this.ITBIS_Modifica.ValidatingType = typeof(int);
             // 
             // RegistrarVenta
             // 

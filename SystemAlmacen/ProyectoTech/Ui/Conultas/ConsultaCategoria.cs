@@ -156,9 +156,21 @@ namespace ProyectoTech.Ui.Conultas
                 button1.Enabled = false;
                 dataGridView1.DataSource = null;
                 buttonImprimir.Enabled = false;
-                Lista = BLL.CategoriaBLL.GetListodo();
-                dataGridView1.DataSource = Lista;
-                buttonImprimir.Enabled = true;
+
+                if (BLL.CategoriaBLL.GetListodo().Count == 0)
+                {
+                    MessageBox.Show("NO se ha registrado Categorias");
+                }
+                else
+                {
+                    Lista = BLL.CategoriaBLL.GetListodo();
+                    dataGridView1.DataSource = Lista;
+                    buttonImprimir.Enabled = true;
+                }
+
+
+
+                
             }
             if(comboBox1.SelectedIndex == 2)
             {

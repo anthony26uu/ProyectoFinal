@@ -201,11 +201,24 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
+
+
+                if (BLL.ArticuloBLL.GetListodo().Count == 0)
+                {
+                    MessageBox.Show("No se han registrado Articulo");
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                    Lista = BLL.ArticuloBLL.GetListodo();
+                    dataGridView1.DataSource = Lista;
+
+                    buttonImprimir.Enabled = true;
+                }
+
+
+
                
-                dataGridView1.DataSource = null;
-                Lista= BLL.ArticuloBLL.GetListodo();
-                dataGridView1.DataSource = Lista;
-                buttonImprimir.Enabled = true;
             }
             if (comboBox1.SelectedIndex == 3)
             {

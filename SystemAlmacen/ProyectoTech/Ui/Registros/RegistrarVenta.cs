@@ -237,7 +237,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void Limpiar()
         {
-
+            errorProviderTodo.Clear();
             ITBIS_Modifica.Clear();
             NombreM_textBox.Clear();
             CantidadD_masked.Clear();
@@ -408,56 +408,67 @@ namespace ProyectoTech.Ui.Registros
         }
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            dataGridViewVenta.Refresh();
-            identificador = 0;
-            decimal descuento = 0;
-            Moodifica = false;
-            EfectivomaskedTextBox.Enabled = true;
-            foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+            if(dataGridViewVenta.DataSource!=null )
             {
-                identificador = Convert.ToInt32(dataGridViewVenta[2, p].Value);
-
-            }
-
-            if (identificador != 0)
-            {
-
-                if (listaRelaciones != null)
+                dataGridViewVenta.Refresh();
+                identificador = 0;
+                decimal descuento = 0;
+                Moodifica = false;
+                EfectivomaskedTextBox.Enabled = true;
+                foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
                 {
-                    var itemToRemove = listaRelaciones.SingleOrDefault(r => r.IdArticulo == identificador);
-                    int productoId = Convert.ToInt32(dataGridViewVenta[2, p].Value);  ///Celda 2 es el idArticulo antes esta detalleid y facturaid
-                    descuento = Convert.ToInt32(dataGridViewVenta[4, p].Value); //Celda 4 es la cantiddad
-                    detalle.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
-                    detalle.Articulo.Existencia += Convert.ToInt32(descuento);
-                    BLL.ArticuloBLL.Mofidicar(detalle.Articulo);
-                    listaRelaciones.Remove(itemToRemove);
-                    MessageBox.Show("Articulo Eliminado de factura y enviado a inventario");
+                    identificador = Convert.ToInt32(dataGridViewVenta[2, p].Value);
 
+                }
 
+                if (identificador != 0)
+                {
 
-                    if (BLL.FacturaDetallesBLL.Eliminar(itemToRemove))
+                    if (listaRelaciones != null)
                     {
-                        Moodifica = true;
+                        var itemToRemove = listaRelaciones.SingleOrDefault(r => r.IdArticulo == identificador);
+                        int productoId = Convert.ToInt32(dataGridViewVenta[2, p].Value);  ///Celda 2 es el idArticulo antes esta detalleid y facturaid
+                        descuento = Convert.ToInt32(dataGridViewVenta[4, p].Value); //Celda 4 es la cantiddad
+                        detalle.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
+                        detalle.Articulo.Existencia += Convert.ToInt32(descuento);
+                        BLL.ArticuloBLL.Mofidicar(detalle.Articulo);
+                        listaRelaciones.Remove(itemToRemove);
+                        MessageBox.Show("Articulo Eliminado de factura y enviado a inventario");
 
-                    }
-                    else
-                    {
-                        Moodifica = false;
+
+
+                        if (BLL.FacturaDetallesBLL.Eliminar(itemToRemove))
+                        {
+                            Moodifica = true;
+
+                        }
+                        else
+                        {
+                            Moodifica = false;
+
+                        }
 
                     }
 
                 }
+                else
+                {
+                    MessageBox.Show("ID a eliminar esta null");
+                }
+                if (facturaG != null)
+                {
+                    facturaG.Total = 0;
+                }
 
+                RefreshListaRelciones();
+                dataGridViewVenta.Refresh();
+                CalcularFactura();
             }
             else
             {
-                MessageBox.Show("ID a eliminar esta null");
+                MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
             }
-            facturaG.Total = 0;
-
-            RefreshListaRelciones();
-            dataGridViewVenta.Refresh();
-            CalcularFactura();
+           
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
@@ -744,6 +755,10 @@ namespace ProyectoTech.Ui.Registros
                                 Limpiar();
                                 MessageBox.Show("Eliminado Con exito");
                                 facturaG = new Facturas();
+                                Estado(false);
+                                Edicion_groupBox.Enabled = false;
+                                buttonGuardar.Enabled = false;
+                                buttonImprimir.Enabled = false;
                             }
                             else
                             {
@@ -790,11 +805,18 @@ namespace ProyectoTech.Ui.Registros
         private void ModificarD_Button_Click(object sender, EventArgs e)
         {
 
-            EfectivomaskedTextBox.Enabled = true;
-            textBoxDevuelta.Enabled = true;
-            dataGridViewVenta[4, p].Value = CantidadD_masked.Text;
-            dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
-            CalcularFactura();
+           if(dataGridViewVenta.DataSource!=null)
+            {
+                EfectivomaskedTextBox.Enabled = true;
+                textBoxDevuelta.Enabled = true;
+                dataGridViewVenta[4, p].Value = CantidadD_masked.Text;
+                dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
+                CalcularFactura();
+            }
+           else
+            {
+                MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
+            }
 
         }
 
@@ -836,8 +858,15 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-
-            imrpimir();
+            if(dataGridViewVenta.DataSource!=null)
+            {
+                imrpimir();
+            }
+            else
+            {
+                MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
+            }
+           
         }
 
         private void EfectivomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)

@@ -84,6 +84,8 @@ namespace ProyectoTech.Ui.Conultas
 
             if (comboBox1.SelectedIndex == 1)
             {
+              
+
                 if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
                 {
 
@@ -289,7 +291,7 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
-                if (BLL.FacturaBLL.GetListodo()==null)
+                if (BLL.FacturaBLL.GetListodo().Count==0)
                 {
                     MessageBox.Show("NO se ha registrado facturas");
                 }

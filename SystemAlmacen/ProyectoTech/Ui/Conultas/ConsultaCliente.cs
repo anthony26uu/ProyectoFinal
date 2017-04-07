@@ -38,9 +38,6 @@ namespace ProyectoTech.Ui.Conultas
             comboBox1.Items.Insert(2, "ID");
             comboBox1.Items.Insert(3, "Sexo");
 
-            //    comboBox1.Items.Insert(2, "TODO");
-
-            //Si Colocas DiplayMember arriba no funcoina
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Nombre";
 
@@ -71,9 +68,6 @@ namespace ProyectoTech.Ui.Conultas
                     else
                     {
                         errorProvider.Clear();
-
-
-
 
                         Lista = BLL.ClientesBLL.GetList(p => p.Nombres == nombre);
                         dataGridView1.DataSource = Lista;
@@ -186,11 +180,21 @@ namespace ProyectoTech.Ui.Conultas
                 maskedTextBoxId.Clear();
                 maskedTextBoxId.Enabled = false;
                 buscaText.Enabled = false;
-               
                 Sexo_comboBox.Enabled = false;
-                Lista= BLL.ClientesBLL.GetListodo();
-                dataGridView1.DataSource = Lista; ;
-                buttonImprimir.Enabled = true;
+                if (BLL.ClientesBLL.GetListodo().Count == 0)
+                {
+                    MessageBox.Show("No se han registrado Clientes");
+                }
+                else
+                {
+                    Lista = BLL.ClientesBLL.GetListodo();
+                    dataGridView1.DataSource = Lista; ;
+                    buttonImprimir.Enabled = true;
+                }
+
+
+             
+                
 
             }
             if (comboBox1.SelectedIndex == 2)

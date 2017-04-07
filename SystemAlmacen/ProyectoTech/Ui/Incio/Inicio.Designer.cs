@@ -302,7 +302,7 @@
             this.button_CambiarUser.Location = new System.Drawing.Point(366, 244);
             this.button_CambiarUser.Name = "button_CambiarUser";
             this.button_CambiarUser.Size = new System.Drawing.Size(73, 69);
-            this.button_CambiarUser.TabIndex = 16;
+            this.button_CambiarUser.TabIndex = 0;
             this.button_CambiarUser.Text = "Usuario";
             this.button_CambiarUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button_CambiarUser.UseVisualStyleBackColor = false;
