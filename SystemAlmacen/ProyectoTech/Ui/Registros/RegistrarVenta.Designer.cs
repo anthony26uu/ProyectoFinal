@@ -481,6 +481,7 @@
             // 
             // textBoxCantidad
             // 
+            this.textBoxCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBoxCantidad.Location = new System.Drawing.Point(63, 120);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.ReadOnly = true;
@@ -491,6 +492,7 @@
             // 
             // PreciotextBox
             // 
+            this.PreciotextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.PreciotextBox.Location = new System.Drawing.Point(199, 120);
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.ReadOnly = true;
@@ -507,6 +509,7 @@
             // 
             // textBoxTotalArticlo
             // 
+            this.textBoxTotalArticlo.BackColor = System.Drawing.Color.Red;
             this.textBoxTotalArticlo.Location = new System.Drawing.Point(456, 120);
             this.textBoxTotalArticlo.Name = "textBoxTotalArticlo";
             this.textBoxTotalArticlo.ReadOnly = true;
@@ -541,6 +544,7 @@
             // TotalmaskedTextBox
             // 
             this.TotalmaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalmaskedTextBox.BackColor = System.Drawing.Color.Red;
             this.TotalmaskedTextBox.Location = new System.Drawing.Point(59, 23);
             this.TotalmaskedTextBox.Name = "TotalmaskedTextBox";
             this.TotalmaskedTextBox.ReadOnly = true;
@@ -550,6 +554,7 @@
             // textBoxDevuelta
             // 
             this.textBoxDevuelta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxDevuelta.BackColor = System.Drawing.Color.Lime;
             this.textBoxDevuelta.Location = new System.Drawing.Point(376, 23);
             this.textBoxDevuelta.Name = "textBoxDevuelta";
             this.textBoxDevuelta.ReadOnly = true;
@@ -574,6 +579,7 @@
             // 
             // EfectivomaskedTextBox
             // 
+            this.EfectivomaskedTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.EfectivomaskedTextBox.Location = new System.Drawing.Point(202, 26);
             this.EfectivomaskedTextBox.MaxLength = 10;
             this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
@@ -741,6 +747,7 @@
             // 
             // CantidadD_masked
             // 
+            this.CantidadD_masked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CantidadD_masked.Location = new System.Drawing.Point(83, 75);
             this.CantidadD_masked.Mask = "99999";
             this.CantidadD_masked.Name = "CantidadD_masked";
