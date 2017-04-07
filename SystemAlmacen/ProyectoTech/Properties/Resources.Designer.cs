@@ -313,6 +313,16 @@ namespace ProyectoTech.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconos_para_prestamos_credixpress_05 {
+            get {
+                object obj = ResourceManager.GetObject("iconos-para-prestamos_credixpress-05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Impresora1_25x25 {
             get {
                 object obj = ResourceManager.GetObject("Impresora1-25x25", resourceCulture);

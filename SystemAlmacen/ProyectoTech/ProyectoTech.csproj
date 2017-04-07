@@ -71,6 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ui\Reportes\DeudasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeudasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Conultas\ConsultaDeudas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +207,12 @@
     <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteDetalleF.Designer.cs">
       <DependentUpon>CReporteDetalleF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteDeudas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteDeudas.Designer.cs">
+      <DependentUpon>CReporteDeudas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +275,7 @@
     <EmbeddedResource Include="Ui\Reportes\ArticulosReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\CategoriasReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\ClienteReport.rdlc" />
+    <EmbeddedResource Include="Ui\Reportes\DeudasReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\Factura.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\FacturaReport.rdlc" />
     <EmbeddedResource Include="Ui\Reportes\UsuariosReport.rdlc" />
@@ -279,6 +291,9 @@
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteDetalleF.resx">
       <DependentUpon>CReporteDetalleF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteDeudas.resx">
+      <DependentUpon>CReporteDeudas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\Reportes\Ventanas Reportes\CReporteFacturas.resx">
       <DependentUpon>CReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +301,17 @@
       <DependentUpon>CReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Ui\Reportes\DeudasDataSet.xsc">
+      <DependentUpon>DeudasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Ui\Reportes\DeudasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeudasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ui\Reportes\DeudasDataSet.xss">
+      <DependentUpon>DeudasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Ui\Reportes\DbDataSet.xsc">
       <DependentUpon>DbDataSet.xsd</DependentUpon>
     </None>
@@ -318,6 +344,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DataBase\Script.sql" />
+    <None Include="Resources\iconos-para-prestamos_credixpress-05.png" />
     <None Include="Resources\logo-elalmacen.png" />
     <None Include="Ui\Reportes\RegistrosDbDataSet.xsc">
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>

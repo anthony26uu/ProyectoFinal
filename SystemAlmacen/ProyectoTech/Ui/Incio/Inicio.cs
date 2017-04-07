@@ -237,5 +237,11 @@ namespace ProyectoTech.Ui.Incio
             Ui.Conultas.ConsultaDeudas.Funcion().Show();
             Ui.Conultas.ConsultaDeudas.Funcion().Activate();
         }
+
+        private void saldarDeudasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ui.Incio.SaldarDeudasFrom.Funcion().Show();
+            Ui.Incio.SaldarDeudasFrom.Funcion().Activate();
+        }
     }
 }

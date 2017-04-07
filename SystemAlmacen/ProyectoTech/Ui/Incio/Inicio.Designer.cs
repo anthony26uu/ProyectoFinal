@@ -45,8 +45,10 @@
             this.canteogiraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puntoDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saldarDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LabelTipo = new System.Windows.Forms.Label();
             this.LabelUsuario = new System.Windows.Forms.Label();
@@ -56,7 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_CambiarUser = new System.Windows.Forms.Button();
             this.button_Apagado = new System.Windows.Forms.Button();
-            this.consultaDeudasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,10 +201,19 @@
             this.facturaToolStripMenuItem.Text = "Cuadres Facturas";
             this.facturaToolStripMenuItem.Click += new System.EventHandler(this.facturaToolStripMenuItem_Click);
             // 
+            // consultaDeudasToolStripMenuItem
+            // 
+            this.consultaDeudasToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.iconos_para_prestamos_credixpress_05;
+            this.consultaDeudasToolStripMenuItem.Name = "consultaDeudasToolStripMenuItem";
+            this.consultaDeudasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.consultaDeudasToolStripMenuItem.Text = "Consulta Deudas";
+            this.consultaDeudasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeudasToolStripMenuItem_Click);
+            // 
             // puntoDeVentasToolStripMenuItem
             // 
             this.puntoDeVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.venderToolStripMenuItem});
+            this.venderToolStripMenuItem,
+            this.saldarDeudasToolStripMenuItem});
             this.puntoDeVentasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.puntoDeVentasToolStripMenuItem.Name = "puntoDeVentasToolStripMenuItem";
             this.puntoDeVentasToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
@@ -217,6 +227,14 @@
             this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
+            // 
+            // saldarDeudasToolStripMenuItem
+            // 
+            this.saldarDeudasToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.iconos_para_prestamos_credixpress_05;
+            this.saldarDeudasToolStripMenuItem.Name = "saldarDeudasToolStripMenuItem";
+            this.saldarDeudasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saldarDeudasToolStripMenuItem.Text = "Saldar Deudas";
+            this.saldarDeudasToolStripMenuItem.Click += new System.EventHandler(this.saldarDeudasToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -329,13 +347,6 @@
             this.button_Apagado.UseVisualStyleBackColor = false;
             this.button_Apagado.Click += new System.EventHandler(this.button_Apagado_Click);
             // 
-            // consultaDeudasToolStripMenuItem
-            // 
-            this.consultaDeudasToolStripMenuItem.Name = "consultaDeudasToolStripMenuItem";
-            this.consultaDeudasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.consultaDeudasToolStripMenuItem.Text = "Consulta Deudas";
-            this.consultaDeudasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeudasToolStripMenuItem_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,5 +404,6 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem consultaDeudasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saldarDeudasToolStripMenuItem;
     }
 }
