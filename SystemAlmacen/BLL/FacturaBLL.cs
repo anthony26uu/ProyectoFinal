@@ -11,7 +11,8 @@ namespace BLL
 {
     public class FacturaBLL
     {
-
+      
+        
         public static bool Guardar(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, int identificador, bool modifica)
         {
             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
@@ -33,14 +34,13 @@ namespace BLL
                     {  
                         if(modifica==false)
                         {
-                         //   listaRelaciones.Equals( listaRelaciones);
-                          //  listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
-                            foreach (var relacion in listaRelaciones)
+                        foreach (var relacion in listaRelaciones)
                             {
                                 relacion.IdFactura = Facturag.IdFactura;
                                 if (!BLL.FacturaDetallesBLL.Guardar(relacion))
                                 {
                                     relacionesGuardadas = false;
+                                   
                                 }
                             }
                         }
@@ -52,22 +52,15 @@ namespace BLL
                                 if (!BLL.FacturaDetallesBLL.Mofidicar(relacion))
                                 {
                                     relacionesGuardadas = true;
+                                   
                                 }
                             }
-
                         }
-                        //      listaRelaciones.RemoveAll(p => p.IdArticulo == identificador);
-
-
-
                     }
                 }
                 return relacionesGuardadas;
             }
         }
-
-
-
 
         public static List<Entidades.Facturas> GetList(Expression<Func<Entidades.Facturas, bool>> criterioBusqueda)
         {
@@ -123,7 +116,6 @@ namespace BLL
                 return repositorio.Eliminar(cliente);
             }
         }
-
 
         public static List<Entidades.Facturas> GetListodo()
         {

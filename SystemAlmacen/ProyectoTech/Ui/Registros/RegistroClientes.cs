@@ -57,6 +57,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void Limpiar()
         {
+            Cedula_maskedTextBox.Clear();
             telefonoMaskedTextBox.Clear();
             clienteIdNumericUpDown.ResetText();
             nombresTextBox.Clear();

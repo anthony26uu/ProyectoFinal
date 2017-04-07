@@ -43,7 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
             this.descuentoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelHORA = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@
             this.EfectivomaskedTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.NombreM_textBox = new System.Windows.Forms.TextBox();
-            this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Edicion_groupBox = new System.Windows.Forms.GroupBox();
             this.buttonEliminar = new System.Windows.Forms.Button();
@@ -91,6 +89,8 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.CantidadD_masked = new System.Windows.Forms.MaskedTextBox();
+            this.idArticuloComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVenta)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -219,15 +219,6 @@
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 54;
             this.label9.Text = "Devuelta:";
-            // 
-            // idArticuloComboBox
-            // 
-            this.idArticuloComboBox.FormattingEnabled = true;
-            this.idArticuloComboBox.Location = new System.Drawing.Point(74, 30);
-            this.idArticuloComboBox.Name = "idArticuloComboBox";
-            this.idArticuloComboBox.Size = new System.Drawing.Size(130, 21);
-            this.idArticuloComboBox.TabIndex = 6;
-            this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
             // 
             // descuentoMaskedTextBox
             // 
@@ -620,15 +611,6 @@
             this.NombreM_textBox.Size = new System.Drawing.Size(97, 20);
             this.NombreM_textBox.TabIndex = 77;
             // 
-            // CantidadD_masked
-            // 
-            this.CantidadD_masked.Location = new System.Drawing.Point(83, 75);
-            this.CantidadD_masked.Mask = "99999";
-            this.CantidadD_masked.Name = "CantidadD_masked";
-            this.CantidadD_masked.Size = new System.Drawing.Size(97, 20);
-            this.CantidadD_masked.TabIndex = 79;
-            this.CantidadD_masked.ValidatingType = typeof(int);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -646,7 +628,7 @@
             this.Edicion_groupBox.Controls.Add(this.ModificarD_Button);
             this.Edicion_groupBox.Controls.Add(this.NombreM_textBox);
             this.Edicion_groupBox.Controls.Add(this.label14);
-            this.Edicion_groupBox.Location = new System.Drawing.Point(657, 77);
+            this.Edicion_groupBox.Location = new System.Drawing.Point(657, 76);
             this.Edicion_groupBox.Name = "Edicion_groupBox";
             this.Edicion_groupBox.Size = new System.Drawing.Size(293, 222);
             this.Edicion_groupBox.TabIndex = 82;
@@ -768,6 +750,25 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // CantidadD_masked
+            // 
+            this.CantidadD_masked.Location = new System.Drawing.Point(83, 75);
+            this.CantidadD_masked.Mask = "99999";
+            this.CantidadD_masked.Name = "CantidadD_masked";
+            this.CantidadD_masked.Size = new System.Drawing.Size(97, 20);
+            this.CantidadD_masked.TabIndex = 79;
+            this.CantidadD_masked.ValidatingType = typeof(int);
+            this.CantidadD_masked.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadD_masked_KeyPress);
+            // 
+            // idArticuloComboBox
+            // 
+            this.idArticuloComboBox.FormattingEnabled = true;
+            this.idArticuloComboBox.Location = new System.Drawing.Point(74, 30);
+            this.idArticuloComboBox.Name = "idArticuloComboBox";
+            this.idArticuloComboBox.Size = new System.Drawing.Size(130, 21);
+            this.idArticuloComboBox.TabIndex = 6;
+            this.idArticuloComboBox.SelectedIndexChanged += new System.EventHandler(this.idArticuloComboBox_SelectedIndexChanged);
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,7 +813,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox idArticuloComboBox;
         private System.Windows.Forms.MaskedTextBox descuentoMaskedTextBox;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelHORA;
@@ -867,11 +867,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox NombreM_textBox;
         private System.Windows.Forms.Button ModificarD_Button;
-        private System.Windows.Forms.MaskedTextBox CantidadD_masked;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.GroupBox Edicion_groupBox;
         private System.Windows.Forms.Button button_LimpiarFactura;
         private System.Windows.Forms.TextBox EfectivomaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox CantidadD_masked;
+        private System.Windows.Forms.ComboBox idArticuloComboBox;
     }
 }

@@ -152,9 +152,11 @@ namespace ProyectoTech.Ui.Registros
                       
                         BLL.ArticuloBLL.Guardar(articulo);
                         MessageBox.Show("Nuevo Articulo agregado con exito!");
+                        Limpiar();
                     }
                 }
                 errorProviderTodo.Clear();
+                
             }
             catch (Exception)
             {
