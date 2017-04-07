@@ -550,7 +550,7 @@
         <DataSetName>ClienteDataSet</DataSetName>
         <Top>3.99466cm</Top>
         <Height>2.36416cm</Height>
-        <Width>16.97239cm</Width>
+        <Width>16.97236cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -595,7 +595,7 @@
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>2.09448cm</Top>
         <Height>1.52604cm</Height>
-        <Width>16.05001cm</Width>
+        <Width>16.97238cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
