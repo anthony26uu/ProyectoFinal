@@ -107,9 +107,25 @@ namespace ProyectoTech.Ui.Registros
             Limpiar();
         }
 
+        private bool validarUser()
+        {
+            bool retorno = true;
+            Entidades.Usuarios us = new Usuarios();
+            us = BLL.UserBLL.Buscar(p => p.NombreUsuario == nombreUsuarioTextBox.Text);
+            if(us!= null)
+            {
+                if (us.NombreUsuario == nombreUsuarioTextBox.Text)
+                {
+                    errorProviderUser.SetError(nombreUsuarioTextBox, "Nombre de usuario ya existe");
+                    retorno = false;
+                }
+            }
+            
+            return retorno;
+        }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
+            
             var guardar = new Entidades.Usuarios();
             int id = 0;
             try
@@ -121,30 +137,38 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                    guardar.Id = (Utilidades.TOINT(IdnumericUpDown.Text));
-                    guardar.NombreUsuario = nombreUsuarioTextBox.Text;
-                    guardar.PassUsuario = passUsuarioTextBox.Text;
-                    guardar.Tipo = TipoComboBox.Text;
-                    if (passUsuarioTextBox.Text == ConfirmaContextBox.Text)
-                    {
-                        if (id != guardar.Id)
-                        {
-                            BLL.UserBLL.Mofidicar(guardar);
-                            MessageBox.Show("Usuario modificado con exito");
-                        }
-                        else
-                        {
-                            BLL.UserBLL.Guardar(guardar);
-                            MessageBox.Show("Nuevo usuario agregado!");
-                        }
+                   if (!validarUser())
+                   {
+                        errorProviderUser.SetError(nombreUsuarioTextBox, "Nombre de usuario ya existe");
                     }
                     else
                     {
-                        errorProviderTodo.SetError(passUsuarioTextBox, "Campos no son iguales");
-                        errorProviderTodo.SetError(ConfirmaContextBox, "Campos no son iguales");
-                        MessageBox.Show("CAMPOS No Coninciden");
+                        guardar.Id = (Utilidades.TOINT(IdnumericUpDown.Text));
+                        guardar.NombreUsuario = nombreUsuarioTextBox.Text;
+                        guardar.PassUsuario = passUsuarioTextBox.Text;
+                        guardar.Tipo = TipoComboBox.Text;
+                        if (passUsuarioTextBox.Text == ConfirmaContextBox.Text)
+                        {
+                            if (id != guardar.Id)
+                            {
+                                BLL.UserBLL.Mofidicar(guardar);
+                                MessageBox.Show("Usuario modificado con exito");
+                            }
+                            else
+                            {
+                                BLL.UserBLL.Guardar(guardar);
+                                MessageBox.Show("Nuevo usuario agregado!");
+                            }
+                        }
+                        else
+                        {
+                            errorProviderTodo.SetError(passUsuarioTextBox, "Campos no son iguales");
+                            errorProviderTodo.SetError(ConfirmaContextBox, "Campos no son iguales");
+                            MessageBox.Show("CAMPOS No Coninciden");
 
+                        }
                     }
+                  
                 }
                 Limpiar();
             }
@@ -180,7 +204,11 @@ namespace ProyectoTech.Ui.Registros
         {
             if (string.IsNullOrWhiteSpace(IdnumericUpDown.Text))
             {
+               
                 errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
+                MessageBox.Show("No Existe Usuario con este id");
+                
+                Limpiar();
             }
             else
 
@@ -222,6 +250,11 @@ namespace ProyectoTech.Ui.Registros
         private void IdnumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             errorProviderTodo.Clear();
+        }
+
+        private void nombreUsuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProviderUser.Clear();
         }
     }
 }

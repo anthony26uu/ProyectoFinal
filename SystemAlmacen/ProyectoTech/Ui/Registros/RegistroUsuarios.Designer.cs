@@ -46,6 +46,7 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProviderUser = new System.Windows.Forms.ErrorProvider(this.components);
             label1 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             nombreUsuarioLabel = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,6 +142,7 @@
             this.nombreUsuarioTextBox.Name = "nombreUsuarioTextBox";
             this.nombreUsuarioTextBox.Size = new System.Drawing.Size(145, 20);
             this.nombreUsuarioTextBox.TabIndex = 0;
+            this.nombreUsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreUsuarioTextBox_KeyPress);
             // 
             // passUsuarioTextBox
             // 
@@ -238,6 +241,10 @@
             this.panel1.Size = new System.Drawing.Size(107, 89);
             this.panel1.TabIndex = 65;
             // 
+            // errorProviderUser
+            // 
+            this.errorProviderUser.ContainerControl = this;
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +275,7 @@
             this.Load += new System.EventHandler(this.RegistroUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTodo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,5 +294,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderTodo;
         private System.Windows.Forms.ComboBox TipoComboBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProviderUser;
     }
 }
