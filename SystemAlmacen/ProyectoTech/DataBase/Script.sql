@@ -1,99 +1,8 @@
 ﻿
 
- CREATE TABLE Articulos(
-    IdArticulo     INT primary key IDENTITY (1, 1),
-    NombreArticulo VARCHAR (80),
-    Existencia     INT ,
-    PrecioVenta    decimal,
-    PrecioCompra   decimal,
-    Categoria      VARCHAR (80),
-    CodigoArticulo VARCHAR (80),
-    FechaIngreso   DATETIME,
-	CategoriaId int ,
-	ITBIS decimal
-);
-
-create table Clientes(ClienteId int identity(1,1) primary key, 
-Nombres varchar(80), 
-Direccion varchar(100),
-Email varchar(50),
-Telefono varchar(15),
-);
-
-create table Deudasclientes(IdDeudas int identity(1,1) primary key, 
-Cliente varchar(80), 
-Deuda decimal,
-
-);
-
-
-create table Usuarios(Id int primary key identity(1,1), 
-nombreUsuario varchar (50),
-PassUsuario varchar(70) ,
-Tipo varchar(70) 
-);
-
-create table Categorias( CategoriaId int primary key identity (1,1), 
-NombreCategoria varchar(80)
-);
-
-
-
-
-create table  Facturas (
-	IdFactura int identity(1,1)primary key,
- NombreUsuario varchar(80),
-FechaVenta datetime,
-Cliente  varchar(80),
-TipoVenta varchar(80),
-Total decimal
-);
-
-
-
-create table  ArticuloCategorias (
-	ArticuloCategoriasid int identity(1,1)primary key,
-    IdArticulo INT  ,
-    CategoriaId   INT ,
-   
-);
-
-
-
-
-create table FacturaDetalles(IdDetalle int identity(1,1) primary key, IdFactura int, 
-IdArticulo int ,  Precio decimal,   Cantidad int);
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE [dbo].[Clientes] (
-    [ClienteId]       INT           IDENTITY (1, 1) NOT NULL,
-    [Nombres]         VARCHAR (80)  NULL,
-    [Direccion]       VARCHAR (100) NULL,
-    [Email]           VARCHAR (80)  NULL,
-    [Telefono]        VARCHAR (80)  NULL,
-    [Sexo]            VARCHAR (50)  NULL,
-    [FechaNacimiento] DATETIME      NULL,
-	[Cedula] VARCHAR (80)       NULL,
-    PRIMARY KEY CLUSTERED ([ClienteId] ASC)
-);
-
-
-CREATE TABLE [dbo].[Categorias] (
-    [CategoriaId]     INT          IDENTITY (1, 1) NOT NULL,
-    [NombreCategoria] VARCHAR (80) NULL,
-    PRIMARY KEY CLUSTERED ([CategoriaId] ASC)
-);
-
+																					/*DATA BASE:   RegistrosDb */
+																					/*Tablas:          8      */
+																			 /*Anthony Santana POlanco -- 2014-0527 */
 
 CREATE TABLE [dbo].[ArticuloCategorias] (
     [ArticuloCategoriasid] INT IDENTITY (1, 1) NOT NULL,
@@ -101,7 +10,6 @@ CREATE TABLE [dbo].[ArticuloCategorias] (
     [CategoriaId]          INT NULL,
     PRIMARY KEY CLUSTERED ([ArticuloCategoriasid] ASC)
 );
-
 
 CREATE TABLE [dbo].[Articulos] (
     [IdArticulo]     INT          IDENTITY (1, 1) NOT NULL,
@@ -117,16 +25,41 @@ CREATE TABLE [dbo].[Articulos] (
     PRIMARY KEY CLUSTERED ([IdArticulo] ASC)
 );
 
+CREATE TABLE [dbo].[Categorias] (
+    [CategoriaId]     INT          IDENTITY (1, 1) NOT NULL,
+    [NombreCategoria] VARCHAR (80) NULL,
+    PRIMARY KEY CLUSTERED ([CategoriaId] ASC)
+);
+
+CREATE TABLE [dbo].[Clientes] (
+    [ClienteId]       INT           IDENTITY (1, 1) NOT NULL,
+    [Nombres]         VARCHAR (80)  NULL,
+    [Direccion]       VARCHAR (100) NULL,
+    [Email]           VARCHAR (80)  NULL,
+    [Telefono]        VARCHAR (80)  NULL,
+    [Sexo]            VARCHAR (50)  NULL,
+    [FechaNacimiento] DATETIME      NULL,
+    [Cedula]          VARCHAR (80)  NULL,
+    PRIMARY KEY CLUSTERED ([ClienteId] ASC)
+);
+
+CREATE TABLE [dbo].[Deudasclientes] (
+    [IdDeudas] INT          IDENTITY (1, 1) NOT NULL,
+    [Cliente]  VARCHAR (80) NULL,
+    [Deuda]    DECIMAL (18) NULL,
+    PRIMARY KEY CLUSTERED ([IdDeudas] ASC)
+);
+
 CREATE TABLE [dbo].[FacturaDetalles] (
     [IdDetalle]  INT          IDENTITY (1, 1) NOT NULL,
     [IdFactura]  INT          NULL,
     [IdArticulo] INT          NULL,
     [Precio]     DECIMAL (18) NULL,
     [Cantidad]   INT          NULL,
+    [Nombre]     VARCHAR (80) NULL,
+    [ITBIS]      DECIMAL (18) NULL,
     PRIMARY KEY CLUSTERED ([IdDetalle] ASC),
-    FOREIGN KEY ([IdArticulo]) REFERENCES [dbo].[Articulos] ([IdArticulo]),
-	FOREIGN KEY ([IdFactura]) REFERENCES [dbo].[Facturas] ([IdFactura])
-
+    FOREIGN KEY ([IdFactura]) REFERENCES [dbo].[Facturas] ([IdFactura])
 );
 
 CREATE TABLE [dbo].[Facturas] (
@@ -147,3 +80,20 @@ CREATE TABLE [dbo].[Usuarios] (
     [Tipo]          VARCHAR (50) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
