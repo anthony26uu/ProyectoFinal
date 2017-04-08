@@ -206,5 +206,10 @@ namespace ProyectoTech.Ui.Incio
                 e.Handled = true;
             }
         }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             idDeudasLabel = new System.Windows.Forms.Label();
             clienteLabel = new System.Windows.Forms.Label();
             deudaLabel = new System.Windows.Forms.Label();
@@ -184,7 +185,7 @@
             this.buttonEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminar.Image")));
             this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonEliminar.Location = new System.Drawing.Point(157, 137);
+            this.buttonEliminar.Location = new System.Drawing.Point(131, 133);
             this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(52, 52);
@@ -202,7 +203,7 @@
             this.buttonGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.Image")));
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGuardar.Location = new System.Drawing.Point(78, 137);
+            this.buttonGuardar.Location = new System.Drawing.Point(52, 133);
             this.buttonGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(53, 52);
@@ -212,12 +213,29 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpiar.Image")));
+            this.buttonLimpiar.Location = new System.Drawing.Point(195, 133);
+            this.buttonLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(51, 52);
+            this.buttonLimpiar.TabIndex = 77;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
+            // 
             // SaldarDeudasFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(306, 241);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(label2);
             this.Controls.Add(this.Devuelta_textBox);
             this.Controls.Add(label1);
@@ -255,5 +273,6 @@
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.TextBox Efectivo_textBox;
         private System.Windows.Forms.TextBox Devuelta_textBox;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }
