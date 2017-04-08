@@ -32,10 +32,9 @@ namespace ProyectoTech.Ui.Registros
         }
 
 
-        private bool Validar()
+        private bool validarEmail()
         {
             bool retorno = true;
-
             Regex regEmail = new Regex(@"^(([^<>()[\]\\.,;:\s@\""]+"
                            + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
                            + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
@@ -43,12 +42,24 @@ namespace ProyectoTech.Ui.Registros
                            + @"[a-zA-Z]{2,}))$",
                            RegexOptions.Compiled);
 
-            if (!regEmail.IsMatch(emailTextBox.Text))
+            if (emailTextBox.Text != "")
             {
-                errorProvider_Email.SetError(emailTextBox, "Ingrese email valido.");
-                retorno = false;
 
+                if (!regEmail.IsMatch(emailTextBox.Text))
+                {
+                    errorProvider_Email.SetError(emailTextBox, "Ingrese email valido.");
+                    retorno = false;
+
+                }
             }
+
+
+
+            return retorno;
+        }
+        private bool Validar()
+        {
+            bool retorno = true;
 
             if (string.IsNullOrEmpty(nombresTextBox.Text))
             {
@@ -92,6 +103,7 @@ namespace ProyectoTech.Ui.Registros
         private void NewButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            errorProvider_Email.Clear();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -107,38 +119,46 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                    guardar.ClienteId = (Utilidades.TOINT(clienteIdNumericUpDown.Text));
-                    guardar.Cedula = Cedula_maskedTextBox.Text;
-                    guardar.Nombres = nombresTextBox.Text;
-                    guardar.Direccion = direccionTextBox.Text;
-                    guardar.Telefono = telefonoMaskedTextBox.Text;
-
-                    if (emailTextBox.Text != "")
+                    if (!validarEmail())
                     {
-                      
-                        guardar.Email = emailTextBox.Text;
+
                     }
                     else
                     {
-                        guardar.Email = "No tiene";
+                        guardar.ClienteId = (Utilidades.TOINT(clienteIdNumericUpDown.Text));
+                        guardar.Cedula = Cedula_maskedTextBox.Text;
+                        guardar.Nombres = nombresTextBox.Text;
+                        guardar.Direccion = direccionTextBox.Text;
+                        guardar.Telefono = telefonoMaskedTextBox.Text;
+
+                        if (emailTextBox.Text != "")
+                        {
+
+                            guardar.Email = emailTextBox.Text;
+                        }
+                        else
+                        {
+                            guardar.Email = "No tiene";
+                        }
+
+
+
+                        guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
+                        guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
+                        //Modifica si es necesario  de lo contrario guarda 
+                        if (id != guardar.ClienteId)
+                        {
+                            BLL.ClientesBLL.Mofidicar(guardar);
+                            MessageBox.Show("Cliente se ha Modificado");
+                        }
+                        else
+                        {
+
+                            BLL.ClientesBLL.Guardar(guardar);
+                            MessageBox.Show("Nuevo cliente agregado con exito!");
+                        }
                     }
 
-
-
-                    guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
-                    guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
-                    //Modifica si es necesario  de lo contrario guarda 
-                    if (id != guardar.ClienteId)
-                    {
-                        BLL.ClientesBLL.Mofidicar(guardar);
-                        MessageBox.Show("Cliente se ha Modificado");
-                    }
-                    else
-                    {
-
-                        BLL.ClientesBLL.Guardar(guardar);
-                        MessageBox.Show("Nuevo cliente agregado con exito!");
-                    }
                 }
                 Limpiar();
             }
@@ -215,7 +235,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void emailTextBox_KeyPress(object sender, KeyPressEventArgs e)
