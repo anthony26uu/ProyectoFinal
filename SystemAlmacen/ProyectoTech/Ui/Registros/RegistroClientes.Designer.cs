@@ -52,6 +52,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.Deletebutton = new System.Windows.Forms.Button();
             this.Cedula_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.errorProvider_Email = new System.Windows.Forms.ErrorProvider(this.components);
             clienteIdLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clienteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteIdLabel
@@ -193,6 +195,8 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(120, 20);
             this.emailTextBox.TabIndex = 3;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
+            this.emailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailTextBox_KeyPress);
             // 
             // telefonoMaskedTextBox
             // 
@@ -305,6 +309,10 @@
             this.Cedula_maskedTextBox.Size = new System.Drawing.Size(120, 20);
             this.Cedula_maskedTextBox.TabIndex = 2;
             // 
+            // errorProvider_Email
+            // 
+            this.errorProvider_Email.ContainerControl = this;
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +349,7 @@
             this.Load += new System.EventHandler(this.RegistroClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NombreerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_Email)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +371,6 @@
         private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox Cedula_maskedTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider_Email;
     }
 }

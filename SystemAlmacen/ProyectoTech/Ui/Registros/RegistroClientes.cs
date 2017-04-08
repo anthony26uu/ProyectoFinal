@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ProyectoTech.Ui.Registros
@@ -34,6 +35,20 @@ namespace ProyectoTech.Ui.Registros
         private bool Validar()
         {
             bool retorno = true;
+
+            Regex regEmail = new Regex(@"^(([^<>()[\]\\.,;:\s@\""]+"
+                           + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
+                           + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
+                           + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
+                           + @"[a-zA-Z]{2,}))$",
+                           RegexOptions.Compiled);
+
+            if (!regEmail.IsMatch(emailTextBox.Text))
+            {
+                errorProvider_Email.SetError(emailTextBox, "Ingrese email valido.");
+                retorno = false;
+
+            }
 
             if (string.IsNullOrEmpty(nombresTextBox.Text))
             {
@@ -88,7 +103,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 if (!Validar())
                 {
-                    MessageBox.Show("Por favor llenar los campos");
+                    MessageBox.Show("Por favor llenar los campos \n Verigique  el Email sea Valido!");
                 }
                 else
                 {
@@ -98,13 +113,14 @@ namespace ProyectoTech.Ui.Registros
                     guardar.Direccion = direccionTextBox.Text;
                     guardar.Telefono = telefonoMaskedTextBox.Text;
 
-                    if (emailTextBox.Text != ".")
+                    if (emailTextBox.Text != "")
                     {
-                        guardar.Email = "No tiene";
+                      
+                        guardar.Email = emailTextBox.Text;
                     }
                     else
                     {
-                        guardar.Email = emailTextBox.Text;
+                        guardar.Email = "No tiene";
                     }
 
 
@@ -143,6 +159,7 @@ namespace ProyectoTech.Ui.Registros
             if (string.IsNullOrWhiteSpace(clienteIdNumericUpDown.Text))
             {
                 NombreerrorProvider.SetError(clienteIdNumericUpDown, "No Existe Cliente con este id");
+                Limpiar();
             }
             else
             {
@@ -166,7 +183,8 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No existe ninguna categoria con ese Id.");
+                    MessageBox.Show("No existe ningun cliente con ese Id.");
+                    Limpiar();
                 }
             }
 
@@ -186,13 +204,23 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar el cliente \n Compruebe Existencia");
+                MessageBox.Show("No se pudo eliminar el cliente");
             }
         }
 
         private void clienteIdNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             NombreerrorProvider.Clear();
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void emailTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorProvider_Email.Clear();
         }
     }
 }
