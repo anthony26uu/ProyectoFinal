@@ -13,7 +13,7 @@ namespace ProyectoTech.Ui.Registros
 {
     public partial class RegistroCategorias : Form
     {
-      private static  RegistroCategorias unico = null;
+        private static RegistroCategorias unico = null;
 
         public RegistroCategorias()
         {
@@ -58,20 +58,21 @@ namespace ProyectoTech.Ui.Registros
 
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
-        {  var guardar = new Categorias();
-                int id = 0;
+        {
+            var guardar = new Categorias();
+            int id = 0;
             try
             {
-               
-              if (!Validar())
+
+                if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
                 }
                 else
                 {
-                 
+
                     guardar.NombreCategoria = nombreCategoriaTextBox.Text;
-                    guardar.CategoriaId= (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
+                    guardar.CategoriaId = (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
                     if (id != guardar.CategoriaId)
                     {
                         CategoriaBLL.Mofidicar(guardar);
@@ -121,7 +122,7 @@ namespace ProyectoTech.Ui.Registros
                     MessageBox.Show("No existe ninguna categoria con ese Id.");
                 }
             }
-               
+
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
@@ -148,7 +149,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void Progreso_Tick(object sender, EventArgs e)
         {
-          
+
         }
 
         private void categoriaIdNumericUpDown_ValueChanged(object sender, EventArgs e)

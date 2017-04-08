@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-public    class FacturaDetalles
+    public class FacturaDetalles
     {
         [Key]
         public int IdDetalle { get; set; }
@@ -22,8 +22,8 @@ public    class FacturaDetalles
         {
 
         }
-    
-        public FacturaDetalles(int idArticulo, int idDetalle, int idFactura, decimal precio, int Cantidad, string nombre, decimal itbis )
+
+        public FacturaDetalles(int idArticulo, int idDetalle, int idFactura, decimal precio, int Cantidad, string nombre, decimal itbis)
         {
             this.IdDetalle = idDetalle;
             this.IdFactura = idFactura;
@@ -32,7 +32,7 @@ public    class FacturaDetalles
             this.Cantidad = Cantidad;
             this.Nombre = nombre;
             this.ITBIS = itbis;
-           
+
 
         }
     }

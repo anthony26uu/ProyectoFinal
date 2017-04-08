@@ -38,12 +38,12 @@ namespace ProyectoTech.Ui.Conultas
             comboBox1.Items.Insert(3, "ID");
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Nombre";
-            
+
         }
-    
+
         public void Selecionar(string nombre)
         {
-            if(comboBox1.SelectedIndex==0)
+            if (comboBox1.SelectedIndex == 0)
             {
                 if (string.IsNullOrEmpty(buscaText.Text))
                 {
@@ -55,7 +55,7 @@ namespace ProyectoTech.Ui.Conultas
 
                     Entidades.Articulos db = new Entidades.Articulos();
 
-                   
+
                     db = BLL.ArticuloBLL.Buscar(p => p.NombreArticulo == nombre);
                     if (db == null)
                     {
@@ -66,7 +66,7 @@ namespace ProyectoTech.Ui.Conultas
                     else
                     {
 
-                        Lista= BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
+                        Lista = BLL.ArticuloBLL.GetList(p => p.NombreArticulo == nombre);
 
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
@@ -81,18 +81,18 @@ namespace ProyectoTech.Ui.Conultas
             {
                 if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
                 {
-                    Lista  = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
+                    Lista = BLL.ArticuloBLL.GetList(p => p.FechaIngreso >= desdeDateTimePicker.Value.Date && p.FechaIngreso <= HastadateTimePicker1.Value.Date);
                     dataGridView1.DataSource = Lista;
                     buttonImprimir.Enabled = true;
                 }
-             
+
             }
 
             else if (comboBox1.SelectedIndex == 2)
             {
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
-                Lista= BLL.ArticuloBLL.GetListodo();
+                Lista = BLL.ArticuloBLL.GetListodo();
                 dataGridView1.DataSource = Lista;
                 buttonImprimir.Enabled = true;
             }
@@ -119,7 +119,7 @@ namespace ProyectoTech.Ui.Conultas
                     }
                     else
                     {
-                        
+
                         Lista = BLL.ArticuloBLL.GetList(p => p.IdArticulo == id);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
@@ -129,7 +129,7 @@ namespace ProyectoTech.Ui.Conultas
                 }
             }
 
-     
+
         }
 
         private void ConsultaArticulos_Load(object sender, EventArgs e)
@@ -147,13 +147,13 @@ namespace ProyectoTech.Ui.Conultas
 
         private void button1_Click(object sender, EventArgs e)
         {
-          if(buscaText.Enabled==false)
+            if (buscaText.Enabled == false)
             {
                 Selecionar(maskedTextBoxId.Text);
             }
             else
             {
-                  Selecionar(buscaText.Text);
+                Selecionar(buscaText.Text);
             }
         }
 
@@ -218,7 +218,7 @@ namespace ProyectoTech.Ui.Conultas
 
 
 
-               
+
             }
             if (comboBox1.SelectedIndex == 3)
             {
@@ -234,7 +234,7 @@ namespace ProyectoTech.Ui.Conultas
                 Selecionar(maskedTextBoxId.Text);
 
             }
-           
+
         }
 
         private void ConsultaArticulos_FormClosed(object sender, FormClosedEventArgs e)
@@ -244,7 +244,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            new Ui.Reportes.Ventanas_Reportes.CReporteArticulos (Lista).Show();
+            new Ui.Reportes.Ventanas_Reportes.CReporteArticulos(Lista).Show();
             new Ui.Reportes.Ventanas_Reportes.CReporteArticulos(Lista).Activate();
         }
     }

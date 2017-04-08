@@ -43,21 +43,21 @@ namespace ProyectoTech.Ui.Conultas
                 {
 
                     errorProvider.Clear();
-                    if(BLL.UserBLL.GetList(p => p.Id == id)!=null)
+                    if (BLL.UserBLL.GetList(p => p.Id == id) != null)
                     {
                         Lista = BLL.UserBLL.GetList(p => p.Id == id);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
-                       
+
 
                     }
-                    else if(dataGridView1.DataSource==null)
+                    else if (dataGridView1.DataSource == null)
                     {
                         MessageBox.Show("Id No Existe");
                         errorProvider.Clear();
                     }
-                   
+
                 }
             }
 
@@ -77,7 +77,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void ConsultaUsuario_FormClosed(object sender, FormClosedEventArgs e)

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-  public  class Categorias
+    public class Categorias
     {
         [Key]
         public int CategoriaId { get; set; }

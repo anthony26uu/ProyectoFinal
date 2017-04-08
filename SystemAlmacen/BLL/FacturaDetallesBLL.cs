@@ -6,9 +6,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace BLL  
+namespace BLL
 {
-  public  class FacturaDetallesBLL
+    public class FacturaDetallesBLL
     {
 
 
@@ -16,9 +16,9 @@ namespace BLL
         {
             using (var repositorio = new Repositorio<FacturaDetalles>())
             {
-                
-                    return repositorio.Guardar(detalle);
-     
+
+                return repositorio.Guardar(detalle);
+
             }
         }
 
@@ -71,25 +71,25 @@ namespace BLL
 
 
         public static bool Guardar(FacturaDetalles relacion)
-    {
-
-        bool resultado = false;
-        using (var conexion = new RegistroDb())
         {
-            try
-            {
-                conexion.RelacionDb.Add(relacion);
-                conexion.SaveChanges();
-                resultado = true;
-            }
-            catch (Exception)
-            {
 
-                throw;
+            bool resultado = false;
+            using (var conexion = new RegistroDb())
+            {
+                try
+                {
+                    conexion.RelacionDb.Add(relacion);
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
+            return resultado;
         }
-        return resultado;
-    }
 
         public static bool Eliminar(Entidades.FacturaDetalles detalle)
         {
@@ -100,24 +100,24 @@ namespace BLL
         }
 
 
-        public static bool Guardar(List<FacturaDetalles >listado)
-    {
-        bool resultado = false;
-        try
+        public static bool Guardar(List<FacturaDetalles> listado)
         {
-            foreach (var relacion in listado)
+            bool resultado = false;
+            try
             {
-                resultado = Guardar(relacion);
+                foreach (var relacion in listado)
+                {
+                    resultado = Guardar(relacion);
+                }
+
             }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return resultado;
         }
-        catch (Exception)
-        {
-
-            throw;
-        }
-        return resultado;
-    }
         public static List<FacturaDetalles> GetLista(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
         {
             using (var repositorio = new Repositorio<FacturaDetalles>())
@@ -146,27 +146,27 @@ namespace BLL
 
 
         public static List<Articulos> Listar(Expression<Func<FacturaDetalles, bool>> criterioBusqueda)
-    {
-        List<Articulos> listado = new List<Articulos>();
-        List<FacturaDetalles> relaciones = null;
-        using (var conexion = new RegistroDb())
         {
-            try
+            List<Articulos> listado = new List<Articulos>();
+            List<FacturaDetalles> relaciones = null;
+            using (var conexion = new RegistroDb())
             {
-                relaciones = conexion.RelacionDb.Where(criterioBusqueda).ToList();
-                foreach (var item in relaciones)
+                try
                 {
-                    listado.Add(ArticuloBLL.BuscarRelacion(item.IdArticulo));
+                    relaciones = conexion.RelacionDb.Where(criterioBusqueda).ToList();
+                    foreach (var item in relaciones)
+                    {
+                        listado.Add(ArticuloBLL.BuscarRelacion(item.IdArticulo));
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
                 }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return listado;
         }
-        return listado;
-    }
 
-}
+    }
 }

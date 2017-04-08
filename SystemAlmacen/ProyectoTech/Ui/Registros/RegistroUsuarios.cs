@@ -18,17 +18,17 @@ namespace ProyectoTech.Ui.Registros
         public RegistroUsuarios()
         {
 
-           
+
             InitializeComponent();
         }
 
         public static RegistroUsuarios Funcion()
-        { 
+        {
             if (unico == null)
             {
                 unico = new RegistroUsuarios();
             }
-         
+
             return unico;
         }
 
@@ -36,7 +36,7 @@ namespace ProyectoTech.Ui.Registros
 
 
         private void RegistroUsuarios_Load(object sender, EventArgs e)
-        {   
+        {
             LlanarTipo();
             Limpiar();
         }
@@ -84,7 +84,7 @@ namespace ProyectoTech.Ui.Registros
         private void Limpiar()
         {
             nombreUsuarioTextBox.Clear();
-            IdnumericUpDown.Value=0;
+            IdnumericUpDown.Value = 0;
             passUsuarioTextBox.Clear();
             ConfirmaContextBox.Clear();
             nombreUsuarioTextBox.Focus();
@@ -125,7 +125,7 @@ namespace ProyectoTech.Ui.Registros
                     guardar.NombreUsuario = nombreUsuarioTextBox.Text;
                     guardar.PassUsuario = passUsuarioTextBox.Text;
                     guardar.Tipo = TipoComboBox.Text;
-                   if(passUsuarioTextBox.Text== ConfirmaContextBox.Text)
+                    if (passUsuarioTextBox.Text == ConfirmaContextBox.Text)
                     {
                         if (id != guardar.Id)
                         {
@@ -143,7 +143,7 @@ namespace ProyectoTech.Ui.Registros
                         errorProviderTodo.SetError(passUsuarioTextBox, "Campos no son iguales");
                         errorProviderTodo.SetError(ConfirmaContextBox, "Campos no son iguales");
                         MessageBox.Show("CAMPOS No Coninciden");
-                     
+
                     }
                 }
                 Limpiar();
@@ -153,8 +153,8 @@ namespace ProyectoTech.Ui.Registros
 
                 throw;
             }
-        
-    }
+
+        }
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
@@ -177,7 +177,8 @@ namespace ProyectoTech.Ui.Registros
         }
 
         private void buttonbuscar_Click(object sender, EventArgs e)
-        {  if(string.IsNullOrWhiteSpace(IdnumericUpDown.Text))
+        {
+            if (string.IsNullOrWhiteSpace(IdnumericUpDown.Text))
             {
                 errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
             }
@@ -204,9 +205,9 @@ namespace ProyectoTech.Ui.Registros
                     errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
                 }
             }
-               
 
-            }
+
+        }
 
         private void categoriaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -223,5 +224,5 @@ namespace ProyectoTech.Ui.Registros
             errorProviderTodo.Clear();
         }
     }
-    }
+}
 

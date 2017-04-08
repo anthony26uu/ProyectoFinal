@@ -213,7 +213,7 @@ namespace ProyectoTech.Ui.Registros
                 retorno = false;
             }
 
-            if(!bandera)
+            if (!bandera)
             {
                 if (string.IsNullOrWhiteSpace(textBoxDevuelta.Text))
                 {
@@ -229,7 +229,7 @@ namespace ProyectoTech.Ui.Registros
             }
 
 
-          
+
 
             if (string.IsNullOrWhiteSpace(tipoVentaComboBox.Text))
             {
@@ -355,7 +355,7 @@ namespace ProyectoTech.Ui.Registros
         {
             Estado(true);
             buttonImprimir.Enabled = false;
-            if(bandera)
+            if (bandera)
             {
                 textBoxDevuelta.Enabled = false;
                 textBoxDevuelta.Clear();
@@ -424,7 +424,7 @@ namespace ProyectoTech.Ui.Registros
         }
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            if(dataGridViewVenta.DataSource!=null )
+            if (dataGridViewVenta.DataSource != null)
             {
                 dataGridViewVenta.Refresh();
                 identificador = 0;
@@ -484,7 +484,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
             }
-           
+
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
@@ -503,13 +503,13 @@ namespace ProyectoTech.Ui.Registros
                 {
 
                     MessageBox.Show("Factura registrada con exito");
-                  
-                    if(bandera)
+
+                    if (bandera)
                     {
                         guardar.Cliente = clienteComboBox.Text;
-                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);                                              
+                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
                         BLL.DeudasclientesBLL.Guardar(guardar);
-                        MessageBox.Show("Nueva deuda agregada al clinete! "+ clienteComboBox.Text );  
+                        MessageBox.Show("Nueva deuda agregada al clinete! " + clienteComboBox.Text);
                     }
                     EliminarExitencia();
                     imrpimir();
@@ -685,7 +685,7 @@ namespace ProyectoTech.Ui.Registros
                     clienteComboBox.Text = facturaG.Cliente;
                     tipoVentaComboBox.Text = facturaG.TipoVenta;
 
-                    if (tipoVentaComboBox.Text=="Credito")
+                    if (tipoVentaComboBox.Text == "Credito")
                     {
                         EfectivomaskedTextBox.Enabled = false;
                         textBoxDevuelta.Enabled = false;
@@ -696,7 +696,7 @@ namespace ProyectoTech.Ui.Registros
                         EfectivomaskedTextBox.Enabled = true;
                         textBoxDevuelta.Enabled = true;
                     }
-                    
+
                     TotalmaskedTextBox.Text = facturaG.Total.ToString();
                     RefreshListaRelciones();
 
@@ -841,7 +841,7 @@ namespace ProyectoTech.Ui.Registros
         private void ModificarD_Button_Click(object sender, EventArgs e)
         {
 
-           if(dataGridViewVenta.DataSource!=null)
+            if (dataGridViewVenta.DataSource != null)
             {
                 EfectivomaskedTextBox.Enabled = true;
                 textBoxDevuelta.Enabled = true;
@@ -849,7 +849,7 @@ namespace ProyectoTech.Ui.Registros
                 dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
                 CalcularFactura();
             }
-           else
+            else
             {
                 MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
             }
@@ -894,7 +894,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            if(dataGridViewVenta.DataSource!=null)
+            if (dataGridViewVenta.DataSource != null)
             {
                 imrpimir();
             }
@@ -902,7 +902,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
             }
-           
+
         }
 
         private void EfectivomaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -934,7 +934,7 @@ namespace ProyectoTech.Ui.Registros
                 textBoxDevuelta.Clear();
                 bandera = true;
                 textBoxDevuelta.Clear();
-                
+
                 EfectivomaskedTextBox.Enabled = false;
             }
             if (tipoVentaComboBox.Text == "Contado")

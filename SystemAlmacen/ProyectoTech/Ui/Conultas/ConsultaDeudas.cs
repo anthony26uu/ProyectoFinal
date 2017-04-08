@@ -29,13 +29,13 @@ namespace ProyectoTech.Ui.Conultas
 
         }
 
-     
+
         private void Llenar()
         {
             comboBox1.Items.Insert(0, "NOMBRE");
             comboBox1.Items.Insert(1, "Todo");
             comboBox1.Items.Insert(2, "ID");
-        
+
             comboBox1.DataSource = comboBox1.Items;
             comboBox1.DisplayMember = "Nombre";
         }
@@ -44,12 +44,12 @@ namespace ProyectoTech.Ui.Conultas
         private void CalcularTotal()
         {
             decimal total = new decimal();
-         
+
             foreach (DataGridViewRow producto in dataGridView1.Rows)
             {
 
                 dataGridView1.Refresh();
-            
+
 
                 total += Convert.ToDecimal(producto.Cells[2].Value);
 
@@ -64,7 +64,7 @@ namespace ProyectoTech.Ui.Conultas
         private void ConsultaDeudas_Load(object sender, EventArgs e)
         {
 
-           
+
             dataGridView1.DataSource = null;
             buttonImprimir.Enabled = false;
             Llenar();
@@ -109,7 +109,7 @@ namespace ProyectoTech.Ui.Conultas
 
             }
 
-       
+
 
             else if (comboBox1.SelectedIndex == 2)
             {
@@ -145,7 +145,7 @@ namespace ProyectoTech.Ui.Conultas
                 }
             }
 
-          
+
 
 
         }
@@ -158,7 +158,7 @@ namespace ProyectoTech.Ui.Conultas
                 errorProvider.Clear();
                 buscaText.Enabled = true;
                 maskedTextBoxId.Enabled = false;
-              
+
                 button1.Enabled = true;
                 maskedTextBoxId.Clear();
                 buttonImprimir.Enabled = false;
@@ -172,7 +172,7 @@ namespace ProyectoTech.Ui.Conultas
                 maskedTextBoxId.Clear();
                 maskedTextBoxId.Enabled = false;
                 buscaText.Enabled = false;
-               
+
                 button1.Enabled = false;
 
 
@@ -190,7 +190,7 @@ namespace ProyectoTech.Ui.Conultas
                 }
 
 
-                
+
             }
             if (comboBox1.SelectedIndex == 2)
             {
@@ -198,10 +198,10 @@ namespace ProyectoTech.Ui.Conultas
 
                 errorProvider.Clear();
                 buscaText.Clear();
-               
+
                 maskedTextBoxId.Clear();
                 buscaText.Enabled = false;
-               
+
                 button1.Enabled = true;
                 buttonImprimir.Enabled = false;
                 dataGridView1.DataSource = null;
@@ -209,7 +209,7 @@ namespace ProyectoTech.Ui.Conultas
                 Selecionar(maskedTextBoxId.Text);
 
             }
-           
+
         }
 
         private void ConsultaDeudas_FormClosed(object sender, FormClosedEventArgs e)
@@ -228,7 +228,7 @@ namespace ProyectoTech.Ui.Conultas
                 Selecionar(buscaText.Text);
             }
 
-           
+
         }
 
         private void buttonImprimir_Click(object sender, EventArgs e)

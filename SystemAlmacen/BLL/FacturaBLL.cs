@@ -11,8 +11,8 @@ namespace BLL
 {
     public class FacturaBLL
     {
-      
-        
+
+
         public static bool Guardar(Entidades.Facturas Facturag, List<Entidades.FacturaDetalles> listaRelaciones, int identificador, bool modifica)
         {
             using (var repositorio = new DAL.Repositorio<Entidades.Facturas>())
@@ -31,16 +31,16 @@ namespace BLL
                 {
                     relacionesGuardadas = true;
                     if (listaRelaciones != null)
-                    {  
-                        if(modifica==false)
+                    {
+                        if (modifica == false)
                         {
-                        foreach (var relacion in listaRelaciones)
+                            foreach (var relacion in listaRelaciones)
                             {
                                 relacion.IdFactura = Facturag.IdFactura;
                                 if (!BLL.FacturaDetallesBLL.Guardar(relacion))
                                 {
                                     relacionesGuardadas = false;
-                                   
+
                                 }
                             }
                         }
@@ -48,11 +48,11 @@ namespace BLL
                         {
                             foreach (var relacion in listaRelaciones)
                             {
-                                 relacion.IdFactura = Facturag.IdFactura;
+                                relacion.IdFactura = Facturag.IdFactura;
                                 if (!BLL.FacturaDetallesBLL.Mofidicar(relacion))
                                 {
                                     relacionesGuardadas = true;
-                                   
+
                                 }
                             }
                         }

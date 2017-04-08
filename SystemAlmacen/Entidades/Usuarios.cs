@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-  public  class Usuarios
+    public class Usuarios
     {
         [Key]
         public int Id { get; set; }
@@ -16,8 +16,8 @@ namespace Entidades
         public Usuarios(int id, string nombreUsuario, string passUsuario, string tipo)
         {
             this.PassUsuario = passUsuario;
-           this.Id = id;
-           this.NombreUsuario = nombreUsuario;
+            this.Id = id;
+            this.NombreUsuario = nombreUsuario;
             this.Tipo = tipo;
 
         }

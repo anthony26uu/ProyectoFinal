@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BLL
 {
-  public  class CategoriaBLL
+    public class CategoriaBLL
     {
         public static bool Guardar(Categorias nuevo)
         {
@@ -33,7 +33,7 @@ namespace BLL
             return eliminado;
 
         }
- 
+
         public static bool Eliminar(Categorias id)
         {
             bool resultado = false;

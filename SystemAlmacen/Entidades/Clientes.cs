@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-  public  class Clientes
+    public class Clientes
     {
         [Key]
         public int ClienteId { get; set; }
@@ -26,7 +26,7 @@ namespace Entidades
 
         public Clientes(int clienteId, string nombres, string direccion, string email, string sexo, DateTime fechaNacimiento, string cedula)
         {
-            this.Cedula =cedula;
+            this.Cedula = cedula;
             this.ClienteId = clienteId;
             this.Nombres = nombres;
             this.Direccion = direccion;
@@ -37,6 +37,6 @@ namespace Entidades
 
 
 
-       
+
     }
 }

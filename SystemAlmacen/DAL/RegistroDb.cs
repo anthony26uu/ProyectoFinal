@@ -8,9 +8,9 @@ using System.Text;
 
 namespace DAL
 {
-   public class RegistroDb : DbContext
+    public class RegistroDb : DbContext
     {
-        public RegistroDb(): base ("ConStr")
+        public RegistroDb() : base("ConStr")
         {
 
         }
@@ -18,7 +18,7 @@ namespace DAL
         public DbSet<Articulos> articuloDb { get; set; }
         public DbSet<Deudasclientes> deudasDb { get; set; }
         public DbSet<Usuarios> usuarioDb { get; set; }
-        public DbSet <Clientes>clientesDb { get; set; }
+        public DbSet<Clientes> clientesDb { get; set; }
         public DbSet<Categorias> categoriaDb { get; set; }
         public DbSet<FacturaDetalles> RelacionDb { get; set; }
         public DbSet<Facturas> FacturasDb { get; set; }

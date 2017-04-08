@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProyectoTech.Ui.Incio
 {
-    
+
     public partial class Inicio : Form
     {
         Entidades.Categorias Categoria = new Entidades.Categorias();
@@ -33,15 +33,15 @@ namespace ProyectoTech.Ui.Incio
         {
 
             LabelUsuario.Text = Login.InsetarU().NombreUsuario;
-          
+
             LabelTipo.Text = Login.InsetarU().Tipo;
-            
+
 
         }
 
         private void Permisos()
         {
-            if(Login.InsetarU().Tipo != "Administrador")
+            if (Login.InsetarU().Tipo != "Administrador")
             {
                 usuariosToolStripMenuItem.Enabled = false;
                 usuarioToolStripMenuItem.Enabled = false;
@@ -56,33 +56,29 @@ namespace ProyectoTech.Ui.Incio
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-                Ui.Registros.RegistroArticulos.Funcion().Show();
-                Ui.Registros.RegistroArticulos.Funcion().Activate();
-           
 
-           
+            Ui.Registros.RegistroArticulos.Funcion().Show();
+            Ui.Registros.RegistroArticulos.Funcion().Activate();
 
-    }
 
-    private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-          //  this.Hide();
-                      
-                RegistroCategorias.Funcion().Show();
-                RegistroCategorias.Funcion().Activate();
-            
-           
+
+            RegistroCategorias.Funcion().Show();
+            RegistroCategorias.Funcion().Activate();
+
+
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
-           // this.Hide();
             RegistroUsuarios.Funcion().Show();
             RegistroUsuarios.Funcion().Activate();
-          
+
         }
 
         private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,10 +99,10 @@ namespace ProyectoTech.Ui.Incio
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-         
-         
-       
-               
+
+
+
+
         }
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +110,7 @@ namespace ProyectoTech.Ui.Incio
 
         }
 
-     
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -145,12 +141,12 @@ namespace ProyectoTech.Ui.Incio
 
         private void articulosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+
 
             Ui.Conultas.ConsultaArticulos.Funcion().Show();
             Ui.Conultas.ConsultaArticulos.Funcion().Activate();
 
-            
+
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,7 +159,7 @@ namespace ProyectoTech.Ui.Incio
 
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             Ui.Registros.RegistrarVenta.Funcion().Show();
             RegistrarVenta.Funcion().Activate();
         }
@@ -191,7 +187,7 @@ namespace ProyectoTech.Ui.Incio
             Ui.Conultas.ConsultaCategoria.Funcion().Show();
             Ui.Conultas.ConsultaCategoria.Funcion().Activate();
 
-          
+
         }
 
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)

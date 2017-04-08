@@ -13,7 +13,7 @@ namespace ProyectoTech.Ui.Conultas
     {
         private static ConsultaCategoria unico = null;
 
-        public  static List<Entidades.Categorias> Lista { get; set; }
+        public static List<Entidades.Categorias> Lista { get; set; }
 
         public static ConsultaCategoria Funcion()
         {
@@ -60,9 +60,9 @@ namespace ProyectoTech.Ui.Conultas
             if (comboBox1.SelectedIndex == 0)
             {
                 if (string.IsNullOrEmpty(buscaText.Text))
-            {
-                errorProvider.SetError(buscaText, "Por favor llenar este campo.");
-            }
+                {
+                    errorProvider.SetError(buscaText, "Por favor llenar este campo.");
+                }
                 else
                 {
 
@@ -82,13 +82,13 @@ namespace ProyectoTech.Ui.Conultas
                         Lista = BLL.CategoriaBLL.GetList(p => p.NombreCategoria == nombre);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
-                        
+
                         buttonImprimir.Enabled = true;
                     }
                 }
 
 
-               
+
             }
 
             else if (comboBox1.SelectedIndex == 1)
@@ -96,7 +96,7 @@ namespace ProyectoTech.Ui.Conultas
                 buscaText.Enabled = false;
                 maskedTextBoxId.Enabled = false;
                 dataGridView1.DataSource = BLL.CategoriaBLL.GetListodo();
-             
+
                 buttonImprimir.Enabled = true;
             }
 
@@ -119,8 +119,8 @@ namespace ProyectoTech.Ui.Conultas
                         maskedTextBoxId.Clear();
                     }
                     else
-                    {   
-                        Lista= BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
+                    {
+                        Lista = BLL.CategoriaBLL.GetList(p => p.CategoriaId == id);
                         dataGridView1.DataSource = Lista;
                         buttonImprimir.Enabled = true;
                         errorProvider.Clear();
@@ -170,9 +170,9 @@ namespace ProyectoTech.Ui.Conultas
 
 
 
-                
+
             }
-            if(comboBox1.SelectedIndex == 2)
+            if (comboBox1.SelectedIndex == 2)
             {
                 button1.Enabled = true;
                 buscaText.Enabled = false;

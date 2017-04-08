@@ -57,7 +57,7 @@ namespace ProyectoTech.Ui.Conultas
 
                     Entidades.Clientes db = new Entidades.Clientes();
 
-                 
+
                     db = BLL.ClientesBLL.Buscar(p => p.Nombres == nombre);
                     if (db == null)
                     {
@@ -73,7 +73,7 @@ namespace ProyectoTech.Ui.Conultas
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
-                        
+
 
                     }
 
@@ -104,28 +104,29 @@ namespace ProyectoTech.Ui.Conultas
 
                     int id = Utilidades.TOINT(maskedTextBoxId.Text);
                     db = BLL.ClientesBLL.Buscar(p => p.ClienteId == id);
-                    if(db==null)
+                    if (db == null)
                     {
                         errorProvider.Clear();
                         MessageBox.Show("Id del cliente no registrado");
                         maskedTextBoxId.Clear();
-                    }else
+                    }
+                    else
                     {
                         Lista = BLL.ClientesBLL.GetList(p => p.ClienteId == id);
                         dataGridView1.DataSource = Lista;
                         errorProvider.Clear();
                         buttonImprimir.Enabled = true;
                     }
-                   
+
                 }
             }
 
             else if (comboBox1.SelectedIndex == 3)
             {
-              
-                if(string.IsNullOrWhiteSpace(Sexo_comboBox.Text))
+
+                if (string.IsNullOrWhiteSpace(Sexo_comboBox.Text))
                 {
-                   errorProvider.SetError(Sexo_comboBox, "Selecione");
+                    errorProvider.SetError(Sexo_comboBox, "Selecione");
                 }
                 else
                 {
@@ -154,7 +155,7 @@ namespace ProyectoTech.Ui.Conultas
             errorProvider.Clear();
             maskedTextBoxId.Enabled = true;
             comboBox1.Text = null;
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,7 +172,7 @@ namespace ProyectoTech.Ui.Conultas
                 button1.Enabled = true;
                 Selecionar(buscaText.Text);
             }
-        
+
             if (comboBox1.SelectedIndex == 1)
             {
                 errorProvider.Clear();
@@ -193,8 +194,8 @@ namespace ProyectoTech.Ui.Conultas
                 }
 
 
-             
-                
+
+
 
             }
             if (comboBox1.SelectedIndex == 2)
@@ -241,13 +242,13 @@ namespace ProyectoTech.Ui.Conultas
             }
             else if (buscaText.Enabled == false && maskedTextBoxId.Enabled == false)
             {
-              
+
                 Selecionar(Sexo_comboBox.SelectedIndex.ToString());
-               
+
             }
 
-            else if(maskedTextBoxId.Enabled== false &&  Sexo_comboBox.Enabled ==false)
- 
+            else if (maskedTextBoxId.Enabled == false && Sexo_comboBox.Enabled == false)
+
             {
                 Selecionar(buscaText.Text);
             }

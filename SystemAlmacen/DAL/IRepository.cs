@@ -15,7 +15,7 @@ namespace DAL
 
         bool Eliminar(TEntity laEntidad);
 
-        /// La expession sera un delegado que es una funcion que permitira buscar por la condicion que definamos
+
         TEntity Buscar(Expression<Func<TEntity, bool>> criterioBusqueda);
 
         List<TEntity> Lista(Expression<Func<TEntity, bool>> criterioBusqueda);

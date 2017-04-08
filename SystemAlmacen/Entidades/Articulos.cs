@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
- public   class Articulos
+    public class Articulos
     {
 
         [Key]
@@ -20,26 +20,26 @@ namespace Entidades
         public DateTime FechaIngreso { get; set; }
         public int CategoriaId { get; set; }
         public decimal ITBIS { get; set; }
-       
 
 
-     
+
+
         public Articulos()
         {
-          
-          
+
+
         }
 
-    
-  public Articulos(int idArticulo,  string nombreArticulo,int existencia,  decimal precioVenta,decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
+
+        public Articulos(int idArticulo, string nombreArticulo, int existencia, decimal precioVenta, decimal precioCompra, string codigoArticulo, DateTime fechaIngreso, decimal itbs, string categoria)
         {
-           this.IdArticulo = idArticulo;
+            this.IdArticulo = idArticulo;
             this.NombreArticulo = nombreArticulo;
             this.Existencia = existencia;
             this.PrecioVenta = precioVenta;
             this.PrecioCompra = precioCompra;
             this.Categoria = categoria;
-           this.CodigoArticulo = codigoArticulo;
+            this.CodigoArticulo = codigoArticulo;
             this.FechaIngreso = fechaIngreso;
             this.ITBIS = itbs;
         }

@@ -29,12 +29,12 @@ namespace DAL
             }
         }
 
-        //propiedad que nos permite acceder al entityset actual con el que se instancion el repositorio
+
         private DbSet<TEntity> EntitySet
         {
             get
             {
-                //devolver del contexto un entityset, esta es la entidad que necesitamos para realizar las operaciones
+
                 return Contex.Set<TEntity>();
             }
         }
@@ -70,17 +70,17 @@ namespace DAL
 
             return Result;
         }
-     
+
         public bool Modificar(TEntity laEntidad)
         {
             bool Result = false;
 
             try
             {
-                //para que el contexto lo considere como si estubiera recien agregado
+
                 EntitySet.Attach(laEntidad);
 
-                //Para que entityframework sepa que la va a actualizar.
+
                 Contex.Entry<TEntity>(laEntidad).State = EntityState.Modified;
 
                 Result = Contex.SaveChanges() > 0;
@@ -103,7 +103,7 @@ namespace DAL
             return Result;
         }
 
-    public bool Eliminar(TEntity entidad)
+        public bool Eliminar(TEntity entidad)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace DAL
             }
             catch (Exception)
             {
-               
+
                 return false;
             }
         }

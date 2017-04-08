@@ -32,10 +32,10 @@ namespace ProyectoTech.Ui.Conultas
         {
 
             comboBox1.Items.Insert(0, "Usuario");
-            comboBox1.Items.Insert(1, "Fecha Venta"); 
-            comboBox1.Items.Insert(2, "Todo"); 
-            comboBox1.Items.Insert(3, "ID"); 
-            comboBox1.Items.Insert(4, "Cliente"); 
+            comboBox1.Items.Insert(1, "Fecha Venta");
+            comboBox1.Items.Insert(2, "Todo");
+            comboBox1.Items.Insert(3, "ID");
+            comboBox1.Items.Insert(4, "Cliente");
             comboBox1.Items.Insert(5, "Tipo de Venta");
 
             comboBox1.DataSource = comboBox1.Items;
@@ -84,7 +84,7 @@ namespace ProyectoTech.Ui.Conultas
 
             if (comboBox1.SelectedIndex == 1)
             {
-              
+
 
                 if (desdeDateTimePicker.Value.Date <= HastadateTimePicker1.Value.Date)
                 {
@@ -158,7 +158,7 @@ namespace ProyectoTech.Ui.Conultas
                     if (db == null)
                     {
                         errorProvider.Clear();
-                        MessageBox.Show("No sean realizado factura al "+ nombre);
+                        MessageBox.Show("No sean realizado factura al " + nombre);
                         maskedTextBoxId.Clear();
                     }
                     else
@@ -226,9 +226,9 @@ namespace ProyectoTech.Ui.Conultas
                 */
                 dataGridView1.Refresh();
                 DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-               
+
                 total += producto.Total;
-             
+
                 dataGridView1.Refresh();
 
 
@@ -290,7 +290,7 @@ namespace ProyectoTech.Ui.Conultas
                 desdeDateTimePicker.Enabled = false;
                 HastadateTimePicker1.Enabled = false;
                 button1.Enabled = false;
-                if (BLL.FacturaBLL.GetListodo().Count==0)
+                if (BLL.FacturaBLL.GetListodo().Count == 0)
                 {
                     MessageBox.Show("NO se ha registrado facturas");
                 }
@@ -301,7 +301,7 @@ namespace ProyectoTech.Ui.Conultas
                     CalcularTotal();
                     buttonImprimir.Enabled = true;
                 }
-               
+
 
             }
             if (comboBox1.SelectedIndex == 3)

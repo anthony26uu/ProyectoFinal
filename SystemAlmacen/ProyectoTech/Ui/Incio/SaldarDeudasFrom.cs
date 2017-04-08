@@ -60,7 +60,7 @@ namespace ProyectoTech.Ui.Incio
 
         private void SaldarDeudasFrom_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace ProyectoTech.Ui.Incio
                         BLL.DeudasclientesBLL.Mofidicar(guardar);
                         MessageBox.Show("Deuda Cliente modificada");
                     }
-                   
+
 
                 }
                 Limpiar();
@@ -151,9 +151,9 @@ namespace ProyectoTech.Ui.Incio
             unico = null;
         }
 
-       private void  CalcularDevuelta()
+        private void CalcularDevuelta()
         {
-            if(string.IsNullOrWhiteSpace( deudaTextBox.Text))
+            if (string.IsNullOrWhiteSpace(deudaTextBox.Text))
             {
                 MessageBox.Show("  Opciones \n -Realice busqueda \n -Registre una deuda");
             }
@@ -164,7 +164,7 @@ namespace ProyectoTech.Ui.Incio
                 decimal tota = efevtivo - deuda;
                 Devuelta_textBox.Text = tota.ToString();
             }
-           
+
         }
 
         private void Efectivo_textBox_KeyPress(object sender, KeyPressEventArgs e)

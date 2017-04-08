@@ -6,14 +6,14 @@ using System.Text;
 
 namespace Entidades
 {
-  
-  public  class Deudasclientes
+
+    public class Deudasclientes
     {
         [Key]
         public int IdDeudas { get; set; }
         public string Cliente { get; set; }
         public decimal Deuda { get; set; }
-        
+
 
         public Deudasclientes()
         {

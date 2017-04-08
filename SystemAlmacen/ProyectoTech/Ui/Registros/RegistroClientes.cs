@@ -22,10 +22,10 @@ namespace ProyectoTech.Ui.Registros
                 unico = new RegistroClientes();
             }
             return unico;
-            
-    }
 
-    public RegistroClientes()
+        }
+
+        public RegistroClientes()
         {
             InitializeComponent();
         }
@@ -45,13 +45,13 @@ namespace ProyectoTech.Ui.Registros
                 NombreerrorProvider.SetError(direccionTextBox, "Por favor llenar el campo vacio.");
                 retorno = false;
             }
-            
+
             if (telefonoMaskedTextBox.Text.Length < 10)
             {
                 NombreerrorProvider.SetError(telefonoMaskedTextBox, "Por favor llenar el campo.");
                 retorno = false;
             }
-         
+
             return retorno;
         }
 
@@ -65,13 +65,13 @@ namespace ProyectoTech.Ui.Registros
             emailTextBox.Clear();
             telefonoMaskedTextBox.Clear();
             NombreerrorProvider.Clear();
-            sexoComboBox.Text = null;    
+            sexoComboBox.Text = null;
             nombresTextBox.Focus();
         }
 
         private void RegistroClientes_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void NewButton_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace ProyectoTech.Ui.Registros
             int id = 0;
 
             try
-            {  
+            {
                 if (!Validar())
                 {
                     MessageBox.Show("Por favor llenar los campos");
@@ -108,7 +108,7 @@ namespace ProyectoTech.Ui.Registros
                     }
 
 
-                   
+
                     guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
                     guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
                     //Modifica si es necesario  de lo contrario guarda 
@@ -120,7 +120,7 @@ namespace ProyectoTech.Ui.Registros
                     else
                     {
 
-                       BLL.ClientesBLL.Guardar(guardar);
+                        BLL.ClientesBLL.Guardar(guardar);
                         MessageBox.Show("Nuevo cliente agregado con exito!");
                     }
                 }
@@ -160,7 +160,7 @@ namespace ProyectoTech.Ui.Registros
                     telefonoMaskedTextBox.Text = cliente.Telefono;
                     sexoComboBox.SelectedIndex = Utilidades.TOINT(cliente.Sexo.ToString());
                     fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
-                    
+
 
                     MessageBox.Show("Resultados de su busqueda");
                 }
@@ -169,7 +169,7 @@ namespace ProyectoTech.Ui.Registros
                     MessageBox.Show("No existe ninguna categoria con ese Id.");
                 }
             }
-               
+
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)

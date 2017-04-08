@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BLL
 {
-  public  class ClientesBLL
+    public class ClientesBLL
     {
 
         public static Clientes Guardar(Entidades.Clientes cliente)
@@ -16,7 +16,7 @@ namespace BLL
             Entidades.Clientes creado = null;
             using (var repositorio = new Repositorio<Entidades.Clientes>())
             {
-                   creado = repositorio.Guardar(cliente);
+                creado = repositorio.Guardar(cliente);
             }
 
             return creado;

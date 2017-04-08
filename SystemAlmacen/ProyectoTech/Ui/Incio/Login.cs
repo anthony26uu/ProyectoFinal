@@ -13,7 +13,7 @@ namespace ProyectoTech.Ui.Incio
     {
         private static Entidades.Usuarios UsuarioG = null;
         private static Login unico = null;
-       
+
         public Login()
         {
             InitializeComponent();
@@ -40,21 +40,21 @@ namespace ProyectoTech.Ui.Incio
                 errorProviderTodo.SetError(contraseñaTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-          
+
             return retorno;
         }
 
-        public static Login Funcion ()
+        public static Login Funcion()
         {
-            if(unico==null)
+            if (unico == null)
             {
                 unico = new Login();
             }
-           
+
             return unico;
         }
-        
-        
+
+
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace ProyectoTech.Ui.Incio
         private void IniciarSesionbutton_Click(object sender, EventArgs e)
         {
             Entidades.Usuarios usuario = null;
-            if(nombreTextBox.Text=="root")
+            if (nombreTextBox.Text == "root")
             {
                 usuario = new Entidades.Usuarios(1, "Admin", "1234", "Administrador");
 
@@ -104,20 +104,20 @@ namespace ProyectoTech.Ui.Incio
             }
             else
             {
-                usuario = BLL.UserBLL.Buscar(p => p.NombreUsuario == nombreTextBox.Text); 
+                usuario = BLL.UserBLL.Buscar(p => p.NombreUsuario == nombreTextBox.Text);
             }
-            if(usuario!=null)
+            if (usuario != null)
             {
-                if(contraseñaTextBox.Text==usuario.PassUsuario)
+                if (contraseñaTextBox.Text == usuario.PassUsuario)
                 {
                     Limpiar();
                     UsuarioG = usuario;
                     this.Hide();
-                    
-                   
+
+
                     Inicio.Funcio().WindowState = FormWindowState.Maximized;
                     Inicio.Funcio().Show();
-                    
+
                 }
                 else
                 {

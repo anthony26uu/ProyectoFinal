@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BLL
 {
- public   class DeudasclientesBLL
+    public class DeudasclientesBLL
     {
         public static bool Guardar(Deudasclientes nuevo)
         {

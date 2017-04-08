@@ -12,9 +12,9 @@ namespace ProyectoTech.Ui.Registros
 {
     public partial class RegistroArticulos : Form
     {
-      Articulos articulo = new Articulos();
-      private static   RegistroArticulos unico=null;
-   
+        Articulos articulo = new Articulos();
+        private static RegistroArticulos unico = null;
+
         public RegistroArticulos()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace ProyectoTech.Ui.Registros
             articulo.PrecioVenta = Convert.ToDecimal(precioVentaMaskedTextBox.Text);
             articulo.PrecioCompra = Convert.ToDecimal(precioCompraMaskedTextBox.Text);
             articulo.CodigoArticulo = codigoArticuloMaskedTextBox.Text;
-            if(ITBISmaskedTextBox.Text!=".")
+            if (ITBISmaskedTextBox.Text != ".")
             {
                 articulo.ITBIS = 0;
             }
@@ -52,10 +52,10 @@ namespace ProyectoTech.Ui.Registros
             {
                 articulo.ITBIS = Convert.ToDecimal(ITBISmaskedTextBox.Text);
             }
-           
+
             string categoria = categoriaComboBox.SelectedValue.ToString();
             articulo.Categoria = categoria;
-          
+
             return articulo;
         }
 
@@ -84,13 +84,13 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(nombreArticuloTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(existenciaMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(existenciaMaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(precioCompraMaskedTextBox.Text))
             {
                 errorProviderTodo.SetError(precioCompraMaskedTextBox, "Campo Obligatorio");
@@ -106,7 +106,7 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(categoriaComboBox, "Campo Obligatorio");
                 retorno = false;
             }
-          
+
 
             if (codigoArticuloMaskedTextBox.Text.Length < 15)
             {
@@ -127,7 +127,7 @@ namespace ProyectoTech.Ui.Registros
         }
 
         public void LlenarCombo()
-        {     
+        {
             List<Entidades.Categorias> lista = BLL.CategoriaBLL.GetListodo();
             categoriaComboBox.DataSource = lista;
             categoriaComboBox.DisplayMember = "NombreCategoria";
@@ -141,7 +141,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-              int id = 0;  
+            int id = 0;
 
             try
             {
@@ -159,14 +159,14 @@ namespace ProyectoTech.Ui.Registros
                     }
                     else
                     {
-                      
+
                         BLL.ArticuloBLL.Guardar(articulo);
                         MessageBox.Show("Nuevo Articulo agregado con exito!");
                         Limpiar();
                     }
                 }
                 errorProviderTodo.Clear();
-                
+
             }
             catch (Exception)
             {
@@ -198,7 +198,7 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonbuscar_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(ArticulonumericUpDown.Text))
+            if (string.IsNullOrWhiteSpace(ArticulonumericUpDown.Text))
             {
                 errorProviderTodo.SetError(ArticulonumericUpDown, "Campo Vacio");
             }
@@ -227,7 +227,7 @@ namespace ProyectoTech.Ui.Registros
                     MessageBox.Show("No existe ninguna categoria con ese Id.");
                 }
             }
-            
+
         }
 
         private void buttonEliminar_Click_1(object sender, EventArgs e)
@@ -235,7 +235,7 @@ namespace ProyectoTech.Ui.Registros
             int id = int.Parse(ArticulonumericUpDown.Text);
             var bll = new BLL.ArticuloBLL();
 
-            var arte =BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
+            var arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
             if (BLL.ArticuloBLL.Eliminar(arte))
             {
                 MessageBox.Show("El Articulo se ha Eliminado  con exito.");
@@ -294,6 +294,6 @@ namespace ProyectoTech.Ui.Registros
             }
         }
     }
-    }
-    
+}
+
 
