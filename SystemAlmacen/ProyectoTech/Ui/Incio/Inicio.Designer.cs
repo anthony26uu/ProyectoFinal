@@ -119,7 +119,7 @@
             // 
             this.articulosToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.productos;
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.articulosToolStripMenuItem.Text = "Articulos";
             this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
@@ -127,7 +127,7 @@
             // 
             this.categoriaToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.categorias;
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
@@ -135,7 +135,7 @@
             // 
             this.usuariosToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.empleados;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@
             // 
             this.clientesToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.clientes1;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -224,7 +224,7 @@
             // 
             this.venderToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.icono_paquetes;
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -232,7 +232,7 @@
             // 
             this.saldarDeudasToolStripMenuItem.Image = global::ProyectoTech.Properties.Resources.iconos_para_prestamos_credixpress_05;
             this.saldarDeudasToolStripMenuItem.Name = "saldarDeudasToolStripMenuItem";
-            this.saldarDeudasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saldarDeudasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saldarDeudasToolStripMenuItem.Text = "Saldar Deudas";
             this.saldarDeudasToolStripMenuItem.Click += new System.EventHandler(this.saldarDeudasToolStripMenuItem_Click);
             // 
@@ -301,14 +301,14 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BackgroundImage = global::ProyectoTech.Properties.Resources.logo_elalmacen;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(12, 68);
+            this.panel1.Location = new System.Drawing.Point(12, 59);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 117);
+            this.panel1.Size = new System.Drawing.Size(489, 179);
             this.panel1.TabIndex = 68;
             // 
             // button_CambiarUser
