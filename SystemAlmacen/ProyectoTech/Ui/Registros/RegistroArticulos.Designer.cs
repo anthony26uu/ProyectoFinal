@@ -319,7 +319,7 @@
             // precioVentaMaskedTextBox
             // 
             this.precioVentaMaskedTextBox.Location = new System.Drawing.Point(114, 103);
-            this.precioVentaMaskedTextBox.MaxLength = 10;
+            this.precioVentaMaskedTextBox.MaxLength = 8;
             this.precioVentaMaskedTextBox.Name = "precioVentaMaskedTextBox";
             this.precioVentaMaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.precioVentaMaskedTextBox.TabIndex = 2;

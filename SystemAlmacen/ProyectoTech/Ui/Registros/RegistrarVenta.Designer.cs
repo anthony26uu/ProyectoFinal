@@ -592,7 +592,7 @@
             // 
             this.EfectivomaskedTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.EfectivomaskedTextBox.Location = new System.Drawing.Point(202, 26);
-            this.EfectivomaskedTextBox.MaxLength = 10;
+            this.EfectivomaskedTextBox.MaxLength = 9;
             this.EfectivomaskedTextBox.Name = "EfectivomaskedTextBox";
             this.EfectivomaskedTextBox.Size = new System.Drawing.Size(100, 20);
             this.EfectivomaskedTextBox.TabIndex = 83;

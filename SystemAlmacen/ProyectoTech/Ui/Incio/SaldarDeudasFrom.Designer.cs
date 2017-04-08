@@ -54,10 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // idDeudasLabel
             // 
             idDeudasLabel.AutoSize = true;
@@ -68,14 +64,6 @@
             idDeudasLabel.Size = new System.Drawing.Size(71, 15);
             idDeudasLabel.TabIndex = 1;
             idDeudasLabel.Text = "Id Deudas:";
-            // 
-            // idDeudasTextBox
-            // 
-            this.idDeudasTextBox.Location = new System.Drawing.Point(97, 27);
-            this.idDeudasTextBox.Name = "idDeudasTextBox";
-            this.idDeudasTextBox.Size = new System.Drawing.Size(54, 20);
-            this.idDeudasTextBox.TabIndex = 2;
-            this.idDeudasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idDeudasTextBox_KeyPress);
             // 
             // clienteLabel
             // 
@@ -88,14 +76,6 @@
             clienteLabel.TabIndex = 3;
             clienteLabel.Text = "Cliente:";
             // 
-            // clienteTextBox
-            // 
-            this.clienteTextBox.Location = new System.Drawing.Point(97, 53);
-            this.clienteTextBox.Name = "clienteTextBox";
-            this.clienteTextBox.ReadOnly = true;
-            this.clienteTextBox.Size = new System.Drawing.Size(100, 20);
-            this.clienteTextBox.TabIndex = 4;
-            // 
             // deudaLabel
             // 
             deudaLabel.AutoSize = true;
@@ -106,15 +86,6 @@
             deudaLabel.Size = new System.Drawing.Size(49, 15);
             deudaLabel.TabIndex = 5;
             deudaLabel.Text = "Deuda:";
-            // 
-            // deudaTextBox
-            // 
-            this.deudaTextBox.Location = new System.Drawing.Point(97, 79);
-            this.deudaTextBox.MaxLength = 3;
-            this.deudaTextBox.Name = "deudaTextBox";
-            this.deudaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.deudaTextBox.TabIndex = 6;
-            this.deudaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.deudaTextBox_KeyPress);
             // 
             // label1
             // 
@@ -127,15 +98,6 @@
             label1.TabIndex = 73;
             label1.Text = "Efectivo:";
             // 
-            // Efectivo_textBox
-            // 
-            this.Efectivo_textBox.Location = new System.Drawing.Point(66, 214);
-            this.Efectivo_textBox.MaxLength = 3;
-            this.Efectivo_textBox.Name = "Efectivo_textBox";
-            this.Efectivo_textBox.Size = new System.Drawing.Size(73, 20);
-            this.Efectivo_textBox.TabIndex = 74;
-            this.Efectivo_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Efectivo_textBox_KeyPress);
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -146,6 +108,44 @@
             label2.Size = new System.Drawing.Size(56, 15);
             label2.TabIndex = 75;
             label2.Text = "Devulta:";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // idDeudasTextBox
+            // 
+            this.idDeudasTextBox.Location = new System.Drawing.Point(97, 27);
+            this.idDeudasTextBox.Name = "idDeudasTextBox";
+            this.idDeudasTextBox.Size = new System.Drawing.Size(54, 20);
+            this.idDeudasTextBox.TabIndex = 2;
+            this.idDeudasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idDeudasTextBox_KeyPress);
+            // 
+            // clienteTextBox
+            // 
+            this.clienteTextBox.Location = new System.Drawing.Point(97, 53);
+            this.clienteTextBox.Name = "clienteTextBox";
+            this.clienteTextBox.ReadOnly = true;
+            this.clienteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.clienteTextBox.TabIndex = 4;
+            // 
+            // deudaTextBox
+            // 
+            this.deudaTextBox.Location = new System.Drawing.Point(97, 79);
+            this.deudaTextBox.MaxLength = 8;
+            this.deudaTextBox.Name = "deudaTextBox";
+            this.deudaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.deudaTextBox.TabIndex = 6;
+            this.deudaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.deudaTextBox_KeyPress);
+            // 
+            // Efectivo_textBox
+            // 
+            this.Efectivo_textBox.Location = new System.Drawing.Point(66, 214);
+            this.Efectivo_textBox.MaxLength = 8;
+            this.Efectivo_textBox.Name = "Efectivo_textBox";
+            this.Efectivo_textBox.Size = new System.Drawing.Size(73, 20);
+            this.Efectivo_textBox.TabIndex = 74;
+            this.Efectivo_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Efectivo_textBox_KeyPress);
             // 
             // Devuelta_textBox
             // 
