@@ -44,7 +44,15 @@ namespace ProyectoTech.Ui.Registros
             articulo.PrecioVenta = Convert.ToDecimal(precioVentaMaskedTextBox.Text);
             articulo.PrecioCompra = Convert.ToDecimal(precioCompraMaskedTextBox.Text);
             articulo.CodigoArticulo = codigoArticuloMaskedTextBox.Text;
-            articulo.ITBIS = Convert.ToDecimal( ITBISmaskedTextBox.Text);
+            if(ITBISmaskedTextBox.Text!=".")
+            {
+                articulo.ITBIS = 0;
+            }
+            else
+            {
+                articulo.ITBIS = Convert.ToDecimal(ITBISmaskedTextBox.Text);
+            }
+           
             string categoria = categoriaComboBox.SelectedValue.ToString();
             articulo.Categoria = categoria;
           
@@ -112,6 +120,8 @@ namespace ProyectoTech.Ui.Registros
                 errorProviderTodo.SetError(ITBISmaskedTextBox, "Campo Obligatorio");
                 retorno = false;
             }
+
+
 
             return retorno;
         }

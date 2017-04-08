@@ -97,7 +97,18 @@ namespace ProyectoTech.Ui.Registros
                     guardar.Nombres = nombresTextBox.Text;
                     guardar.Direccion = direccionTextBox.Text;
                     guardar.Telefono = telefonoMaskedTextBox.Text;
-                    guardar.Email = emailTextBox.Text;
+
+                    if (emailTextBox.Text != ".")
+                    {
+                        guardar.Email = "No tiene";
+                    }
+                    else
+                    {
+                        guardar.Email = emailTextBox.Text;
+                    }
+
+
+                   
                     guardar.Sexo = sexoComboBox.SelectedIndex.ToString();
                     guardar.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
                     //Modifica si es necesario  de lo contrario guarda 
@@ -147,7 +158,7 @@ namespace ProyectoTech.Ui.Registros
                     direccionTextBox.Text = cliente.Direccion;
                     emailTextBox.Text = cliente.Email;
                     telefonoMaskedTextBox.Text = cliente.Telefono;
-                    sexoComboBox.Text = cliente.Sexo;
+                    sexoComboBox.SelectedIndex = Utilidades.TOINT(cliente.Sexo.ToString());
                     fechaNacimientoDateTimePicker.Value = cliente.FechaNacimiento;
                     
 

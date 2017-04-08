@@ -354,6 +354,7 @@ namespace ProyectoTech.Ui.Registros
         private void idArticuloComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Estado(true);
+            buttonImprimir.Enabled = false;
             if(bandera)
             {
                 textBoxDevuelta.Enabled = false;
