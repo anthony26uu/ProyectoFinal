@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace ProyectoTech.Ui.Incio
 {
+    
     public partial class Inicio : Form
     {
+        Entidades.Categorias Categoria = new Entidades.Categorias();
         private static Inicio inicio;
         public Inicio()
         {
@@ -54,9 +56,12 @@ namespace ProyectoTech.Ui.Incio
 
         private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         //   this.Hide();
-            Ui.Registros.RegistroArticulos.Funcion().Show();
-            Ui.Registros.RegistroArticulos.Funcion().Activate();
+           
+                Ui.Registros.RegistroArticulos.Funcion().Show();
+                Ui.Registros.RegistroArticulos.Funcion().Activate();
+           
+
+           
 
     }
 
@@ -64,8 +69,11 @@ namespace ProyectoTech.Ui.Incio
         {
           
           //  this.Hide();
-            RegistroCategorias.Funcion().Show();
-            RegistroCategorias.Funcion().Activate();
+                      
+                RegistroCategorias.Funcion().Show();
+                RegistroCategorias.Funcion().Activate();
+            
+           
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)

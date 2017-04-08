@@ -156,11 +156,11 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(722, 339);
+            this.label6.Location = new System.Drawing.Point(620, 338);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(139, 13);
             this.label6.TabIndex = 101;
-            this.label6.Text = "Total:";
+            this.label6.Text = "Total Adeudado a Empresa:";
             // 
             // errorProvider
             // 

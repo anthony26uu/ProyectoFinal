@@ -74,6 +74,7 @@
             this.idDeudasTextBox.Name = "idDeudasTextBox";
             this.idDeudasTextBox.Size = new System.Drawing.Size(54, 20);
             this.idDeudasTextBox.TabIndex = 2;
+            this.idDeudasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idDeudasTextBox_KeyPress);
             // 
             // clienteLabel
             // 
@@ -108,6 +109,7 @@
             // deudaTextBox
             // 
             this.deudaTextBox.Location = new System.Drawing.Point(97, 79);
+            this.deudaTextBox.MaxLength = 3;
             this.deudaTextBox.Name = "deudaTextBox";
             this.deudaTextBox.Size = new System.Drawing.Size(100, 20);
             this.deudaTextBox.TabIndex = 6;
@@ -127,6 +129,7 @@
             // Efectivo_textBox
             // 
             this.Efectivo_textBox.Location = new System.Drawing.Point(66, 214);
+            this.Efectivo_textBox.MaxLength = 3;
             this.Efectivo_textBox.Name = "Efectivo_textBox";
             this.Efectivo_textBox.Size = new System.Drawing.Size(73, 20);
             this.Efectivo_textBox.TabIndex = 74;

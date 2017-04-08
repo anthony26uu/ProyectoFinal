@@ -502,28 +502,19 @@ namespace ProyectoTech.Ui.Registros
                 {
 
                     MessageBox.Show("Factura registrada con exito");
+                  
+                    if(bandera)
+                    {
+                        guardar.Cliente = clienteComboBox.Text;
+                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);                                              
+                        BLL.DeudasclientesBLL.Guardar(guardar);
+                        MessageBox.Show("Nueva deuda agregada al clinete! "+ clienteComboBox.Text );  
+                    }
                     EliminarExitencia();
                     imrpimir();
                     facturaG = new Facturas();
                     identificador = 0;
                     Moodifica = false;
-                    if(bandera)
-                    {
-                        guardar.Cliente = clienteComboBox.Text;
-                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
-                       // guardar.IdDeudas = (Utilidades.TOINT(categoriaIdNumericUpDown.Text));
-                        //if (id != guardar.CategoriaId)
-                        //{
-                        //    CategoriaBLL.Mofidicar(guardar);
-                        //    MessageBox.Show("Categoria modificada");
-                        //}
-                                               
-                            BLL.DeudasclientesBLL.Guardar(guardar);
-                            MessageBox.Show("Nueva deuda agregada al clinete! "+ clienteComboBox.Text );
-                        
-                       
-                    }
-
 
                 }
                 else
@@ -693,6 +684,18 @@ namespace ProyectoTech.Ui.Registros
                     clienteComboBox.Text = facturaG.Cliente;
                     tipoVentaComboBox.Text = facturaG.TipoVenta;
 
+                    if (tipoVentaComboBox.Text=="Credito")
+                    {
+                        EfectivomaskedTextBox.Enabled = false;
+                        textBoxDevuelta.Enabled = false;
+
+                    }
+                    else
+                    {
+                        EfectivomaskedTextBox.Enabled = true;
+                        textBoxDevuelta.Enabled = true;
+                    }
+                    
                     TotalmaskedTextBox.Text = facturaG.Total.ToString();
                     RefreshListaRelciones();
 

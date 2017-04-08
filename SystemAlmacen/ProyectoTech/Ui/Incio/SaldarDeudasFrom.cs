@@ -34,6 +34,8 @@ namespace ProyectoTech.Ui.Incio
             clienteTextBox.Clear();
             deudaTextBox.Clear();
             idDeudasTextBox.Focus();
+            Efectivo_textBox.Clear();
+            Devuelta_textBox.Clear();
 
         }
         private bool Validar()
@@ -65,7 +67,8 @@ namespace ProyectoTech.Ui.Incio
         {
             if (string.IsNullOrWhiteSpace(idDeudasTextBox.Text))
             {
-                errorProvider.SetError(idDeudasTextBox, "No Existe Cliente con este id");
+                errorProvider.SetError(idDeudasTextBox, "Coloque id de, deuda");
+                Limpiar();
             }
             else
             {
@@ -83,6 +86,7 @@ namespace ProyectoTech.Ui.Incio
                 else
                 {
                     MessageBox.Show("No existe ninguna Deuda con ese Id.");
+                    Limpiar();
                 }
             }
 
@@ -148,10 +152,19 @@ namespace ProyectoTech.Ui.Incio
         }
 
        private void  CalcularDevuelta()
-        {   decimal efevtivo = Convert.ToDecimal(Efectivo_textBox.Text);
-            decimal deuda = Convert.ToDecimal(deudaTextBox.Text);
-            decimal tota = efevtivo- deuda ;
-            Devuelta_textBox.Text = tota.ToString();
+        {
+            if(string.IsNullOrWhiteSpace( deudaTextBox.Text))
+            {
+                MessageBox.Show("  Opciones \n -Realice busqueda \n -Registre una deuda");
+            }
+            else
+            {
+                decimal efevtivo = Convert.ToDecimal(Efectivo_textBox.Text);
+                decimal deuda = Convert.ToDecimal(deudaTextBox.Text);
+                decimal tota = efevtivo - deuda;
+                Devuelta_textBox.Text = tota.ToString();
+            }
+           
         }
 
         private void Efectivo_textBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -171,6 +184,18 @@ namespace ProyectoTech.Ui.Incio
         }
 
         private void deudaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void idDeudasTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
             {
