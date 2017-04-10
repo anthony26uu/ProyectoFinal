@@ -233,6 +233,11 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click_1(object sender, EventArgs e)
         {
             int id = int.Parse(ArticulonumericUpDown.Text);
+            if (string.IsNullOrWhiteSpace(ArticulonumericUpDown.Text))
+            {
+                errorProviderTodo.SetError(ArticulonumericUpDown, "No Existe Articulo con este id");
+                Limpiar();
+            
             var bll = new BLL.ArticuloBLL();
 
             var arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
@@ -244,6 +249,11 @@ namespace ProyectoTech.Ui.Registros
             else
             {
                 MessageBox.Show("No se pudo eliminar.");
+            }
+        }
+            else
+            {
+                errorProviderTodo.SetError(ArticulonumericUpDown, "Realice busqueda antes");
             }
         }
 

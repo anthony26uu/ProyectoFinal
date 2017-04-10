@@ -128,18 +128,31 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int id = int.Parse(categoriaIdNumericUpDown.Text);
-            var bll = new BLL.CategoriaBLL();
-            var user = CategoriaBLL.Buscar(p => p.CategoriaId == id);
-            if (BLL.CategoriaBLL.Eliminar(user))
+            if (string.IsNullOrWhiteSpace(categoriaIdNumericUpDown.Text))
             {
-
-                MessageBox.Show("El Tipo se ha Eliminado  con exito.");
+                errorProvider1.SetError(categoriaIdNumericUpDown, "No Existe Categoria con este id");
                 Limpiar();
+
+                var bll = new BLL.CategoriaBLL();
+                var user = CategoriaBLL.Buscar(p => p.CategoriaId == id);
+                if (BLL.CategoriaBLL.Eliminar(user))
+                {
+
+                    MessageBox.Show("El Tipo se ha Eliminado  con exito.");
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar la categoria.");
+                }
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar la categoria.");
+                errorProvider1.SetError(categoriaIdNumericUpDown, "Realice busqueda antes");
             }
+
+
+
         }
 
         private void RegistroCategorias_FormClosed(object sender, FormClosedEventArgs e)
