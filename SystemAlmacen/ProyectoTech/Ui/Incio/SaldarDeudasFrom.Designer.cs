@@ -131,6 +131,7 @@
             // 
             // deudaTextBox
             // 
+            this.deudaTextBox.BackColor = System.Drawing.Color.Red;
             this.deudaTextBox.Location = new System.Drawing.Point(97, 79);
             this.deudaTextBox.MaxLength = 8;
             this.deudaTextBox.Name = "deudaTextBox";
@@ -140,6 +141,7 @@
             // 
             // Efectivo_textBox
             // 
+            this.Efectivo_textBox.BackColor = System.Drawing.Color.Lime;
             this.Efectivo_textBox.Location = new System.Drawing.Point(66, 214);
             this.Efectivo_textBox.MaxLength = 8;
             this.Efectivo_textBox.Name = "Efectivo_textBox";
@@ -149,6 +151,7 @@
             // 
             // Devuelta_textBox
             // 
+            this.Devuelta_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Devuelta_textBox.Location = new System.Drawing.Point(221, 214);
             this.Devuelta_textBox.Name = "Devuelta_textBox";
             this.Devuelta_textBox.ReadOnly = true;

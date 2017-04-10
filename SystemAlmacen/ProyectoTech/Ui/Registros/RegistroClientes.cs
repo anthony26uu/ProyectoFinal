@@ -45,7 +45,7 @@ namespace ProyectoTech.Ui.Registros
             if (emailTextBox.Text != "")
             {
 
-                if (!regEmail.IsMatch(emailTextBox.Text))
+                if (!regEmail.IsMatch(emailTextBox.Text) && emailTextBox.Text != "No tiene")
                 {
                     errorProvider_Email.SetError(emailTextBox, "Ingrese email valido.");
                     retorno = false;

@@ -265,6 +265,7 @@
             this.dataGridViewVenta.GridColor = System.Drawing.Color.DimGray;
             this.dataGridViewVenta.Location = new System.Drawing.Point(3, 309);
             this.dataGridViewVenta.Name = "dataGridViewVenta";
+            this.dataGridViewVenta.ReadOnly = true;
             this.dataGridViewVenta.Size = new System.Drawing.Size(1022, 216);
             this.dataGridViewVenta.TabIndex = 32;
             this.dataGridViewVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVenta_CellClick);

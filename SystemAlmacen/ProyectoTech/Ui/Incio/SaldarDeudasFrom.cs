@@ -163,6 +163,10 @@ namespace ProyectoTech.Ui.Incio
                 decimal deuda = Convert.ToDecimal(deudaTextBox.Text);
                 decimal tota = efevtivo - deuda;
                 Devuelta_textBox.Text = tota.ToString();
+                if(efevtivo> Utilidades.TOINT(deudaTextBox.Text))
+                {
+                    deudaTextBox.Text = "0";
+                }
             }
 
         }
@@ -210,6 +214,8 @@ namespace ProyectoTech.Ui.Incio
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            errorProvider.Clear();
+            
         }
     }
 }
