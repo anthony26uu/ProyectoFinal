@@ -20,6 +20,7 @@ namespace ProyectoTech.Ui.Registros
         bool Moodifica = false;
         int identificador = 0;
 
+      
         public RegistrarVenta()
         {
 
@@ -430,118 +431,138 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int data = dataGridViewVenta.RowCount;
-
-            if (data != 0)
-           {
-                if (dataGridViewVenta.DataSource != null)
+            if (facturaG.FechaVenta.Day == DateTime.Now.Day)
             {
-                dataGridViewVenta.Refresh();
-                identificador = 0;
-                decimal descuento = 0;
-                Moodifica = false;
-                EfectivomaskedTextBox.Enabled = true;
-                foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
+
+                if (data != 0)
                 {
-                    identificador = Convert.ToInt32(dataGridViewVenta[2, p].Value);
-
-                }
-
-                    if (identificador != 0)
+                    if (dataGridViewVenta.DataSource != null)
                     {
-
-                        if (listaRelaciones != null)
+                        dataGridViewVenta.Refresh();
+                        identificador = 0;
+                        decimal descuento = 0;
+                        Moodifica = false;
+                        EfectivomaskedTextBox.Enabled = true;
+                        foreach (DataGridViewRow producto in dataGridViewVenta.Rows)
                         {
-                            var itemToRemove = listaRelaciones.SingleOrDefault(r => r.IdArticulo == identificador);
-                            int productoId = Convert.ToInt32(dataGridViewVenta[2, p].Value);  ///Celda 2 es el idArticulo antes esta detalleid y facturaid
-                            descuento = Convert.ToInt32(dataGridViewVenta[4, p].Value); //Celda 4 es la cantiddad
-                            detalle.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
-                            detalle.Articulo.Existencia += Convert.ToInt32(descuento);
-                            BLL.ArticuloBLL.Mofidicar(detalle.Articulo);
-                            listaRelaciones.Remove(itemToRemove);
-                            MessageBox.Show("Articulo Eliminado de factura y enviado a inventario");
+                            identificador = Convert.ToInt32(dataGridViewVenta[2, p].Value);
 
+                        }
 
+                        if (identificador != 0)
+                        {
 
-                            if (BLL.FacturaDetallesBLL.Eliminar(itemToRemove))
+                            if (listaRelaciones != null)
                             {
-                                Moodifica = true;
+                                var itemToRemove = listaRelaciones.SingleOrDefault(r => r.IdArticulo == identificador);
+                                int productoId = Convert.ToInt32(dataGridViewVenta[2, p].Value);  ///Celda 2 es el idArticulo antes esta detalleid y facturaid
+                                descuento = Convert.ToInt32(dataGridViewVenta[4, p].Value); //Celda 4 es la cantiddad
+                                detalle.Articulo = BLL.ArticuloBLL.BuscarB(productoId);
+                                detalle.Articulo.Existencia += Convert.ToInt32(descuento);
+                                BLL.ArticuloBLL.Mofidicar(detalle.Articulo);
+                                listaRelaciones.Remove(itemToRemove);
+                                MessageBox.Show("Articulo Eliminado de factura y enviado a inventario");
 
-                            }
-                            else
-                            {
-                                Moodifica = false;
+
+
+                                if (BLL.FacturaDetallesBLL.Eliminar(itemToRemove))
+                                {
+                                    Moodifica = true;
+
+                                }
+                                else
+                                {
+                                    Moodifica = false;
+
+                                }
 
                             }
 
                         }
-
+                        else
+                        {
+                            MessageBox.Show("ID a eliminar esta null");
+                        }
                     }
                     else
                     {
                         MessageBox.Show("ID a eliminar esta null");
                     }
+                    if (facturaG != null)
+                    {
+                        facturaG.Total = 0;
+                    }
+
+                    RefreshListaRelciones();
+                    dataGridViewVenta.Refresh();
+                    CalcularFactura();
                 }
                 else
                 {
-                    MessageBox.Show("ID a eliminar esta null");
+                    MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
                 }
-                if (facturaG != null)
-                {
-                    facturaG.Total = 0;
-                }
-
-                RefreshListaRelciones();
-                dataGridViewVenta.Refresh();
-                CalcularFactura();
             }
             else
+
             {
-                MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
+                MessageBox.Show("Fecha de cambio expiro");
             }
+
 
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             var guardar = new Entidades.Deudasclientes();
-            if (!Validar())
-            {
-                MessageBox.Show("Por favor llenar los campos");
-
-                Limpiar();
-            }
-            else
+            if (facturaG.FechaVenta.Day == DateTime.Now.Day)
             {
 
-                LlenarFactura();
-                if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador, Moodifica))
+
+                if (!Validar())
                 {
+                    MessageBox.Show("Por favor llenar los campos");
 
-                    MessageBox.Show("Factura registrada con exito");
-
-                    if (bandera)
-                    {
-                        guardar.Cliente = clienteComboBox.Text;
-                        guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
-                        BLL.DeudasclientesBLL.Guardar(guardar);
-                        MessageBox.Show("Nueva deuda agregada al clinete! " + clienteComboBox.Text);
-                    }
-                    EliminarExitencia();
-                    imrpimir();
-                    facturaG = new Facturas();
-                    identificador = 0;
-                    Moodifica = false;
-
+                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show("Error al rgistrar factura");
-                    Moodifica = false;
+
+                    LlenarFactura();
+                    if (BLL.FacturaBLL.Guardar(facturaG, listaRelaciones, identificador, Moodifica))
+                    {
+
+                        MessageBox.Show("Factura registrada con exito");
+
+                        if (bandera)
+                        {
+                            guardar.Cliente = clienteComboBox.Text;
+                            guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
+                            BLL.DeudasclientesBLL.Guardar(guardar);
+                            MessageBox.Show("Nueva deuda agregada al clinete! " + clienteComboBox.Text);
+                        }
+                        EliminarExitencia();
+                        imrpimir();
+                        facturaG = new Facturas();
+                        identificador = 0;
+                        Moodifica = false;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al rgistrar factura");
+                        Moodifica = false;
+                    }
+                    Limpiar();
+                    clienteComboBox.Focus();
+                    buttonImprimir.Enabled = false;
+                    buttonGuardar.Enabled = false;
                 }
-                Limpiar();
-                clienteComboBox.Focus();
-                buttonImprimir.Enabled = false;
-                buttonGuardar.Enabled = false;
             }
+            else
+
+            {
+                MessageBox.Show("Fecha de cambio expiro");
+            }
+
 
         }
 
@@ -793,6 +814,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 if (facturaG.FechaVenta.Day == DateTime.Now.Day )
                 {
+
                     if (dataGridViewVenta.DataSource != null)
                     {
                         if (facturaG != null)
@@ -875,28 +897,36 @@ namespace ProyectoTech.Ui.Registros
         {
 
             int data = dataGridViewVenta.RowCount;
-
-            if (data != 0)
+            if (facturaG.FechaVenta.Day == DateTime.Now.Day)
             {
-                if (dataGridViewVenta.DataSource != null)
+
+
+                if (data != 0)
                 {
-                    EfectivomaskedTextBox.Enabled = true;
-                    textBoxDevuelta.Enabled = true;
-                    dataGridViewVenta[4, p].Value = CantidadD_masked.Text;
-                    dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
-                    CalcularFactura();
+                    if (dataGridViewVenta.DataSource != null)
+                    {
+                        EfectivomaskedTextBox.Enabled = true;
+                        textBoxDevuelta.Enabled = true;
+                        dataGridViewVenta[4, p].Value = CantidadD_masked.Text;
+                        dataGridViewVenta[6, p].Value = ITBIS_Modifica.Text;
+                        CalcularFactura();
+                    }
+                    else
+                    {
+                        MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
                 }
+
             }
             else
-            {
-                MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
-            }
 
-         
+            {
+                MessageBox.Show("Fecha de cambio expiro");
+            }
 
         }
 
