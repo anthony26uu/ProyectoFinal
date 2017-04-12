@@ -132,12 +132,17 @@ namespace ProyectoTech.Ui.Incio
         private void buttonEliminar_Click_1(object sender, EventArgs e)
         {
           
-            int id = int.Parse(idDeudasTextBox.Text);
+          
             if (string.IsNullOrWhiteSpace(idDeudasTextBox.Text))
             {
                 errorProvider.SetError(idDeudasTextBox, "No Existe Deuda con este id");
                 Limpiar();
 
+            }
+            else
+            {
+
+                int id = int.Parse(idDeudasTextBox.Text);
                 var bll = new BLL.CategoriaBLL();
                 var user = BLL.DeudasclientesBLL.Buscar(p => p.IdDeudas == id);
                 if (BLL.DeudasclientesBLL.Eliminar(user))
@@ -150,10 +155,6 @@ namespace ProyectoTech.Ui.Incio
                 {
                     MessageBox.Show("No se pudo Saldar la deuda.");
                 }
-            }
-            else
-            {
-                errorProvider.SetError(idDeudasTextBox, "Realice busqueda antes");
             }
         }
 

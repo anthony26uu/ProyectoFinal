@@ -182,29 +182,30 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(IdnumericUpDown.Text);
+           
             if (string.IsNullOrWhiteSpace(IdnumericUpDown.Text))
             {
                 errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
                 Limpiar();
-            
 
-            var bll = new BLL.UserBLL();
-            var user = BLL.UserBLL.Buscar(p => p.Id == id);
-            if (BLL.UserBLL.Eliminar(user))
-            {
-
-                MessageBox.Show("El Usuario se ha Eliminado  con exito.");
-                Limpiar();
+          
             }
             else
             {
-                MessageBox.Show("No se pudo eliminar El usuario.");
-            }
-        }
-            else
-            {
-                errorProviderTodo.SetError(IdnumericUpDown, "Realice busqueda antes");
+                int id = int.Parse(IdnumericUpDown.Text);
+                var bll = new BLL.UserBLL();
+                var user = BLL.UserBLL.Buscar(p => p.Id == id);
+                if (BLL.UserBLL.Eliminar(user))
+                {
+
+                    MessageBox.Show("El Usuario se ha Eliminado  con exito.");
+                    Limpiar();
+                }
+                else
+                {
+                    errorProviderTodo.SetError(IdnumericUpDown, "No Existe Usuario con este id");
+                    MessageBox.Show("No se pudo eliminar El usuario.");
+                }
             }
 
         }

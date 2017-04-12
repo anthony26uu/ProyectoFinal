@@ -46,11 +46,12 @@ namespace ProyectoTech.Ui.Registros
             articulo.CodigoArticulo = codigoArticuloMaskedTextBox.Text;
             if (ITBISmaskedTextBox.Text != ".")
             {
-                articulo.ITBIS = 0;
+                articulo.ITBIS = Convert.ToDecimal(ITBISmaskedTextBox.Text);
             }
             else
             {
-                articulo.ITBIS = Convert.ToDecimal(ITBISmaskedTextBox.Text);
+                articulo.ITBIS = 0;
+               
             }
 
             string categoria = categoriaComboBox.SelectedValue.ToString();
@@ -237,24 +238,24 @@ namespace ProyectoTech.Ui.Registros
             {
                 errorProviderTodo.SetError(ArticulonumericUpDown, "No Existe Articulo con este id");
                 Limpiar();
-            
-            var bll = new BLL.ArticuloBLL();
+            }
+            else
+            {
+                var bll = new BLL.ArticuloBLL();
 
-            var arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
-            if (BLL.ArticuloBLL.Eliminar(arte))
-            {
-                MessageBox.Show("El Articulo se ha Eliminado  con exito.");
-                Limpiar();
+                var arte = BLL.ArticuloBLL.Buscar(p => p.IdArticulo == id);
+                if (BLL.ArticuloBLL.Eliminar(arte))
+                {
+                    MessageBox.Show("El Articulo se ha Eliminado  con exito.");
+                    Limpiar();
+                }
+                else
+                {
+                    errorProviderTodo.SetError(ArticulonumericUpDown, "No Existe Articulo con este id");
+                    MessageBox.Show("No se pudo eliminar.");
+                }
             }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar.");
-            }
-        }
-            else
-            {
-                errorProviderTodo.SetError(ArticulonumericUpDown, "Realice busqueda antes");
-            }
+           
         }
 
         private void RegistroArticulos_FormClosed(object sender, FormClosedEventArgs e)

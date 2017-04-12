@@ -127,12 +127,17 @@ namespace ProyectoTech.Ui.Registros
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(categoriaIdNumericUpDown.Text);
+          
             if (string.IsNullOrWhiteSpace(categoriaIdNumericUpDown.Text))
             {
                 errorProvider1.SetError(categoriaIdNumericUpDown, "No Existe Categoria con este id");
                 Limpiar();
 
+              
+            }
+            else
+            {
+                int id = int.Parse(categoriaIdNumericUpDown.Text);
                 var bll = new BLL.CategoriaBLL();
                 var user = CategoriaBLL.Buscar(p => p.CategoriaId == id);
                 if (BLL.CategoriaBLL.Eliminar(user))
@@ -143,12 +148,10 @@ namespace ProyectoTech.Ui.Registros
                 }
                 else
                 {
+                    errorProvider1.SetError(categoriaIdNumericUpDown, "No Existe Categoria con este id");
                     MessageBox.Show("No se pudo eliminar la categoria.");
                 }
-            }
-            else
-            {
-                errorProvider1.SetError(categoriaIdNumericUpDown, "Realice busqueda antes");
+
             }
 
 

@@ -213,28 +213,29 @@ namespace ProyectoTech.Ui.Registros
         private void Deletebutton_Click(object sender, EventArgs e)
         {
 
-            int id = int.Parse(clienteIdNumericUpDown.Text);
+           
             if (string.IsNullOrWhiteSpace(clienteIdNumericUpDown.Text))
             {
                 NombreerrorProvider.SetError(clienteIdNumericUpDown, "No Existe Cliente con este id");
                 Limpiar();
             
-            var bll = new BLL.ClientesBLL();
-            var user = ClientesBLL.Buscar(p => p.ClienteId == id);
-            if (BLL.ClientesBLL.Eliminar(user))
+            }
+            else
             {
+                int id = int.Parse(clienteIdNumericUpDown.Text);
+                var bll = new BLL.ClientesBLL();
+                var user = ClientesBLL.Buscar(p => p.ClienteId == id);
+                if (BLL.ClientesBLL.Eliminar(user))
+                {
 
-                MessageBox.Show("El Cliente se ha Eliminado  con exito.");
-                Limpiar();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo eliminar el cliente");
-            }
-        }
-            else
-            {
-                errorProvider_Email.SetError(clienteIdNumericUpDown, "Realice busqueda antes");
+                    MessageBox.Show("El Cliente se ha Eliminado  con exito.");
+                    Limpiar();
+                }
+                else
+                {
+                    NombreerrorProvider.SetError(clienteIdNumericUpDown, "No Existe Cliente con este id");
+                    MessageBox.Show("No se pudo eliminar el cliente");
+                }
             }
         }
 
