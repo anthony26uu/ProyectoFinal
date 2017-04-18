@@ -20,7 +20,7 @@ namespace ProyectoTech.Ui.Registros
         bool Moodifica = false;
         int identificador = 0;
 
-      
+
         public RegistrarVenta()
         {
 
@@ -137,7 +137,7 @@ namespace ProyectoTech.Ui.Registros
 
                     }
                 }
-               
+
             }
 
 
@@ -431,8 +431,8 @@ namespace ProyectoTech.Ui.Registros
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
             int data = dataGridViewVenta.RowCount;
-            //if (facturaG.FechaVenta.Day == DateTime.Now.Day)
-            //{
+            if (facturaG.FechaVenta.Day == DateTime.Now.Day)
+            {
 
                 if (data != 0)
                 {
@@ -501,20 +501,19 @@ namespace ProyectoTech.Ui.Registros
                 {
                     MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
                 }
-            //}
-            //else
+            }
+            else
 
-            //{
-            //    MessageBox.Show("Fecha de cambio expiro");
-            //}
+            {
+                MessageBox.Show("Fecha de cambio expiro");
+            }
 
 
         }
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             var guardar = new Entidades.Deudasclientes();
-            //if (facturaG.FechaVenta.Day == DateTime.Now.Day)
-            //{
+           
 
 
                 if (!Validar())
@@ -538,12 +537,17 @@ namespace ProyectoTech.Ui.Registros
                             guardar.Deuda = Convert.ToDecimal(TotalmaskedTextBox.Text);
                             BLL.DeudasclientesBLL.Guardar(guardar);
                             MessageBox.Show("Nueva deuda agregada al clinete! " + clienteComboBox.Text);
+                           // bandera = false;
                         }
-                        EliminarExitencia();
-                        imrpimir();
-                        facturaG = new Facturas();
-                        identificador = 0;
-                        Moodifica = false;
+                        
+                           
+                            EliminarExitencia();
+                            imrpimir();
+                            facturaG = new Facturas();
+                            identificador = 0;
+                            Moodifica = false;
+                        
+                      
 
                     }
                     else
@@ -556,12 +560,7 @@ namespace ProyectoTech.Ui.Registros
                     buttonImprimir.Enabled = false;
                     buttonGuardar.Enabled = false;
                 }
-         //   }
-            //else
-
-            //{
-            //    MessageBox.Show("Fecha de cambio expiro");
-            //}
+           
 
 
         }
@@ -812,8 +811,8 @@ namespace ProyectoTech.Ui.Registros
             }
             else
             {
-                //if (facturaG.FechaVenta.Day == DateTime.Now.Day )
-                //{
+                if (facturaG.FechaVenta.Day == DateTime.Now.Day)
+                {
 
                     if (dataGridViewVenta.DataSource != null)
                     {
@@ -849,13 +848,13 @@ namespace ProyectoTech.Ui.Registros
                     {
                         MessageBox.Show("No ha realizado busqeuda");
                     }
-                //}
-                //else
+                }
+                else
 
-                //{
-                //    MessageBox.Show("Fecha de cambio expiro");
-                //}
-              
+                {
+                    MessageBox.Show("Fecha de cambio expiro");
+                }
+
 
             }
         }
@@ -889,7 +888,7 @@ namespace ProyectoTech.Ui.Registros
             {
                 MessageBox.Show("Lista Vacia");
             }
-          
+
 
         }
 
@@ -897,8 +896,8 @@ namespace ProyectoTech.Ui.Registros
         {
 
             int data = dataGridViewVenta.RowCount;
-            //if (facturaG.FechaVenta.Day == DateTime.Now.Day)
-            //{
+            if (facturaG.FechaVenta.Day == DateTime.Now.Day)
+            {
 
 
                 if (data != 0)
@@ -921,12 +920,12 @@ namespace ProyectoTech.Ui.Registros
                     MessageBox.Show("-Opciones \n -Primero Registre Factura \n -Primero Busque factura");
                 }
 
-            //}
-            //else
+            }
+            else
 
-            //{
-            //    MessageBox.Show("Fecha de cambio expiro");
-            //}
+            {
+                MessageBox.Show("Fecha de cambio expiro");
+            }
 
         }
 

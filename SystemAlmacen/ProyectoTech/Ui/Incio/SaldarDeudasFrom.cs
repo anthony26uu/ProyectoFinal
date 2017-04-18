@@ -99,6 +99,7 @@ namespace ProyectoTech.Ui.Incio
             decimal deuda = 0;
             var guardar = new Entidades.Deudasclientes();
             int id = 0;
+          
             try
             {
 
@@ -107,16 +108,29 @@ namespace ProyectoTech.Ui.Incio
                     MessageBox.Show("Por favor llenar los campos");
                 }
                 else
-                {
-                    deuda = Convert.ToDecimal(deudaTextBox.Text) - Convert.ToDecimal(Efectivo_textBox.Text);
-                    guardar.Cliente = clienteTextBox.Text;
-                    guardar.Deuda = deuda;
-                    guardar.IdDeudas = (Utilidades.TOINT(idDeudasTextBox.Text));
-                    if (id != guardar.IdDeudas)
+                {if(string.IsNullOrWhiteSpace(Devuelta_textBox.Text))
                     {
-                        BLL.DeudasclientesBLL.Mofidicar(guardar);
-                        MessageBox.Show("Deuda Cliente modificada");
+                        MessageBox.Show("Primero Calcule devuleta");
                     }
+                else
+                    {
+                        deuda = Convert.ToDecimal(deudaTextBox.Text) - Convert.ToDecimal(Efectivo_textBox.Text);
+                        guardar.Cliente = clienteTextBox.Text;
+                        guardar.Deuda = deuda;
+                        guardar.IdDeudas = (Utilidades.TOINT(idDeudasTextBox.Text));
+                        if (Convert.ToUInt32(deudaTextBox.Text) == 0)
+                        {
+                            BLL.DeudasclientesBLL.Eliminar(guardar);
+                            MessageBox.Show("Deuda Cliente Eliminada debido a que es 0");
+                        }
+
+                        else if (id != guardar.IdDeudas)
+                        {
+                            BLL.DeudasclientesBLL.Mofidicar(guardar);
+                            MessageBox.Show("Deuda Cliente modificada");
+                        }
+                    }
+                   
 
 
                 }
@@ -173,12 +187,13 @@ namespace ProyectoTech.Ui.Incio
             {
                 decimal efevtivo = Convert.ToDecimal(Efectivo_textBox.Text);
                 decimal deuda = Convert.ToDecimal(deudaTextBox.Text);
-                decimal tota = efevtivo - deuda;
-                Devuelta_textBox.Text = tota.ToString();
-                if(efevtivo> Utilidades.TOINT(deudaTextBox.Text))
+                decimal total = efevtivo - deuda;
+                Devuelta_textBox.Text = total.ToString();
+                if(efevtivo>deuda)
                 {
                     deudaTextBox.Text = "0";
                 }
+                
             }
 
         }
