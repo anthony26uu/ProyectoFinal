@@ -233,8 +233,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            new Ui.Reportes.Ventanas_Reportes.CReporteDeudas(Lista).Show();
-            new Ui.Reportes.Ventanas_Reportes.CReporteDeudas(Lista).Activate();
+           
         }
     }
 }

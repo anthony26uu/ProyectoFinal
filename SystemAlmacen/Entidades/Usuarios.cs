@@ -13,8 +13,10 @@ namespace Entidades
         public string NombreUsuario { get; set; }
         public string PassUsuario { get; set; }
         public string Tipo { get; set; }
-        public Usuarios(int id, string nombreUsuario, string passUsuario, string tipo)
+        public DateTime FechaIngreso { get; set; }
+        public Usuarios(int id, string nombreUsuario, string passUsuario, string tipo, DateTime fechaIngreso)
         {
+            this.FechaIngreso = fechaIngreso;
             this.PassUsuario = passUsuario;
             this.Id = id;
             this.NombreUsuario = nombreUsuario;

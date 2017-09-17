@@ -369,8 +369,7 @@ namespace ProyectoTech.Ui.Conultas
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Show();
-            new Ui.Reportes.Ventanas_Reportes.CReporteFacturas(Lista).Activate();
+          
         }
 
         private void label3_Click(object sender, EventArgs e)

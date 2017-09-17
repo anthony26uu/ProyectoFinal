@@ -961,8 +961,7 @@ namespace ProyectoTech.Ui.Registros
 
             Lista = BLL.FacturaBLL.GetList(p => p.IdFactura == facturaG.IdFactura);
 
-            new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Show();
-            new Ui.Reportes.Ventanas_Reportes.CReporteDetalleF(listaRelaciones, Lista).Activate();
+           
         }
 
         private void buttonImprimir_Click(object sender, EventArgs e)

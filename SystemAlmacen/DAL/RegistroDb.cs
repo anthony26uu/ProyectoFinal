@@ -22,5 +22,6 @@ namespace DAL
         public DbSet<Categorias> categoriaDb { get; set; }
         public DbSet<FacturaDetalles> RelacionDb { get; set; }
         public DbSet<Facturas> FacturasDb { get; set; }
+       
     }
 }

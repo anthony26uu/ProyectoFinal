@@ -204,26 +204,22 @@ namespace ProyectoTech.Ui.Incio
 
         private void articulosToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Ui.Reportes.Ventanas_Reportes.CReporteArticulos.Funcion().Show();
-            Ui.Reportes.Ventanas_Reportes.CReporteArticulos.Funcion().Activate();
+           
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ui.Reportes.Ventanas_Reportes.CReporteCategorias.Funcion().Show();
-            Ui.Reportes.Ventanas_Reportes.CReporteCategorias.Funcion().Activate();
+          
         }
 
         private void clientesToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Ui.Reportes.Ventanas_Reportes.CReporteClientes.Funcion().Show();
-            Ui.Reportes.Ventanas_Reportes.CReporteClientes.Funcion().Activate();
+          
         }
 
         private void facturasVendidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ui.Reportes.Ventanas_Reportes.CReporteFacturas.Funcion().Show();
-            Ui.Reportes.Ventanas_Reportes.CReporteFacturas.Funcion().Activate();
+         
         }
 
         private void Inicio_FormClosed(object sender, FormClosedEventArgs e)
