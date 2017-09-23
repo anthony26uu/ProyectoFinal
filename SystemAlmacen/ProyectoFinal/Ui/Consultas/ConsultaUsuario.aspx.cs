@@ -28,24 +28,24 @@ namespace ProyectoFinal.Ui.Consultas
 
         public void Selecionar(int id)
         {
-          
-          
+
+
 
             if (DropFiltro.SelectedIndex == 0)
             {
                 buscaText.Text = "";
-                
+
 
                 if (BLL.UserBLL.GetListodo().Count == 0)
                 {
-                   
-                    MessageBox.Show("No se han registrado Usuarios");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Usuarios');</script>");
+
                 }
                 else
                 {
                     Lista = BLL.UserBLL.GetListodo();
                     UsuarioGrid.DataSource = Lista;
-                    
+
 
                 }
             }
@@ -53,12 +53,14 @@ namespace ProyectoFinal.Ui.Consultas
             {
                 if (string.IsNullOrWhiteSpace(buscaText.Text))
                 {
-                    MessageBox.Show("Campo ID Vaccio");
+
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Campo ID Vaccio');</script>");
+
                 }
                 else
                 {
 
-                   
+
                     if (BLL.UserBLL.GetList(p => p.Id == id) != null)
                     {
                         Lista = BLL.UserBLL.GetList(p => p.Id == id);
@@ -72,12 +74,55 @@ namespace ProyectoFinal.Ui.Consultas
                     }
                     else if (UsuarioGrid.DataSource == null)
                     {
-                        MessageBox.Show("Id No Existe");
-                       
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se han registrado Usuarios con este Id');</script>");
+
+
                     }
 
                 }
             }
+
+            else if (DropFiltro.SelectedIndex == 2)
+            {
+
+                DateTime desde = Convert.ToDateTime(desdeFecha.Text);
+                DateTime hasta = Convert.ToDateTime(desdeFecha.Text);
+
+                if (desdeFecha.Text != "" && hastaFecha.Text != "")
+                {
+                    if (desde <= hasta)
+                    {
+                        Lista = BLL.UserBLL.GetList(p => p.FechaIngreso >= desde && p.FechaIngreso <= hasta);
+                        UsuarioGrid.DataSource = Lista;
+                        UsuarioGrid.DataBind();
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida debe ser menor');</script>");
+                    }
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Ingrese Fecha');</script>");
+                }
+
+
+            }
+            else if (DropFiltro.SelectedIndex == 3)
+            {
+                if (buscaText.Text == "")
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debe escribir el Nombre a buscar');</script>");
+                }
+                else
+                {
+                    Lista = BLL.UserBLL.GetList(p => p.NombreUsuario == buscaText.Text);
+                    UsuarioGrid.DataSource = Lista;
+                    UsuarioGrid.DataBind();
+                }
+
+            }
+
 
 
         }
@@ -100,6 +145,11 @@ namespace ProyectoFinal.Ui.Consultas
 
         protected void DropFiltro_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

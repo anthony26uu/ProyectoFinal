@@ -98,13 +98,16 @@ namespace ProyectoFinal.Ui.Registros
 
                 if (!Validar())
                 {
-                    MessageBox.Show("Por favor llenar los campos");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Por favor llenar los campos');</script>");
+
                 }
                 else
                 {
                     if (!validarUser())
                     {
-                        MessageBox.Show("Nombre de usuario ya existe");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nombre de usuario ya existe');</script>");
+
+
                     }
                     else
                     {
@@ -121,7 +124,10 @@ namespace ProyectoFinal.Ui.Registros
                             if (id != guardar.Id)
                             {
                                 BLL.UserBLL.Mofidicar(guardar);
-                                MessageBox.Show("Usuario modificado con exito");
+
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Usuario modificado con exito');</script>");
+
+                             
                             }
                             else
                             {
@@ -153,8 +159,9 @@ namespace ProyectoFinal.Ui.Registros
             if (string.IsNullOrWhiteSpace(TextBoxID.Text))
             {
 
-               MessageBox.Show("No Existe Usuario con este id");
-              
+
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Usuario con este ido');</script>");
+
 
                 Limpiar();
             }
@@ -173,15 +180,17 @@ namespace ProyectoFinal.Ui.Registros
                     TextBoxConfirm.Text = user.PassUsuario;
                     TextFecha.Text = Convert.ToString(user.FechaIngreso);
 
-                    MessageBox.Show("Contraseña omitida por Seguridad");
 
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Contraseña omitida por Seguridad');</script>");
+
+                    
                 }
                 else
                 {
 
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Usuario con este ido');</script>");
+                
                     
-
-                    MessageBox.Show("No Existe Usuario con este id");
                 }
             }
 
@@ -192,7 +201,10 @@ namespace ProyectoFinal.Ui.Registros
 
             if (string.IsNullOrWhiteSpace(TextBoxID.Text))
             {
-                MessageBox.Show( "No Existe Usuario con este id");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Usuario con este id');</script>");
+
+
+             
                 Limpiar();
 
 
@@ -205,13 +217,15 @@ namespace ProyectoFinal.Ui.Registros
                 if (BLL.UserBLL.Eliminar(user))
                 {
 
-                    MessageBox.Show("El Usuario se ha Eliminado  con exito.");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Usuario se ha Eliminado  con exito');</script>");
+
                     Limpiar();
                 }
                 else
                 {
-                  
-                    MessageBox.Show("No se pudo eliminar El usuario.");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar El usuario');</script>");
+
+                 
                 }
             }
         }
@@ -222,6 +236,11 @@ namespace ProyectoFinal.Ui.Registros
         }
 
         protected void TextBoxPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DropTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
