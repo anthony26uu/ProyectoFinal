@@ -145,10 +145,9 @@
         </header>
 
          
-        <div class="Central">
-     
-          <asp:Label ID="Label1" runat="server" Text="Selecione"></asp:Label>
-          <asp:DropDownList ID="DropFiltro" runat="server" OnSelectedIndexChanged="DropFiltro_SelectedIndexChanged" OnTextChanged="DropFiltro_TextChanged"> 
+       
+          <span class="label label-primary">Selecione-</span>
+          <asp:DropDownList ID="DropFiltro" CssClass="custom-select" runat="server" Height="30px" OnSelectedIndexChanged="DropFiltro_SelectedIndexChanged" OnTextChanged="DropFiltro_TextChanged"> 
             
               <asp:ListItem>Todo</asp:ListItem>
               <asp:ListItem>ID</asp:ListItem>
@@ -160,34 +159,43 @@
 
        
            
+          <span class="label label-primary">ID / Nombre</span>
         
-          <asp:Label ID="Label2" runat="server" Text="ID / Nombre"></asp:Label>
-          <asp:TextBox ID="buscaText" runat="server" OnTextChanged="buscaText_TextChanged"></asp:TextBox>
+          <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="30px" OnTextChanged="buscaText_TextChanged"></asp:TextBox>
           <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
               <br />
-            <label for="Desde:">
+              <br />
+        
+         <span class="label label-primary">Desde</span>
+          
             Desde </label>
-            &nbsp;<asp:TextBox ID="desdeFecha" runat="server" Width="141px"></asp:TextBox>
-            <label for="hasta">
-            Hasta</label>
-            <asp:TextBox ID="hastaFecha" runat="server" Width="162px"></asp:TextBox>
-              </div>
 
-            <div class="Central"> 
+            &nbsp;&nbsp;<asp:TextBox ID="desdeFecha"  class="input-lg" placeholder="00/00/0000 "  runat="server" Width="141px" Height="30px"></asp:TextBox>
+          &nbsp;&nbsp;  <span class="label label-primary">Hasta</span>
+            
+            <asp:TextBox ID="hastaFecha"   class="input-lg" placeholder="00/00/0000 " runat="server" Height="30px" Width="162px"></asp:TextBox>
+          <br />    
+        <br />
+             
+
+
                 <asp:GridView ID="UsuarioGrid" runat="server">
                 </asp:GridView>
                 <br />
                 <asp:ImageButton ID="ImageButton1" runat="server" />
-        </div>
-
+     
 
         </form>
-    <footer>
-            <div class="page-footer">
-                <p>Anthony Santana 2014-0527.</p>
+             <!--Mensaje de copyright -->
+        <div class="list-group-item-success">
 
-            </div>
-        </footer>
+            <div class="text-center">
+
+           
+             
+                <p><span class="glyphicon glyphicon-copyright-mark"></span>     Anthony Javier Santana  Polanco 2014-0527       </p>
+           
+                    </div>
             
 
 </body>
