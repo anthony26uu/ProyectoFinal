@@ -10,16 +10,17 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
 {
     public partial class UsuarioReport : System.Web.UI.Page
     {
-        Consultas.ConsultaUsuario usuarioC = new Consultas.ConsultaUsuario();
+      
 
-        protected void Page_Load(object sender, EventArgs e)
+
+    protected void Page_Load(object sender, EventArgs e)
         {
            this. ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             this.ReportViewer1.Reset();
 
           
             this.ReportViewer1.LocalReport.ReportPath = @"C:\Users\antho\Desktop\Aplicada II\Repos\ProyectoFinal\SystemAlmacen\ProyectoFinal\Ui\Reportes\UsuariosReport.rdlc";
-            ReportViewer1.LocalReport.DataSources.Clear();
+            this.ReportViewer1.LocalReport.DataSources.Clear();
 
 
 
