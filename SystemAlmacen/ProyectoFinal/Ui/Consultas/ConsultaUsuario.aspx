@@ -181,6 +181,8 @@
 
                 <asp:GridView ID="UsuarioGrid" runat="server">
                 </asp:GridView>
+    
+                <asp:LinkButton ID="LinkButton1"  href="../Reportes/Ventanas/UsuarioReport.aspx"  runat="server">LinkButton</asp:LinkButton>
                 <br />
                 <asp:ImageButton ID="ImageButton1" runat="server" Height="56px" ImageUrl="~/Ui/Logos/Impresora.png" OnClick="ImageButton1_Click1" Width="68px" />
      
