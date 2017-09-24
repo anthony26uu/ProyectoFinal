@@ -105,6 +105,28 @@
     <Content Include="Ui\Reportes\ClienteReport.rdlc" />
     <Content Include="Ui\Reportes\DeudasReport.rdlc" />
     <Content Include="Ui\Reportes\FacturaReport.rdlc" />
+    <Content Include="RegistrosDbDataSet.xsc">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="RegistrosDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegistrosDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="RegistrosDbDataSet.xss">
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="UsuarioDataSet.xsc">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="UsuarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="UsuarioDataSet.xss">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,6 +181,11 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Ui\Consultas\ConsultaArticulos.aspx.cs">
@@ -244,6 +271,11 @@
     </Compile>
     <Compile Include="Ui\SaldarDeudas.aspx.designer.cs">
       <DependentUpon>SaldarDeudas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

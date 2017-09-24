@@ -20,8 +20,7 @@ namespace ProyectoFinal.Ui.Consultas
             Usuarios user = new Usuarios();
             UsuarioGrid.DataSource = BLL.UserBLL.GetListodo();
             UsuarioGrid.DataBind();
-          
-
+            Lista= BLL.UserBLL.GetListodo(); 
 
 
 
@@ -158,7 +157,7 @@ namespace ProyectoFinal.Ui.Consultas
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
         {
-            new Ui.Reportes.Ventanas.UsuarioReport(Lista);
+         
 
         }
 

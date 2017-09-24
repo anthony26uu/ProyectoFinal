@@ -14,7 +14,7 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+           this. ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             this.ReportViewer1.Reset();
 
           
@@ -22,35 +22,16 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
             ReportViewer1.LocalReport.DataSources.Clear();
 
 
-            ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Usuarios", Consultas.ConsultaUsuario.Lista));
-            ReportViewer1.LocalReport.Refresh();
+
+            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSet", Consultas.ConsultaUsuario.Lista));
+
+            this.ReportViewer1.LocalReport.Refresh();
+
+            
 
 
-
-            //        ReportViewer1.LocalReport.ReportPath = Server.MapPath(@"Usuario.rdlc");
-
-
-
-
-        }
-
-        public UsuarioReport()
-        {
-
-        }
-
-    
-        
-        public List<Entidades.Usuarios> Lista { get; set; }
-
-        public UsuarioReport(List<Entidades.Usuarios> lista)
-        {
-            this.Lista = lista;
         }
         
-      
-
-
 
     }
 }
