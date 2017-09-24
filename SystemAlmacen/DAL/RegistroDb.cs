@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 
@@ -22,6 +23,12 @@ namespace DAL
         public DbSet<Categorias> categoriaDb { get; set; }
         public DbSet<FacturaDetalles> RelacionDb { get; set; }
         public DbSet<Facturas> FacturasDb { get; set; }
-       
+
+
     }
+
+
+
+   
+
 }

@@ -1,7 +1,10 @@
-﻿using Entidades;
+﻿using DAL;
+using Entidades;
 using ProyectoTech;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +27,8 @@ namespace ProyectoFinal.Ui.Consultas
 
         }
 
-        public List<Entidades.Usuarios> Lista { get; set; }
+
+        public static List<Entidades.Usuarios> Lista { get; set; }
 
         public void Selecionar(int id)
         {
@@ -154,7 +158,18 @@ namespace ProyectoFinal.Ui.Consultas
 
         protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("UsuarioReport.aspx");
+            new Ui.Reportes.Ventanas.UsuarioReport(Lista);
+
         }
+
+
+        
+
+        
+
     }
+
+    
+   
+
 }

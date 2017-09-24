@@ -13,19 +13,13 @@
  
 
     
-      <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-    </asp:ScriptManager>
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Width="785px" BackColor="" ClientIDMode="AutoID" Height="647px" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
-   <ServerReport ReportServerUrl="http://AContosoDepartment/ReportServer" ReportPath="Ui\Reportes\UsuariosReport.rdlc"/>
-        <localreport reportpath="Ui\Reportes\UsuariosReport.rdlc">
-            <datasources>
-                <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="UsuarioSet" />
-            </datasources>
-        </localreport>
+       <form id="formulario" runat="server">
+        <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Local" Height="715px" Width="967px" style="margin-right: 57px">
+            <ServerReport ReportPath="" ReportServerUrl="" />
         </rsweb:ReportViewer>
-           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrosDbConnectionString2 %>" SelectCommand="SELECT [Id], [nombreUsuario], [PassUsuario], [Tipo], [FechaIngreso] FROM [Usuarios]"></asp:SqlDataSource>
-           </form>
+
+    </form>
 
 </body>
 </html>
