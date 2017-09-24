@@ -151,5 +151,10 @@ namespace ProyectoFinal.Ui.Consultas
         {
 
         }
+
+        protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("UsuarioReport.aspx");
+        }
     }
 }

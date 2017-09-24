@@ -130,6 +130,7 @@
     <Content Include="Ui\Inicio.aspx" />
     <Content Include="Ui\Logos\find-file.ico" />
     <Content Include="Ui\Logos\iconos-para-prestamos_credixpress-05.png" />
+    <Content Include="Ui\Logos\Impresora.png" />
     <Content Include="Ui\Logos\logo-elalmacen.png" />
     <Content Include="Ui\Logos\logo.png" />
     <Content Include="Ui\Logos\mercadona-729845.gif" />

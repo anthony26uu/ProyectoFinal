@@ -182,7 +182,7 @@
                 <asp:GridView ID="UsuarioGrid" runat="server">
                 </asp:GridView>
                 <br />
-                <asp:ImageButton ID="ImageButton1" runat="server" />
+                <asp:ImageButton ID="ImageButton1" runat="server" Height="56px" ImageUrl="~/Ui/Logos/Impresora.png" OnClick="ImageButton1_Click1" Width="68px" />
      
 
         </form>
