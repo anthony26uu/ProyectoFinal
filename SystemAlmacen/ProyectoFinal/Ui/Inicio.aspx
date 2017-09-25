@@ -89,9 +89,9 @@
       
            
           
-            <h2 class="page-header text-center">
+            <h1 class="page-header text-center">
 
-                  Consulta Usuario <span class="glyphicon glyphicon-shopping-cart"></span></h2>
+                  EL ALMACEN  <span class="glyphicon glyphicon-shopping-cart"></span></h1>
 
 	<body>
       
@@ -135,9 +135,23 @@
 	</body>
 </html>
 
-                     
+
+    
          
             <p>
+                  <h1 class="page-header text-center">
+
+                 <Tipo botón = "botón" class = "glyphicon glyphicon-shopping-cart" style = "font-size: 60px">
+                      
+
+ </ Button>
+
+
+
+      
+          
+
+
                <asp:Image ID="Image2" runat="server" Height="230px" ImageUrl="~/Ui/Logos/logo-elalmacen.png" Width="383px" />
         </p>
            

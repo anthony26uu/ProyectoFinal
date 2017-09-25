@@ -153,7 +153,8 @@
         <span class="label label-primary">ID Usuario</span>
          
             <asp:TextBox ID="TextBoxID" class="input-lg" placeholder="ID a buscar "  runat="server"   Height="30px"  Width="160px"></asp:TextBox>
-            <asp:Button ID="BotonBuscar" CssClass="btn btn-primary btn-md boton" runat="server" Text="Buscar" OnClick="BotonBuscar_Click" Height="32px" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBoxID" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
+            <asp:Button ID="BotonBuscar" CssClass="btn btn-primary btn-md boton" runat="server" Text="Buscar" OnClick="BotonBuscar_Click" Height="32px" ValidationGroup="buscar" />
         
              <br />
         
@@ -166,6 +167,8 @@
    
            <!--Texbox -->
         
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxNombre" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+        
                <asp:TextBox ID="TextFecha" runat="server" placeholder="00/00/0000 "  class="input-lg" OnTextChanged="TextFecha_TextChanged" ReadOnly="True" Width="199px" Height="30px"></asp:TextBox>
 
        
@@ -174,9 +177,14 @@
                 <asp:TextBox ID="TextBoxPass" placeholder="Contraseña"  class="input-lg" TextMode="Password" runat="server" OnTextChanged="TextBoxPass_TextChanged"  Height="30px" Width="199px"></asp:TextBox>
 
        
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPass" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
+
+       
                   <!--Texbox -->
 
                         <asp:TextBox ID="TextBoxConfirm" placeholder="Confirma Pass"  class="input-lg"  TextMode="Password" runat="server"    Height="30px" Width="199px"></asp:TextBox>
+
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxConfirm" ErrorMessage="**" Font-Bold="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
 
                <!--Select -->
                
@@ -194,8 +202,8 @@
          
              <div class="left">
                 <asp:Button ID="Button4"  CssClass="btn btn-primary btn-md boton"  runat="server" Text="Nuevo" OnClick="ButtonNuevo_Click" Height="36px" Width="88px" />
-                <asp:Button ID="Button2" CssClass="btn btn-primary btn-md boton"  runat="server" Text="Guardar" OnClick="Guardar_Click" Height="36px" Width="88px" />
-                <asp:Button ID="Button3" CssClass="btn btn-primary btn-md boton"  runat="server" Text="Eliminar" OnClick="Eliminar_Click" Height="36px" Width="88px" />
+                <asp:Button ID="Button2" CssClass="btn btn-primary btn-md boton"  runat="server" Text="Guardar" OnClick="Guardar_Click" Height="36px" Width="88px" ValidationGroup="guardar" />
+                <asp:Button ID="Button3" CssClass="btn btn-primary btn-md boton"  runat="server" Text="Eliminar" OnClick="Eliminar_Click" Height="36px" Width="88px" ValidationGroup="buscar" />
             </div>
                       
           <br />

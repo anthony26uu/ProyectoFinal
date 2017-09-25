@@ -18,6 +18,18 @@ namespace ProyectoFinal.Ui.Registros
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+            this.TextFecha.Text = string.Format("{0:G}", DateTime.Now);
+
+
+
+            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
+            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
+            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
+            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
+            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+
         }
 
         private void Limpiar()
@@ -26,6 +38,11 @@ namespace ProyectoFinal.Ui.Registros
             TextBoxConfirm.Text = "";
             TextBoxNombre.Text = "";
             TextBoxPass.Text = "";
+            RequiredFieldValidator1.Text = "";
+            RequiredFieldValidator2.Text = "";
+            RequiredFieldValidator3.Text = "";
+            RequiredFieldValidator3.Text = "";
+            RequiredFieldValidator5.Text = "";
             DropTipo.Text = null;
 
         }
@@ -65,29 +82,7 @@ namespace ProyectoFinal.Ui.Registros
             Limpiar();
         }
 
-        private bool Validar()
-        {
-            bool retorno = true;
-            if (string.IsNullOrWhiteSpace(TextBoxNombre.Text))
-            {
-              
-                retorno = false;
-            }
-            if (string.IsNullOrWhiteSpace(TextBoxPass.Text))
-            {
-               
-                retorno = false;
-            }
-            if (string.IsNullOrWhiteSpace(TextBoxConfirm.Text))
-            {
-              
-                retorno = false;
-            }
-           
-            return retorno;
-
-        }
-
+       
         protected void Guardar_Click(object sender, EventArgs e)
         {
 
@@ -95,54 +90,53 @@ namespace ProyectoFinal.Ui.Registros
             int id = 0;
             try
             {
-
-                if (!Validar())
+                if (IsValid)
                 {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Por favor llenar los campos');</script>");
-
-                }
-                else
-                {
+                   
                     if (!validarUser())
-                    {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nombre de usuario ya existe');</script>");
-
-
-                    }
-                    else
-                    {
-                        guardar.Id = (Utilidades.TOINT(TextBoxID.Text));
-                        guardar.NombreUsuario = TextBoxNombre.Text;
-                        guardar.PassUsuario = TextBoxPass.Text;
-                        guardar.Tipo = DropTipo.Text;
-                        guardar.FechaIngreso = DateTime.Now;
-                      
-
-
-                        if (TextBoxPass.Text == TextBoxConfirm.Text)
                         {
-                            if (id != guardar.Id)
-                            {
-                                BLL.UserBLL.Mofidicar(guardar);
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nombre de usuario ya existe');</script>");
 
-                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Usuario modificado con exito');</script>");
 
-                             
-                            }
-                            else
-                            {
-                                BLL.UserBLL.Guardar(guardar);
-                                MessageBox.Show("Nuevo usuario agregado!");
-                            }
                         }
                         else
                         {
-                           
-                            MessageBox.Show("CAMPOS  contraseña No Coninciden");
+                            guardar.Id = (Utilidades.TOINT(TextBoxID.Text));
+                            guardar.NombreUsuario = TextBoxNombre.Text;
+                            guardar.PassUsuario = TextBoxPass.Text;
+                            guardar.Tipo = DropTipo.Text;
+                            guardar.FechaIngreso = Convert.ToDateTime(TextFecha.Text);
 
-                        }
+
+
+                            if (TextBoxPass.Text == TextBoxConfirm.Text)
+                            {
+                                if (id != guardar.Id)
+                                {
+                                    BLL.UserBLL.Mofidicar(guardar);
+
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Usuario modificado con exito');</script>");
+
+
+                                }
+                                else
+                                {
+                                    BLL.UserBLL.Guardar(guardar);
+                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nuevo usuario agregado!');</script>");
+
+
+                                }
+                            }
+                            else
+                            {
+                                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Campos Contraseña no coninciden');</script>");
+
+
+
+                            }
+                        
+
                     }
-
                 }
                 Limpiar();
             }

@@ -20,8 +20,9 @@ namespace ProyectoFinal.Ui.Consultas
             Usuarios user = new Usuarios();
             UsuarioGrid.DataSource = BLL.UserBLL.GetListodo();
             UsuarioGrid.DataBind();
-            Lista= BLL.UserBLL.GetListodo(); 
+            Lista= BLL.UserBLL.GetListodo();
 
+          
 
 
         }
