@@ -57,24 +57,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.74342cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.74342cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.74342cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.74342cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.74342cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.57354cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -85,7 +85,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id</Value>
+                              <Value>ID</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -115,7 +115,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nombre Usuario</Value>
+                              <Value>Nombre Usuario</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -145,7 +145,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Pass Usuario</Value>
+                              <Value>Contraseña</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -175,7 +175,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo</Value>
+                              <Value>Tipo Usuario</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -229,7 +229,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.57354cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -407,8 +407,8 @@
         <DataSetName>DataSet</DataSetName>
         <Top>2.83917cm</Top>
         <Left>1.48906cm</Left>
-        <Height>1.2cm</Height>
-        <Width>12.5cm</Width>
+        <Height>1.14708cm</Height>
+        <Width>13.71708cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

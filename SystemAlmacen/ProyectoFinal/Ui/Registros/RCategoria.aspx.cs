@@ -16,19 +16,17 @@ namespace ProyectoFinal.Ui
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+            ScriptResourceDefinition myScriptResDef = new ScriptResourceDefinition();
+            myScriptResDef.Path = "~/Scripts/jquery-1.4.2.min.js";
+            myScriptResDef.DebugPath = "~/Scripts/jquery-1.4.2.js";
+            myScriptResDef.CdnPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js";
+            myScriptResDef.CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js";
+            ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, myScriptResDef);
+
         }
 
-        private bool Validar()
-        {
-            bool retorno = true;
-            if (string.IsNullOrWhiteSpace(Textnombre.Text))
-            {
-                MessageBox.Show("CAMPO VACIO");
-                retorno = false;
-            }
-            return retorno;
-        }
-
+       
         protected void Button3_Click(object sender, EventArgs e)
         {
 
@@ -36,25 +34,25 @@ namespace ProyectoFinal.Ui
             int id = 0;
             try
             {
-
-                if (!Validar())
-                {
-                    MessageBox.Show("Por favor llenar los campos");
-                }
-                else
+                if (IsValid)
                 {
 
+              
                     guardar.NombreCategoria = Textnombre.Text;
                     guardar.CategoriaId = (Utilidades.TOINT(Textid.Text));
                     if (id != guardar.CategoriaId)
                     {
                         CategoriaBLL.Mofidicar(guardar);
-                        MessageBox.Show("Categoria modificada");
+
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Categoria modificada');</script>");
+
+                        
                     }
                     else
                     {
                         CategoriaBLL.Guardar(guardar);
-                        MessageBox.Show("Nueva Categoria agregada con exito!");
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nueva Categoria agregada con exito!');</script>");
+
                         Limpiar();
                     }
 
@@ -63,16 +61,18 @@ namespace ProyectoFinal.Ui
             }
             catch (Exception)
             {
-                MessageBox.Show("Por favor llenar los campos");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Por favor llenar los campos');</script>");
+
+               
                 throw;
             }
         }
 
         private void Limpiar()
         {
-
+            RequiredFieldValidator1.Text = "";
+            RequiredFieldValidator2.Text = "";
             Textnombre.Text = "";
-
             Textid.Text ="";
         }
 
@@ -94,14 +94,14 @@ namespace ProyectoFinal.Ui
                 var user = CategoriaBLL.Buscar(p => p.CategoriaId == id);
                 if (BLL.CategoriaBLL.Eliminar(user))
                 {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('El Tipo se ha Eliminado  con exito');</script>");
 
-                    MessageBox.Show("El Tipo se ha Eliminado  con exito.");
                     Limpiar();
                 }
                 else
                 {
-                   
-                    MessageBox.Show("No se pudo eliminar la categoria.");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No se pudo eliminar la categoria.');</script>");
+
                 }
 
             }
@@ -118,7 +118,8 @@ namespace ProyectoFinal.Ui
         {
             if (string.IsNullOrWhiteSpace(Textid.Text))
             {
-                MessageBox.Show("No Existe Cliente con este id");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No Existe Cliente con este id');</script>");
+
             }
             else
             {
@@ -130,11 +131,13 @@ namespace ProyectoFinal.Ui
                 {
 
                     Textnombre.Text = tipo.NombreCategoria;
-                    MessageBox.Show("Resultados de su busqueda");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Resultados de su busqueda');</script>");
+
                 }
                 else
                 {
-                    MessageBox.Show("No existe ninguna categoria con ese Id.");
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('No existe ninguna categoria con ese Id.');</script>");
+
                 }
             }
         }

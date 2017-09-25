@@ -117,6 +117,7 @@
 						<li><a href="../Consultas/ConsultaArticulos.aspx">Articulos</a></li>
 						<li><a href="../Consultas/ConsultaClientes.aspx">Clientes</a></li>
 						<li><a href="../Consultas/ConsultaDeudas.aspx">Deudas</a></li>
+                        <li><a href="../Consultas/ConsultaCategorias.aspx">Categorias</a></li>
 					</ul>
 				</li>
 				<li><a href="../SaldarDeudas.aspx">Sadar Deudas</a></li>
@@ -162,7 +163,8 @@
           <span class="label label-primary">ID / Nombre</span>
         
           <asp:TextBox ID="buscaText" runat="server"    class="input-lg" placeholder="ID a buscar" Height="30px" OnTextChanged="buscaText_TextChanged"></asp:TextBox>
-          <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="Button1_Click" />
+         <asp:Button ID="Button1" runat="server" Text="Buscar" Height="36px" Width="88px" CssClass="btn btn-primary btn-md boton" OnClick="Button1_Click" />
+ 
               <br />
               <br />
         
@@ -181,9 +183,10 @@
 
                 <asp:GridView ID="UsuarioGrid" runat="server">
                 </asp:GridView>
-    
-                <asp:LinkButton ID="LinkButton1"  href="../Reportes/Ventanas/UsuarioReport.aspx"  runat="server">Imprimir</asp:LinkButton>
-                <br />
+        <a href="../Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-print"></span> Imprimir
+        </a> 
+               <br />
      
 
         </form>

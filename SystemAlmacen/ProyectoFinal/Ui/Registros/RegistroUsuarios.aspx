@@ -121,6 +121,7 @@
 						<li><a href="../Consultas/ConsultaArticulos.aspx">Articulos</a></li>
 						<li><a href="../Consultas/ConsultaClientes.aspx">Clientes</a></li>
 						<li><a href="../Consultas/ConsultaDeudas.aspx">Deudas</a></li>
+                        <li><a href="../Consultas/ConsultaCategorias.aspx">Categorias</a></li>
 					</ul>
 				</li>
 				<li><a href="../SaldarDeudas.aspx">Sadar Deudas</a></li>
@@ -159,6 +160,7 @@
              <br />
         
         <br />
+                   <br />
               <!--Texbox -->
              
              <div class="input-group">

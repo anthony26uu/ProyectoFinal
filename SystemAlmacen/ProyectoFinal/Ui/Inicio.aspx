@@ -115,6 +115,7 @@
 						<li><a href="Consultas/ConsultaArticulos.aspx">Articulos</a></li>
 						<li><a href="Consultas/ConsultaClientes.aspx">Clientes</a></li>
 						<li><a href="Consultas/ConsultaDeudas.aspx">Deudas</a></li>
+                        <li><a href="Consultas/ConsultaCategorias.aspx">Categorias</a></li>
 					</ul>
 				</li>
 				<li><a href="SaldarDeudas.aspx">Sadar Deudas</a></li>
@@ -138,27 +139,21 @@
 
     
          
-            <p>
-                  <h1 class="page-header text-center">
-
-                 <Tipo botón = "botón" class = "glyphicon glyphicon-shopping-cart" style = "font-size: 60px">
-                      
-
- </ Button>
-
-
-
-      
-          
-
-
-               <asp:Image ID="Image2" runat="server" Height="230px" ImageUrl="~/Ui/Logos/logo-elalmacen.png" Width="383px" />
-        </p>
-           
-  
-        </div>
-
+    
     </form>
+    </div>
+        <!--Mensaje de copyright -->
+        <div class="list-group-item-success">
+
+            <div class="text-center">
+
+           
+             
+                <p><span class="glyphicon glyphicon-copyright-mark"></span>     Anthony Javier Santana  Polanco 2014-0527       </p>
+           
+                    </div>
+                
+       </div>
     <p>
         </p>
 </body>

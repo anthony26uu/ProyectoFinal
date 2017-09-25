@@ -114,6 +114,7 @@
 						<li><a href="../Consultas/ConsultaArticulos.aspx">Articulos</a></li>
 						<li><a href="../Consultas/ConsultaClientes.aspx">Clientes</a></li>
 						<li><a href="../Consultas/ConsultaDeudas.aspx">Deudas</a></li>
+                        <li><a href="../Consultas/ConsultaCategorias.aspx">Categorias</a></li>
 					</ul>
 				</li>
 				<li><a href="../SaldarDeudas.aspx">Sadar Deudas</a></li>
@@ -141,7 +142,7 @@
 
           <h1 class="page-header text-center">
 
-                  Registro Categoria <span class="  glyphicon glyphicon-shopping-cart"></span></h1  >
+                  Registro Categoria <span class=" 	glyphicon glyphicon-list-alt"></span></h1  >
          
 
         
@@ -150,11 +151,14 @@
            
                 
              <span class="label label-primary">ID Categoria</span>
-              <asp:TextBox ID="Textid" placeholder="Id a Buscar"  class="input-lg"  runat="server" Height="30px" Width="134px"></asp:TextBox>
+              <asp:TextBox ID="Textid" placeholder="Id a Buscar"  class="input-lg"  runat="server" Height="30px" Width="134px" ValidationGroup="buscar"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Textid" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="buscar"></asp:RequiredFieldValidator>
               <asp:Button ID="Button1"  CssClass="btn btn-primary btn-md boton" runat="server" Text="Buscar" OnClick="Button1_Click" Height="31px" />
      
     
              <asp:TextBox ID="Textnombre"  placeholder="Descripcion" class="input-lg" runat="server" Height="30px" Width="162px"></asp:TextBox>
+ 
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Textnombre" ErrorMessage="**" Font-Bold="True" Font-Italic="True" ForeColor="Red" ValidationGroup="guardar"></asp:RequiredFieldValidator>
  
            <br />
                 <br />
@@ -163,8 +167,8 @@
          
              <div class="left">
         <asp:Button ID="Button2"  CssClass="btn btn-primary btn-md boton" runat="server" Text="Nuevo" OnClick="Button2_Click" Height="36px" />
-        <asp:Button ID="Button3"  CssClass="btn btn-primary btn-md boton" runat="server" OnClick="Button3_Click" Text="Guardar" Height="36px" />
-        <asp:Button ID="Button4"  CssClass="btn btn-primary btn-md boton" runat="server" Text="Eliminar" OnClick="Button4_Click" Height="36px" />
+        <asp:Button ID="Button3"  CssClass="btn btn-primary btn-md boton" runat="server" OnClick="Button3_Click" Text="Guardar" Height="36px" ValidationGroup="guardar" />
+        <asp:Button ID="Button4"  CssClass="btn btn-primary btn-md boton" runat="server" Text="Eliminar" OnClick="Button4_Click" Height="36px" ValidationGroup="buscar" />
   </div>
 
     </form>
