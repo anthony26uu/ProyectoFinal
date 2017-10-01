@@ -39,9 +39,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox82</rd:DefaultName>
         <Top>0.37469cm</Top>
-        <Left>0.00198cm</Left>
+        <Left>0.71636cm</Left>
         <Height>1.52604cm</Height>
-        <Width>15.79365cm</Width>
+        <Width>14.48981cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -57,19 +57,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.74342cm</Width>
+              <Width>2.89796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.74342cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.74342cm</Width>
+              <Width>2.89796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.74342cm</Width>
+              <Width>2.89796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.74342cm</Width>
+              <Width>2.89796cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -108,21 +108,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Textbox18">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre Usuario</Value>
+                              <Value>nombre Usuario</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -289,6 +289,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -406,9 +407,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet</DataSetName>
         <Top>2.83917cm</Top>
-        <Left>1.48906cm</Left>
+        <Left>0.71636cm</Left>
         <Height>1.14708cm</Height>
-        <Width>13.71708cm</Width>
+        <Width>14.09184cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

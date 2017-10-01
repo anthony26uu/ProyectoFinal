@@ -30,9 +30,11 @@
 <style type="text/css">
 			
 			* {
-				margin:0px;
 				padding:0px;
-			}
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 			
 			#header {
                 border:ridge;
@@ -172,16 +174,25 @@
           
             Desde </label>
 
-            &nbsp;&nbsp;<asp:TextBox ID="desdeFecha"  class="input-lg" placeholder="00/00/0000 "  runat="server" Width="141px" Height="30px"></asp:TextBox>
+            &nbsp;&nbsp;<asp:TextBox ID="desdeFecha"  class="input-lg" TextMode="Date"  runat="server" Width="198px" Height="30px"></asp:TextBox>
           &nbsp;&nbsp;  <span class="label label-primary">Hasta</span>
             
-            <asp:TextBox ID="hastaFecha"   class="input-lg" placeholder="00/00/0000 " runat="server" Height="30px" Width="162px"></asp:TextBox>
+            <asp:TextBox ID="hastaFecha"   class="input-lg" TextMode="Date"  runat="server" Height="30px" Width="195px"></asp:TextBox>
           <br />    
         <br />
              
 
 
-                <asp:GridView ID="UsuarioGrid" runat="server">
+                <asp:GridView ID="UsuarioGrid" runat="server" BackColor="White"  BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px"  Height="18px"  CellPadding="5" Width="519px">
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
                 </asp:GridView>
         <a href="../Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-print"></span> Imprimir

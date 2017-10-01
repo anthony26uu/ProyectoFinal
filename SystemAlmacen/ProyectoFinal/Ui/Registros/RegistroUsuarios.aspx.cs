@@ -54,7 +54,7 @@ namespace ProyectoFinal.Ui.Registros
             usuario.NombreUsuario = TextBoxNombre.Text;
             usuario.PassUsuario = TextBoxPass.Text;
             usuario.Tipo = DropTipo.Text;
-
+            usuario.FechaIngreso = Convert.ToDateTime(TextFecha.Text);
             return usuario;
         }
 

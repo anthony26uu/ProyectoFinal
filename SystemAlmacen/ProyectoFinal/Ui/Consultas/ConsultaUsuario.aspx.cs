@@ -89,46 +89,64 @@ namespace ProyectoFinal.Ui.Consultas
             else if (DropFiltro.SelectedIndex == 2)
             {
 
-                DateTime desde = Convert.ToDateTime(desdeFecha.Text);
-                DateTime hasta = Convert.ToDateTime(desdeFecha.Text);
-
-                if (desdeFecha.Text != "" && hastaFecha.Text != "")
+                if (desdeFecha.Text == "" && desdeFecha.Text == null)
                 {
-                    if (desde <= hasta)
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida ');</script>");
+
+                    hastaFecha.Text = "";
+                    desdeFecha.Text = "";
+                    desdeFecha.Focus();
+                }
+                else
+                {
+
+                    DateTime desde = DateTime.Now;
+                    DateTime hasta = DateTime.Now;
+                    if (desdeFecha.Text == "")
                     {
-                        Lista = BLL.UserBLL.GetList(p => p.FechaIngreso >= desde && p.FechaIngreso <= hasta);
-                        UsuarioGrid.DataSource = Lista;
-                        UsuarioGrid.DataBind();
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida ');</script>");
+                        hastaFecha.Text = "";
+                        desdeFecha.Text = "";
+                        desdeFecha.Focus();
                     }
                     else
                     {
-                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida debe ser menor');</script>");
+                        desde = Convert.ToDateTime(desdeFecha.Text);
+                        hasta = Convert.ToDateTime(hastaFecha.Text);
                     }
+
+
+                    if (desdeFecha.Text != "" && hastaFecha.Text != "")
+                    {
+                        if (desde <= hasta)
+                        {
+
+
+                            Lista = BLL.UserBLL.GetList(p => p.FechaIngreso >= desde.Date && p.FechaIngreso <= hasta.Date);
+                            UsuarioGrid.DataSource = Lista;
+                            UsuarioGrid.DataBind();
+
+
+                        }
+                        else
+                        {
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Fecha invalida debe ser menor');</script>");
+                            desdeFecha.Text = "";
+                            hastaFecha.Text = "";
+                            desdeFecha.Focus();
+                        }
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Ingrese Fecha');</script>");
+                        desdeFecha.Focus();
+                    }
+
                 }
-                else
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Ingrese Fecha');</script>");
-                }
+
 
 
             }
-            else if (DropFiltro.SelectedIndex == 3)
-            {
-                if (buscaText.Text == "")
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Debe escribir el Nombre a buscar');</script>");
-                }
-                else
-                {
-                    Lista = BLL.UserBLL.GetList(p => p.NombreUsuario == buscaText.Text);
-                    UsuarioGrid.DataSource = Lista;
-                    UsuarioGrid.DataBind();
-                }
-
-            }
-
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
