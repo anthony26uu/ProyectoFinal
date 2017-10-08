@@ -24,7 +24,7 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
 
 
 
-            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSet", Consultas.ConsultaUsuario.Lista));
+            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("DataSet", Consultas.ConsultaUsuarios.Lista));
 
             this.ReportViewer1.LocalReport.Refresh();
 

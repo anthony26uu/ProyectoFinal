@@ -20,7 +20,7 @@ namespace ProyectoFinal.Ui.Reportes.Ventanas
 
 
 
-            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("CategoriasDataSet", Consultas.ConsultaCategorias.Lista));
+            this.ReportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("CategoriasDataSet", Consultas.ConsultaCategoria.Lista));
 
             this.ReportViewer1.LocalReport.Refresh();
 

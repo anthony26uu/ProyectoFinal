@@ -94,7 +94,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Ui\Registros\Base.Master" />
+    <Content Include="Content\Img\warehouse.jpg" />
+    <Content Include="Ui\ConsultaCategoria.aspx" />
+    <Content Include="Ui\ConsultaUsuarios.aspx" />
+    <Content Include="Ui\Home.aspx" />
+    <Content Include="Ui\Base.Master" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,10 +113,9 @@
     <Content Include="Scripts\bootstrap4.0.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Ui\Consultas\ConsultaCategorias.aspx" />
-    <Content Include="Ui\Registros\RCategorias.aspx" />
+    <Content Include="Ui\RCategorias.aspx" />
     <Content Include="Ui\Registros\RegistroArticulo.aspx" />
-    <Content Include="Ui\Registros\RUsuario.aspx" />
+    <Content Include="Ui\RUsuario.aspx" />
     <Content Include="Ui\Reportes\CategoriasReport.rdlc" />
     <Content Include="Ui\Reportes\UsuariosReport.rdlc" />
     <Content Include="Ui\Reportes\ArticulosReport.rdlc" />
@@ -164,12 +167,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Ui\Consultas\ConsultaArticulos.aspx" />
-    <Content Include="Ui\Consultas\ConsultaClientes.aspx" />
-    <Content Include="Ui\Consultas\ConsultaDeudas.aspx" />
-    <Content Include="Ui\Consultas\ConsultaFactura.aspx" />
-    <Content Include="Ui\Consultas\ConsultaUsuario.aspx" />
-    <Content Include="Ui\Inicio.aspx" />
     <Content Include="Ui\Logos\find-file.ico" />
     <Content Include="Ui\Logos\iconos-para-prestamos_credixpress-05.png" />
     <Content Include="Ui\Logos\Impresora.png" />
@@ -178,18 +175,37 @@
     <Content Include="Ui\Logos\mercadona-729845.gif" />
     <Content Include="Ui\Logos\Product_96px.png" />
     <Content Include="Ui\Logos\usuario_318-10541.jpg" />
-    <Content Include="Ui\Registros\RCategoria.aspx" />
     <Content Include="Ui\Registros\RegistroClientes.aspx" />
     <Content Include="Ui\Reportes\Ventanas\UsuarioReport.aspx" />
-    <Content Include="Ui\SaldarDeudas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ui\Registros\Base.Master.cs">
+    <Compile Include="Ui\ConsultaCategoria.aspx.cs">
+      <DependentUpon>ConsultaCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\ConsultaCategoria.aspx.designer.cs">
+      <DependentUpon>ConsultaCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ConsultaUsuarios.aspx.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\ConsultaUsuarios.aspx.designer.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ui\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Base.Master.cs">
       <DependentUpon>Base.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ui\Registros\Base.Master.designer.cs">
+    <Compile Include="Ui\Base.Master.designer.cs">
       <DependentUpon>Base.Master</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
@@ -214,67 +230,11 @@
       <DependentUpon>RegistrosDbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Ui\Consultas\ConsultaArticulos.aspx.cs">
-      <DependentUpon>ConsultaArticulos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaArticulos.aspx.designer.cs">
-      <DependentUpon>ConsultaArticulos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaCategorias.aspx.cs">
-      <DependentUpon>ConsultaCategorias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaCategorias.aspx.designer.cs">
-      <DependentUpon>ConsultaCategorias.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaClientes.aspx.cs">
-      <DependentUpon>ConsultaClientes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaClientes.aspx.designer.cs">
-      <DependentUpon>ConsultaClientes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaDeudas.aspx.cs">
-      <DependentUpon>ConsultaDeudas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaDeudas.aspx.designer.cs">
-      <DependentUpon>ConsultaDeudas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaFactura.aspx.cs">
-      <DependentUpon>ConsultaFactura.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaFactura.aspx.designer.cs">
-      <DependentUpon>ConsultaFactura.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaUsuario.aspx.cs">
-      <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Consultas\ConsultaUsuario.aspx.designer.cs">
-      <DependentUpon>ConsultaUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Registros\RCategoria.aspx.cs">
-      <DependentUpon>RCategoria.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\Registros\RCategoria.aspx.designer.cs">
-      <DependentUpon>RCategoria.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\Registros\RCategorias.aspx.cs">
+    <Compile Include="Ui\RCategorias.aspx.cs">
       <DependentUpon>RCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ui\Registros\RCategorias.aspx.designer.cs">
+    <Compile Include="Ui\RCategorias.aspx.designer.cs">
       <DependentUpon>RCategorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Registros\RegistroArticulo.aspx.cs">
@@ -291,11 +251,11 @@
     <Compile Include="Ui\Registros\RegistroClientes.aspx.designer.cs">
       <DependentUpon>RegistroClientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Ui\Registros\RUsuario.aspx.cs">
+    <Compile Include="Ui\RUsuario.aspx.cs">
       <DependentUpon>RUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ui\Registros\RUsuario.aspx.designer.cs">
+    <Compile Include="Ui\RUsuario.aspx.designer.cs">
       <DependentUpon>RUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ui\Reportes\Ventanas\CategoriaReport.aspx.cs">
@@ -311,13 +271,6 @@
     </Compile>
     <Compile Include="Ui\Reportes\Ventanas\UsuarioReport.aspx.designer.cs">
       <DependentUpon>UsuarioReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Ui\SaldarDeudas.aspx.cs">
-      <DependentUpon>SaldarDeudas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Ui\SaldarDeudas.aspx.designer.cs">
-      <DependentUpon>SaldarDeudas.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuarioDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -344,7 +297,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Img\" />
+    <Folder Include="Ui\Consultas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
