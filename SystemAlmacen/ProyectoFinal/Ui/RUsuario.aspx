@@ -60,7 +60,7 @@
 
                <!--Select -->
                
-                <asp:DropDownList ID="DropTipo" runat="server" class="custom-select"  Height="42px" Width="199px">
+                <asp:DropDownList ID="DropTipo" runat="server" class="btn btn-danger"  Height="42px" Width="199px">
                     <asp:ListItem>Administrador</asp:ListItem>
                     <asp:ListItem>Empleado</asp:ListItem>
                 </asp:DropDownList>   

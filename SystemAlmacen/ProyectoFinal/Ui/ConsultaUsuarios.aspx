@@ -65,7 +65,7 @@
    
     
       <br />
-        <a href="Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-info btn-lg">
+        <a href="Reportes/Ventanas/UsuarioReport.aspx" class="btn btn-danger">
           <span ></span> Imprimir
         </a> 
        
