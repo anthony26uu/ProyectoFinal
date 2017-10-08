@@ -30,48 +30,81 @@
 
    
         <div>
-            <a href="Inicio.aspx" class="btn btn-danger btn-block">EL ALMACEN</a><br />
+            <a href="Home.aspx"class="btn btn-danger btn-block">EL ALMACEN</a><br />
 
             <br />
 
 
-            <a href="" class="btn btn-default">Registrar Ventas</a>
-            <a href="../SaldarDeudas.aspx" class="btn btn-default">Saldar Deudas</a>
-            <a href="#" class="btn btn-default">Acerca de</a>
-        
-        
-
-            <div > 
-
-           
-            <a class="btn btn-default dropdown" data-toggle="dropdown" aria-expanded="false" id="Consultas">Consultas
-            <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="ConsultaUsuarios.aspx">Usuario</a></li>
-                <li><a href="ConsultaCategoria.aspx">Categoria</a></li>
-                <li><a href="#">Articulo</a></li>
-                <li><a href="#">Cliente</a></li>
-            </ul>
-             
-             </div>
-             
-            <div>
 
 
-                <a href="#" id="R" class="btn btn-default dropdown" data-toggle="dropdown" aria-expanded="false">Registros
-        <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="RUsuario.aspx">Usuario</a></li>
-                <li><a href="RCategorias.aspx">Categoria</a></li>
-                <li><a href="#">Articulo</a></li>
-                <li><a href="#">Cliente</a></li>
-            </ul>
 
-            </div>
-           
-        </div>
+
+
+
+
+
+
+
+
+
+
+            <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+    
+       
+      </button>
+
+      <a class="navbar-brand" href="Home.aspx">Inicio</a>
+         <a class="navbar-brand" href="#">Saldar Deudas</a>
+         <a class="navbar-brand" href="#">Punto de Ventas</a>
+       
+    </div>
+
+         <li class="dropdown">
+          <a href="#"  class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Consultas <span class="caret"></span></a>
+          
+             <ul class="dropdown-menu" role="menu">
+            <li><a href="ConsultaUsuarios.aspx">Usuario</a></li>
+            <li><a href="ConsultaCategoria.aspx">Categorias</a></li>
+            <li><a href="#">Clientes</a></li>
+            
+          </ul>
+        </li>
+
+       <li class="dropdown">
+          <a href="#"  class="navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">Registros <span class="caret"></span></a>
+          
+             <ul class="dropdown-menu" role="menu">
+            <li><a href="RUsuario.aspx">Usuario</a></li>
+            <li><a href="RCategorias.aspx">Categorias</a></li>
+            <li><a href="#">Clientes</a></li>
+            
+          </ul>
+        </li>
+    
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Cerrar Seccion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
 
         <br />
         <br />
