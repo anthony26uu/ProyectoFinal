@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,6 +11,9 @@ namespace BLL
 {
     public class UserBLL
     {
+        public static object FormsAuthentication { get; private set; }
+        public static object Utilidades { get; private set; }
+
         public static bool Guardar(Usuarios nuevo)
         {
             bool retorno = false;
@@ -19,6 +23,25 @@ namespace BLL
                 retorno = db.Guardar(nuevo) != null;
             }
             return retorno;
+
+        }
+       
+        public static bool Authenticate(string NombreUsuario, string password)
+        {
+
+
+
+       
+        
+            if (GetList(p => p.NombreUsuario == NombreUsuario && p.PassUsuario == password).Count==0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
 
         }
 
